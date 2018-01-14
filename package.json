@@ -17,13 +17,21 @@
   },
   "homepage": "https://github.com/bipbop/juristek-parser#readme",
   "dependencies": {
+    "basic-logger": "^0.4.4",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
     "change-case": "^3.0.1",
     "cheerio": "^1.0.0-rc.2",
     "es6-error": "^4.1.1",
+    "express": "^4.16.2",
     "iso-7064": "^1.0.0",
     "moment": "^2.20.1",
     "numeral": "^2.0.6",
     "pad": "^2.0.3",
+    "raw-body-parser": "0.0.2",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "tinydb": "^0.1.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
