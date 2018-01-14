@@ -1,5 +1,7 @@
 const exceptions = require('./exceptions');
 const cheerio = require('cheerio');
+const p = require('../package.json');
+const _ = require('underscore');
 
 module.exports = class Parser {
   constructor(cherrioObject, defaultErrorMessage = 'A classe de Parser não foi configurada') {
@@ -27,7 +29,11 @@ module.exports = class Parser {
 
   load() {
     this.assertDocument();
-    return this.dump();
+    return this.parse();
+  }
+
+  parse() {
+    return Object.assign(this.dump(), { _parserLoaded: new Date(), _parser: _.pick(p, 'version', 'name', 'repository') });
   }
 
   dump() {

@@ -9,7 +9,8 @@ const moment = require('moment');
 require('numeral/locales/pt-br');
 
 numeral.locale('pt-br');
-const numeroRegex = /numero/;
+const numeroRegex = /numero/i;
+const dataRegex = /data/i;
 
 function camelObject(from) {
   const obj = {};
@@ -19,33 +20,46 @@ function camelObject(from) {
   return obj;
 }
 
-class Processo {
+class Processo extends Parser {
   constructor(elementProcesso, $) {
+    super($);
     this.elementProcesso = elementProcesso;
-    this.$ = $;
   }
 
   static formatItem(v, k, dump) {
     if (Array.isArray(v)) return v.map(n => this.formatItem(n, k, dump));
     if (typeof v === 'object') return Processo.format(v);
-    if (k === 'numeroProcesso') {
-      try {
-        const cnj = CalculateCNJ.load(v);
-        Object.assign(dump, { cnj: cnj.pieces });
-        return cnj.generate(true); /* cnj mask */
-      } catch (e) {
-        return v;
-      }
-    }
+    if (k === 'numeroProcesso') return v;
     if (k === 'numeroAntigo') return v;
     if (['valorCausa', 'instancia'].indexOf(k) !== -1 || numeroRegex.test(k)) return numeral(v).value();
     if (k === 'eletronico') return v === '1';
-    if (k === 'data' && dump.format) return moment(v, phpMoment(dump.format)).toDate();
+    if (dataRegex.test(k) || ['inscricao', 'transitoJulgado', 'ajuizamento', 'autuacao', 'distribuicao', 'autuacao', 'andamentoInicial', 'dataValorCausa'].indexOf(k) !== -1) {
+      return moment(v, phpMoment(dump.format || (dump[`${k}Attributes`] ? dump[`${k}Attributes`].format : null) || 'd/m/Y')).toDate();
+    }
+
     return v;
   }
 
   static format(dump) {
-    return _.mapObject(dump, (v, k) => Processo.formatItem(v, k, dump));
+    let ret = _.mapObject(dump, (v, k) => Processo.formatItem(v, k, dump));
+    ret = Processo.formatNumeroProcesso(ret);
+    return ret;
+  }
+
+  static formatNumeroProcesso(proc) {
+    if (!proc.numeroProcesso) return proc;
+
+    const ret = proc;
+
+    try {
+      const cnj = CalculateCNJ.load(ret.numeroProcesso);
+      ret.numeroProcesso = cnj.generate(true); /* cnj mask */
+      ret.cnj = cnj.pieces;
+    } catch (e) {
+      /* pass */
+    }
+
+    return ret;
   }
 
 
@@ -190,6 +204,6 @@ class Processo {
 
 module.exports = class Processos extends Parser {
   dump() {
-    return this.$('body > processo').map((i, p) => new Processo(p, this.$).dump()).get();
+    return { processos: this.$('body > processo').map((i, p) => new Processo(p, this.$).parse()).get() };
   }
 };
