@@ -1,0 +1,36 @@
+{
+  "name": "juristek-parser",
+  "version": "1.0.0",
+  "description": "Parser de XML do BIPBOP Juristek para NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bipbop/juristek-parser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bipbop/juristek-parser/issues"
+  },
+  "homepage": "https://github.com/bipbop/juristek-parser#readme",
+  "dependencies": {
+    "change-case": "^3.0.1",
+    "cheerio": "^1.0.0-rc.2",
+    "es6-error": "^4.1.1",
+    "iso-7064": "^1.0.0",
+    "moment": "^2.20.1",
+    "numeral": "^2.0.6",
+    "pad": "^2.0.3",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-flowtype": "^2.41.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}
