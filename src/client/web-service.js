@@ -9,6 +9,7 @@ const DEFAULT_ENDPOINT = {
   protocol: 'https:',
   host: 'irql.bipbop.com.br',
   hostname: 'irql.bipbop.com.br',
+  pathname: '/',
 };
 
 module.exports = class BIPBOPWebService {
@@ -16,17 +17,34 @@ module.exports = class BIPBOPWebService {
     this.apiKey = apiKey;
   }
 
-  request(q, requestOptions = {}, urlParameters = {}, endpoint = {}, UseParser = Parser) {
-    this.fuck = 1;
-    return request(Object.assign({
+  default(defaultParser = null, ...args) {
+    return this.request(...args)
+      .then(data => Parser.openString(data, defaultParser || Parser))
+      .then(parser => parser.load());
+  }
+
+  request(q, form = {}, options = {}, urlParameters = {}, endpoint = {}) {
+    const urlData = Object.assign({
+      query: querystring.stringify(Object.assign({}, urlParameters, {
+        q,
+        apiKey: this.apiKey,
+      })),
+    }, endpoint, DEFAULT_ENDPOINT);
+
+    urlData.search = `?${urlData.query}`;
+
+    const requestOptions = Object.assign({
       method: 'POST',
-    }, requestOptions, {
-      url: Object.assign({
-        query: querystring.stringify(Object.assign({}, urlParameters, {
-          q,
-          apiKey: this.apiKey,
-        })),
-      }),
-    }, endpoint, DEFAULT_ENDPOINT)).then(r => new UseParser(r));
+      form,
+    }, options, {
+      url: urlData,
+    });
+
+    return Promise.resolve()
+      .then(() => request(requestOptions))
+      .catch((e) => {
+        if (e && e.response && e.response.body) Parser.openString(e.response.body).assertDocument();
+        throw e;
+      });
   }
 };

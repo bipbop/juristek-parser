@@ -1,6 +1,6 @@
 const _ = require('underscore');
 const Promise = require('bluebird');
-const Parser = require('../parser');
+const changeCase = require('change-case');
 
 const PUSH_APPEND_REGEX = /^push/i;
 
@@ -26,25 +26,20 @@ const parameter = {
   weekdays: 'pushWeekdays',
 };
 
-module.exports.parameter = parameter;
-
-module.exports = class Push {
+class Push {
   constructor(ws, pushController = 'PUSH') {
     this.ws = ws;
     this.pushController = pushController;
   }
 
-  request(method, table, form = {}) {
+  request(method, table, form = {}, parser = null, ...args) {
     const query = `${method} '${this.pushController}'.'${table}'`;
     return Promise.resolve()
-      .then(() => this.ws.request(query, { form }))
-      .then(data => new Parser(data))
-      .tap(parser => parser.assertDocument())
-      .then(parser => parser.$);
+      .then(() => this.ws.default(parser, query, form, ...args));
   }
 
   static filterPush(filter) {
-    return _.map(filter, (v, k) => ({ [k.replace(PUSH_APPEND_REGEX, '')]: v }));
+    return Object.assign({}, ..._.map(filter, (v, k) => ({ [changeCase.camelCase(k.replace(PUSH_APPEND_REGEX, ''))]: v, [k]: v })));
   }
 
   static idOrLabel({ pushId, pushLabel }) {
@@ -54,55 +49,58 @@ module.exports = class Push {
     }, value => !!value));
   }
 
-  deleteJob(parameters) {
-    return this.request('DELETE FROM', 'Job', Push.idOrLabel(parameters));
+  deleteJob(parameters, ...args) {
+    return this.request('DELETE FROM', 'JOB', Push.idOrLabel(parameters), ...args);
   }
 
-  deleteJobs() {
-    return this.request('DELETE FROM', 'Jobs');
+  deleteJobs(...args) {
+    return this.request('DELETE FROM', 'JOBS', ...args);
   }
 
-  insertJob(parameters) {
-    return this.request('INSERT INTO', 'Job', parameters);
+  insertJob(parameters, ...args) {
+    return this.request('INSERT INTO', 'JOB', parameters, ...args);
   }
 
-  selectDeletedDocument(id) {
-    return this.request('SELECT FROM', 'DeletedDocument', id ? { id } : {});
+  selectDeletedDocument(id, ...args) {
+    return this.request('SELECT FROM', 'DELETEDDOCUMENT', id ? { id } : {}, ...args);
   }
 
-  selectDeletedJob(id) {
-    return this.request('SELECT FROM', 'DeletedJob', id ? { id } : {});
+  selectDeletedJob(id, ...args) {
+    return this.request('SELECT FROM', 'DELETEDJOB', id ? { id } : {}, ...args);
   }
 
-  selectDocument(parameters) {
-    return this.request('SELECT FROM', 'Document', Push.idOrLabel(parameters));
+  selectDocument(parameters, ...args) {
+    return this.request('SELECT FROM', 'DOCUMENT', Push.idOrLabel(parameters), ...args);
   }
 
-  selectForceCallback(parameters) {
-    return this.request('SELECT FROM', 'ForceCallback', Push.idOrLabel(parameters));
+  selectForceCallback(parameters, ...args) {
+    return this.request('SELECT FROM', 'FORCECALLBACK', Push.idOrLabel(parameters), ...args);
   }
 
-  selectFullReport(parameters) {
-    return this.request('SELECT FROM', 'FullReport', Push.filterPush(parameters));
+  selectFullReport(parameters, ...args) {
+    return this.request('SELECT FROM', 'FULLREPORT', Push.filterPush(parameters), ...args);
   }
 
-  selectHistory(id) {
-    return this.request('SELECT FROM', 'History', { id });
+  selectHistory(id, ...args) {
+    return this.request('SELECT FROM', 'HISTORY', { id }, ...args);
   }
 
-  selectJob(parameters) {
-    return this.request('SELECT FROM', 'Job', Push.filterPush(parameters));
+  selectJob(parameters, ...args) {
+    return this.request('SELECT FROM', 'JOB', Push.filterPush(parameters), ...args);
   }
 
-  selectReport(parameters) {
-    return this.request('SELECT FROM', 'Report', Push.filterPush(parameters));
+  selectReport(parameters, ...args) {
+    return this.request('SELECT FROM', 'REPORT', Push.filterPush(parameters), ...args);
   }
 
-  selectReportRemoved(parameters) {
-    return this.request('SELECT FROM', 'ReportRemoved', Push.filterPush(parameters));
+  selectReportRemoved(parameters, ...args) {
+    return this.request('SELECT FROM', 'REPORTREMOVED', Push.filterPush(parameters), ...args);
   }
 
-  updateJob(parameters) {
-    return this.request('UPDATE', 'Job', Push.filterPush(parameters));
+  updateJob(parameters, ...args) {
+    return this.request('UPDATE', 'JOB', Push.filterPush(parameters), ...args);
   }
-};
+}
+
+module.exports = Push;
+module.exports.pushParameter = parameter;

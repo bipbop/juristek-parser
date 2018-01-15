@@ -18,6 +18,7 @@ const databaseProcesso = new TinyDB(path.join(__dirname, 'db', './processos.db')
 app.post('/processo', (req, res) => {
   const processo = JuristekParser.openString(req.body.toString(), JuristekParser).load();
   Object.assign(processo, { _bipbop: _.pick(req.headers, (v, k) => k.substr(0, 9) === 'x-bipbop-') });
+  log.info(`Processo carregado: ${JSON.stringify(processo._bipbop)}`);
   databaseProcesso.insertItem(processo);
   databaseProcesso.flush(() => res.send(processo));
 });

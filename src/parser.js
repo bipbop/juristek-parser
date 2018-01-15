@@ -4,9 +4,8 @@ const p = require('../package.json');
 const _ = require('underscore');
 
 module.exports = class Parser {
-  constructor(cherrioObject, defaultErrorMessage = 'A classe de Parser não foi configurada') {
+  constructor(cherrioObject) {
     this.$ = cherrioObject;
-    this.defaultErrorMessage = defaultErrorMessage;
   }
 
   assertDocument() {
@@ -37,6 +36,6 @@ module.exports = class Parser {
   }
 
   dump() {
-    throw new exceptions.Parser(this.defaultErrorMessage);
+    return this.$;
   }
 };

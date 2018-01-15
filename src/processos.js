@@ -64,7 +64,8 @@ class Processo extends Parser {
 
 
   getter(name, attributes = {}, df = null) {
-    const element = this.$(this.elementProcesso).children(name);
+    const { $ } = this;
+    const element = $(this.elementProcesso).children(name);
     if (!element.length) return df;
     const textValue = element.text();
     Object.assign(attributes, element.get().attribs);
@@ -72,7 +73,8 @@ class Processo extends Parser {
   }
 
   attributes(name, df = null) {
-    const element = this.$(this.elementProcesso).children(name);
+    const { $ } = this;
+    const element = $(this.elementProcesso).children(name);
     if (!element.length) return df;
     const { attribs } = element.get();
     return attribs ? camelObject(attribs) : df;
@@ -168,24 +170,28 @@ class Processo extends Parser {
   get urlProcessoAttributes() { return this.attributes('url_processo'); }
 
   get advogados() {
-    return this.$('advogados advogado', this.elementProcesso).map((i, advogado) => Object.assign({}, camelObject(advogado.attribs), {
-      nome: this.$(advogado).text().trim(),
+    const { $ } = this;
+    return $('advogados advogado', this.elementProcesso).map((i, advogado) => Object.assign({}, camelObject(advogado.attribs), {
+      nome: $(advogado).text().trim(),
     })).get();
   }
 
   get partes() {
-    return this.$('partes parte', this.elementProcesso).map((i, parte) => Object.assign({}, camelObject(parte.attribs), {
-      nome: this.$(parte).text().trim(),
+    const { $ } = this;
+    return $('partes parte', this.elementProcesso).map((i, parte) => Object.assign({}, camelObject(parte.attribs), {
+      nome: $(parte).text().trim(),
     })).get();
   }
 
   get andamentos() {
-    return this.$('andamentos andamento', this.elementProcesso).map((i, andamento) => Object.assign(..._.flatten(this.$(andamento).children().map((ik, k) =>
-      [{ [changeCase.camelCase(k.name)]: this.$(k).text() }, k.attribs || {}]).get()))).get();
+    const { $ } = this;
+    return $('andamentos andamento', this.elementProcesso).map((i, andamento) => Object.assign(..._.flatten($(andamento).children().map((ik, k) =>
+      [{ [changeCase.camelCase(k.name)]: $(k).text() }, k.attribs || {}]).get()))).get();
   }
 
   get tags() {
-    const tags = this.$('tags tag', this.elementProcesso).map((i, tag) => ({ [this.$(tag).text().trim()]: camelObject(tag.attribs) })).get();
+    const { $ } = this;
+    const tags = $('tags tag', this.elementProcesso).map((i, tag) => ({ [$(tag).text().trim()]: camelObject(tag.attribs) })).get();
     if (!tags.length) return [];
     return Object.assign(...tags);
   }
@@ -202,8 +208,12 @@ class Processo extends Parser {
   }
 }
 
-module.exports = class Processos extends Parser {
+class Processos extends Parser {
   dump() {
-    return { processos: this.$('body > processo').map((i, p) => new Processo(p, this.$).parse()).get() };
+    const $ = super.dump();
+    return { processos: $('body > processo').map((i, p) => new Processo(p, $).parse()).get() };
   }
-};
+}
+
+module.exports = Processos;
+module.exports.Processo = Processo;
