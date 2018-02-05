@@ -1,6 +1,6 @@
 const Parser = require('./parser');
 const phpMoment = require('./php-moment');
-const _ = require('underscore');
+const _ = require('lodash');
 const changeCase = require('change-case');
 const numeral = require('numeral');
 const CalculateCNJ = require('./calculate-cnj');
@@ -41,7 +41,7 @@ class Processo extends Parser {
   }
 
   static format(dump) {
-    let ret = _.mapObject(dump, (v, k) => Processo.formatItem(v, k, dump));
+    let ret = _.mapValues(dump, (v, k) => Processo.formatItem(v, k, dump));
     ret = Processo.formatNumeroProcesso(ret);
     return ret;
   }
@@ -185,7 +185,7 @@ class Processo extends Parser {
 
   get andamentos() {
     const { $ } = this;
-    return $('andamentos andamento', this.elementProcesso).map((i, andamento) => Object.assign(..._.flatten($(andamento).children().map((ik, k) =>
+    return $('andamentos andamento', this.elementProcesso).map((i, andamento) => Object.assign(..._.flattenDeep($(andamento).children().map((ik, k) =>
       [{ [changeCase.camelCase(k.name)]: $(k).text() }, k.attribs || {}]).get()))).get();
   }
 

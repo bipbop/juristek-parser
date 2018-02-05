@@ -1,7 +1,7 @@
 const exceptions = require('./exceptions');
 const cheerio = require('cheerio');
 const p = require('../package.json');
-const _ = require('underscore');
+const _ = require('lodash');
 
 module.exports = class Parser {
   constructor(cherrioObject) {
@@ -32,7 +32,7 @@ module.exports = class Parser {
   }
 
   parse() {
-    return Object.assign(this.dump(), { _parserLoaded: new Date(), _parser: _.pick(p, 'version', 'name', 'repository') });
+    return Object.assign(this.dump(), { _parserLoaded: new Date(), _parser: _.pickBy(p, 'version', 'name', 'repository') });
   }
 
   dump() {

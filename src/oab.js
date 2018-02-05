@@ -1,13 +1,13 @@
 const Parser = require('./parser');
 const changeCase = require('change-case');
 const { Processo } = require('./processos');
-const _ = require('underscore');
+const _ = require('lodash');
 
 module.exports = class OAB extends Parser {
   readNode(key, node) {
     const { $ } = this;
 
-    return _.pick(Object.assign({}, node.attribs, {
+    return _.pickBy(Object.assign({}, node.attribs, {
       [key]: $(node).text().trim(),
     }), v => !!v);
   }

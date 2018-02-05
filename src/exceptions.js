@@ -1,5 +1,5 @@
 const ExtendableError = require('es6-error');
-const _ = require('underscore');
+const _ = require('lodash');
 
 class JuristekException extends ExtendableError {} /* Erros de */
 class JuristekInstanceException extends JuristekException {} /* Erros de Robô */

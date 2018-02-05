@@ -1,4 +1,4 @@
-const _ = require('underscore');
+const _ = require('lodash');
 const Promise = require('bluebird');
 const changeCase = require('change-case');
 
@@ -43,7 +43,7 @@ class Push {
   }
 
   static idOrLabel({ pushId, pushLabel }) {
-    return Push.filterPush(_.pick({
+    return Push.filterPush(_.pickBy({
       [parameter.id]: pushId,
       [parameter.label]: pushLabel,
     }, value => !!value));
