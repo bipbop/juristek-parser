@@ -1,0 +1,25 @@
+{
+  "name": "juristek-parser",
+  "description": "Parser de XML do BIPBOP Juristek para NodeJS.",
+  "main": "browser.js",
+  "authors": [
+    "Lucas Fernando Amorim <lf.amorim@bipbop.com.br>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "legaltech",
+    "juristek",
+    "fastjur",
+    "parser",
+    "webservice",
+    "processos"
+  ],
+  "homepage": "https://github.com/bipbop/juristek-parser",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
