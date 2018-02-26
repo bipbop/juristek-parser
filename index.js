@@ -1,18 +1,23 @@
-const Parser = require('./src/parser');
-const Info = require('./src/info');
-const OAB = require('./src/oab');
-const Processos = require('./src/processos');
-const Exceptions = require('./src/exceptions');
-const CalculateCNJ = require('./src/calculate-cnj');
-const WebService = require('./src/client/web-service');
-const Push = require('./src/client/push');
+import "babel-polyfill";
 
-module.exports = Processos;
-module.exports.Processos = Processos;
-module.exports.CalculateCNJ = CalculateCNJ;
-module.exports.exceptions = Exceptions;
-module.exports.Parser = Parser;
-module.exports.Info = Info;
-module.exports.OAB = OAB;
-module.exports.WebService = WebService;
-module.exports.WebService.Push = Push;
+import Parser from './src/parser';
+import Info from './src/info';
+import OAB from './src/oab';
+import Processos from './src/processos';
+import Exceptions from './src/exceptions';
+import CalculateCNJ from './src/calculate-cnj';
+import WebService from './src/client/web-service';
+import Push from './src/client/push';
+
+Object.assign(Processos, {
+  Processos,
+  CalculateCNJ,
+  exceptions: Exceptions,
+  Parser,
+  Info,
+  OAB,
+  WebService,
+  Push,
+});
+
+export default Processos;

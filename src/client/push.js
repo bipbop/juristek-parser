@@ -1,6 +1,6 @@
-const _ = require('lodash');
-const Promise = require('bluebird');
-const changeCase = require('change-case');
+import _ from 'lodash';
+import Promise from 'bluebird';
+import changeCase from 'change-case';
 
 const PUSH_APPEND_REGEX = /^push/i;
 
@@ -102,5 +102,5 @@ class Push {
   }
 }
 
-module.exports = Push;
-module.exports.pushParameter = parameter;
+export default Push;
+export { parameter as pushParameter };

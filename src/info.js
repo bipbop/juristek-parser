@@ -1,6 +1,6 @@
-const Parser = require('./parser');
+import Parser from './parser';
 
-module.exports = class Info extends Parser {
+export default class Info extends Parser {
   dump() {
     const { $ } = this;
     return $('database').map((i, databaseNode) => $('table', databaseNode).map((it, tableNode) => ({
@@ -13,4 +13,4 @@ module.exports = class Info extends Parser {
       })).get(),
     })).get()).get();
   }
-};
+}

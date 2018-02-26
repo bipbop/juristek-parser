@@ -57,6 +57,6 @@ const formatMap = {
 
 const formatEx = /[dDjlNSwzWFmMntLoYyaABgGhHisueIOPTZcrU]/g;
 
-module.exports = function phpMoment(format, moment) {
+export default function phpMoment(format, moment) {
   return format.replace(formatEx, phpStr => (typeof formatMap[phpStr] === 'function' ? formatMap[phpStr](moment) : formatMap[phpStr]));
-};
+}

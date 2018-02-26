@@ -1,7 +1,7 @@
-const request = require('request-promise');
-const querystring = require('querystring');
-const Promise = require('bluebird');
-const Parser = require('../parser');
+import request from 'request-promise';
+import querystring from 'querystring';
+import Promise from 'bluebird';
+import Parser from '../parser';
 
 const FREE_APIKEY = '6057b71263c21e4ada266c9d4d4da613';
 
@@ -12,7 +12,7 @@ const DEFAULT_ENDPOINT = {
   pathname: '/',
 };
 
-module.exports = class BIPBOPWebService {
+export default class BIPBOPWebService {
   constructor(apiKey = FREE_APIKEY) {
     this.apiKey = apiKey;
   }
@@ -47,4 +47,4 @@ module.exports = class BIPBOPWebService {
         throw e;
       });
   }
-};
+}

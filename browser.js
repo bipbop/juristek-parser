@@ -1,3 +1,3 @@
 /* global window */
 
-window.JuristekParser = require('./index');
+window.JuristekParser = require('./dist/node');

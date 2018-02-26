@@ -1,11 +1,12 @@
-const Parser = require('./parser');
-const phpMoment = require('./php-moment');
-const _ = require('lodash');
-const changeCase = require('change-case');
-const numeral = require('numeral');
-const CalculateCNJ = require('./calculate-cnj');
+import _ from 'lodash';
+import changeCase from 'change-case';
+import numeral from 'numeral';
+import moment from 'moment';
 
-const moment = require('moment');
+import Parser from './parser';
+import phpMoment from './php-moment';
+import CalculateCNJ from './calculate-cnj';
+
 require('numeral/locales/pt-br');
 
 numeral.locale('pt-br');
@@ -215,5 +216,5 @@ class Processos extends Parser {
   }
 }
 
-module.exports = Processos;
-module.exports.Processo = Processo;
+export default Processos;
+export { Processo };

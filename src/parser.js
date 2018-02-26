@@ -1,9 +1,10 @@
-const exceptions = require('./exceptions');
-const cheerio = require('cheerio');
-const p = require('../package.json');
-const _ = require('lodash');
+import cheerio from 'cheerio';
+import _ from 'lodash';
 
-module.exports = class Parser {
+import { Exception } from './exceptions';
+import p from '../package.json';
+
+export default class Parser {
   constructor(cherrioObject) {
     this.$ = cherrioObject;
   }
@@ -11,7 +12,7 @@ module.exports = class Parser {
   assertDocument() {
     const exception = this.$('BPQL > header > exception');
     if (!exception.length) return;
-    throw new exceptions.Exception({
+    throw new Exception({
       message: exception.text(),
       source: exception.attr('source'),
       code: parseInt(exception.attr('code'), 10) || 0,
@@ -38,4 +39,4 @@ module.exports = class Parser {
   dump() {
     return this.$;
   }
-};
+}

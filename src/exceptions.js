@@ -1,9 +1,9 @@
-const ExtendableError = require('es6-error');
-const _ = require('lodash');
+import ExtendableError from 'es6-error';
+import _ from 'lodash';
 
-class JuristekException extends ExtendableError {} /* Erros de */
-class JuristekInstanceException extends JuristekException {} /* Erros de Robô */
-class JuristekParserException extends JuristekException {} /* Erros de Interpretação */
+class JuristekException extends ExtendableError {}/* Erros de */
+class JuristekInstanceException extends JuristekException {}/* Erros de Robô */
+class JuristekParserException extends JuristekException {}/* Erros de Interpretação */
 
 const errorCodes = {
   E_TABLE_NOT_FOUND: 1, // Tipo de consulta inexistente
@@ -33,10 +33,12 @@ const errorCodes = {
   E_UNKNOWN: 0,
 };
 
-module.exports = errorCodes;
+export default errorCodes;
 
-module.exports.codename = k => _.findKey(errorCodes, n => n === k) || 'E_UNKNOWN';
+export function codename(k) {
+  return _.findKey(errorCodes, n => n === k) || 'E_UNKNOWN';
+}
 
-module.exports.Instance = JuristekInstanceException;
-module.exports.Exception = JuristekException;
-module.exports.Parser = JuristekParserException;
+export { JuristekInstanceException as Instance };
+export { JuristekException as Exception };
+export { JuristekParserException as Parser };

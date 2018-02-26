@@ -1,13 +1,13 @@
-const iso7064 = require('iso-7064');
-const pad = require('pad');
-const ExtendableError = require('es6-error');
+import iso7064 from 'iso-7064';
+import pad from 'pad';
+import ExtendableError from 'es6-error';
 
 class CalculateCNJError extends ExtendableError {}
 
 const SIZES = [7, 2, 4, 1, 2, 4];
 const NOT_NUMBERS = /[^0-9]/g;
 
-module.exports = class CalculateCNJ {
+export default class CalculateCNJ {
   constructor(...parameters) {
     const args = parameters.map((v, i) => {
       let r = v;
@@ -65,4 +65,4 @@ module.exports = class CalculateCNJ {
     return !mask ? this.proc + this.dv + this.year + this.justice + this.number + this.court :
       [this.proc, [this.dv, this.year, this.justice, this.number, this.court].join('.')].join('-');
   }
-};
+}

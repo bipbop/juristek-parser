@@ -1,11 +1,12 @@
-const Parser = require('./parser');
-const changeCase = require('change-case');
-const { Processo } = require('./processos');
-const _ = require('lodash');
+import changeCase from 'change-case';
+import _ from 'lodash';
 
-module.exports = class OAB extends Parser {
+import Parser from './parser';
+import { Processo } from './processos';
+
+export default class OAB extends Parser {
   readNode(key, node) {
-    const { $ } = this;
+    const { $ } = this; 
 
     return _.pickBy(Object.assign({}, node.attribs, {
       [key]: $(node).text().trim(),
@@ -48,4 +49,4 @@ module.exports = class OAB extends Parser {
     return $('body advogado processos processo').map((i, processoNode) =>
       OAB.formatQuery(Processo.formatNumeroProcesso(this.childrenDump(processoNode)))).get()[0];
   }
-};
+}
