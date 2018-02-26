@@ -9,7 +9,7 @@ import json from 'rollup-plugin-json';
 const $ = gulpLoadPlugins();
 
 gulp.task('node', () => rollup({
-  input: './index.js',
+  input: './lib.js',
   format: 'cjs',
   plugins: [json()],
   exports: 'default',
@@ -20,7 +20,9 @@ gulp.task('node', () => rollup({
     babelrc: false,
     presets: ['env', 'stage-0'],
   }))
-  .pipe(gulp.dest('./dist')));
+  .pipe(gulp.dest('./dist'))
+  .pipe($.rename('index.js'))
+  .pipe(gulp.dest('./')));
 
 gulp.task('browser', ['node'], () => browserify()
   .add('./browser.js')
