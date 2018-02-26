@@ -77,7 +77,7 @@ var errorCodes = {
 };
 
 var name = "juristek-parser";
-var version = "1.1.2";
+var version = "2.0.0";
 var description = "Parser de XML do BIPBOP Juristek para NodeJS.";
 var main = "index.js";
 var browser = "dist/browser.js";
