@@ -7,6 +7,7 @@ class CalculateCNJError extends ExtendableError {}
 const SIZES = [7, 2, 4, 1, 2, 4];
 const NOT_NUMBERS = /[^0-9]/g;
 
+export { CalculateCNJError };
 export default class CalculateCNJ {
   constructor(...parameters) {
     const args = parameters.map((v, i) => {

@@ -26,17 +26,117 @@ require('babel-polyfill');
 var cheerio = _interopDefault(require('cheerio'));
 var _ = _interopDefault(require('lodash'));
 var ExtendableError = _interopDefault(require('es6-error'));
+var iso7064 = _interopDefault(require('iso-7064'));
+var pad = _interopDefault(require('pad'));
 var changeCase = _interopDefault(require('change-case'));
 var numeral = _interopDefault(require('numeral'));
 var moment = _interopDefault(require('moment'));
-var iso7064 = _interopDefault(require('iso-7064'));
-var pad = _interopDefault(require('pad'));
 var _request = _interopDefault(require('request-promise'));
 var querystring = _interopDefault(require('querystring'));
 var Promise = _interopDefault(require('bluebird'));
 
-var JuristekException = function (_ExtendableError) {
-  _inherits(JuristekException, _ExtendableError);
+var CalculateCNJError = function (_ExtendableError) {
+  _inherits(CalculateCNJError, _ExtendableError);
+
+  function CalculateCNJError() {
+    _classCallCheck(this, CalculateCNJError);
+
+    return _possibleConstructorReturn(this, (CalculateCNJError.__proto__ || Object.getPrototypeOf(CalculateCNJError)).apply(this, arguments));
+  }
+
+  return CalculateCNJError;
+}(ExtendableError);
+
+var SIZES = [7, 2, 4, 1, 2, 4];
+var NOT_NUMBERS = /[^0-9]/g;
+
+var CalculateCNJ = function () {
+  function CalculateCNJ() {
+    _classCallCheck(this, CalculateCNJ);
+
+    for (var _len = arguments.length, parameters = Array(_len), _key = 0; _key < _len; _key++) {
+      parameters[_key] = arguments[_key];
+    }
+
+    var args = parameters.map(function (v, i) {
+      var r = v;
+      if (typeof r === 'number') r = r.toString();
+      if (typeof r !== 'string') return r;
+      if (!SIZES[i]) return r;
+      return pad(SIZES[i], r, '0');
+    });
+
+    var _args = _slicedToArray(args, 6),
+        proc = _args[0],
+        dv = _args[1],
+        year = _args[2],
+        justice = _args[3],
+        number = _args[4],
+        court = _args[5];
+
+    var firstStep = iso7064.compute(proc).toString();
+    var secondStep = iso7064.compute(firstStep + year + justice + number).toString();
+    var thirdStep = iso7064.compute(secondStep + court + '00').toString();
+
+    var ndv = 98 - thirdStep % 97;
+    this.dv = pad(2, ndv.toString(), '0');
+
+    if (dv !== null && dv !== this.dv) {
+      throw new CalculateCNJError();
+    }
+
+    this.proc = proc;
+    this.year = year;
+    this.justice = justice;
+    this.number = number;
+    this.court = court;
+  }
+
+  _createClass(CalculateCNJ, [{
+    key: 'generate',
+    value: function generate() {
+      var mask = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+      return !mask ? this.proc + this.dv + this.year + this.justice + this.number + this.court : [this.proc, [this.dv, this.year, this.justice, this.number, this.court].join('.')].join('-');
+    }
+  }, {
+    key: 'pieces',
+    get: function get() {
+      return {
+        proc: this.proc,
+        year: this.year,
+        justice: this.justice,
+        number: this.number,
+        court: this.court
+      };
+    }
+  }], [{
+    key: 'factory',
+    value: function factory(proc, _ref, year) {
+      var justice = _ref.justice,
+          number = _ref.number,
+          court = _ref.court;
+
+      return new CalculateCNJ(proc, null, year, justice, number, court);
+    }
+  }, {
+    key: 'load',
+    value: function load(cnj) {
+      var numcnj = cnj.replace(NOT_NUMBERS, '');
+      var pos = 0;
+      return new (Function.prototype.bind.apply(CalculateCNJ, [null].concat(_toConsumableArray(SIZES.map(function (i) {
+        var substr = numcnj.substr(pos, i);
+        pos += i;
+        return substr;
+      })))))();
+    }
+  }]);
+
+  return CalculateCNJ;
+}();
+
+var JuristekException = function (_ExtendableError2) {
+  _inherits(JuristekException, _ExtendableError2);
 
   function JuristekException() {
     _classCallCheck(this, JuristekException);
@@ -47,6 +147,31 @@ var JuristekException = function (_ExtendableError) {
   return JuristekException;
 }(ExtendableError); /* Erros de */
 
+
+var JuristekInstanceException = function (_JuristekException) {
+  _inherits(JuristekInstanceException, _JuristekException);
+
+  function JuristekInstanceException() {
+    _classCallCheck(this, JuristekInstanceException);
+
+    return _possibleConstructorReturn(this, (JuristekInstanceException.__proto__ || Object.getPrototypeOf(JuristekInstanceException)).apply(this, arguments));
+  }
+
+  return JuristekInstanceException;
+}(JuristekException); /* Erros de Robô */
+
+
+var JuristekParserException = function (_JuristekException2) {
+  _inherits(JuristekParserException, _JuristekException2);
+
+  function JuristekParserException() {
+    _classCallCheck(this, JuristekParserException);
+
+    return _possibleConstructorReturn(this, (JuristekParserException.__proto__ || Object.getPrototypeOf(JuristekParserException)).apply(this, arguments));
+  }
+
+  return JuristekParserException;
+}(JuristekException); /* Erros de Interpretação */
 
 var errorCodes = {
   E_TABLE_NOT_FOUND: 1, // Tipo de consulta inexistente
@@ -76,8 +201,23 @@ var errorCodes = {
   E_UNKNOWN: 0
 };
 
+function codename(k) {
+  return _.findKey(errorCodes, function (n) {
+    return n === k;
+  }) || 'E_UNKNOWN';
+}
+
+var exceptions = Object.freeze({
+  default: errorCodes,
+  codename: codename,
+  CalculateCNJError: CalculateCNJError,
+  Instance: JuristekInstanceException,
+  Exception: JuristekException,
+  Parser: JuristekParserException
+});
+
 var name = "juristek-parser";
-var version = "2.0.0";
+var version = "3.0.1";
 var description = "Parser de XML do BIPBOP Juristek para NodeJS.";
 var main = "index.js";
 var browser = "dist/browser.js";
@@ -88,7 +228,7 @@ var license = "ISC";
 var bugs = { "url": "https://github.com/bipbop/juristek-parser/issues" };
 var homepage = "https://github.com/bipbop/juristek-parser#readme";
 var dependencies = { "@babel/register": "^7.0.0-beta.40", "babel-polyfill": "^6.26.0", "basic-logger": "^0.4.4", "bluebird": "^3.5.1", "body-parser": "^1.18.2", "change-case": "^3.0.1", "cheerio": "^1.0.0-rc.2", "es6-error": "^4.1.1", "express": "^4.16.2", "gulp-babel": "^7.0.1", "gulp-rename": "^1.2.2", "iso-7064": "^1.0.0", "lodash": "^4.17.5", "moment": "^2.20.1", "numeral": "^2.0.6", "pad": "^2.0.3", "request": "^2.83.0", "request-promise": "^4.2.2", "rollup-plugin-babel": "^3.0.3", "rollup-plugin-json": "^2.3.0", "rollup-plugin-multi-entry": "^2.0.2", "rollup-stream": "^1.24.1", "tinydb": "^0.1.0", "underscore": "^1.8.3" };
-var devDependencies = { "babel-core": "^6.26.0", "babel-eslint": "^8.2.1", "babel-loader": "^7.1.2", "babel-plugin-external-helpers": "^6.22.0", "babel-preset-env": "^1.6.1", "babel-preset-stage-0": "^6.24.1", "babel-register": "^6.26.0", "babelify": "^8.0.0", "browserify": "^15.2.0", "eslint": "^4.15.0", "eslint-config-airbnb-base": "^12.1.0", "eslint-plugin-flowtype": "^2.41.0", "eslint-plugin-import": "^2.8.0", "gulp": "^3.9.1", "gulp-load-plugins": "^1.5.0", "gulp-uglyfly": "^1.4.2", "uglifyify": "^4.0.5", "vinyl-buffer": "^1.0.1", "vinyl-source-stream": "^2.0.0" };
+var devDependencies = { "babel-core": "^6.26.0", "babel-eslint": "^8.2.1", "babel-loader": "^7.1.2", "babel-plugin-external-helpers": "^6.22.0", "babel-preset-env": "^1.6.1", "babel-preset-stage-0": "^6.24.1", "babel-register": "^6.26.0", "babelify": "^8.0.0", "browserify": "^15.2.0", "eslint": "^4.15.0", "eslint-config-airbnb-base": "^12.1.0", "eslint-plugin-flowtype": "^2.41.0", "eslint-plugin-import": "^2.9.0", "gulp": "^3.9.1", "gulp-load-plugins": "^1.5.0", "gulp-uglyfly": "^1.4.2", "uglifyify": "^4.0.5", "vinyl-buffer": "^1.0.1", "vinyl-source-stream": "^2.0.0" };
 var p = {
   name: name,
   version: version,
@@ -262,106 +402,6 @@ function phpMoment(format, moment$$1) {
   });
 }
 
-var CalculateCNJError = function (_ExtendableError2) {
-  _inherits(CalculateCNJError, _ExtendableError2);
-
-  function CalculateCNJError() {
-    _classCallCheck(this, CalculateCNJError);
-
-    return _possibleConstructorReturn(this, (CalculateCNJError.__proto__ || Object.getPrototypeOf(CalculateCNJError)).apply(this, arguments));
-  }
-
-  return CalculateCNJError;
-}(ExtendableError);
-
-var SIZES = [7, 2, 4, 1, 2, 4];
-var NOT_NUMBERS = /[^0-9]/g;
-
-var CalculateCNJ = function () {
-  function CalculateCNJ() {
-    _classCallCheck(this, CalculateCNJ);
-
-    for (var _len = arguments.length, parameters = Array(_len), _key = 0; _key < _len; _key++) {
-      parameters[_key] = arguments[_key];
-    }
-
-    var args = parameters.map(function (v, i) {
-      var r = v;
-      if (typeof r === 'number') r = r.toString();
-      if (typeof r !== 'string') return r;
-      if (!SIZES[i]) return r;
-      return pad(SIZES[i], r, '0');
-    });
-
-    var _args = _slicedToArray(args, 6),
-        proc = _args[0],
-        dv = _args[1],
-        year = _args[2],
-        justice = _args[3],
-        number = _args[4],
-        court = _args[5];
-
-    var firstStep = iso7064.compute(proc).toString();
-    var secondStep = iso7064.compute(firstStep + year + justice + number).toString();
-    var thirdStep = iso7064.compute(secondStep + court + '00').toString();
-
-    var ndv = 98 - thirdStep % 97;
-    this.dv = pad(2, ndv.toString(), '0');
-
-    if (dv !== null && dv !== this.dv) {
-      throw new CalculateCNJError();
-    }
-
-    this.proc = proc;
-    this.year = year;
-    this.justice = justice;
-    this.number = number;
-    this.court = court;
-  }
-
-  _createClass(CalculateCNJ, [{
-    key: 'generate',
-    value: function generate() {
-      var mask = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-
-      return !mask ? this.proc + this.dv + this.year + this.justice + this.number + this.court : [this.proc, [this.dv, this.year, this.justice, this.number, this.court].join('.')].join('-');
-    }
-  }, {
-    key: 'pieces',
-    get: function get() {
-      return {
-        proc: this.proc,
-        year: this.year,
-        justice: this.justice,
-        number: this.number,
-        court: this.court
-      };
-    }
-  }], [{
-    key: 'factory',
-    value: function factory(proc, _ref, year) {
-      var justice = _ref.justice,
-          number = _ref.number,
-          court = _ref.court;
-
-      return new CalculateCNJ(proc, null, year, justice, number, court);
-    }
-  }, {
-    key: 'load',
-    value: function load(cnj) {
-      var numcnj = cnj.replace(NOT_NUMBERS, '');
-      var pos = 0;
-      return new (Function.prototype.bind.apply(CalculateCNJ, [null].concat(_toConsumableArray(SIZES.map(function (i) {
-        var substr = numcnj.substr(pos, i);
-        pos += i;
-        return substr;
-      })))))();
-    }
-  }]);
-
-  return CalculateCNJ;
-}();
-
 require('numeral/locales/pt-br');
 
 numeral.locale('pt-br');
@@ -382,10 +422,10 @@ var Processo = function (_Parser2) {
   function Processo(elementProcesso, $) {
     _classCallCheck(this, Processo);
 
-    var _this4 = _possibleConstructorReturn(this, (Processo.__proto__ || Object.getPrototypeOf(Processo)).call(this, $));
+    var _this6 = _possibleConstructorReturn(this, (Processo.__proto__ || Object.getPrototypeOf(Processo)).call(this, $));
 
-    _this4.elementProcesso = elementProcesso;
-    return _this4;
+    _this6.elementProcesso = elementProcesso;
+    return _this6;
   }
 
   _createClass(Processo, [{
@@ -418,11 +458,11 @@ var Processo = function (_Parser2) {
   }, {
     key: 'dump',
     value: function dump() {
-      var _this5 = this;
+      var _this7 = this;
 
       var items = _.map(Object.getOwnPropertyDescriptors(Object.getPrototypeOf(this)), function (v, key) {
         if (typeof v.get !== 'function') return null;
-        var value = v.get.apply(_this5);
+        var value = v.get.apply(_this7);
         if (!value) return null;
         return _defineProperty({}, changeCase.camelCase(key), value);
       }).filter(function (x) {
@@ -918,10 +958,10 @@ var Processo = function (_Parser2) {
   }], [{
     key: 'formatItem',
     value: function formatItem(v, k, dump) {
-      var _this6 = this;
+      var _this8 = this;
 
       if (Array.isArray(v)) return v.map(function (n) {
-        return _this6.formatItem(n, k, dump);
+        return _this8.formatItem(n, k, dump);
       });
       if ((typeof v === 'undefined' ? 'undefined' : _typeof(v)) === 'object') return Processo.format(v);
       if (k === 'numeroProcesso') return v;
@@ -1009,7 +1049,7 @@ var OAB = function (_Parser4) {
   }, {
     key: 'childrenDump',
     value: function childrenDump(node) {
-      var _this9 = this;
+      var _this11 = this;
 
       var children = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var $ = this.$;
@@ -1028,22 +1068,22 @@ var OAB = function (_Parser4) {
         var elementChildren = $(e).children();
         if (elementChildren.length) {
           return _defineProperty({}, '' + key, elementChildren.map(function (i, n) {
-            return _this9.childrenDump(n, true);
+            return _this11.childrenDump(n, true);
           }).get());
         }
 
-        return _this9.readNode(key, e);
+        return _this11.readNode(key, e);
       }).get()));
     }
   }, {
     key: 'dump',
     value: function dump() {
-      var _this10 = this;
+      var _this12 = this;
 
       var $ = this.$;
 
       return $('body advogado processos processo').map(function (i, processoNode) {
-        return OAB.formatQuery(Processo.formatNumeroProcesso(_this10.childrenDump(processoNode)));
+        return OAB.formatQuery(Processo.formatNumeroProcesso(_this12.childrenDump(processoNode)));
       }).get()[0];
     }
   }], [{
@@ -1175,7 +1215,7 @@ var Push = function () {
         args[_key3 - 4] = arguments[_key3];
       }
 
-      var _this11 = this;
+      var _this13 = this;
 
       var form = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
       var parser = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
@@ -1184,7 +1224,7 @@ var Push = function () {
       return Promise.resolve().then(function () {
         var _ws;
 
-        return (_ws = _this11.ws).default.apply(_ws, [parser, query, form].concat(args));
+        return (_ws = _this13.ws).default.apply(_ws, [parser, query, form].concat(args));
       });
     }
   }, {
@@ -1333,7 +1373,7 @@ var Push = function () {
 Object.assign(Processos$1, {
   Processos: Processos$1,
   CalculateCNJ: CalculateCNJ,
-  exceptions: errorCodes,
+  exceptions: Object.assign(errorCodes, exceptions),
   Parser: Parser,
   Info: Info,
   OAB: OAB,

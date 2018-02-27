@@ -1,5 +1,6 @@
 import ExtendableError from 'es6-error';
 import _ from 'lodash';
+import { CalculateCNJError } from './calculate-cnj';
 
 class JuristekException extends ExtendableError {}/* Erros de */
 class JuristekInstanceException extends JuristekException {}/* Erros de Robô */
@@ -39,6 +40,7 @@ export function codename(k) {
   return _.findKey(errorCodes, n => n === k) || 'E_UNKNOWN';
 }
 
+export { CalculateCNJError };
 export { JuristekInstanceException as Instance };
 export { JuristekException as Exception };
 export { JuristekParserException as Parser };

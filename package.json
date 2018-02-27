@@ -1,6 +1,6 @@
 {
   "name": "juristek-parser",
-  "version": "2.0.0",
+  "version": "3.0.1",
   "description": "Parser de XML do BIPBOP Juristek para NodeJS.",
   "main": "index.js",
   "browser": "dist/browser.js",
@@ -56,7 +56,7 @@
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-flowtype": "^2.41.0",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-import": "^2.9.0",
     "gulp": "^3.9.1",
     "gulp-load-plugins": "^1.5.0",
     "gulp-uglyfly": "^1.4.2",
