@@ -1,22 +1,22 @@
-import _ from 'lodash';
-import changeCase from 'change-case';
+import each from 'lodash/each';
+import mapValues from 'lodash/mapValues';
+import flattenDeep from 'lodash/flattenDeep';
+import map from 'lodash/map';
+import camelCase from 'camel-case';
 import numeral from 'numeral';
 import moment from 'moment';
+import CalculateCNJ from 'validate-cnj';
 
 import Parser from './parser';
 import phpMoment from './php-moment';
-import CalculateCNJ from './calculate-cnj';
 
-require('numeral/locales/pt-br');
-
-numeral.locale('pt-br');
 const numeroRegex = /numero/i;
 const dataRegex = /data/i;
 
 function camelObject(from) {
   const obj = {};
-  _.each(from, (v, k) => {
-    obj[changeCase.camelCase(k)] = v;
+  each(from, (v, k) => {
+    obj[camelCase(k)] = v;
   });
   return obj;
 }
@@ -42,7 +42,7 @@ class Processo extends Parser {
   }
 
   static format(dump) {
-    let ret = _.mapValues(dump, (v, k) => Processo.formatItem(v, k, dump));
+    let ret = mapValues(dump, (v, k) => Processo.formatItem(v, k, dump));
     ret = Processo.formatNumeroProcesso(ret);
     return ret;
   }
@@ -172,38 +172,47 @@ class Processo extends Parser {
 
   get advogados() {
     const { $ } = this;
-    return $('advogados advogado', this.elementProcesso).map((i, advogado) => Object.assign({}, camelObject(advogado.attribs), {
-      nome: $(advogado).text().trim(),
-    })).get();
+    return $('advogados advogado', this.elementProcesso).map((i, advogado) =>
+      Object.assign({}, camelObject(advogado.attribs), {
+        nome: $(advogado).text().trim(),
+      })).get();
   }
 
   get partes() {
     const { $ } = this;
-    return $('partes parte', this.elementProcesso).map((i, parte) => Object.assign({}, camelObject(parte.attribs), {
-      nome: $(parte).text().trim(),
-    })).get();
+    return $('partes parte', this.elementProcesso).map((i, parte) => Object.assign(
+      {},
+      camelObject(parte.attribs), {
+        nome: $(parte).text().trim(),
+      },
+    )).get();
   }
 
   get andamentos() {
     const { $ } = this;
-    return $('andamentos andamento', this.elementProcesso).map((i, andamento) => Object.assign(..._.flattenDeep($(andamento).children().map((ik, k) =>
-      [{ [changeCase.camelCase(k.name)]: $(k).text() }, k.attribs || {}]).get()))).get();
+    return $('andamentos andamento', this.elementProcesso).map((i, andamento) =>
+      Object.assign(...flattenDeep($(andamento).children().map((ik, k) =>
+        [{ [camelCase(k.name)]: $(k).text() }, k.attribs || {}]).get()))).get();
   }
 
   get tags() {
     const { $ } = this;
-    const tags = $('tags tag', this.elementProcesso).map((i, tag) => ({ [$(tag).text().trim()]: camelObject(tag.attribs) })).get();
+    const tags = $('tags tag', this.elementProcesso).map((i, tag) =>
+      ({ [$(tag).text().trim()]: camelObject(tag.attribs) })).get();
     if (!tags.length) return [];
     return Object.assign(...tags);
   }
 
   dump() {
-    const items = _.map(Object.getOwnPropertyDescriptors(Object.getPrototypeOf(this)), (v, key) => {
-      if (typeof v.get !== 'function') return null;
-      const value = v.get.apply(this);
-      if (!value) return null;
-      return { [changeCase.camelCase(key)]: value };
-    }).filter(x => !!x);
+    const items = map(
+      Object.getOwnPropertyDescriptors(Object.getPrototypeOf(this)),
+      (v, key) => {
+        if (typeof v.get !== 'function') return null;
+        const value = v.get.apply(this);
+        if (!value) return null;
+        return { [camelCase(key)]: value };
+      },
+    ).filter(x => !!x);
     if (!items.length) return {};
     return Processo.format(Object.assign(...items));
   }
@@ -212,7 +221,10 @@ class Processo extends Parser {
 class Processos extends Parser {
   dump() {
     const $ = super.dump();
-    return { processos: $('body > processo').map((i, p) => new Processo(p, $).parse()).get() };
+    return {
+      processos: $('body > processo').map((i, p) =>
+        new Processo(p, $).parse()).get(),
+    };
   }
 }
 

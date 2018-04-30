@@ -1,14 +1,14 @@
-import changeCase from 'change-case';
-import _ from 'lodash';
+import camelCase from 'camel-case';
+import pickBy from 'lodash/pickBy';
 
 import Parser from './parser';
 import { Processo } from './processos';
 
 export default class OAB extends Parser {
   readNode(key, node) {
-    const { $ } = this; 
+    const { $ } = this;
 
-    return _.pickBy(Object.assign({}, node.attribs, {
+    return pickBy(Object.assign({}, node.attribs, {
       [key]: $(node).text().trim(),
     }), v => !!v);
   }
@@ -20,11 +20,11 @@ export default class OAB extends Parser {
     const nodeChildren = element.children();
 
     if (children) {
-      return this.readNode(changeCase.camelCase(node.name), node);
+      return this.readNode(camelCase(node.name), node);
     }
 
     return Object.assign(...nodeChildren.map((ip, e) => {
-      const key = changeCase.camelCase(e.name);
+      const key = camelCase(e.name);
 
       const elementChildren = $(e).children();
       if (elementChildren.length) {

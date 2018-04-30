@@ -1,5 +1,5 @@
 import cheerio from 'cheerio';
-import _ from 'lodash';
+import pickBy from 'lodash/pickBy';
 
 import { Exception } from './exceptions';
 import p from '../package.json';
@@ -33,7 +33,7 @@ export default class Parser {
   }
 
   parse() {
-    return Object.assign(this.dump(), { _parserLoaded: new Date(), _parser: _.pickBy(p, 'version', 'name', 'repository') });
+    return Object.assign(this.dump(), { _parserLoaded: new Date(), _parser: pickBy(p, 'version', 'name', 'repository') });
   }
 
   dump() {
