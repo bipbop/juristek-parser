@@ -35,7 +35,8 @@ class Processo extends Parser {
     if (['valorCausa', 'instancia'].indexOf(k) !== -1 || numeroRegex.test(k)) return numeral(v).value();
     if (k === 'eletronico') return v === '1';
     if (dataRegex.test(k) || ['inscricao', 'transitoJulgado', 'ajuizamento', 'autuacao', 'distribuicao', 'autuacao', 'andamentoInicial', 'dataValorCausa'].indexOf(k) !== -1) {
-      return moment(v, phpMoment(dump.format || (dump[`${k}Attributes`] ? dump[`${k}Attributes`].format : null) || 'd/m/Y')).toDate();
+      const n = moment(v, phpMoment(dump.format || (dump[`${k}Attributes`] ? dump[`${k}Attributes`].format : null) || 'd/m/Y'));
+      return n.isValid() ? n.toDate() : v;
     }
 
     return v;
@@ -81,6 +82,7 @@ class Processo extends Parser {
     return attribs ? camelObject(attribs) : df;
   }
 
+  get processo() { return this.elementProcesso.attribs; }
   get adicional() { return this.getter('adicional'); }
   get ajuizamento() { return this.getter('ajuizamento'); }
   get area() { return this.getter('area'); }
@@ -188,7 +190,15 @@ class Processo extends Parser {
     )).get();
   }
 
-  get andamentos() {
+  get documento() {
+    const { $ } = this;
+    return $('documentos documento', this.elementProcesso).map((i, andamento) =>
+      Object.assign(...flattenDeep($(andamento).children().map((ik, k) =>
+        [{ [camelCase(k.name)]: $(k).text() }, k.attribs || {}]).get()))).get();
+  }
+
+
+  get documentos() {
     const { $ } = this;
     return $('andamentos andamento', this.elementProcesso).map((i, andamento) =>
       Object.assign(...flattenDeep($(andamento).children().map((ik, k) =>

@@ -1,375 +1,624 @@
-<?xml version="1.0" encoding="UTF-8"?>
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
 <BPQL>
-  <header resourceUse="0">
-    <date-time>28/04/2018 08:38:44</date-time>
-    <description>Processos da Primeira Instância TJSP</description>
-    <execution-time>1</execution-time>
-    <query database="JURISTEK" table="QUERY">SELECT FROM 'JURISTEK'.'QUERY'</query>
-  </header>
-  <body>
-    <processo filter="0004803-81.2015.8.26.0428/16" id="ca5ad4fbc825284240707f6d8969aaf3">
-      <instancia>1</instancia>
-      <url_processo>https://esaj.tjsp.jus.br/cpopg/show.do;jsessionid=6AC07CF365AC53F1EDEB0F4CFDCB07A8.cpopg1?processo.codigo=BW0000I6D0000&amp;processo.foro=428&amp;uuidCaptcha=sajcaptcha_79f3969990134b44ba4d353d6bf4fcff</url_processo>
-      <numero_processo>0004803-81.2015.8.26.0428</numero_processo>
-      <situacao>Extinto</situacao>
-      <classe>Despejo</classe>
-      <area>Cível</area>
-      <acao>Locação de Imóvel</acao>
-      <localizacao>Arquivo Geral - recall</localizacao>
-      <vara>Vara</vara>
-      <numero_vara>1</numero_vara>
-      <foro>Foro de Paulínia</foro>
-      <valor_causa unidade_monetaria="R$">90.000,00</valor_causa>
-      <observacao>Juiz: Carlos Eduardo Mendes</observacao>
-      <advogados>
-        <advogado parte="Ademar Alberto Pasetti">Maria Aparecida Santos de Souza</advogado>
-        <advogado parte="Brutus Lavagens de Autos Ltda - Me">Luís Eugênio do Amaral Medeiros</advogado>
-      </advogados>
-      <andamentos>
-        <andamento>
-          <descricao>Certidão de Cartório Expedida Certidão - Genérica</descricao>
-          <data hash="2d45547dea4a412c4a48e440f5a62b61" format="d/m/Y">19/05/2017</data>
-          <url_documento>SENHA_REQUERIDA</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Cartório Expedida Certidão - Genérica</descricao>
-          <data hash="2d45547dea4a412c4a48e440f5a62b61" format="d/m/Y">19/05/2017</data>
-          <url_documento>SENHA_REQUERIDA</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Arquivado Definitivamente pacote 5900/2017 vls 1 e 2</descricao>
-          <data hash="0a5762e8e42d25df3c74530efde97f51" format="d/m/Y">12/05/2017</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetidos os Autos para o Anexo sala 24</descricao>
-          <data hash="62e6296ff50587a0373a6dec7110a3ee" format="d/m/Y">17/01/2017</data>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Cartório Expedida Certidão - Genérica</descricao>
-          <data hash="d4894817ef2017a6e6f56f5d9b826dab" format="d/m/Y">17/01/2017</data>
-          <url_documento>SENHA_REQUERIDA</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Autos no Prazo Prazo 01</descricao>
-          <data hash="705a7979f515476f859c2ecb74f0e8d8" format="d/m/Y">11/11/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Publicação Expedida Relação :0618/2016 Data da Disponibilização: 11/11/2016 Data da Publicação: 16/11/2016 Número do Diário: 2239 Página: 2514/2518</descricao>
-          <data hash="4f88f9b0f701c31612b99a3e95abf45f" format="d/m/Y">11/11/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetido ao DJE Relação: 0618/2016 Teor do ato: Manifeste-se a parte interessada o que de direito. Caso haja interesse no cumprimento de sentença, cumpra-se o artigo 1.286 das Normas de Serviço da Corregedoria Geral de Justiça, a execução de sentença deverá tramitar em formato digital, na forma de petição intermediária. Mantenham-se os autos em cartório pelo prazo de trinta dias, nos termos do artigo 4º do citado artigo, para consulta e extração de cópias conforme normas da CGJ. Decorrido tal prazo, promova-se seu arquivamento provisório. Advogados(s): Maria Aparecida Santos de Souza (OAB 220127/SP), Luís Eugênio do Amaral Medeiros (OAB 99681/SP)</descricao>
-          <data hash="c8073f924a8201c5c8b0726df7be11e1" format="d/m/Y">10/11/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Ato ordinatório Manifeste-se a parte interessada o que de direito. Caso haja interesse no cumprimento de sentença, cumpra-se o artigo 1.286 das Normas de Serviço da Corregedoria Geral de Justiça, a execução de sentença deverá tramitar em formato digital, na forma de petição intermediária. Mantenham-se os autos em cartório pelo prazo de trinta dias, nos termos do artigo 4º do citado artigo, para consulta e extração de cópias conforme normas da CGJ. Decorrido tal prazo, promova-se seu arquivamento provisório.</descricao>
-          <data hash="cfdc5aab5a37c5b02005f10da407a2c2" format="d/m/Y">03/11/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Trânsito em Julgado às partes</descricao>
-          <data hash="cb9df3347068f170ca7dd74a2b083c2c" format="d/m/Y">06/10/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Autos no Prazo Prazo 12</descricao>
-          <data hash="1d6ba2732a71ec0f0a1af240f2de8f70" format="d/m/Y">13/09/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Publicação Expedida Relação :0498/2016 Data da Disponibilização: 13/09/2016 Data da Publicação: 14/09/2016 Número do Diário: 2199 Página: 1633/1649</descricao>
-          <data hash="e163c2b4c944ef5c7610fd1102b36252" format="d/m/Y">13/09/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetido ao DJE Relação: 0498/2016 Teor do ato: Vistos.ADEMAR ALBERTO PASETTI ajuizou a presente Ação de Despejo com pedido liminar em face de BRUTUS LAVAGENS DE AUTOS LTDA. - ME, alegando, em síntese, ter celebrado contrato de locação com a ré, mas que não mais possui interesse no prosseguimento da locação, visando a encerrar o vínculo contratual, nos termos do art. 57 e 59, §1º, VIII, da Lei de Locação. Ao final, requereu a procedência do pedido, juntando documentos (fls. 06/24).Deferida a gratuidade e o pedido liminar de despejo (fls. 35/36).Manifestou-se o requerente, informando que o pedido liminar foi efetuado nos moldes da denunciação vazia, fundado no escoamento do prazo contratual e não em razão de inadimplemento (fls. 40).Suspensa a medida liminar, sendo designada audiência de conciliação (fls. 42), sendo informado pela requerida, momento em que se deu por citada nos autos, que o contrato se iniciou em data diversa da afirmada na exordial (fls. 42/47).Interposto agravo de instrumento em razão da revogação da concessão do despejo. Assim que conferido efeito suspensivo e determinada a expedição de mandado, novo agravo interposto pela parte contrária (fls. 129/136).Informado acordo no sentido de que a requerida desocupará o imóvel no prazo máximo de 60 (sessenta) dias, contados da data de 07/03/2016, comprometendo-se a pagar os alugueres e demais encargos do período, sob pena de despejo imediato (fls. 148).No entanto, houve descumprimento do acordo (fls. 151), sendo determinado novamente o despejo (fls. 155), cumprido às fls. 166.Dado provimento ao agravo de instrumento interposto, para que o despejo seja considerado em razão da denúncia vazia e encerramento do vínculo contratual (fls. 229).O recurso especial não foi admitido (fls. 251).Vieram os autos conclusos para sentença. Relatei. DECIDO.Desnecessária a produção de provas, sendo cabível o julgamento antecipado da lide, nos termos do art. 355, I, do CPC.No mérito, o pedido é procedente.No caso em epígrafe, a autora comprovou ter locado seu imóvel à ré por meio de contrato escrito, como se observa às fls. 07/19, documento esse que não foi impugnado nos autos, que dispõe expressamente que o período de vínculo contratual foi datado de 01/02/2013 até 31/01/2015. Ou seja, não basta que a requerida informe por petição que tal data não corresponde a verdade, simplesmente alegando outro momento para o início e término do vínculo, faz-se necessário que comprove suas informações, o que não se verificou nos autos, há que se observar que a própria demanda juntou novamente o contrato entabulado, que continha as datas supra esposadas. A pretensão pela denúncia vazia propugnada pela autora encontra respaldo no art. 57 da Lei de Locações: "O contrato de locação por prazo indeterminado pode ser denunciado por escrito, pelo locador, concedidos ao locatário trinta dias para a desocupação".Não fosse bastante o encerramento do vínculo, restou demonstrado nos autos que as partes se acordaram em período maior que o previsto legalmente para desocupação, ou seja, a ré deveria deixar o imóvel no prazo de 60 (sessenta) dias, e mesmo assim não cumpriu com o pactuado.Observa-se ter havido a concessão do prazo até mais que o de trinta dias à ré-locatária, cumprindo-se o mandamento legal fato que extirpa quaisquer dúvidas sobre a legalidade do pedido.De outra banda, o fato de o imóvel já haver sido desocupado pelo cumprimento da liminar, não frustra a procedência do pedido, pois a desocupação só ocorreu após a citação, quando a ré já obrigara o autor a lançar mão da atividade jurisdicional, com os ônus que esta acarreta; mas torna prejudicada a providência material atinente à desocupação e, consequentemente, ao despejo.DispositivoIsto posto, JULGO PROCEDENTE o pedido inicial, declarando extinta a relação locatícia em epígrafe e deixando de decretar o despejo, ante a desocupação já efetivada, mas condenando a ré ao pagamento das custas, despesas processuais e honorários de advogado, os quais arbitro em 10% do valor da causa atualizado desde a propositura da ação.P.R.I.C. Advogados(s): Maria Aparecida Santos de Souza (OAB 220127/SP), Luís Eugênio do Amaral Medeiros (OAB 99681/SP)</descricao>
-          <data hash="e92129cbac9008f81f0f47f58185fdcd" format="d/m/Y">12/09/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Recebidos os Autos da Conclusão Tipo de local de destino: Cartório Especificação do local de destino: Cartório da 1ª. Vara Judicial</descricao>
-          <data hash="5dfca002a84bfbab52a5dc8e7d319311" format="d/m/Y">12/09/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Sentença Registrada</descricao>
-          <data hash="cced487235dec4efeb3e6b352b20d3a3" format="d/m/Y">02/09/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Julgada Procedente a Ação Vistos.ADEMAR ALBERTO PASETTI ajuizou a presente Ação de Despejo com pedido liminar em face de BRUTUS LAVAGENS DE AUTOS LTDA. - ME, alegando, em síntese, ter celebrado contrato de locação com a ré, mas que não mais possui interesse no prosseguimento da locação, visando a encerrar o vínculo contratual, nos termos do art. 57 e 59, §1º, VIII, da Lei de Locação. Ao final, requereu a procedência do pedido, juntando documentos (fls. 06/24).Deferida a gratuidade e o pedido liminar de despejo (fls. 35/36).Manifestou-se o requerente, informando que o pedido liminar foi efetuado nos moldes da denunciação vazia, fundado no escoamento do prazo contratual e não em razão de inadimplemento (fls. 40).Suspensa a medida liminar, sendo designada audiência de conciliação (fls. 42), sendo informado pela requerida, momento em que se deu por citada nos autos, que o contrato se iniciou em data diversa da afirmada na exordial (fls. 42/47).Interposto agravo de instrumento em razão da revogação da concessão do despejo. Assim que conferido efeito suspensivo e determinada a expedição de mandado, novo agravo interposto pela parte contrária (fls. 129/136).Informado acordo no sentido de que a requerida desocupará o imóvel no prazo máximo de 60 (sessenta) dias, contados da data de 07/03/2016, comprometendo-se a pagar os alugueres e demais encargos do período, sob pena de despejo imediato (fls. 148).No entanto, houve descumprimento do acordo (fls. 151), sendo determinado novamente o despejo (fls. 155), cumprido às fls. 166.Dado provimento ao agravo de instrumento interposto, para que o despejo seja considerado em razão da denúncia vazia e encerramento do vínculo contratual (fls. 229).O recurso especial não foi admitido (fls. 251).Vieram os autos conclusos para sentença. Relatei. DECIDO.Desnecessária a produção de provas, sendo cabível o julgamento antecipado da lide, nos termos do art. 355, I, do CPC.No mérito, o pedido é procedente.No caso em epígrafe, a autora comprovou ter locado seu imóvel à ré por meio de contrato escrito, como se observa às fls. 07/19, documento esse que não foi impugnado nos autos, que dispõe expressamente que o período de vínculo contratual foi datado de 01/02/2013 até 31/01/2015. Ou seja, não basta que a requerida informe por petição que tal data não corresponde a verdade, simplesmente alegando outro momento para o início e término do vínculo, faz-se necessário que comprove suas informações, o que não se verificou nos autos, há que se observar que a própria demanda juntou novamente o contrato entabulado, que continha as datas supra esposadas. A pretensão pela denúncia vazia propugnada pela autora encontra respaldo no art. 57 da Lei de Locações: "O contrato de locação por prazo indeterminado pode ser denunciado por escrito, pelo locador, concedidos ao locatário trinta dias para a desocupação".Não fosse bastante o encerramento do vínculo, restou demonstrado nos autos que as partes se acordaram em período maior que o previsto legalmente para desocupação, ou seja, a ré deveria deixar o imóvel no prazo de 60 (sessenta) dias, e mesmo assim não cumpriu com o pactuado.Observa-se ter havido a concessão do prazo até mais que o de trinta dias à ré-locatária, cumprindo-se o mandamento legal fato que extirpa quaisquer dúvidas sobre a legalidade do pedido.De outra banda, o fato de o imóvel já haver sido desocupado pelo cumprimento da liminar, não frustra a procedência do pedido, pois a desocupação só ocorreu após a citação, quando a ré já obrigara o autor a lançar mão da atividade jurisdicional, com os ônus que esta acarreta; mas torna prejudicada a providência material atinente à desocupação e, consequentemente, ao despejo.DispositivoIsto posto, JULGO PROCEDENTE o pedido inicial, declarando extinta a relação locatícia em epígrafe e deixando de decretar o despejo, ante a desocupação já efetivada, mas condenando a ré ao pagamento das custas, despesas processuais e honorários de advogado, os quais arbitro em 10% do valor da causa atualizado desde a propositura da ação.P.R.I.C.</descricao>
-          <data hash="392169cf2b296cb9501e63510beba4ce" format="d/m/Y">02/09/2016</data>
-          <url_documento>http://recibos.bipbop.com.br/bbbdf69e9f2500259d016016cc9d65afe6408bb8.pdf</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Conclusos para Decisão Tipo de local de destino: Juiz de Direito Especificação do local de destino: Carlos Eduardo Mendes</descricao>
-          <data hash="2ebd9d16e9973f3de9f79f702dad69fc" format="d/m/Y">01/09/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Conclusos para Despacho</descricao>
-          <data hash="e85d29208e99a0ca5be50dd5b186c567" format="d/m/Y">29/08/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Petição Juntada Juntada a petição diversa - Tipo: Documentos em Despejo - Número: 80007 - Complemento: e-mail</descricao>
-          <data hash="a607dbb699dcecda8536f121d82441ff" format="d/m/Y">29/08/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Autos no Prazo prazo 02</descricao>
-          <data hash="f6fbe14c1c9e79a3c93c7511096b77dd" format="d/m/Y">11/08/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Publicação Expedida Relação :0428/2016 Data da Disponibilização: 10/08/2016 Data da Publicação: 11/08/2016 Número do Diário: 2176 Página: 1586/1593</descricao>
-          <data hash="68a27e6155c81312c003d72c4c8da4f8" format="d/m/Y">10/08/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetido ao DJE Relação: 0428/2016 Teor do ato: Certidão - Oficial de Justiça - Mandado Cumprido Positivo -CERTIDÃO - MANDADO CUMPRIDO POSITIVOCERTIFICO eu, Oficial de Justiça, que em cumprimento ao mandado nº 428.2016/005436-7 dirigi-me ao endereço: Rodovia SP 332, Km 124,5, Sítio Potira, Sta Terezinha, Paulínia - SP, e aí sendo no dia 20/06/16 informei o Sr. Milton Andrade sobre a ordem de despejo e fui informado que ele sairia voluntariamente necessitando apenas de um final de semana para fazer o mudança efetiva da empresa. No dia 27/06/16 às 17h00 retornei ao local e encontrei funcionários finalizando a mudança com a retirada de faixas e câmeras de segurança. No local encontrei representantes das partes que consignaram divergência sobre a propriedade de um reservatório de água, fotos doc. 1 e o estado em que se encontra uma estação de tratamento de água localizada no local, fotos doc. 2. Finalizado despejo o imóvel foi entregue conforme as fotos apresentadas no docs 3 a 9.O referido é verdade e dou fé. Paulinia, 28 de junho de 2016. Advogados(s): Maria Aparecida Santos de Souza (OAB 220127/SP), Luís Eugênio do Amaral Medeiros (OAB 99681/SP)</descricao>
-          <data hash="7e3d0253eb1f70623d26d07df8d46459" format="d/m/Y">09/08/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Mandado Devolvido Cumprido Positivo Certidão - Oficial de Justiça - Mandado Cumprido Positivo -CERTIDÃO - MANDADO CUMPRIDO POSITIVOCERTIFICO eu, Oficial de Justiça, que em cumprimento ao mandado nº 428.2016/005436-7 dirigi-me ao endereço: Rodovia SP 332, Km 124,5, Sítio Potira, Sta Terezinha, Paulínia - SP, e aí sendo no dia 20/06/16 informei o Sr. Milton Andrade sobre a ordem de despejo e fui informado que ele sairia voluntariamente necessitando apenas de um final de semana para fazer o mudança efetiva da empresa. No dia 27/06/16 às 17h00 retornei ao local e encontrei funcionários finalizando a mudança com a retirada de faixas e câmeras de segurança. No local encontrei representantes das partes que consignaram divergência sobre a propriedade de um reservatório de água, fotos doc. 1 e o estado em que se encontra uma estação de tratamento de água localizada no local, fotos doc. 2. Finalizado despejo o imóvel foi entregue conforme as fotos apresentadas no docs 3 a 9.O referido é verdade e dou fé. Paulinia, 28 de junho de 2016.</descricao>
-          <data hash="417997443865244e76b72fa93d4fcc1d" format="d/m/Y">02/08/2016</data>
-          <url_documento>SENHA_REQUERIDA</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Serventuário</descricao>
-          <data hash="035c804524684aa161bb7719195d64ad" format="d/m/Y">07/07/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Autos no Prazo Prazo 28</descricao>
-          <data hash="eda7376e01553add4690c80ed9e2f713" format="d/m/Y">12/06/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Publicação Expedida Relação :0323/2016 Data da Disponibilização: 10/06/2016 Data da Publicação: 13/06/2016 Número do Diário: 2133 Página: 1716/1719</descricao>
-          <data hash="872ada2ff76616e3e3b528b23a510a91" format="d/m/Y">10/06/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Publicação Expedida Relação :0323/2016 Data da Disponibilização: 10/06/2016 Data da Publicação: 13/06/2016 Número do Diário: 2133 Página: 1716/1719</descricao>
-          <data hash="872ada2ff76616e3e3b528b23a510a91" format="d/m/Y">10/06/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Publicação Expedida Relação :0323/2016 Data da Disponibilização: 10/06/2016 Data da Publicação: 13/06/2016 Número do Diário: 2133 Página: 1716/1719</descricao>
-          <data hash="872ada2ff76616e3e3b528b23a510a91" format="d/m/Y">10/06/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetido ao DJE Relação: 0323/2016 Teor do ato: Vistos.Fls. 157/158:Indefiro. Cumpra-se o determinado às fls. 155, com urgência.Int. NOTA CARTORIAL: Mandado de Despejo expedido e encaminhado para a CENTRAL DE MANDADOS, providenciar os meios para cumprimento da medida. Advogados(s): Maria Aparecida Santos de Souza (OAB 220127/SP), Luís Eugênio do Amaral Medeiros (OAB 99681/SP)</descricao>
-          <data hash="65688052997fe21c601797b336aca1ac" format="d/m/Y">09/06/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetido ao DJE Relação: 0323/2016 Teor do ato: Vistos.Fls: 151/154: Ante a informação de desocupação do imóvel, descumprido acordo firmado perante este juízo, defiro o despejo IMEDIATO, conforme requerido, inclusive, com força policial, se assim necessário.Expeça-se mandado de despejo com urgência.Int. Advogados(s): Maria Aparecida Santos de Souza (OAB 220127/SP), Luís Eugênio do Amaral Medeiros (OAB 99681/SP)</descricao>
-          <data hash="630ab25e5a614f5b52f8a9ba0732150b" format="d/m/Y">09/06/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetido ao DJE Relação: 0323/2016 Teor do ato: Vistos. Ciente da concessão de efeito suspensivo ao agravo de instrumento interposto pelo autor. Expeça-se mandado de despejo. Int. Advogados(s): Maria Aparecida Santos de Souza (OAB 220127/SP), Luís Eugênio do Amaral Medeiros (OAB 99681/SP)</descricao>
-          <data hash="5b9094e6362d5122518311c7dfb9d674" format="d/m/Y">09/06/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Mandado Expedido Mandado nº: 428.2016/005436-7 Situação: Cumprido - Ato positivo em 04/07/2016 Local: Cartório da 1ª. Vara Judicial</descricao>
-          <data hash="1b8ecb37f02fdde37e6524d4861cb9f4" format="d/m/Y">09/06/2016</data>
-          <url_documento>SENHA_REQUERIDA</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Mero expediente Vistos.Fls. 157/158:Indefiro. Cumpra-se o determinado às fls. 155, com urgência.Int. NOTA CARTORIAL: Mandado de Despejo expedido e encaminhado para a CENTRAL DE MANDADOS, providenciar os meios para cumprimento da medida.</descricao>
-          <data hash="1cfb25d5223adb4c80e306fc568c232d" format="d/m/Y">09/06/2016</data>
-          <url_documento>http://recibos.bipbop.com.br/38f2903b8b86e25a10b7407f37e5796740f49732.pdf</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Petição Juntada Juntada a petição diversa - Tipo: Petição Intermediária em Despejo - Número: 80006 - Protocolo: CAS116000102367</descricao>
-          <data hash="a9a4e6d3e3779602a25cc94537a5f374" format="d/m/Y">30/05/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Mero expediente Vistos.Fls: 151/154: Ante a informação de desocupação do imóvel, descumprido acordo firmado perante este juízo, defiro o despejo IMEDIATO, conforme requerido, inclusive, com força policial, se assim necessário.Expeça-se mandado de despejo com urgência.Int.</descricao>
-          <data hash="9945e46af60d9730bedbce89e7f7c592" format="d/m/Y">23/05/2016</data>
-          <url_documento>http://recibos.bipbop.com.br/9b068890e0b16d62eb56cd8f777edc05e38c8293.pdf</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Petição Juntada J.Conclusos, com brevidade</descricao>
-          <data hash="9c160dec513d24ceee64497e72ef1f4c" format="d/m/Y">11/05/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Conclusos para Despacho</descricao>
-          <data hash="6843d4b312e6ec6cb2266d4684dff8c3" format="d/m/Y">28/03/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Serventuário JUNTADA 18/03</descricao>
-          <data hash="ad55de5c50b2cbbb30545b69040e5aa3" format="d/m/Y">18/03/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Pedido de Homologação de Acordo Juntado Juntada a petição diversa - Tipo: Pedido de Homologação de Acordo em Despejo - Número: 80005 - Protocolo: FPLA16000064436</descricao>
-          <data hash="ec3b30ccfbe331aab00dbcd445963abb" format="d/m/Y">18/03/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Autos no Prazo</descricao>
-          <data hash="5cea18d14219c5b868b5d5caa794391c" format="d/m/Y">14/03/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Mandado Juntado</descricao>
-          <data hash="2230db3567d79851cba0b41b5c6faa9c" format="d/m/Y">11/03/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Autos no Prazo</descricao>
-          <data hash="71dfaf7a17e51215a67b8cf9be543cec" format="d/m/Y">15/02/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Publicação Expedida Relação :0063/2016 Data da Disponibilização: 15/02/2016 Data da Publicação: 16/02/2016 Número do Diário: 2055 Página: 1539/1547</descricao>
-          <data hash="ee34db07bc0a050c0dd0f187061cb11c" format="d/m/Y">15/02/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetido ao DJE Relação: 0063/2016 Teor do ato: Mandado de intimação expedido e encaminhado para a CENTRAL DE MANDADOS. Advogados(s): Maria Aparecida Santos de Souza (OAB 220127/SP), Luís Eugênio do Amaral Medeiros (OAB 99681/SP)</descricao>
-          <data hash="78932a70251ac99700750a70e49dce87" format="d/m/Y">05/02/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Ato Ordinatório - Intimação para Andamento - Autor Mandado de intimação expedido e encaminhado para a CENTRAL DE MANDADOS.</descricao>
-          <data hash="d32d259b54ce87a7d7dfc3ec077e31f3" format="d/m/Y">05/02/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Mandado Expedido Mandado nº: 428.2016/001201-0 Situação: Cumprido - Ato positivo em 09/03/2016 Local: Cartório da 1ª. Vara Judicial</descricao>
-          <data hash="2cd41619d2375a5fb621bd51b519162e" format="d/m/Y">05/02/2016</data>
-          <url_documento>SENHA_REQUERIDA</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Expedição de documento</descricao>
-          <data hash="fc5a6e425442a35bd580320304100ff5" format="d/m/Y">02/02/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Serventuário juntada 26/01</descricao>
-          <data hash="2c3af30f14f1123f4bcb2fd047b14fca" format="d/m/Y">26/01/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Petição Juntada Juntada a petição diversa - Tipo: Petição Intermediária em Despejo - Número: 80004 - Protocolo: FPLA16000015866</descricao>
-          <data hash="e200c122e8025dd4fc79388e087ecbb1" format="d/m/Y">26/01/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Conclusos para Despacho</descricao>
-          <data hash="f6721818984ea3ee5078148d3f9af024" format="d/m/Y">22/01/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Documento Juntado</descricao>
-          <data hash="977ad31473936a860074ca6ff065a122" format="d/m/Y">08/01/2016</data>
-        </andamento>
-        <andamento>
-          <descricao>Serventuário juntada 15/12</descricao>
-          <data hash="2168d2b56c2c8ebd2b2424b0f5b216f9" format="d/m/Y">15/12/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Documento Juntado</descricao>
-          <data hash="567bb3118fd6cfdb6f2d27fa96c14c5f" format="d/m/Y">15/12/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Recebidos os Autos do Advogado CARGA RÁPIDA/ 1 HORA Luís Eugênio do Amaral Medeiros Tipo de local de destino: Cartório Especificação do local de destino: Cartório da 1ª. Vara Judicial</descricao>
-          <data hash="322f80a57b2370200c17c34624905650" format="d/m/Y">23/11/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Autos Entregues em Carga ao Advogado do Réu CARGA RÁPIDA/ 1 HORA Luís Eugênio do Amaral Medeiros Tipo de local de destino: Advogado Especificação do local de destino: Luís Eugênio do Amaral Medeiros</descricao>
-          <data hash="c83fa5604c3765cee50d42caffb331a4" format="d/m/Y">23/11/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Mero expediente Vistos. Ciente da concessão de efeito suspensivo ao agravo de instrumento interposto pelo autor. Expeça-se mandado de despejo. Int.</descricao>
-          <data hash="ca022309120d937d60a104d2b28e7c10" format="d/m/Y">17/11/2015</data>
-          <url_documento>http://recibos.bipbop.com.br/3831e0e0c67af2d1b1ede68087cc39660784914b.pdf</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Conclusos para Despacho</descricao>
-          <data hash="f5e72fe1f11a8570c3079284257debfc" format="d/m/Y">12/11/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Documento Juntado Juntada a petição diversa - Tipo: Documentos Diversos em Despejo - Número: 80003</descricao>
-          <data hash="cdca89950bff5c7b8c04e3bb90d5f7ab" format="d/m/Y">11/11/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Conclusos para Despacho Cejusc - designar data</descricao>
-          <data hash="9948102eb5c4e559820756de109b3a97" format="d/m/Y">05/11/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Agravo de Instrumento - Cópia da Interposição Juntada - Art. 526 do CPC Juntada a petição diversa - Tipo: Petição Juntando Cópia do Agravo (Art. 526, do CPC) em Despejo - Número: 80002 - Protocolo: FPLA15000340920</descricao>
-          <data hash="626ba20dad81ccdd7cf22077d257bb31" format="d/m/Y">23/10/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Serventuário</descricao>
-          <data hash="28cee5caaac81a827f47696f9b3692ab" format="d/m/Y">21/10/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Recebidos os Autos do Advogado Tipo de local de destino: Cartório Especificação do local de destino: Cartório da 1ª. Vara Judicial</descricao>
-          <data hash="54e85db25fecf31ca3c4302820eeb22a" format="d/m/Y">20/10/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Autos Entregues em Carga ao Advogado do Autor Tipo de local de destino: Advogado Especificação do local de destino: Luciano Simões</descricao>
-          <data hash="4f8385c06dfcd1594ef81a990356b706" format="d/m/Y">05/10/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Publicação Expedida Relação :0430/2015 Data da Disponibilização: 02/10/2015 Data da Publicação: 05/10/2015 Número do Diário: 1980 Página: 1428 a 143</descricao>
-          <data hash="26fc34ce4be5d257e6496fd158dc1b9a" format="d/m/Y">05/10/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetido ao DJE Relação: 0430/2015 Teor do ato: "J. Ante a alegação de ausência de inadimplemento, suspendo a medida liminar de despejo. Remetam-se os autos ao CEJUSC, para designação de audiência de conciliação". Int. Paulínia, 30/09/15. Advogados(s): Maria Aparecida Santos de Souza (OAB 220127/SP)</descricao>
-          <data hash="e38b16b31d61331e1a9a55d6e3c25229" format="d/m/Y">01/10/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Petição Juntada "J. Ante a alegação de ausência de inadimplemento, suspendo a medida liminar de despejo. Remetam-se os autos ao CEJUSC, para designação de audiência de conciliação". Int. Paulínia, 30/09/15.</descricao>
-          <data hash="a22171fcd3c6106394a66e79ea9dc815" format="d/m/Y">30/09/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Petição Intermediária Juntada Petição com despacho: "J. Conclusos, de imediato." Paulínia, 29/09/15 Carlos Eduardo Mendes</descricao>
-          <data hash="601bdd51817a537906f752bb55f0f1eb" format="d/m/Y">30/09/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Recebidos os Autos do Advogado Tipo de local de destino: Cartório Especificação do local de destino: Cartório da 1ª. Vara Judicial</descricao>
-          <data hash="d12999a8662b434b8527b37cc94def3a" format="d/m/Y">29/09/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Autos Entregues em Carga ao Advogado do Autor Tipo de local de destino: Advogado Especificação do local de destino: Luciano Simões</descricao>
-          <data hash="4b6c02b8f989ea5d3b44917e6b351386" format="d/m/Y">29/09/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Expedição de documento Urgente</descricao>
-          <data hash="eeb1eb2c0d0807ad69c15a2ac416a00c" format="d/m/Y">29/09/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Mero expediente Vistos. Defiro a gratuidade do feito. O pedido liminar merece ser deferido. O direito da autora é provável, já que é locadora do bem e, ao que tudo indica, os réus não vêm cumprindo com suas obrigações contratuais, o que levará, hipoteticamente, ao despejo. O perigo de dano irreparável ou de difícil reparação se extrai da inserção do nome da autora nos cadastros de maus pagadores, em razão de débitos contraídos pelos réus. Ante o exposto, defiro o pedido liminar, determinando que os réus, ou quem esteja na posse direta do bem, desocupem o imóvel, voluntariamente, no prazo de 15 dias da data da intimação, sob pena de execução forçada, podendo neste prazo purgar a mora. Nesse caso, fica deferido o arrombamento. Eventuais bens que estejam no interior do imóvel ficarão depositados nas mãos do locador, lavrando-se o termo competente. Cite-se a parte ré para contestar em quinze dias, como postulado, cientificando-se que poderá evitar a rescisão da locação, requerendo, no prazo da contestação, autorização para o pagamento do débito atualizado, independentemente de cálculo e mediante depósito judicial das verbas mencionadas no artigo 62, inciso II, alíneas " a", "b", "c", e "d". da Lei 8245/91, neste caso, deposite a parte ré , em quinze (15) dias, a oferta. Em seguida, intime-se a parte autora para manifestar-se, em cinco dias sobre a sua integralidade; ocorrendo discordância, complemente a parte ré em dez dias. Após, manifeste-se expressamente a parte requerente. Não citada a parte requerida ou inocorrendo resposta, manifeste-se expressamente a parte requerente, traduzido o silêncio como desistência da ação. Desde já deferida a suspensão , objetivamente justificada, por até noventa dias e diligências para a localização da parte ré. Paralisado o processo por inércia da parte, intime-se a termo do Código de Processo Civil , art. 267, III, § 1º. Ofertada resposta e/ou exceções, impugnações, reconvenção ou novos documentos, à réplica e/ou contrariedade, dentro no prazo legal. Int.</descricao>
-          <data hash="ffbde2044281f62014e8a500008d4118" format="d/m/Y">29/09/2015</data>
-          <url_documento>http://recibos.bipbop.com.br/5eac53f1b99ca4d626d40e0ca82f55cb6a6365af.pdf</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Conclusos para Despacho</descricao>
-          <data hash="4fb09a43a0865505a1a770316e6f235b" format="d/m/Y">09/09/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Petição Juntada Juntada a petição diversa - Tipo: Petição Intermediária em Despejo - Número: 80001 - Protocolo: FPLA15000272120</descricao>
-          <data hash="ebdde71cc8d3e6571fb3785b6a155d0d" format="d/m/Y">25/08/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Custas Iniciais Juntadas Juntada a petição diversa - Tipo: Custas Iniciais em Despejo - Número: 80000 - Protocolo: FPLA15000232357</descricao>
-          <data hash="70a5beb22e6fe69a3c9dadb22c17e6ad" format="d/m/Y">20/07/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Certidão de Publicação Expedida Relação :0273/2015 Data da Disponibilização: 17/07/2015 Data da Publicação: 20/07/2015 Número do Diário: 1926 Página: 1447/1455</descricao>
-          <data hash="a512bbd4bc6ee771ac80c600e0a8acf1" format="d/m/Y">17/07/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetido ao DJE Relação: 0273/2015 Teor do ato: Vistos. Antes da apreciação do pedido de despejo, recolha a parte autora as custas processuais, sob pena de cancelamento da distribuição. Int. Advogados(s): Maria Aparecida Santos de Souza (OAB 220127/SP)</descricao>
-          <data hash="063da4563c98e7f51f44b916cb62b735" format="d/m/Y">14/07/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Mero expediente Vistos. Antes da apreciação do pedido de despejo, recolha a parte autora as custas processuais, sob pena de cancelamento da distribuição. Int.</descricao>
-          <data hash="fa798fe591bd2f641b325a30f8de03bf" format="d/m/Y">14/07/2015</data>
-          <url_documento>http://recibos.bipbop.com.br/ba3b4c22f3cf0e07e3526ed7e4b7346b33656d97.pdf</url_documento>
-        </andamento>
-        <andamento>
-          <descricao>Remetido ao DJE para Republicação Relação 273</descricao>
-          <data hash="6e0891ebd912cc284875764ee8892685" format="d/m/Y">14/07/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Recebidos os Autos do Distribuidor local</descricao>
-          <data hash="d57dab9b8dbbb1c2b1912534b9723e3d" format="d/m/Y">06/07/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Remetidos os Autos ao Cartório (movimentação exclusiva do distribuidor) Tipo de local de destino: Cartório Especificação do local de destino: Cartório da 1ª. Vara Judicial</descricao>
-          <data hash="7a99f6f00ccdfab37dda9c635232d51b" format="d/m/Y">06/07/2015</data>
-        </andamento>
-        <andamento>
-          <descricao>Distribuído Livremente (por Sorteio) (movimentação exclusiva do distribuidor)</descricao>
-          <data hash="a597264fbf66a826482ba414ca12a075" format="d/m/Y">06/07/2015</data>
-        </andamento>
-      </andamentos>
-      <partes>
-        <parte tipo="Requerente">Ademar Alberto Pasetti</parte>
-        <parte tipo="Requerido">Brutus Lavagens de Autos Ltda - Me</parte>
-      </partes>
-      <tags>
-        <tag tipo="situacao">baixado</tag>
-      </tags>
-    </processo>
-  </body>
+<header resourceUse="0">
+<date-time>04/07/2018 03:03:02</date-time>
+<validRequest>
+SELECT FROM 'TJPA'.'ConsultaProcessualPrimeiroGrau' WHERE 'processo' = '0000723-97.2016.8.14.1875' AND 'reference' = 'CNJ' AND 'numero_processo' = '0000723-97.2016.8.14.1875'
+</validRequest>
+<validRequest>
+SELECT FROM 'TJPA'.'ConsultaProcessualSegundoGrau' WHERE 'processo' = '0000723-97.2016.8.14.1875' AND 'reference' = 'CNJ' AND 'numero_processo' = '0000723-97.2016.8.14.1875'
+</validRequest>
+<warning push="true" code="2" source="ExceptionDatabase">
+Não foi possível localizar o processo (00007239720168141875)
+</warning>
+<warning push="true" code="2" source="ExceptionDatabase">
+Não foi possível obter resultado para o número de processo (0000723-97.2016.8.14.1875).
+</warning>
+<execution-time>56</execution-time>
+<query database="JURISTEK" table="PUSH">SELECT FROM 'JURISTEK'.'PUSH'</query>
+</header>
+<body>
+<processo id="2d5d339d455f767fc9d4cf217a10ad42" databaseUrl="http://www.tjpa.jus.br" databaseName="TJPA" databaseDescription="TJPA - Tribunal de Justiça do Estado do Pará" tableName="ConsultaProcessualPrimeiroGrau" tableUrl="http://www.tjpa.jus.br/PortalExterno/" tableDescription="Consulta Processual de Primeiro Grau (Número Único CNJ)" instancia="1">
+<numero_processo>0000723-97.2016.8.14.1875</numero_processo>
+<instancia>1</instancia>
+<comarca numero="93">Santarém Novo</comarca>
+<situacao>Em Andamento</situacao>
+<area>Cível</area>
+<distribuicao>18/02/2016</distribuicao>
+<vara>Vara Unica De Sao Joao De Pirabas - Santarem Novo</vara>
+<classe>Procedimento Sumário</classe>
+<valor_causa>22356,1</valor_causa>
+<autuacao>Não Informado</autuacao>
+<andamentos>
+<andamento>
+<descricao>Conclusos Ao Magistrado</descricao>
+<data hash="8574761c1ecc481712f3c7005adb2452" format="d/m/Y">14/06/2018</data>
+</andamento>
+<andamento>
+<descricao>Certidao</descricao>
+<data hash="4a5377ed853f72558c29685e5f7faed6" format="d/m/Y">14/06/2018</data>
+</andamento>
+<andamento>
+<descricao>Certidao</descricao>
+<data hash="4a5377ed853f72558c29685e5f7faed6" format="d/m/Y">14/06/2018</data>
+<url_documento>
+https://recibos.bipbop.com.br/899aa49ef82284e31c143f0c90cb458e.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="a0756b02a069a1655a9849cc8761cc21" format="d/m/Y">14/06/2018</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="a0756b02a069a1655a9849cc8761cc21" format="d/m/Y">14/06/2018</data>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="f153fff3b8d5969fd6aa1719d16b9d61" format="d/m/Y">14/06/2018</data>
+</andamento>
+<andamento>
+<descricao>A Secretaria De Origem</descricao>
+<data hash="e0cb8dfc8a230878c9b6811964c63a9c" format="d/m/Y">21/05/2018</data>
+</andamento>
+<andamento>
+<descricao>Despacho</descricao>
+<data hash="efd69eb475c2869c1394b04e6b21eb57" format="d/m/Y">18/05/2018</data>
+</andamento>
+<andamento>
+<descricao>Despacho</descricao>
+<data hash="efd69eb475c2869c1394b04e6b21eb57" format="d/m/Y">18/05/2018</data>
+<url_documento>
+https://recibos.bipbop.com.br/2127d170e8eb7ed7cdc3e0f2b7af47cf.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="f5f7077e70ab006a3970e2b66d75bf44" format="d/m/Y">30/04/2018</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="b70098a05f882b3d84d53fa35df2c062" format="d/m/Y">16/01/2018</data>
+</andamento>
+<andamento>
+<descricao>Petição / Ar Devolvido (civel)</descricao>
+<data hash="92c5acfbc97cd87f1ddf1c51023459a8" format="d/m/Y">02/08/2017</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="9f5f3e1b7d38fc88352b2326d7d769f4" format="d/m/Y">02/08/2017</data>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="63a9bcb1616e3ef778bbd9468f65d08c" format="d/m/Y">12/07/2017</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="666d5a1dae15cdae2d9d6ccf5ae09496" format="d/m/Y">07/07/2017</data>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="6a4ed52798a0d6c48d58cb5f022dc4a1" format="d/m/Y">07/07/2017</data>
+</andamento>
+<andamento>
+<descricao>Conclusos Ao Magistrado</descricao>
+<data hash="4f9885f5d8d1fa9f20033eb442b813ea" format="d/m/Y">26/06/2017</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="747bc9f0b62b408b819af6bc475182d9" format="d/m/Y">20/06/2017</data>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="77370af627f511ee4f1124883a097614" format="d/m/Y">20/06/2017</data>
+</andamento>
+<andamento>
+<descricao>Vinculação De Representante</descricao>
+<data hash="7e435f270eaf47d695dafc0586dbc8cc" format="d/m/Y">22/05/2017</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="04761676ecf7e924c04a468cc04a8e04" format="d/m/Y">22/05/2017</data>
+</andamento>
+<andamento>
+<descricao>Petição / Juntada De Procuração</descricao>
+<data hash="4bcdb492ec00c462f84b9b27889210ab" format="d/m/Y">22/05/2017</data>
+</andamento>
+<andamento>
+<descricao>Vistas Ao Defensor</descricao>
+<data hash="e4e3b39050724c82b87f67ec1b0d2c28" format="d/m/Y">10/11/2016</data>
+</andamento>
+<andamento>
+<descricao>A Secretaria De Origem</descricao>
+<data hash="de0a2217819c178e47560097020c8f31" format="d/m/Y">19/10/2016</data>
+</andamento>
+<andamento>
+<descricao>Decisão</descricao>
+<data hash="420eb33757df5064c6b672127706feb1" format="d/m/Y">04/10/2016</data>
+</andamento>
+<andamento>
+<descricao>Decisão</descricao>
+<data hash="420eb33757df5064c6b672127706feb1" format="d/m/Y">04/10/2016</data>
+<url_documento>
+https://recibos.bipbop.com.br/e65635044a3cc222c950085614c32ecd.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="f0de106e683d27d601605c2a3ef9f80d" format="d/m/Y">27/09/2016</data>
+</andamento>
+<andamento>
+<descricao>Inclusão De Prioridade De Tramitação</descricao>
+<data hash="3027820f7b9538e80f4c12155034b904" format="d/m/Y">27/09/2016</data>
+</andamento>
+<andamento>
+<descricao>Alteração De Dados Do Processo</descricao>
+<data hash="151ae92b9352f0f5c6b0e4a99619f803" format="d/m/Y">27/09/2016</data>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="6822ca81501ac5efb0a635d1b4a74be2" format="d/m/Y">27/09/2016</data>
+</andamento>
+<andamento>
+<descricao>Conclusos Ao Magistrado</descricao>
+<data hash="1cf9c217b56c7e03b33fe687e77da9ad" format="d/m/Y">03/08/2016</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="8a4f464a0bb4dadc408a3139b396c03e" format="d/m/Y">02/08/2016</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="8a4f464a0bb4dadc408a3139b396c03e" format="d/m/Y">02/08/2016</data>
+</andamento>
+<andamento>
+<descricao>A Secretaria De Origem</descricao>
+<data hash="fb86fb4bc50e63dc4b217b1864d709c7" format="d/m/Y">11/07/2016</data>
+</andamento>
+<andamento>
+<descricao>A Secretaria De Origem</descricao>
+<data hash="fb86fb4bc50e63dc4b217b1864d709c7" format="d/m/Y">11/07/2016</data>
+</andamento>
+<andamento>
+<descricao>Vinculação De Representante</descricao>
+<data hash="03eb147138c4f33224c3c6ea4721056e" format="d/m/Y">30/06/2016</data>
+</andamento>
+<andamento>
+<descricao>Petição / Contestacao (civel)</descricao>
+<data hash="fec81d99b813f2ebe20c686ba42b2e6e" format="d/m/Y">30/06/2016</data>
+</andamento>
+<andamento>
+<descricao>Petição / Ar Devolvido (civel)</descricao>
+<data hash="b468a558ef83e9bacd2c08e5acf51621" format="d/m/Y">27/06/2016</data>
+</andamento>
+<andamento>
+<descricao>Conclusos Ao Magistrado</descricao>
+<data hash="5fec58deb71998cc7e66c7eef8814f14" format="d/m/Y">15/06/2016</data>
+</andamento>
+<andamento>
+<descricao>Mero Expediente</descricao>
+<data hash="1fbe06a49798112f05606fe0dedf6f55" format="d/m/Y">08/06/2016</data>
+</andamento>
+<andamento>
+<descricao>Mero Expediente</descricao>
+<data hash="1fbe06a49798112f05606fe0dedf6f55" format="d/m/Y">08/06/2016</data>
+<url_documento>
+https://recibos.bipbop.com.br/feb355415980bbc8b18d9a8b887d4a53.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Vistas Ao Promotor</descricao>
+<data hash="9f2ab0e9a1492e7d09cda49ca919691c" format="d/m/Y">30/05/2016</data>
+</andamento>
+<andamento>
+<descricao>Citacao / Intimacao Postal</descricao>
+<data hash="ffc1e3dd72eac4be7c0dfa0c8cfc2cec" format="d/m/Y">25/05/2016</data>
+</andamento>
+<andamento>
+<descricao>Citacao / Intimacao Postal</descricao>
+<data hash="ffc1e3dd72eac4be7c0dfa0c8cfc2cec" format="d/m/Y">25/05/2016</data>
+<url_documento>
+https://recibos.bipbop.com.br/f84e89f1a850066b3b6f0bd87ebd92f9.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Conciliação</descricao>
+<data hash="55e8bed970a8bd08e597e03a3b56642e" format="d/m/Y">25/05/2016</data>
+</andamento>
+<andamento>
+<descricao>Conciliação</descricao>
+<data hash="55e8bed970a8bd08e597e03a3b56642e" format="d/m/Y">25/05/2016</data>
+<url_documento>
+https://recibos.bipbop.com.br/56cfcbb6946dcebcba5aba091f7b76a6.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
+<data hash="59478891950ab436a326121cfe90ff76" format="d/m/Y">25/05/2016</data>
+</andamento>
+<andamento>
+<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
+<data hash="59478891950ab436a326121cfe90ff76" format="d/m/Y">25/05/2016</data>
+<url_documento>
+https://recibos.bipbop.com.br/8c89561afce88896ca05dd1753e0742e.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>A Secretaria De Origem</descricao>
+<data hash="4c6685f095bf1486d53f29091153f25b" format="d/m/Y">20/05/2016</data>
+</andamento>
+<andamento>
+<descricao>Conclusos Ao Magistrado</descricao>
+<data hash="c37129cda7350e2890d879533c91acb9" format="d/m/Y">24/02/2016</data>
+</andamento>
+<andamento>
+<descricao>Distribuição De Processo</descricao>
+<data hash="6c0fafa66a314ad727cd4b51d9059ed3" format="d/m/Y">18/02/2016</data>
+</andamento>
+</andamentos>
+<partes>
+<parte tipo="Requerido">Banco Bradesco Sa</parte>
+<parte tipo="Requerente">Benedito Gomes Pereira</parte>
+</partes>
+<documentos>
+<documento>
+<descricao>Certidao</descricao>
+<data format="d/m/Y">14/06/2018</data>
+<url>
+https://recibos.bipbop.com.br/899aa49ef82284e31c143f0c90cb458e.pdf
+</url>
+</documento>
+<documento>
+<descricao>Despacho</descricao>
+<data format="d/m/Y">18/05/2018</data>
+<url>
+https://recibos.bipbop.com.br/2127d170e8eb7ed7cdc3e0f2b7af47cf.pdf
+</url>
+</documento>
+<documento>
+<descricao>Decisão</descricao>
+<data format="d/m/Y">04/10/2016</data>
+<url>
+https://recibos.bipbop.com.br/e65635044a3cc222c950085614c32ecd.pdf
+</url>
+</documento>
+<documento>
+<descricao>Mero Expediente</descricao>
+<data format="d/m/Y">08/06/2016</data>
+<url>
+https://recibos.bipbop.com.br/feb355415980bbc8b18d9a8b887d4a53.pdf
+</url>
+</documento>
+<documento>
+<descricao>Citacao / Intimacao Postal</descricao>
+<data format="d/m/Y">25/05/2016</data>
+<url>
+https://recibos.bipbop.com.br/f84e89f1a850066b3b6f0bd87ebd92f9.pdf
+</url>
+</documento>
+<documento>
+<descricao>Conciliação</descricao>
+<data format="d/m/Y">25/05/2016</data>
+<url>
+https://recibos.bipbop.com.br/56cfcbb6946dcebcba5aba091f7b76a6.pdf
+</url>
+</documento>
+<documento>
+<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
+<data format="d/m/Y">25/05/2016</data>
+<url>
+https://recibos.bipbop.com.br/8c89561afce88896ca05dd1753e0742e.pdf
+</url>
+</documento>
+</documentos>
+</processo>
+<processo id="2d5d339d455f767fc9d4cf217a10ad42" databaseUrl="http://www.tjpa.jus.br" databaseName="TJPA" databaseDescription="TJPA - Tribunal de Justiça do Estado do Pará" tableName="ConsultaProcessualSegundoGrau" tableUrl="http://www.tjpa.jus.br/PortalExterno/" tableDescription="Consulta Processual de Segundo Grau" instancia="2">
+<numero_processo>0000723-97.2016.8.14.1875</numero_processo>
+<instancia>1</instancia>
+<comarca numero="93">Santarém Novo</comarca>
+<situacao>Em Andamento</situacao>
+<area>Cível</area>
+<distribuicao>18/02/2016</distribuicao>
+<vara>Vara Unica De Sao Joao De Pirabas - Santarem Novo</vara>
+<classe>Procedimento Sumário</classe>
+<valor_causa>22356,1</valor_causa>
+<autuacao>Não Informado</autuacao>
+<andamentos>
+<andamento>
+<descricao>Conclusos Ao Magistrado</descricao>
+<data hash="8574761c1ecc481712f3c7005adb2452" format="d/m/Y">14/06/2018</data>
+</andamento>
+<andamento>
+<descricao>Certidao</descricao>
+<data hash="4a5377ed853f72558c29685e5f7faed6" format="d/m/Y">14/06/2018</data>
+</andamento>
+<andamento>
+<descricao>Certidao</descricao>
+<data hash="4a5377ed853f72558c29685e5f7faed6" format="d/m/Y">14/06/2018</data>
+<url_documento>
+https://recibos.bipbop.com.br/19d99dbafe88b747888e5b1ccfd2bf57.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="a0756b02a069a1655a9849cc8761cc21" format="d/m/Y">14/06/2018</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="a0756b02a069a1655a9849cc8761cc21" format="d/m/Y">14/06/2018</data>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="f153fff3b8d5969fd6aa1719d16b9d61" format="d/m/Y">14/06/2018</data>
+</andamento>
+<andamento>
+<descricao>A Secretaria De Origem</descricao>
+<data hash="e0cb8dfc8a230878c9b6811964c63a9c" format="d/m/Y">21/05/2018</data>
+</andamento>
+<andamento>
+<descricao>Despacho</descricao>
+<data hash="efd69eb475c2869c1394b04e6b21eb57" format="d/m/Y">18/05/2018</data>
+</andamento>
+<andamento>
+<descricao>Despacho</descricao>
+<data hash="efd69eb475c2869c1394b04e6b21eb57" format="d/m/Y">18/05/2018</data>
+<url_documento>
+https://recibos.bipbop.com.br/7ac484ac874d301e8980a973c60b86b8.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="f5f7077e70ab006a3970e2b66d75bf44" format="d/m/Y">30/04/2018</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="b70098a05f882b3d84d53fa35df2c062" format="d/m/Y">16/01/2018</data>
+</andamento>
+<andamento>
+<descricao>Petição / Ar Devolvido (civel)</descricao>
+<data hash="92c5acfbc97cd87f1ddf1c51023459a8" format="d/m/Y">02/08/2017</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="9f5f3e1b7d38fc88352b2326d7d769f4" format="d/m/Y">02/08/2017</data>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="63a9bcb1616e3ef778bbd9468f65d08c" format="d/m/Y">12/07/2017</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="666d5a1dae15cdae2d9d6ccf5ae09496" format="d/m/Y">07/07/2017</data>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="6a4ed52798a0d6c48d58cb5f022dc4a1" format="d/m/Y">07/07/2017</data>
+</andamento>
+<andamento>
+<descricao>Conclusos Ao Magistrado</descricao>
+<data hash="4f9885f5d8d1fa9f20033eb442b813ea" format="d/m/Y">26/06/2017</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="747bc9f0b62b408b819af6bc475182d9" format="d/m/Y">20/06/2017</data>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="77370af627f511ee4f1124883a097614" format="d/m/Y">20/06/2017</data>
+</andamento>
+<andamento>
+<descricao>Vinculação De Representante</descricao>
+<data hash="7e435f270eaf47d695dafc0586dbc8cc" format="d/m/Y">22/05/2017</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="04761676ecf7e924c04a468cc04a8e04" format="d/m/Y">22/05/2017</data>
+</andamento>
+<andamento>
+<descricao>Petição / Juntada De Procuração</descricao>
+<data hash="4bcdb492ec00c462f84b9b27889210ab" format="d/m/Y">22/05/2017</data>
+</andamento>
+<andamento>
+<descricao>Vistas Ao Defensor</descricao>
+<data hash="e4e3b39050724c82b87f67ec1b0d2c28" format="d/m/Y">10/11/2016</data>
+</andamento>
+<andamento>
+<descricao>A Secretaria De Origem</descricao>
+<data hash="de0a2217819c178e47560097020c8f31" format="d/m/Y">19/10/2016</data>
+</andamento>
+<andamento>
+<descricao>Decisão</descricao>
+<data hash="420eb33757df5064c6b672127706feb1" format="d/m/Y">04/10/2016</data>
+</andamento>
+<andamento>
+<descricao>Decisão</descricao>
+<data hash="420eb33757df5064c6b672127706feb1" format="d/m/Y">04/10/2016</data>
+<url_documento>
+https://recibos.bipbop.com.br/c132cc45918e050f3b3fd24f7853473a.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="f0de106e683d27d601605c2a3ef9f80d" format="d/m/Y">27/09/2016</data>
+</andamento>
+<andamento>
+<descricao>Inclusão De Prioridade De Tramitação</descricao>
+<data hash="3027820f7b9538e80f4c12155034b904" format="d/m/Y">27/09/2016</data>
+</andamento>
+<andamento>
+<descricao>Alteração De Dados Do Processo</descricao>
+<data hash="151ae92b9352f0f5c6b0e4a99619f803" format="d/m/Y">27/09/2016</data>
+</andamento>
+<andamento>
+<descricao>Petição / Petição Cível</descricao>
+<data hash="6822ca81501ac5efb0a635d1b4a74be2" format="d/m/Y">27/09/2016</data>
+</andamento>
+<andamento>
+<descricao>Conclusos Ao Magistrado</descricao>
+<data hash="1cf9c217b56c7e03b33fe687e77da9ad" format="d/m/Y">03/08/2016</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="8a4f464a0bb4dadc408a3139b396c03e" format="d/m/Y">02/08/2016</data>
+</andamento>
+<andamento>
+<descricao>Juntar Documento</descricao>
+<data hash="8a4f464a0bb4dadc408a3139b396c03e" format="d/m/Y">02/08/2016</data>
+</andamento>
+<andamento>
+<descricao>A Secretaria De Origem</descricao>
+<data hash="fb86fb4bc50e63dc4b217b1864d709c7" format="d/m/Y">11/07/2016</data>
+</andamento>
+<andamento>
+<descricao>A Secretaria De Origem</descricao>
+<data hash="fb86fb4bc50e63dc4b217b1864d709c7" format="d/m/Y">11/07/2016</data>
+</andamento>
+<andamento>
+<descricao>Vinculação De Representante</descricao>
+<data hash="03eb147138c4f33224c3c6ea4721056e" format="d/m/Y">30/06/2016</data>
+</andamento>
+<andamento>
+<descricao>Petição / Contestacao (civel)</descricao>
+<data hash="fec81d99b813f2ebe20c686ba42b2e6e" format="d/m/Y">30/06/2016</data>
+</andamento>
+<andamento>
+<descricao>Petição / Ar Devolvido (civel)</descricao>
+<data hash="b468a558ef83e9bacd2c08e5acf51621" format="d/m/Y">27/06/2016</data>
+</andamento>
+<andamento>
+<descricao>Conclusos Ao Magistrado</descricao>
+<data hash="5fec58deb71998cc7e66c7eef8814f14" format="d/m/Y">15/06/2016</data>
+</andamento>
+<andamento>
+<descricao>Mero Expediente</descricao>
+<data hash="1fbe06a49798112f05606fe0dedf6f55" format="d/m/Y">08/06/2016</data>
+</andamento>
+<andamento>
+<descricao>Mero Expediente</descricao>
+<data hash="1fbe06a49798112f05606fe0dedf6f55" format="d/m/Y">08/06/2016</data>
+<url_documento>
+https://recibos.bipbop.com.br/8f0554939a355fec72bb17cce8fbe91e.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Vistas Ao Promotor</descricao>
+<data hash="9f2ab0e9a1492e7d09cda49ca919691c" format="d/m/Y">30/05/2016</data>
+</andamento>
+<andamento>
+<descricao>Citacao / Intimacao Postal</descricao>
+<data hash="ffc1e3dd72eac4be7c0dfa0c8cfc2cec" format="d/m/Y">25/05/2016</data>
+</andamento>
+<andamento>
+<descricao>Citacao / Intimacao Postal</descricao>
+<data hash="ffc1e3dd72eac4be7c0dfa0c8cfc2cec" format="d/m/Y">25/05/2016</data>
+<url_documento>
+https://recibos.bipbop.com.br/757f7c6cd7bed894815343256d8e00d6.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Conciliação</descricao>
+<data hash="55e8bed970a8bd08e597e03a3b56642e" format="d/m/Y">25/05/2016</data>
+</andamento>
+<andamento>
+<descricao>Conciliação</descricao>
+<data hash="55e8bed970a8bd08e597e03a3b56642e" format="d/m/Y">25/05/2016</data>
+<url_documento>
+https://recibos.bipbop.com.br/25c2ff97d7f8d49a91f3752212b23f4b.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
+<data hash="59478891950ab436a326121cfe90ff76" format="d/m/Y">25/05/2016</data>
+</andamento>
+<andamento>
+<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
+<data hash="59478891950ab436a326121cfe90ff76" format="d/m/Y">25/05/2016</data>
+<url_documento>
+https://recibos.bipbop.com.br/f006a47c2aac8d9dcdd0a5fcab28d588.pdf
+</url_documento>
+<tipo_andamento>DOCUMENTO</tipo_andamento>
+</andamento>
+<andamento>
+<descricao>A Secretaria De Origem</descricao>
+<data hash="4c6685f095bf1486d53f29091153f25b" format="d/m/Y">20/05/2016</data>
+</andamento>
+<andamento>
+<descricao>Conclusos Ao Magistrado</descricao>
+<data hash="c37129cda7350e2890d879533c91acb9" format="d/m/Y">24/02/2016</data>
+</andamento>
+<andamento>
+<descricao>Distribuição De Processo</descricao>
+<data hash="6c0fafa66a314ad727cd4b51d9059ed3" format="d/m/Y">18/02/2016</data>
+</andamento>
+</andamentos>
+<partes>
+<parte tipo="Requerido">Banco Bradesco Sa</parte>
+<parte tipo="Requerente">Benedito Gomes Pereira</parte>
+</partes>
+<documentos>
+<documento>
+<descricao>Certidao</descricao>
+<data format="d/m/Y">14/06/2018</data>
+<url>
+https://recibos.bipbop.com.br/19d99dbafe88b747888e5b1ccfd2bf57.pdf
+</url>
+</documento>
+<documento>
+<descricao>Despacho</descricao>
+<data format="d/m/Y">18/05/2018</data>
+<url>
+https://recibos.bipbop.com.br/7ac484ac874d301e8980a973c60b86b8.pdf
+</url>
+</documento>
+<documento>
+<descricao>Decisão</descricao>
+<data format="d/m/Y">04/10/2016</data>
+<url>
+https://recibos.bipbop.com.br/c132cc45918e050f3b3fd24f7853473a.pdf
+</url>
+</documento>
+<documento>
+<descricao>Mero Expediente</descricao>
+<data format="d/m/Y">08/06/2016</data>
+<url>
+https://recibos.bipbop.com.br/8f0554939a355fec72bb17cce8fbe91e.pdf
+</url>
+</documento>
+<documento>
+<descricao>Citacao / Intimacao Postal</descricao>
+<data format="d/m/Y">25/05/2016</data>
+<url>
+https://recibos.bipbop.com.br/757f7c6cd7bed894815343256d8e00d6.pdf
+</url>
+</documento>
+<documento>
+<descricao>Conciliação</descricao>
+<data format="d/m/Y">25/05/2016</data>
+<url>
+https://recibos.bipbop.com.br/25c2ff97d7f8d49a91f3752212b23f4b.pdf
+</url>
+</documento>
+<documento>
+<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
+<data format="d/m/Y">25/05/2016</data>
+<url>
+https://recibos.bipbop.com.br/f006a47c2aac8d9dcdd0a5fcab28d588.pdf
+</url>
+</documento>
+</documentos>
+</processo>
+</body>
 </BPQL>
