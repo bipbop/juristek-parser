@@ -198,7 +198,7 @@ class Processo extends Parser {
   }
 
 
-  get documentos() {
+  get andamento() {
     const { $ } = this;
     return $('andamentos andamento', this.elementProcesso).map((i, andamento) =>
       Object.assign(...flattenDeep($(andamento).children().map((ik, k) =>
