@@ -82,7 +82,7 @@ class Processo extends Parser {
     return attribs ? camelObject(attribs) : df;
   }
 
-  get processo() { return this.elementProcesso.attribs; }
+  get dadosCaptura() { return this.elementProcesso.attribs; }
   get adicional() { return this.getter('adicional'); }
   get ajuizamento() { return this.getter('ajuizamento'); }
   get area() { return this.getter('area'); }
@@ -190,7 +190,7 @@ class Processo extends Parser {
     )).get();
   }
 
-  get documento() {
+  get documentos() {
     const { $ } = this;
     return $('documentos documento', this.elementProcesso).map((i, andamento) =>
       Object.assign(...flattenDeep($(andamento).children().map((ik, k) =>
@@ -198,7 +198,7 @@ class Processo extends Parser {
   }
 
 
-  get andamento() {
+  get andamentos() {
     const { $ } = this;
     return $('andamentos andamento', this.elementProcesso).map((i, andamento) =>
       Object.assign(...flattenDeep($(andamento).children().map((ik, k) =>
