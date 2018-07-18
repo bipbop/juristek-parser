@@ -3,12 +3,13 @@ import mapValues from 'lodash/mapValues';
 import flattenDeep from 'lodash/flattenDeep';
 import map from 'lodash/map';
 import camelCase from 'camel-case';
-import numeral from 'numeral';
 import moment from 'moment';
 import CalculateCNJ from 'validate-cnj';
 
+import numeral from './numeral-pt-br';
 import Parser from './parser';
 import phpMoment from './php-moment';
+
 
 const numeroRegex = /numero/i;
 const dataRegex = /data/i;

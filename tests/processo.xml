@@ -1,624 +1,316 @@
-This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<?xml version="1.0" encoding="UTF-8"?>
 <BPQL>
-<header resourceUse="0">
-<date-time>04/07/2018 03:03:02</date-time>
-<validRequest>
-SELECT FROM 'TJPA'.'ConsultaProcessualPrimeiroGrau' WHERE 'processo' = '0000723-97.2016.8.14.1875' AND 'reference' = 'CNJ' AND 'numero_processo' = '0000723-97.2016.8.14.1875'
-</validRequest>
-<validRequest>
-SELECT FROM 'TJPA'.'ConsultaProcessualSegundoGrau' WHERE 'processo' = '0000723-97.2016.8.14.1875' AND 'reference' = 'CNJ' AND 'numero_processo' = '0000723-97.2016.8.14.1875'
-</validRequest>
-<warning push="true" code="2" source="ExceptionDatabase">
-Não foi possível localizar o processo (00007239720168141875)
-</warning>
-<warning push="true" code="2" source="ExceptionDatabase">
-Não foi possível obter resultado para o número de processo (0000723-97.2016.8.14.1875).
-</warning>
-<execution-time>56</execution-time>
-<query database="JURISTEK" table="PUSH">SELECT FROM 'JURISTEK'.'PUSH'</query>
-</header>
-<body>
-<processo id="2d5d339d455f767fc9d4cf217a10ad42" databaseUrl="http://www.tjpa.jus.br" databaseName="TJPA" databaseDescription="TJPA - Tribunal de Justiça do Estado do Pará" tableName="ConsultaProcessualPrimeiroGrau" tableUrl="http://www.tjpa.jus.br/PortalExterno/" tableDescription="Consulta Processual de Primeiro Grau (Número Único CNJ)" instancia="1">
-<numero_processo>0000723-97.2016.8.14.1875</numero_processo>
-<instancia>1</instancia>
-<comarca numero="93">Santarém Novo</comarca>
-<situacao>Em Andamento</situacao>
-<area>Cível</area>
-<distribuicao>18/02/2016</distribuicao>
-<vara>Vara Unica De Sao Joao De Pirabas - Santarem Novo</vara>
-<classe>Procedimento Sumário</classe>
-<valor_causa>22356,1</valor_causa>
-<autuacao>Não Informado</autuacao>
-<andamentos>
-<andamento>
-<descricao>Conclusos Ao Magistrado</descricao>
-<data hash="8574761c1ecc481712f3c7005adb2452" format="d/m/Y">14/06/2018</data>
-</andamento>
-<andamento>
-<descricao>Certidao</descricao>
-<data hash="4a5377ed853f72558c29685e5f7faed6" format="d/m/Y">14/06/2018</data>
-</andamento>
-<andamento>
-<descricao>Certidao</descricao>
-<data hash="4a5377ed853f72558c29685e5f7faed6" format="d/m/Y">14/06/2018</data>
-<url_documento>
-https://recibos.bipbop.com.br/899aa49ef82284e31c143f0c90cb458e.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="a0756b02a069a1655a9849cc8761cc21" format="d/m/Y">14/06/2018</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="a0756b02a069a1655a9849cc8761cc21" format="d/m/Y">14/06/2018</data>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="f153fff3b8d5969fd6aa1719d16b9d61" format="d/m/Y">14/06/2018</data>
-</andamento>
-<andamento>
-<descricao>A Secretaria De Origem</descricao>
-<data hash="e0cb8dfc8a230878c9b6811964c63a9c" format="d/m/Y">21/05/2018</data>
-</andamento>
-<andamento>
-<descricao>Despacho</descricao>
-<data hash="efd69eb475c2869c1394b04e6b21eb57" format="d/m/Y">18/05/2018</data>
-</andamento>
-<andamento>
-<descricao>Despacho</descricao>
-<data hash="efd69eb475c2869c1394b04e6b21eb57" format="d/m/Y">18/05/2018</data>
-<url_documento>
-https://recibos.bipbop.com.br/2127d170e8eb7ed7cdc3e0f2b7af47cf.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="f5f7077e70ab006a3970e2b66d75bf44" format="d/m/Y">30/04/2018</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="b70098a05f882b3d84d53fa35df2c062" format="d/m/Y">16/01/2018</data>
-</andamento>
-<andamento>
-<descricao>Petição / Ar Devolvido (civel)</descricao>
-<data hash="92c5acfbc97cd87f1ddf1c51023459a8" format="d/m/Y">02/08/2017</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="9f5f3e1b7d38fc88352b2326d7d769f4" format="d/m/Y">02/08/2017</data>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="63a9bcb1616e3ef778bbd9468f65d08c" format="d/m/Y">12/07/2017</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="666d5a1dae15cdae2d9d6ccf5ae09496" format="d/m/Y">07/07/2017</data>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="6a4ed52798a0d6c48d58cb5f022dc4a1" format="d/m/Y">07/07/2017</data>
-</andamento>
-<andamento>
-<descricao>Conclusos Ao Magistrado</descricao>
-<data hash="4f9885f5d8d1fa9f20033eb442b813ea" format="d/m/Y">26/06/2017</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="747bc9f0b62b408b819af6bc475182d9" format="d/m/Y">20/06/2017</data>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="77370af627f511ee4f1124883a097614" format="d/m/Y">20/06/2017</data>
-</andamento>
-<andamento>
-<descricao>Vinculação De Representante</descricao>
-<data hash="7e435f270eaf47d695dafc0586dbc8cc" format="d/m/Y">22/05/2017</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="04761676ecf7e924c04a468cc04a8e04" format="d/m/Y">22/05/2017</data>
-</andamento>
-<andamento>
-<descricao>Petição / Juntada De Procuração</descricao>
-<data hash="4bcdb492ec00c462f84b9b27889210ab" format="d/m/Y">22/05/2017</data>
-</andamento>
-<andamento>
-<descricao>Vistas Ao Defensor</descricao>
-<data hash="e4e3b39050724c82b87f67ec1b0d2c28" format="d/m/Y">10/11/2016</data>
-</andamento>
-<andamento>
-<descricao>A Secretaria De Origem</descricao>
-<data hash="de0a2217819c178e47560097020c8f31" format="d/m/Y">19/10/2016</data>
-</andamento>
-<andamento>
-<descricao>Decisão</descricao>
-<data hash="420eb33757df5064c6b672127706feb1" format="d/m/Y">04/10/2016</data>
-</andamento>
-<andamento>
-<descricao>Decisão</descricao>
-<data hash="420eb33757df5064c6b672127706feb1" format="d/m/Y">04/10/2016</data>
-<url_documento>
-https://recibos.bipbop.com.br/e65635044a3cc222c950085614c32ecd.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="f0de106e683d27d601605c2a3ef9f80d" format="d/m/Y">27/09/2016</data>
-</andamento>
-<andamento>
-<descricao>Inclusão De Prioridade De Tramitação</descricao>
-<data hash="3027820f7b9538e80f4c12155034b904" format="d/m/Y">27/09/2016</data>
-</andamento>
-<andamento>
-<descricao>Alteração De Dados Do Processo</descricao>
-<data hash="151ae92b9352f0f5c6b0e4a99619f803" format="d/m/Y">27/09/2016</data>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="6822ca81501ac5efb0a635d1b4a74be2" format="d/m/Y">27/09/2016</data>
-</andamento>
-<andamento>
-<descricao>Conclusos Ao Magistrado</descricao>
-<data hash="1cf9c217b56c7e03b33fe687e77da9ad" format="d/m/Y">03/08/2016</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="8a4f464a0bb4dadc408a3139b396c03e" format="d/m/Y">02/08/2016</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="8a4f464a0bb4dadc408a3139b396c03e" format="d/m/Y">02/08/2016</data>
-</andamento>
-<andamento>
-<descricao>A Secretaria De Origem</descricao>
-<data hash="fb86fb4bc50e63dc4b217b1864d709c7" format="d/m/Y">11/07/2016</data>
-</andamento>
-<andamento>
-<descricao>A Secretaria De Origem</descricao>
-<data hash="fb86fb4bc50e63dc4b217b1864d709c7" format="d/m/Y">11/07/2016</data>
-</andamento>
-<andamento>
-<descricao>Vinculação De Representante</descricao>
-<data hash="03eb147138c4f33224c3c6ea4721056e" format="d/m/Y">30/06/2016</data>
-</andamento>
-<andamento>
-<descricao>Petição / Contestacao (civel)</descricao>
-<data hash="fec81d99b813f2ebe20c686ba42b2e6e" format="d/m/Y">30/06/2016</data>
-</andamento>
-<andamento>
-<descricao>Petição / Ar Devolvido (civel)</descricao>
-<data hash="b468a558ef83e9bacd2c08e5acf51621" format="d/m/Y">27/06/2016</data>
-</andamento>
-<andamento>
-<descricao>Conclusos Ao Magistrado</descricao>
-<data hash="5fec58deb71998cc7e66c7eef8814f14" format="d/m/Y">15/06/2016</data>
-</andamento>
-<andamento>
-<descricao>Mero Expediente</descricao>
-<data hash="1fbe06a49798112f05606fe0dedf6f55" format="d/m/Y">08/06/2016</data>
-</andamento>
-<andamento>
-<descricao>Mero Expediente</descricao>
-<data hash="1fbe06a49798112f05606fe0dedf6f55" format="d/m/Y">08/06/2016</data>
-<url_documento>
-https://recibos.bipbop.com.br/feb355415980bbc8b18d9a8b887d4a53.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Vistas Ao Promotor</descricao>
-<data hash="9f2ab0e9a1492e7d09cda49ca919691c" format="d/m/Y">30/05/2016</data>
-</andamento>
-<andamento>
-<descricao>Citacao / Intimacao Postal</descricao>
-<data hash="ffc1e3dd72eac4be7c0dfa0c8cfc2cec" format="d/m/Y">25/05/2016</data>
-</andamento>
-<andamento>
-<descricao>Citacao / Intimacao Postal</descricao>
-<data hash="ffc1e3dd72eac4be7c0dfa0c8cfc2cec" format="d/m/Y">25/05/2016</data>
-<url_documento>
-https://recibos.bipbop.com.br/f84e89f1a850066b3b6f0bd87ebd92f9.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Conciliação</descricao>
-<data hash="55e8bed970a8bd08e597e03a3b56642e" format="d/m/Y">25/05/2016</data>
-</andamento>
-<andamento>
-<descricao>Conciliação</descricao>
-<data hash="55e8bed970a8bd08e597e03a3b56642e" format="d/m/Y">25/05/2016</data>
-<url_documento>
-https://recibos.bipbop.com.br/56cfcbb6946dcebcba5aba091f7b76a6.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
-<data hash="59478891950ab436a326121cfe90ff76" format="d/m/Y">25/05/2016</data>
-</andamento>
-<andamento>
-<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
-<data hash="59478891950ab436a326121cfe90ff76" format="d/m/Y">25/05/2016</data>
-<url_documento>
-https://recibos.bipbop.com.br/8c89561afce88896ca05dd1753e0742e.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>A Secretaria De Origem</descricao>
-<data hash="4c6685f095bf1486d53f29091153f25b" format="d/m/Y">20/05/2016</data>
-</andamento>
-<andamento>
-<descricao>Conclusos Ao Magistrado</descricao>
-<data hash="c37129cda7350e2890d879533c91acb9" format="d/m/Y">24/02/2016</data>
-</andamento>
-<andamento>
-<descricao>Distribuição De Processo</descricao>
-<data hash="6c0fafa66a314ad727cd4b51d9059ed3" format="d/m/Y">18/02/2016</data>
-</andamento>
-</andamentos>
-<partes>
-<parte tipo="Requerido">Banco Bradesco Sa</parte>
-<parte tipo="Requerente">Benedito Gomes Pereira</parte>
-</partes>
-<documentos>
-<documento>
-<descricao>Certidao</descricao>
-<data format="d/m/Y">14/06/2018</data>
-<url>
-https://recibos.bipbop.com.br/899aa49ef82284e31c143f0c90cb458e.pdf
-</url>
-</documento>
-<documento>
-<descricao>Despacho</descricao>
-<data format="d/m/Y">18/05/2018</data>
-<url>
-https://recibos.bipbop.com.br/2127d170e8eb7ed7cdc3e0f2b7af47cf.pdf
-</url>
-</documento>
-<documento>
-<descricao>Decisão</descricao>
-<data format="d/m/Y">04/10/2016</data>
-<url>
-https://recibos.bipbop.com.br/e65635044a3cc222c950085614c32ecd.pdf
-</url>
-</documento>
-<documento>
-<descricao>Mero Expediente</descricao>
-<data format="d/m/Y">08/06/2016</data>
-<url>
-https://recibos.bipbop.com.br/feb355415980bbc8b18d9a8b887d4a53.pdf
-</url>
-</documento>
-<documento>
-<descricao>Citacao / Intimacao Postal</descricao>
-<data format="d/m/Y">25/05/2016</data>
-<url>
-https://recibos.bipbop.com.br/f84e89f1a850066b3b6f0bd87ebd92f9.pdf
-</url>
-</documento>
-<documento>
-<descricao>Conciliação</descricao>
-<data format="d/m/Y">25/05/2016</data>
-<url>
-https://recibos.bipbop.com.br/56cfcbb6946dcebcba5aba091f7b76a6.pdf
-</url>
-</documento>
-<documento>
-<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
-<data format="d/m/Y">25/05/2016</data>
-<url>
-https://recibos.bipbop.com.br/8c89561afce88896ca05dd1753e0742e.pdf
-</url>
-</documento>
-</documentos>
-</processo>
-<processo id="2d5d339d455f767fc9d4cf217a10ad42" databaseUrl="http://www.tjpa.jus.br" databaseName="TJPA" databaseDescription="TJPA - Tribunal de Justiça do Estado do Pará" tableName="ConsultaProcessualSegundoGrau" tableUrl="http://www.tjpa.jus.br/PortalExterno/" tableDescription="Consulta Processual de Segundo Grau" instancia="2">
-<numero_processo>0000723-97.2016.8.14.1875</numero_processo>
-<instancia>1</instancia>
-<comarca numero="93">Santarém Novo</comarca>
-<situacao>Em Andamento</situacao>
-<area>Cível</area>
-<distribuicao>18/02/2016</distribuicao>
-<vara>Vara Unica De Sao Joao De Pirabas - Santarem Novo</vara>
-<classe>Procedimento Sumário</classe>
-<valor_causa>22356,1</valor_causa>
-<autuacao>Não Informado</autuacao>
-<andamentos>
-<andamento>
-<descricao>Conclusos Ao Magistrado</descricao>
-<data hash="8574761c1ecc481712f3c7005adb2452" format="d/m/Y">14/06/2018</data>
-</andamento>
-<andamento>
-<descricao>Certidao</descricao>
-<data hash="4a5377ed853f72558c29685e5f7faed6" format="d/m/Y">14/06/2018</data>
-</andamento>
-<andamento>
-<descricao>Certidao</descricao>
-<data hash="4a5377ed853f72558c29685e5f7faed6" format="d/m/Y">14/06/2018</data>
-<url_documento>
-https://recibos.bipbop.com.br/19d99dbafe88b747888e5b1ccfd2bf57.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="a0756b02a069a1655a9849cc8761cc21" format="d/m/Y">14/06/2018</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="a0756b02a069a1655a9849cc8761cc21" format="d/m/Y">14/06/2018</data>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="f153fff3b8d5969fd6aa1719d16b9d61" format="d/m/Y">14/06/2018</data>
-</andamento>
-<andamento>
-<descricao>A Secretaria De Origem</descricao>
-<data hash="e0cb8dfc8a230878c9b6811964c63a9c" format="d/m/Y">21/05/2018</data>
-</andamento>
-<andamento>
-<descricao>Despacho</descricao>
-<data hash="efd69eb475c2869c1394b04e6b21eb57" format="d/m/Y">18/05/2018</data>
-</andamento>
-<andamento>
-<descricao>Despacho</descricao>
-<data hash="efd69eb475c2869c1394b04e6b21eb57" format="d/m/Y">18/05/2018</data>
-<url_documento>
-https://recibos.bipbop.com.br/7ac484ac874d301e8980a973c60b86b8.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="f5f7077e70ab006a3970e2b66d75bf44" format="d/m/Y">30/04/2018</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="b70098a05f882b3d84d53fa35df2c062" format="d/m/Y">16/01/2018</data>
-</andamento>
-<andamento>
-<descricao>Petição / Ar Devolvido (civel)</descricao>
-<data hash="92c5acfbc97cd87f1ddf1c51023459a8" format="d/m/Y">02/08/2017</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="9f5f3e1b7d38fc88352b2326d7d769f4" format="d/m/Y">02/08/2017</data>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="63a9bcb1616e3ef778bbd9468f65d08c" format="d/m/Y">12/07/2017</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="666d5a1dae15cdae2d9d6ccf5ae09496" format="d/m/Y">07/07/2017</data>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="6a4ed52798a0d6c48d58cb5f022dc4a1" format="d/m/Y">07/07/2017</data>
-</andamento>
-<andamento>
-<descricao>Conclusos Ao Magistrado</descricao>
-<data hash="4f9885f5d8d1fa9f20033eb442b813ea" format="d/m/Y">26/06/2017</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="747bc9f0b62b408b819af6bc475182d9" format="d/m/Y">20/06/2017</data>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="77370af627f511ee4f1124883a097614" format="d/m/Y">20/06/2017</data>
-</andamento>
-<andamento>
-<descricao>Vinculação De Representante</descricao>
-<data hash="7e435f270eaf47d695dafc0586dbc8cc" format="d/m/Y">22/05/2017</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="04761676ecf7e924c04a468cc04a8e04" format="d/m/Y">22/05/2017</data>
-</andamento>
-<andamento>
-<descricao>Petição / Juntada De Procuração</descricao>
-<data hash="4bcdb492ec00c462f84b9b27889210ab" format="d/m/Y">22/05/2017</data>
-</andamento>
-<andamento>
-<descricao>Vistas Ao Defensor</descricao>
-<data hash="e4e3b39050724c82b87f67ec1b0d2c28" format="d/m/Y">10/11/2016</data>
-</andamento>
-<andamento>
-<descricao>A Secretaria De Origem</descricao>
-<data hash="de0a2217819c178e47560097020c8f31" format="d/m/Y">19/10/2016</data>
-</andamento>
-<andamento>
-<descricao>Decisão</descricao>
-<data hash="420eb33757df5064c6b672127706feb1" format="d/m/Y">04/10/2016</data>
-</andamento>
-<andamento>
-<descricao>Decisão</descricao>
-<data hash="420eb33757df5064c6b672127706feb1" format="d/m/Y">04/10/2016</data>
-<url_documento>
-https://recibos.bipbop.com.br/c132cc45918e050f3b3fd24f7853473a.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="f0de106e683d27d601605c2a3ef9f80d" format="d/m/Y">27/09/2016</data>
-</andamento>
-<andamento>
-<descricao>Inclusão De Prioridade De Tramitação</descricao>
-<data hash="3027820f7b9538e80f4c12155034b904" format="d/m/Y">27/09/2016</data>
-</andamento>
-<andamento>
-<descricao>Alteração De Dados Do Processo</descricao>
-<data hash="151ae92b9352f0f5c6b0e4a99619f803" format="d/m/Y">27/09/2016</data>
-</andamento>
-<andamento>
-<descricao>Petição / Petição Cível</descricao>
-<data hash="6822ca81501ac5efb0a635d1b4a74be2" format="d/m/Y">27/09/2016</data>
-</andamento>
-<andamento>
-<descricao>Conclusos Ao Magistrado</descricao>
-<data hash="1cf9c217b56c7e03b33fe687e77da9ad" format="d/m/Y">03/08/2016</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="8a4f464a0bb4dadc408a3139b396c03e" format="d/m/Y">02/08/2016</data>
-</andamento>
-<andamento>
-<descricao>Juntar Documento</descricao>
-<data hash="8a4f464a0bb4dadc408a3139b396c03e" format="d/m/Y">02/08/2016</data>
-</andamento>
-<andamento>
-<descricao>A Secretaria De Origem</descricao>
-<data hash="fb86fb4bc50e63dc4b217b1864d709c7" format="d/m/Y">11/07/2016</data>
-</andamento>
-<andamento>
-<descricao>A Secretaria De Origem</descricao>
-<data hash="fb86fb4bc50e63dc4b217b1864d709c7" format="d/m/Y">11/07/2016</data>
-</andamento>
-<andamento>
-<descricao>Vinculação De Representante</descricao>
-<data hash="03eb147138c4f33224c3c6ea4721056e" format="d/m/Y">30/06/2016</data>
-</andamento>
-<andamento>
-<descricao>Petição / Contestacao (civel)</descricao>
-<data hash="fec81d99b813f2ebe20c686ba42b2e6e" format="d/m/Y">30/06/2016</data>
-</andamento>
-<andamento>
-<descricao>Petição / Ar Devolvido (civel)</descricao>
-<data hash="b468a558ef83e9bacd2c08e5acf51621" format="d/m/Y">27/06/2016</data>
-</andamento>
-<andamento>
-<descricao>Conclusos Ao Magistrado</descricao>
-<data hash="5fec58deb71998cc7e66c7eef8814f14" format="d/m/Y">15/06/2016</data>
-</andamento>
-<andamento>
-<descricao>Mero Expediente</descricao>
-<data hash="1fbe06a49798112f05606fe0dedf6f55" format="d/m/Y">08/06/2016</data>
-</andamento>
-<andamento>
-<descricao>Mero Expediente</descricao>
-<data hash="1fbe06a49798112f05606fe0dedf6f55" format="d/m/Y">08/06/2016</data>
-<url_documento>
-https://recibos.bipbop.com.br/8f0554939a355fec72bb17cce8fbe91e.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Vistas Ao Promotor</descricao>
-<data hash="9f2ab0e9a1492e7d09cda49ca919691c" format="d/m/Y">30/05/2016</data>
-</andamento>
-<andamento>
-<descricao>Citacao / Intimacao Postal</descricao>
-<data hash="ffc1e3dd72eac4be7c0dfa0c8cfc2cec" format="d/m/Y">25/05/2016</data>
-</andamento>
-<andamento>
-<descricao>Citacao / Intimacao Postal</descricao>
-<data hash="ffc1e3dd72eac4be7c0dfa0c8cfc2cec" format="d/m/Y">25/05/2016</data>
-<url_documento>
-https://recibos.bipbop.com.br/757f7c6cd7bed894815343256d8e00d6.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Conciliação</descricao>
-<data hash="55e8bed970a8bd08e597e03a3b56642e" format="d/m/Y">25/05/2016</data>
-</andamento>
-<andamento>
-<descricao>Conciliação</descricao>
-<data hash="55e8bed970a8bd08e597e03a3b56642e" format="d/m/Y">25/05/2016</data>
-<url_documento>
-https://recibos.bipbop.com.br/25c2ff97d7f8d49a91f3752212b23f4b.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
-<data hash="59478891950ab436a326121cfe90ff76" format="d/m/Y">25/05/2016</data>
-</andamento>
-<andamento>
-<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
-<data hash="59478891950ab436a326121cfe90ff76" format="d/m/Y">25/05/2016</data>
-<url_documento>
-https://recibos.bipbop.com.br/f006a47c2aac8d9dcdd0a5fcab28d588.pdf
-</url_documento>
-<tipo_andamento>DOCUMENTO</tipo_andamento>
-</andamento>
-<andamento>
-<descricao>A Secretaria De Origem</descricao>
-<data hash="4c6685f095bf1486d53f29091153f25b" format="d/m/Y">20/05/2016</data>
-</andamento>
-<andamento>
-<descricao>Conclusos Ao Magistrado</descricao>
-<data hash="c37129cda7350e2890d879533c91acb9" format="d/m/Y">24/02/2016</data>
-</andamento>
-<andamento>
-<descricao>Distribuição De Processo</descricao>
-<data hash="6c0fafa66a314ad727cd4b51d9059ed3" format="d/m/Y">18/02/2016</data>
-</andamento>
-</andamentos>
-<partes>
-<parte tipo="Requerido">Banco Bradesco Sa</parte>
-<parte tipo="Requerente">Benedito Gomes Pereira</parte>
-</partes>
-<documentos>
-<documento>
-<descricao>Certidao</descricao>
-<data format="d/m/Y">14/06/2018</data>
-<url>
-https://recibos.bipbop.com.br/19d99dbafe88b747888e5b1ccfd2bf57.pdf
-</url>
-</documento>
-<documento>
-<descricao>Despacho</descricao>
-<data format="d/m/Y">18/05/2018</data>
-<url>
-https://recibos.bipbop.com.br/7ac484ac874d301e8980a973c60b86b8.pdf
-</url>
-</documento>
-<documento>
-<descricao>Decisão</descricao>
-<data format="d/m/Y">04/10/2016</data>
-<url>
-https://recibos.bipbop.com.br/c132cc45918e050f3b3fd24f7853473a.pdf
-</url>
-</documento>
-<documento>
-<descricao>Mero Expediente</descricao>
-<data format="d/m/Y">08/06/2016</data>
-<url>
-https://recibos.bipbop.com.br/8f0554939a355fec72bb17cce8fbe91e.pdf
-</url>
-</documento>
-<documento>
-<descricao>Citacao / Intimacao Postal</descricao>
-<data format="d/m/Y">25/05/2016</data>
-<url>
-https://recibos.bipbop.com.br/757f7c6cd7bed894815343256d8e00d6.pdf
-</url>
-</documento>
-<documento>
-<descricao>Conciliação</descricao>
-<data format="d/m/Y">25/05/2016</data>
-<url>
-https://recibos.bipbop.com.br/25c2ff97d7f8d49a91f3752212b23f4b.pdf
-</url>
-</documento>
-<documento>
-<descricao>Escrivão/diretor De Secretaria/secretário Jurídico</descricao>
-<data format="d/m/Y">25/05/2016</data>
-<url>
-https://recibos.bipbop.com.br/f006a47c2aac8d9dcdd0a5fcab28d588.pdf
-</url>
-</documento>
-</documentos>
-</processo>
-</body>
+  <header resourceUse="0">
+    <date-time>11/07/2018 15:20:13</date-time>
+    <validRequest>SELECT FROM 'TJSP'.'PrimeiraInstancia' WHERE 'processo' = '1001633-36.2018.8.26.0604' AND 'reference' = 'CNJ' AND 'numero_processo' = '1001633-36.2018.8.26.0604'</validRequest>
+    <validRequest>SELECT FROM 'TJSP'.'SegundaInstancia' WHERE 'processo' = '1001633-36.2018.8.26.0604' AND 'reference' = 'CNJ' AND 'numero_processo' = '1001633-36.2018.8.26.0604'</validRequest>
+    <warning push="true" code="2" source="ExceptionDatabase">Não foi possível localizar o processo (10016333620188260604)</warning>
+    <warning push="true" code="2" source="ExceptionDatabase">Não foi possível obter resultado para o número de processo (1001633-36.2018.8.26.0604).</warning>
+    <execution-time>10</execution-time>
+    <query database="JURISTEK" table="PUSH">SELECT FROM 'JURISTEK'.'PUSH'</query>
+  </header>
+  <body>
+    <processo filter="1001633-36.2018.8.26.0604/02" id="153dcb21da58a64f10c063e19a543c48" databaseUrl="http://www.tjsp.jus.br/" databaseName="TJSP" databaseDescription="TJSP - Tribunal de Justiça do Estado de São Paulo" tableName="PrimeiraInstancia" tableUrl="https://esaj.tjsp.jus.br/cpopg/open.do" tableDescription="Processos da Primeira Instância" instancia="1">
+      <instancia>1</instancia>
+      <url_processo>https://esaj.tjsp.jus.br/cpopg/show.do;jsessionid=43102C3AF5C64CD5777FEB8A38AE1ABF.cpopg7?processo.codigo=GS0002MP00000&amp;processo.foro=604&amp;uuidCaptcha=sajcaptcha_fc1b73a8ab0f47638623230583470175</url_processo>
+      <numero_processo>1001633-36.2018.8.26.0604</numero_processo>
+      <classe>Execução de Título Extrajudicial</classe>
+      <area>Cível</area>
+      <acao>Prestação de Serviços</acao>
+      <distribuicao format="d/m/Y">07/03/2018</distribuicao>
+      <vara>Vara Cível</vara>
+      <numero_vara>2</numero_vara>
+      <foro>Foro de Sumaré</foro>
+      <valor_causa unidade_monetaria="R$">32.667.884,64</valor_causa>
+      <eletronico>1</eletronico>
+      <observacao>Juiz: André Gonçalves Fernandes</observacao>
+      <advogados>
+        <advogado parte="Elijet Participação Societária Ltda">Heitor Carvalho Silva</advogado>
+        <advogado parte="Elijet Participação Societária Ltda">Tamires Lopes Pinheiro de Oliveira</advogado>
+      </advogados>
+      <andamentos>
+        <andamento>
+          <descricao>Certidão de Publicação Expedida Relação :0519/2018 Data da Disponibilização: 10/07/2018 Data da Publicação: 11/07/2018 Número do Diário: 2612 Página: 1969/1976</descricao>
+          <data hash="b37f46bb87ca90d815a1656a055a07d1" format="d/m/Y">10/07/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Remetido ao DJE Relação: 0519/2018 Teor do ato: Vistos. Fls. 122/129: nada a prover. Certifique-se o trânsito em julgado da sentença e arquivem-se os autos. Int. Advogados(s): Tamires Lopes Pinheiro de Oliveira (OAB 306970/SP), Heitor Carvalho Silva (OAB 310936/SP)</descricao>
+          <data hash="c4b3dba6d5503f3f8863206bd90e1676" format="d/m/Y">06/07/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Despacho Vistos. Fls. 122/129: nada a prover. Certifique-se o trânsito em julgado da sentença e arquivem-se os autos. Int.</descricao>
+          <data hash="81f004726b6b462812154cd9b3cc5f07" format="d/m/Y">05/07/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Conclusos para Despacho</descricao>
+          <data hash="02d95ef2613da8bb9c97ff5b1953ada1" format="d/m/Y">05/07/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Agravo de Instrumento - Acórdão e Demais Peças Juntados - Com Trânsito em Julgado - Agravo Destruído</descricao>
+          <data hash="8b228110a6aea62504de1724df0a0313" format="d/m/Y">14/06/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Certidão de Publicação Expedida Relação :0393/2018 Data da Disponibilização: 28/05/2018 Data da Publicação: 29/05/2018 Número do Diário: 2584 Página: 2415/2421</descricao>
+          <data hash="e011df8e11b69ac6f49155ac07052fdb" format="d/m/Y">28/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Remetido ao DJE Relação: 0393/2018 Teor do ato: Posto isso, homologo a desistência ora formulada e JULGO EXTINTO o processo, sem resolução do mérito, com espeque na norma do artigo 485, inciso VIII, do Código de Processo Civil. Oportunamente, expeça-se certidão e arquivem-se os autos observadas as cautelas de praxe.P.R.I. Advogados(s): Tamires Lopes Pinheiro de Oliveira (OAB 306970/SP), Heitor Carvalho Silva (OAB 310936/SP)</descricao>
+          <data hash="cd4e2db9d07c7f4348355e5e045331fd" format="d/m/Y">25/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Desistência Posto isso, homologo a desistência ora formulada e JULGO EXTINTO o processo, sem resolução do mérito, com espeque na norma do artigo 485, inciso VIII, do Código de Processo Civil. Oportunamente, expeça-se certidão e arquivem-se os autos observadas as cautelas de praxe.P.R.I.</descricao>
+          <data hash="f4300dc38a3c6e8c5655ea9f76657772" format="d/m/Y">25/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Conclusos para Sentença</descricao>
+          <data hash="6d02a3650c1c0114ec72f299b9096987" format="d/m/Y">24/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Pedido de Extinção Juntada Nº Protocolo: WSMR.18.70038070-9 Tipo da Petição: Pedido de Extinção do Processo Data: 23/05/2018 17:30</descricao>
+          <data hash="d7f7e241f5d1cae6cab6a677863ee1a7" format="d/m/Y">24/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Petição Juntada Nº Protocolo: WSMR.18.70035683-2 Tipo da Petição: Petições Diversas Data: 16/05/2018 08:50</descricao>
+          <data hash="914247d518b81d2f5952d602eae7ef23" format="d/m/Y">16/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Certidão de Publicação Expedida Relação :0321/2018 Data da Disponibilização: 04/05/2018 Data da Publicação: 07/05/2018 Número do Diário: 2568 Página: 2686/2694</descricao>
+          <data hash="61e0913f6f585cb903e126666b604564" format="d/m/Y">04/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Remetido ao DJE Relação: 0321/2018 Teor do ato: Fls. 77/78: Ciente. Aguarde-se o retorno da carta precatória.Int. Advogados(s): Tamires Lopes Pinheiro de Oliveira (OAB 306970/SP), Heitor Carvalho Silva (OAB 310936/SP)</descricao>
+          <data hash="7f0bd986352008a6bef9f807970ead7b" format="d/m/Y">03/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Agravo de Instrumento - Acórdão e Demais Peças Juntados - Com Trânsito em Julgado - Agravo Destruído</descricao>
+          <data hash="42deae0fceac3c0fc27350e816907832" format="d/m/Y">02/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Despacho Fls. 77/78: Ciente. Aguarde-se o retorno da carta precatória.Int.</descricao>
+          <data hash="264ec7b940ac11a2f5c1bd912580e12f" format="d/m/Y">02/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Conclusos para Despacho</descricao>
+          <data hash="140e07cb437f06f94b9152fd9b371b55" format="d/m/Y">02/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Comprovação da Distribuição da Carta Precatória Juntada Nº Protocolo: WSMR.18.70025535-1 Tipo da Petição: Petição Comprovando a Distrib. da Carta Precatória Data: 11/04/2018 18:15</descricao>
+          <data hash="a388c9799ea0754bb147a961044f6cff" format="d/m/Y">11/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Petição Juntada Nº Protocolo: WSMR.18.70025471-1 Tipo da Petição: Petições Diversas Data: 11/04/2018 17:32</descricao>
+          <data hash="65d4cb46f63937cbb9b3c2ad44c13b39" format="d/m/Y">11/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Certidão de Publicação Expedida Relação :0233/2018 Data da Disponibilização: 06/04/2018 Data da Publicação: 09/04/2018 Número do Diário: 2550 Página: 2568/2575</descricao>
+          <data hash="606be4344804bd72e4b9b799086e908c" format="d/m/Y">06/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Remetido ao DJE Relação: 0233/2018 Teor do ato: Nos termos do COMUNICADO CG nº 1951/2017, providencie a parte requerente a distribuição digital da Carta Precatória (fls. 67/68) junto ao juízo deprecado, comprovando nestes autos. Advogados(s): Tamires Lopes Pinheiro de Oliveira (OAB 306970/SP), Heitor Carvalho Silva (OAB 310936/SP)</descricao>
+          <data hash="54ab729ad3839093f0dddc657cc48e97" format="d/m/Y">05/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Ato Ordinatório - Publicável Nos termos do COMUNICADO CG nº 1951/2017, providencie a parte requerente a distribuição digital da Carta Precatória (fls. 67/68) junto ao juízo deprecado, comprovando nestes autos.</descricao>
+          <data hash="5ca9f94b7c39e8a594929d6d823870bb" format="d/m/Y">04/04/2018</data>
+          <url_documento>SENHA_REQUERIDA</url_documento>
+        </andamento>
+        <andamento>
+          <descricao>Carta Precatória Expedida Processo Digital - Carta Precatória - Citação, Penhora e Avaliação - Título Executivo Extrajudicial - Cível</descricao>
+          <data hash="51b32be6ec980d938c09b2b930de5ce3" format="d/m/Y">04/04/2018</data>
+          <url_documento>SENHA_REQUERIDA</url_documento>
+        </andamento>
+        <andamento>
+          <descricao>Certidão de Publicação Expedida Relação :0223/2018 Data da Disponibilização: 04/04/2018 Data da Publicação: 05/04/2018 Número do Diário: 2548 Página: 3114/3124</descricao>
+          <data hash="0b3584305b726822af8e6f7a0c823f48" format="d/m/Y">04/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Remetido ao DJE Relação: 0223/2018 Teor do ato: Vistos.Ciente da decisão proferida pela Superior Instância.Cite-se em execução nos termos do artigo 827 e seguintes do N.C.P.C.Int. Advogados(s): Tamires Lopes Pinheiro de Oliveira (OAB 306970/SP), Heitor Carvalho Silva (OAB 310936/SP)</descricao>
+          <data hash="4471fb19f2d203737a3cee4247875363" format="d/m/Y">03/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Recebida a Petição Inicial Vistos.Ciente da decisão proferida pela Superior Instância.Cite-se em execução nos termos do artigo 827 e seguintes do N.C.P.C.Int.</descricao>
+          <data hash="041c52fbcd0247f6d1ca71e9e136c097" format="d/m/Y">02/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Conclusos para Decisão</descricao>
+          <data hash="db9beb9fdeebab54231f0430309acc92" format="d/m/Y">02/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Decisão Interlocutória de 2ª Instância Juntada</descricao>
+          <data hash="aeab0104265c81cc57038a784f477783" format="d/m/Y">02/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Petição Juntada Nº Protocolo: WSMR.18.70020978-3 Tipo da Petição: Petição Juntando Cópia do Agravo (Art. 1.018, do CPC) Data: 26/03/2018 18:04</descricao>
+          <data hash="637e520a43b4995f802240a2119da513" format="d/m/Y">26/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Certidão de Publicação Expedida Relação :0150/2018 Data da Disponibilização: 12/03/2018 Data da Publicação: 13/03/2018 Número do Diário: 2533 Página: 2855/2860</descricao>
+          <data hash="4a9be4314a29773aad5824c99e01f2d1" format="d/m/Y">12/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Remetido ao DJE Relação: 0150/2018 Teor do ato: Fls. 54/56: Recebo a emenda. Nos termos do artigo 5º, inciso LX, da Constituição Federal, os atos processuais, são, em regra, públicos, admitindo-se excepcionalmente o trâmite do processo em segredo de justiça se, no caso concreto, verificar-se presente alguma das hipóteses elencadas no artigo 189 do Código de Processo Civil. Como o presente processo não se amolda à nenhuma das hipóteses, indefiro o pedido de segredo de justiça.Considerando não se enquadrar nos casos de diferimento (art. 5, incs. I a IV, da Lei 11.608/03), nem haver comprovado a momentânea impossibilidade, além do fato que trata-se de pessoa juridica e os valores envolvidos superabundam, em muito, o padrão médio daqueles que são beneficiados por este Juízo, providencie a parte autora o recolhimento das custas iniciais (Lei Estadual nº 11.608, de 29 de dezembro de 2003), observando-se o teor do Comunicado CG nº 1621/2009, no prazo de dez dias, sob pena de indeferimento da inicial (art. 485, I, CPC).No mais, esclareça a divergência entre o endereço do executado informado na exordial (São Paulo) e no cadastrado digital (Brasília). Por fim, ante a informação de prisão, a citação deverá ocorrer por mandado/precatória.Int. Advogados(s): Tamires Lopes Pinheiro de Oliveira (OAB 306970/SP), Heitor Carvalho Silva (OAB 310936/SP)</descricao>
+          <data hash="aad156a5088194b11b981d0b971e03c4" format="d/m/Y">09/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Despacho Fls. 54/56: Recebo a emenda. Nos termos do artigo 5º, inciso LX, da Constituição Federal, os atos processuais, são, em regra, públicos, admitindo-se excepcionalmente o trâmite do processo em segredo de justiça se, no caso concreto, verificar-se presente alguma das hipóteses elencadas no artigo 189 do Código de Processo Civil. Como o presente processo não se amolda à nenhuma das hipóteses, indefiro o pedido de segredo de justiça.Considerando não se enquadrar nos casos de diferimento (art. 5, incs. I a IV, da Lei 11.608/03), nem haver comprovado a momentânea impossibilidade, além do fato que trata-se de pessoa juridica e os valores envolvidos superabundam, em muito, o padrão médio daqueles que são beneficiados por este Juízo, providencie a parte autora o recolhimento das custas iniciais (Lei Estadual nº 11.608, de 29 de dezembro de 2003), observando-se o teor do Comunicado CG nº 1621/2009, no prazo de dez dias, sob pena de indeferimento da inicial (art. 485, I, CPC).No mais, esclareça a divergência entre o endereço do executado informado na exordial (São Paulo) e no cadastrado digital (Brasília). Por fim, ante a informação de prisão, a citação deverá ocorrer por mandado/precatória.Int.</descricao>
+          <data hash="832ff864f076db3d8374d84ed97f9226" format="d/m/Y">08/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Conclusos para Decisão</descricao>
+          <data hash="32d57d3f4be427b04d35a8a954f5d15a" format="d/m/Y">08/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Procuração/substabelecimento Juntada</descricao>
+          <data hash="889430255a9fb11ed18f6984d4731dac" format="d/m/Y">08/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Emenda à Inicial Juntada Nº Protocolo: WSMR.18.70015211-0 Tipo da Petição: Emenda à Inicial Data: 08/03/2018 10:59</descricao>
+          <data hash="c2e0402ae7b1c72dd0b34e6beb3ce1e7" format="d/m/Y">08/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Distribuído Livremente (por Sorteio) (movimentação exclusiva do distribuidor)</descricao>
+          <data hash="29b75d7025549448c7b466311209ed7c" format="d/m/Y">07/03/2018</data>
+        </andamento>
+      </andamentos>
+      <partes>
+        <parte tipo="Exequente">Elijet Participação Societária Ltda</parte>
+        <parte tipo="Executado">Joesley Mendonça Batista</parte>
+      </partes>
+      <tags>
+        <tag tipo="andamentos">ativo</tag>
+      </tags>
+    </processo>
+    <processo filter="1001633-36.2018.8.26.0604/03" id="fc38aed051fd1f745bc5a5f6c21ec141" databaseUrl="http://www.tjsp.jus.br/" databaseName="TJSP" databaseDescription="TJSP - Tribunal de Justiça do Estado de São Paulo" tableName="SegundaInstancia" tableUrl="https://esaj.tjsp.jus.br/cposg/open.do" tableDescription="Processos da Segunda Instância" instancia="2">
+      <instancia>2</instancia>
+      <url_processo>https://esaj.tjsp.jus.br/cposg/search.do;jsessionid=BBB8473535AC5C18DDDFA0D983B9EE86.cposg10?conversationId=&amp;paginaConsulta=1&amp;numeroDigitoAnoUnificado=1001633-36.2018&amp;=8.26&amp;foroNumeroUnificado=0604&amp;dePesquisaNuUnificado=10016333620188260604&amp;dePesquisa=&amp;uuidCaptcha=&amp;localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMPROC&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;tipoNuProcesso=UNIFICADO</url_processo>
+      <numero_processo>2057010-41.2018.8.26.0000</numero_processo>
+      <situacao>Arquivado administrativamente</situacao>
+      <classe>Agravo de Instrumento</classe>
+      <acao>DIREITO CIVIL - Obrigações - Espécies de Contratos - Corretagem</acao>
+      <origem_processo>Comarca de Sumaré / Foro de Sumaré / 2ª Vara Cível</origem_processo>
+      <valor_causa>1.000,00</valor_causa>
+      <observacao>Relator: JAYME QUEIROZ LOPES</observacao>
+      <advogados>
+        <advogado parte="ELIJET PARTICIPAÇÃO SOCIETÁRIA LTDA">Heitor Carvalho Silva</advogado>
+        <advogado parte="ELIJET PARTICIPAÇÃO SOCIETÁRIA LTDA">Tamires Lopes Pinheiro de Oliveira</advogado>
+      </advogados>
+      <andamentos>
+        <andamento>
+          <descricao>Processo encaminhado para o Arquivo Termo de Encaminhamento ao Arquivo [Digital]</descricao>
+          <data hash="62d9fcd7892a94bb573c15515e34c936" format="d/m/Y">13/06/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Expedido Certidão Certidão de Trânsito em Julgado [Digital]</descricao>
+          <data hash="d921b21507baed56f732f0e2d6d29998" format="d/m/Y">13/06/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Trânsito em julgado 11/06/2018</descricao>
+          <data hash="b81e8c4e29d790b3af6df53f4c237b4f" format="d/m/Y">13/06/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Publicado em Disponibilizado em 03/05/2018 Tipo de publicação: Intimação de Acórdão Número do Diário Eletrônico: 2567</descricao>
+          <data hash="601dbbd703ccd869afc69aaa517e908e" format="d/m/Y">04/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Prazo</descricao>
+          <data hash="5c4ba21f9ee6ae9a62af2d50c546336f" format="d/m/Y">03/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Expedido Certidão Certidão de Publicação de Acórdão [Digital]</descricao>
+          <data hash="13d4717bae3537f332d0aead3479e85a" format="d/m/Y">03/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Expedido Certidão Transmissão de e-mail - Resultado do julgamento</descricao>
+          <data hash="da12b926d740c9537e9c004073dd656f" format="d/m/Y">02/05/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Acórdão registrado Acórdão registrado sob nº 20180000312410, com 4 folhas.</descricao>
+          <data hash="37c829da3fc99a6d74e5050dc86ed8bb" format="d/m/Y">28/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Processo encaminhado para o Processamento de Grupos e Câmaras para Intimação do Acórdão - Julgamento Virtual</descricao>
+          <data hash="6b26d024cc1017c11e2388dcd29950c1" format="d/m/Y">27/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Julgado virtualmente Deram provimento em parte ao recurso. V. U.</descricao>
+          <data hash="83f8e2aa713238443ab8879183522918" format="d/m/Y">27/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Julgamento Virtual Iniciado</descricao>
+          <data hash="a56a76d6989d9c57cd1c931307037cca" format="d/m/Y">25/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Conclusos para o Relator</descricao>
+          <data hash="ecb9b8d933fee7872648fecb62a3d911" format="d/m/Y">12/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Petição Intermediária Juntada Nº Protocolo: WPRO.18.00311070-0 Tipo da Petição: Petições Diversas Data: 11/04/2018 17:41</descricao>
+          <data hash="7d240fc6f9a6779f392d3cf06b7c6940" format="d/m/Y">12/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Publicado em Disponibilizado em 03/04/2018 Tipo de publicação: Despacho Número do Diário Eletrônico: 2547</descricao>
+          <data hash="c9b37b2694e740242fdbbdb94df2fdb3" format="d/m/Y">04/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Prazo</descricao>
+          <data hash="aad4c47f9bc162a58c750862739fbc96" format="d/m/Y">03/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Expedido Certidão Certidão de Publicação de Despacho [Digital]</descricao>
+          <data hash="1e06a9c2621ba2646b3e8bc9b8ec4a9f" format="d/m/Y">03/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Publicado em Disponibilizado em 02/04/2018 Tipo de publicação: Distribuídos Número do Diário Eletrônico: 2546</descricao>
+          <data hash="a5d31f7f3ce57989411db23048134160" format="d/m/Y">03/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Publicado em Disponibilizado em 02/04/2018 Tipo de publicação: Entrados Número do Diário Eletrônico: 2546</descricao>
+          <data hash="3a0bab8b3c09c1f59c88e700050492ae" format="d/m/Y">03/04/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Processo encaminhado para o Processamento de Grupos e Câmaras</descricao>
+          <data hash="17f240575fc8b40bde74c860dae44e57" format="d/m/Y">28/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Expedido Certidão Certidão em branco - [Digital]</descricao>
+          <data hash="a460bafac3a916f4736b34551c5698a4" format="d/m/Y">28/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Expedido Ofício Ofício</descricao>
+          <data hash="07200fe543eadfc13e0ad32f14d53aed" format="d/m/Y">28/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Ordenação de entrega de autos Vistos. Processe-se o recurso, que é tempestivo e foi preparado. Por entender presentes os requisitos necessários, antecipo parcialmente a tutela recursal, para o fim de possibilitar o parcelamento de despesas processuais, nos termos do artigo 98, §6º, do CPC, devendo a ora agravante proceder ao recolhimento do valor devido em 10 (dez) parcelas, vencendo-se a primeira no dia 10 de abril p.f. e as demais no mesmo dia dos meses subsequentes. Comunique-se e esclareça ao MM. Juízo "a quo" que não é necessário prestar informações. Intime-se e tornem conclusos para voto. São Paulo, 28 de março de 2018. JAYME QUEIROZ LOPES Relator</descricao>
+          <data hash="eb3c9a5bff66a247c56644d757f599b0" format="d/m/Y">28/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Conclusos para o Relator (Expedido Termo com Conclusão) JAYME QUEIROZ LOPES</descricao>
+          <data hash="21b7ab439583bbb8fdadcde5a63c0b78" format="d/m/Y">27/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Distribuição por Sorteio Órgão Julgador: 55 - 36ª Câmara de Direito Privado Relator: 11764 - Jayme Queiroz Lopes</descricao>
+          <data hash="e2ab97c0fdd140ffaa2400f971a2b25c" format="d/m/Y">27/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Processo encaminhado para a Distribuição de Originários</descricao>
+          <data hash="d9209f2eab77cdec40f9663ef06d535c" format="d/m/Y">27/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Processo Cadastrado SJ 1.2.4.1 - Serv. de Entrada e Distrib. de Feitos Originários de Dir. Privado 3</descricao>
+          <data hash="ee500840bbc2ceff6aa3ce28f35d3e71" format="d/m/Y">27/03/2018</data>
+        </andamento>
+        <andamento>
+          <descricao>Processo encaminhado para outra Seção Motivo: . Seção anterior: Direito Privado Subseção anterior: Direito Privado 2 Seção atual: Direito Privado Subseção atual: Direito Privado 3</descricao>
+          <data hash="3624ecb922facf1c2da5a7876e594e77" format="d/m/Y">26/03/2018</data>
+        </andamento>
+      </andamentos>
+      <partes>
+        <parte tipo="Agravante">ELIJET PARTICIPAÇÃO SOCIETÁRIA LTDA</parte>
+        <parte tipo="Agravado">JOESLEY MENDONÇA BATISTA</parte>
+      </partes>
+      <tags>
+        <tag tipo="andamentos">ativo</tag>
+      </tags>
+    </processo>
+  </body>
 </BPQL>
