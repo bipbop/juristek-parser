@@ -12,7 +12,7 @@ import phpMoment from './php-moment';
 
 
 const numeroRegex = /numero/i;
-const dataRegex = /data/i;
+const dataRegex = /data(?!base)/i;
 
 function camelObject(from) {
   const obj = {};
