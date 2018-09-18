@@ -203,7 +203,8 @@ class Processo extends Parser {
     const { $ } = this;
     return $('andamentos andamento', this.elementProcesso).map((i, andamento) =>
       Object.assign(...flattenDeep($(andamento).children().map((ik, k) =>
-        [{ [camelCase(k.name)]: $(k).text() }, k.attribs || {}]).get()))).get();
+        [{ [camelCase(k.name)]: $(k).text() }, k.attribs || {}]).get()))).get()
+      .reduce((obj, item) => Object.assign(obj, { [item.hash]: item }), {});
   }
 
   get tags() {
