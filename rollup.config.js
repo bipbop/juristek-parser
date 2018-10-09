@@ -26,9 +26,9 @@ module.exports = {
     format: 'umd',
     name: 'JuristekParser',
     globals: {
-      cheerio: "cheerio",
-      moment: "moment",
-      numeral: "numeral",
+      cheerio: 'cheerio',
+      moment: 'moment',
+      numeral: 'numeral',
     },
   },
 };
