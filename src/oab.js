@@ -47,6 +47,6 @@ export default class OAB extends Parser {
   dump() {
     const { $ } = this;
     return $('body advogado processos processo').map((i, processoNode) =>
-      OAB.formatQuery(Processo.formatNumeroProcesso(this.childrenDump(processoNode)))).get()[0];
+      OAB.formatQuery(Processo.formatNumeroProcesso(this.childrenDump(processoNode)))).get();
   }
 }
