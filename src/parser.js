@@ -33,7 +33,9 @@ export default class Parser {
   }
 
   parse() {
-    return Object.assign(this.dump(), { _parserLoaded: new Date(), _parser: pickBy(p, 'version', 'name', 'repository') });
+    let dump = this.dump();
+    if (Array.isArray(dump) || typeof dump !== 'object') dump = { response: dump };
+    return Object.assign(dump, { _parserLoaded: new Date(), _parser: pickBy(p, 'version', 'name', 'repository') });
   }
 
   dump() {
