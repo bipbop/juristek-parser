@@ -1,6 +1,6 @@
 {
   "name": "juristek-parser",
-  "version": "4.1.4",
+  "version": "4.1.5",
   "description": "Parser de XML do BIPBOP Juristek para NodeJS.",
   "main": "lib/index.js",
   "browser": "lib/index.js",
@@ -23,9 +23,9 @@
     "numeral": "^2.0.6"
   },
   "devDependencies": {
-    "camel-case": "^3.0.0",
     "basic-logger": "^0.4.4",
     "body-parser": "^1.18.2",
+    "camel-case": "^3.0.0",
     "es6-error": "^4.1.1",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
