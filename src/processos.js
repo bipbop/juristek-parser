@@ -5,6 +5,7 @@ import map from 'lodash/map';
 import camelCase from 'camel-case';
 import moment from 'moment';
 import CalculateCNJ from 'validate-cnj';
+import fixUtf8 from 'fix-utf8';
 
 import numeral from './numeral-pt-br';
 import Parser from './parser';
@@ -72,7 +73,7 @@ class Processo extends Parser {
     if (!element.length) return df;
     const textValue = element.text();
     Object.assign(attributes, element.get().attribs);
-    return textValue;
+    return fixUtf8(textValue);
   }
 
   attributes(name, df = null) {
@@ -80,7 +81,7 @@ class Processo extends Parser {
     const element = $(this.elementProcesso).children(name);
     if (!element.length) return df;
     const { attribs } = element.get();
-    return attribs ? camelObject(attribs) : df;
+    return attribs ? mapValues(camelObject(attribs), v => fixUtf8(v)) : df;
   }
 
   get dadosCaptura() { return this.elementProcesso.attribs; }
@@ -128,6 +129,7 @@ class Processo extends Parser {
   get justiceSecret() { return this.getter('justiceSecret'); }
   get transitoJulgado() { return this.getter('transitoJulgado'); }
   get urlProcesso() { return this.getter('url_processo'); }
+
   get adicionalAttributes() { return this.attributes('adicional'); }
   get ajuizamentoAttributes() { return this.attributes('ajuizamento'); }
   get areaAttributes() { return this.attributes('area'); }
@@ -185,8 +187,8 @@ class Processo extends Parser {
     const { $ } = this;
     return $('partes parte', this.elementProcesso).map((i, parte) => Object.assign(
       {},
-      camelObject(parte.attribs), {
-        nome: $(parte).text().trim(),
+      mapValues(camelObject(parte.attribs), v => fixUtf8(v)), {
+        nome: fixUtf8($(parte).text().trim()),
       },
     )).get();
   }
@@ -195,7 +197,7 @@ class Processo extends Parser {
     const { $ } = this;
     return $('documentos documento', this.elementProcesso).map((i, andamento) =>
       Object.assign(...flattenDeep($(andamento).children().map((ik, k) =>
-        [{ [camelCase(k.name)]: $(k).text() }, k.attribs || {}]).get()))).get();
+        [{ [camelCase(k.name)]: fixUtf8($(k).text()) }, k.attribs || {}]).get()))).get();
   }
 
 
@@ -203,7 +205,7 @@ class Processo extends Parser {
     const { $ } = this;
     return $('andamentos andamento', this.elementProcesso).map((i, andamento) =>
       Object.assign(...flattenDeep($(andamento).children().map((ik, k) =>
-        [{ [camelCase(k.name)]: $(k).text() }, k.attribs || {}]).get()))).get()
+        [{ [camelCase(k.name)]: fixUtf8($(k).text()) }, k.attribs || {}]).get()))).get()
       .reduce((obj, item) => Object.assign(obj, { [item.hash]: item }), {});
   }
 
@@ -231,6 +233,13 @@ class Processo extends Parser {
 }
 
 class Processos extends Parser {
+  load() {
+    const $ = super.dump();
+    return {
+      processos: $('body > processo').map((i, p) =>
+        new Processo(p, $)).get(),
+    };
+  }
   dump() {
     const $ = super.dump();
     return {

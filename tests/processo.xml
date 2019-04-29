@@ -1,262 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<BPQL><header resourceUse="0"><date-time>20/07/2018 09:19:32</date-time><description>Consulta PJe Primeiro Grau - Tribunal Regional do Trabalho da 4ª Região - RS</description><validRequest>SELECT FROM 'TRT04'.'ConsultaPJePrimeiroGrau' WHERE 'processo' = '00214608220175040334' AND 'reference' = 'CNJ' AND 'numero_processo' = '00214608220175040334'</validRequest><warning push="true" code="2" source="ExceptionDatabase">Não foi possível localizar o processo (0021460-82.2017.5.04.0334)</warning><warning push="true" code="2" source="ExceptionDatabase">Não foi possível localizar o processo (00214608220175040334)</warning><warning push="true" code="2" source="ExceptionDatabase">Não foi possível obter resultado para o número de processo (0021460-82.2017.5.04.0334).</warning><execution-time>61</execution-time><query database="JURISTEK" table="PUSH">SELECT FROM 'JURISTEK'.'PUSH'</query></header><body><processo id="1eef97c9c3b41d56677bd847cb105126" databaseUrl="https://www.trt4.jus.br" databaseName="TRT04" databaseDescription="TRT 04 - Tribunal Regional do Trabalho da 4ª Região - RS" tableName="ConsultaPJePrimeiroGrau" tableUrl="https://pje.trt4.jus.br/consultaprocessual/pages/consultas/ConsultaProcessual.seam" tableDescription="Consulta PJe Primeiro Grau" instancia="1">
+<BPQL>
+  <header resourceUse="0" specialResourceUse="1">
+    <description>Processos da Primeira Instância TJSP</description>
+  </header>
+  <body>
+    <processo filter="1000618-82.2017.8.26.0534/00" origin="esaj" id="47ebcbb470227d4897c680981ea08f69" databaseUrl="http://www.tjsp.jus.br/" databaseName="TJSP" databaseDescription="TJSP - Tribunal de Justiça do Estado de São Paulo" tableName="PrimeiraInstancia" tableUrl="https://esaj.tjsp.jus.br/cpopg/open.do" tableDescription="Processos da Primeira Instância">
       <instancia>1</instancia>
-      <numero_processo>0021460-82.2017.5.04.0334</numero_processo>
-      <classe>RTOrd-</classe>
-      <assunto>Desconfiguração de Justa Causa</assunto>
-      <url_processo>https://pje.trt4.jus.br/consultaprocessual/pages/consultas/DetalhaProcesso.seam?p_num_pje=847836&amp;p_grau_pje=1&amp;popup=0&amp;dt_autuacao=&amp;cid=397376</url_processo>
+      <url_processo>https://esaj.tjsp.jus.br/pastadigital/abrirPastaProcessoDigital.do?nuProcesso=1000618-82.2017.8.26.0534&amp;cdProcesso=EU00006Y70000&amp;cdForo=534&amp;baseIndice=INDDS&amp;nmAlias=PG5SJCADS&amp;tpOrigem=2&amp;flOrigem=P&amp;cdServico=190101&amp;acessibilidade=false&amp;ticket=T4jJROhPaCuRj7QdTtPjU8o7DbaRQP0ciU9v3jTQY9CCy4IUZbNOKN4F0xYudKlvoUWWIvc5NwgZc9daJv2hdpElur%2Bk8m8uHYKEq9vnBjyvkQg%2Fd2Uzp%2BGny%2BKR%2BYOwE4ZYwx65w7OX4pS93VVORsBZpiHhBJhukReAZVN0TXLT5xLC%2Bl7YWqFsBQcY0A4op5DOo9OlvF1qVrmfhyx9bb1BSqOIbJNt0tM%2FZLiYjS1C1RxFHfIRrMVtUJq4Zq0ajN0Z0Rb3nGqiCS0QeubHwnSg2TfY7yiIQP3T66xZKxBnc5e6eZRptbN8T1pUX3dO</url_processo>
+      <numero_processo>1000618-82.2017.8.26.0534</numero_processo>
+      <classe>Procedimento Comum</classe>
+      <area>Cível</area>
+      <acao>Indenização por Dano Moral</acao>
+      <distribuicao format="d/m/Y">11/10/2017</distribuicao>
+      <vara>Vara Única</vara>
+      <foro>Foro de Santa Branca</foro>
+      <valor_causa unidade_monetaria="R$">48.608,00</valor_causa>
+      <eletronico>1</eletronico>
+      <observacao>Juiz: Adriana Vicentin Pezzatti de Carvalho</observacao>
       <advogados>
-        <advogado parte="">LUIZ ANGELO BIANCHI JUNIOR</advogado>
-        <advogado parte="">GUILHERME ORLANDINI SPESSATO</advogado>
-        <advogado parte="">PAULINE METZ</advogado>
+        <advogado parte="José Maria Nogueira">Silvia Palácio de Almeida</advogado>
+        <advogado parte="Maria Eloisa Ugolini">Carlos Pagano Botana Portugal Gouvêa</advogado>
+        <advogado parte="Maria Eloisa Ugolini">Fernando Binatto Tambucci</advogado>
+        <advogado parte="Maria Eloisa Ugolini">Ricardo Rissato</advogado>
+        <advogado parte="Maria Regina Ugolini Chamma">Renata Quintela Tavares Rissato</advogado>
+        <advogado parte="Maria Regina Ugolini Chamma">Aparecida Rosa Martins</advogado>
+        <advogado parte="Maria Regina Ugolini Chamma">Tiago Alcaraz</advogado>
+        <advogado parte="Maria Regina Ugolini Chamma">Marcelo Rubens Lopes de Souza</advogado>
       </advogados>
       <andamentos>
         <andamento>
-          <descricao>Notificação (documento restrito)</descricao>
-          <data hash="8ea23ae65953a407b4899b05b5476965" format="d/m/Y H:i">25/10/2017 16:36</data>
-          <tipo_andamento>EXPEDIENTE</tipo_andamento>
-          <instancia>1</instancia>
-          <nome>ABDOU LAHAT FALL</nome>
-          <meio_expediente>Diário Eletrônico</meio_expediente>
-          <ciencia>27/10/2017 23:59</ciencia>
-          <fechado>S</fechado>
+          <descricao>Processo Completo</descricao>
+          <data hash="ee7aa4371e2c0422690710863af20f5d" format="d/m/Y H:i:s">17/12/2018 19:03:00</data>
+          <url_documento>https://recibos.bipbop.com.br/tjsp_7d737f9154dac211a321f02fa607b8f81e25227c.zip</url_documento>
+          <tipo_andamento>DOCUMENTO</tipo_andamento>
         </andamento>
         <andamento>
-          <descricao>Intimação (documento restrito)</descricao>
-          <data hash="c01d9b56b57839ea71762c877429ae88" format="d/m/Y H:i">25/10/2017 16:36</data>
-          <tipo_andamento>EXPEDIENTE</tipo_andamento>
-          <instancia>1</instancia>
-          <nome>AGROSUL AGROAVICOLA INDUSTRIAL S.A.</nome>
-          <meio_expediente>Correios</meio_expediente>
-          <ciencia>06/11/2017 23:59</ciencia>
-          <fechado>S</fechado>
+          <descricao>Certidão de Publicação Expedida Relação :0775/2018 Data da Disponibilização: 13/12/2018 Data da Publicação: 14/12/2018 Número do Diário: 2717 Página: 652/664</descricao>
+          <data hash="f0b0882bfff2037da6f5b12e396d903d" format="d/m/Y">13/12/2018</data>
         </andamento>
         <andamento>
-          <descricao>Manifestação dos Documentos | Manifestação (documento restrito)</descricao>
-          <data hash="b922110bf62320617079c8c8e533d458" format="d/m/Y H:i:s">22/12/2017 08:42:02</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Remetido ao DJE Relação: 0775/2018 Teor do ato: Vistos. Fls. 336: O pedido na realidade foi formulado pela requerida e não pelo autor, como por equivoco, constou no despacho de fls. 402. Fls. 399 e seguintes: A relação processual está formada, pois já ocorreu a citação dos requeridos, que inclusive apresentaram defesa . Portanto, não há que se falar em substituição de parte como pleiteado pela requerida Maria Eloisa Ugolini, posto que rege o principio da estabilização da demanda. Desta feita, acolho os embargos de declaração apresentados e indefiro o requerimento de fls. 336. No mais, em termos de prosseguimento, manifestem-se as partes. Int. Advogados(s): Ricardo Rissato (OAB 130730/SP), Renata Quintela Tavares Rissato (OAB 150185/SP), Fernando Binatto Tambucci (OAB 192587/SP), Marcelo Rubens Lopes de Souza (OAB 212614/SP), Aparecida Rosa Martins (OAB 232171/SP), Tiago Alcaraz (OAB 241091/SP), Carlos Pagano Botana Portugal Gouvêa (OAB 199725/SP), Silvia Palácio de Almeida (OAB 326351/SP)</descricao>
+          <data hash="ea27b044dc748ee5e05eefc767d65575" format="d/m/Y">12/12/2018</data>
         </andamento>
         <andamento>
-          <descricao>Perfil Profissiográfico Previdenciário (PPP) | Perfil Profissiográfico Previdenciário (PPP) (documento restrito)</descricao>
-          <data hash="98ef5bfc9a1c1700c378d54c5da17172" format="d/m/Y H:i:s">14/12/2017 12:15:35</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Despacho Vistos. Fls. 336: O pedido na realidade foi formulado pela requerida e não pelo autor, como por equivoco, constou no despacho de fls. 402. Fls. 399 e seguintes: A relação processual está formada, pois já ocorreu a citação dos requeridos, que inclusive apresentaram defesa . Portanto, não há que se falar em substituição de parte como pleiteado pela requerida Maria Eloisa Ugolini, posto que rege o principio da estabilização da demanda. Desta feita, acolho os embargos de declaração apresentados e indefiro o requerimento de fls. 336. No mais, em termos de prosseguimento, manifestem-se as partes. Int.</descricao>
+          <data hash="cb67702089f1f3ba5ef62506f8b4aabd" format="d/m/Y">22/11/2018</data>
         </andamento>
         <andamento>
-          <descricao>Documento | Manifestação (documento restrito)</descricao>
-          <data hash="8e57268b7368ed5f14974ca051ec22b2" format="d/m/Y H:i:s">14/12/2017 12:15:35</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Conclusos para Despacho</descricao>
+          <data hash="03f1119eddce667fd467989787e9d217" format="d/m/Y">22/11/2018</data>
         </andamento>
         <andamento>
-          <descricao>Audiência instrução designada (02/08/2018 10:20 - POSTO DA JT DE SÃO SEBASTIÃO DO CAÍ)</descricao>
-          <data hash="2a616d5d2ae5c413fb0149742dded8f2" format="d/m/Y H:i:s">12/12/2017 17:26:16</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Petição Juntada Nº Protocolo: WSBR.18.70006934-5 Tipo da Petição: Petições Diversas Data: 04/09/2018 17:13</descricao>
+          <data hash="ad35a2c9917a31e3c1522583a0088085" format="d/m/Y">04/09/2018</data>
         </andamento>
         <andamento>
-          <descricao>Ata da Audiência | Ata da Audiência</descricao>
-          <data hash="766f8d05fdc1a0775cbb8999d736a2ee" format="d/m/Y H:i:s">11/12/2017 11:27:59</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
-          <url_documento>http://pje.trt4.jus.br/visualizador/pages/conteudo.seam?p_tipo=2&amp;p_grau=1&amp;p_id=eCNE%2B0KQ0ObfN5%2F5oMAy%2Bw%3D%3D&amp;p_idpje=wbjdEDy9ZYw%3D&amp;p_num=wbjdEDy9ZYw%3D&amp;p_npag=x</url_documento>
+          <descricao>Embargos de Declaração Juntados Nº Protocolo: WSBR.18.70006744-0 Tipo da Petição: Embargos de Declaração Data: 29/08/2018 16:36</descricao>
+          <data hash="b137cf5b6ac2c2d285e33b95e96d5b35" format="d/m/Y">29/08/2018</data>
         </andamento>
         <andamento>
-          <descricao>Audiência inicial realizada (11/12/2017 09:30 - POSTO DA JT DE SÃO SEBASTIÃO DO CAÍ)</descricao>
-          <data hash="afd6402381accf02b22265de95cbfaee" format="d/m/Y H:i:s">11/12/2017 11:27:59</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Embargos de Declaração Juntados Nº Protocolo: WSBR.18.70006742-3 Tipo da Petição: Embargos de Declaração Data: 29/08/2018 16:32</descricao>
+          <data hash="b137cf5b6ac2c2d285e33b95e96d5b35" format="d/m/Y">29/08/2018</data>
         </andamento>
         <andamento>
-          <descricao>Documento Diverso | Documento Diverso (documento restrito)</descricao>
-          <data hash="a9e46f9eef0be664b2e6d1516f4f06dd" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Certidão de Publicação Expedida Relação :0537/2018 Data da Disponibilização: 29/08/2018 Data da Publicação: 30/08/2018 Número do Diário: 2648 Página: 595/602</descricao>
+          <data hash="b677a4f32f0867eaf661a8a74292098d" format="d/m/Y">29/08/2018</data>
         </andamento>
         <andamento>
-          <descricao>Documento Diverso | Documento Diverso (documento restrito)</descricao>
-          <data hash="a9e46f9eef0be664b2e6d1516f4f06dd" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Remetido ao DJE Relação: 0537/2018 Teor do ato: Vistos. Fls.336: Sobre o pedido do autor, manifestem-se os contestantes. Int. Advogados(s): Ricardo Rissato (OAB 130730/SP), Renata Quintela Tavares Rissato (OAB 150185/SP), Fernando Binatto Tambucci (OAB 192587/SP), Marcelo Rubens Lopes de Souza (OAB 212614/SP), Aparecida Rosa Martins (OAB 232171/SP), Tiago Alcaraz (OAB 241091/SP), Carlos Pagano Botana Portugal Gouvêa (OAB 199725/SP), Silvia Palácio de Almeida (OAB 326351/SP)</descricao>
+          <data hash="f3d5028812e7434f8fad0e24b8251425" format="d/m/Y">27/08/2018</data>
         </andamento>
         <andamento>
-          <descricao>Documento Diverso | Documento Diverso (documento restrito)</descricao>
-          <data hash="a9e46f9eef0be664b2e6d1516f4f06dd" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Despacho Vistos. Fls.336: Sobre o pedido do autor, manifestem-se os contestantes. Int.</descricao>
+          <data hash="79ab64613d15bf02217bc9ba437bfe4a" format="d/m/Y">22/08/2018</data>
         </andamento>
         <andamento>
-          <descricao>Termo de Rescisão de Contrato de Trabalho (TRCT) | Termo de Rescisão de Contrato de Trabalho (TRCT) (documento restrito)</descricao>
-          <data hash="5a44ac9245b89cb3687a435f4a900a3b" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Conclusos para Despacho</descricao>
+          <data hash="a027336932ef793ee3201fd3275f4ce1" format="d/m/Y">20/08/2018</data>
         </andamento>
         <andamento>
-          <descricao>Documento Diverso | Documento Diverso (documento restrito)</descricao>
-          <data hash="a9e46f9eef0be664b2e6d1516f4f06dd" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Réplica Juntada Nº Protocolo: WSBR.18.70004777-5 Tipo da Petição: Manifestação Sobre a Contestação Data: 02/07/2018 15:48</descricao>
+          <data hash="7b254e2a5bef006e44580247afb33872" format="d/m/Y">02/07/2018</data>
         </andamento>
         <andamento>
-          <descricao>Carta de Preposição | Carta de Preposição (documento restrito)</descricao>
-          <data hash="9b9c6abef8c80468eeb12277316bb9ab" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Réplica Juntada Nº Protocolo: WSBR.18.70004776-7 Tipo da Petição: Manifestação Sobre a Contestação Data: 02/07/2018 15:43</descricao>
+          <data hash="7b254e2a5bef006e44580247afb33872" format="d/m/Y">02/07/2018</data>
         </andamento>
         <andamento>
-          <descricao>Carta de Preposição | Carta de Preposição (documento restrito)</descricao>
-          <data hash="9b9c6abef8c80468eeb12277316bb9ab" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Certidão de Publicação Expedida Relação :0338/2018 Data da Disponibilização: 19/06/2018 Data da Publicação: 20/06/2018 Número do Diário: 2598 Página: 780/787</descricao>
+          <data hash="097f0ae9a3c92566b37706e4d0b01f53" format="d/m/Y">19/06/2018</data>
         </andamento>
         <andamento>
-          <descricao>Ficha de Registro de Empregado | Ficha de Registro de Empregado (documento restrito)</descricao>
-          <data hash="a2032bab1a43da691f12ea9631c396bf" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Remetido ao DJE Relação: 0338/2018 Teor do ato: MANIFESTE-SE O AUTOR. Advogados(s): Ricardo Rissato (OAB 130730/SP), Renata Quintela Tavares Rissato (OAB 150185/SP), Fernando Binatto Tambucci (OAB 192587/SP), Marcelo Rubens Lopes de Souza (OAB 212614/SP), Aparecida Rosa Martins (OAB 232171/SP), Tiago Alcaraz (OAB 241091/SP), Carlos Pagano Botana Portugal Gouvêa (OAB 199725/SP), Silvia Palácio de Almeida (OAB 326351/SP)</descricao>
+          <data hash="26520d2a742081aaeda5f283e6743179" format="d/m/Y">18/06/2018</data>
         </andamento>
         <andamento>
-          <descricao>Extrato de FGTS | Extrato de FGTS (documento restrito)</descricao>
-          <data hash="f01796bfae6b0f2e75a38dd8f4c94de0" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Ato ordinatório MANIFESTE-SE O AUTOR.</descricao>
+          <data hash="dbeb8e637c9a013e4b8be980c09deb4e" format="d/m/Y">14/06/2018</data>
         </andamento>
         <andamento>
-          <descricao>Convenção Coletiva de Trabalho (CCT) | Convenção Coletiva de Trabalho (CCT) (documento restrito)</descricao>
-          <data hash="cbe5492eaa8ab2fcb38c3a8651e84947" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Contestação Juntada Nº Protocolo: WSBR.18.70003984-5 Tipo da Petição: Contestação Data: 04/06/2018 16:51</descricao>
+          <data hash="1e0f8c7e286a0796f8db3ae9d7ff0207" format="d/m/Y">04/06/2018</data>
         </andamento>
         <andamento>
-          <descricao>Cartão de Ponto/Controle de Frequência | Cartão de Ponto/Controle de Frequência (documento restrito)</descricao>
-          <data hash="ab26a07e79bcdd1457bd237ff1e57025" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Contestação Juntada Nº Protocolo: WSBR.18.70003983-7 Tipo da Petição: Contestação Data: 04/06/2018 16:45</descricao>
+          <data hash="1e0f8c7e286a0796f8db3ae9d7ff0207" format="d/m/Y">04/06/2018</data>
         </andamento>
         <andamento>
-          <descricao>Contrato de Trabalho | Contrato de Trabalho (documento restrito)</descricao>
-          <data hash="57e820eb2d9a45c06ed72741b0506c59" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Pedido de Diligência em Novo Endereço Juntado Nº Protocolo: WSBR.18.70003916-0 Tipo da Petição: Petição de Diligência em Novo Endereço Data: 30/05/2018 16:39</descricao>
+          <data hash="417854d413bb893923ce4f5dc2a36d5b" format="d/m/Y">30/05/2018</data>
         </andamento>
         <andamento>
-          <descricao>Contestação | Contestação (documento restrito)</descricao>
-          <data hash="b04ead7cd5db9b5b9d02b3e83845068d" format="d/m/Y H:i:s">10/12/2017 21:26:53</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Certidão de Publicação Expedida Relação :0291/2018 Data da Disponibilização: 29/05/2018 Data da Publicação: 30/05/2018 Número do Diário: 2585 Página: 517/525</descricao>
+          <data hash="a753d229aeda11627ada297068b8c663" format="d/m/Y">29/05/2018</data>
         </andamento>
         <andamento>
-          <descricao>EST ATA PROC | Procuração (documento restrito)</descricao>
-          <data hash="84aad4d4dfe3b1347b4fdd2af394db13" format="d/m/Y H:i:s">10/12/2017 21:18:46</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Remetido ao DJE Relação: 0291/2018 Teor do ato: Recebo a petição de fls. 327/328 como emenda à inicial, procedendo-se a Serventia as necessárias anotações a fim de que Roberto Ugolini Filho e Maria Regina Ugolini Chamma sejam incluídos no polo passivo da demanda.Após, citem-se os requeridos. Advogados(s): Carlos Pagano Botana Portugal Gouvêa (OAB 199725/SP), Silvia Palácio de Almeida (OAB 326351/SP)</descricao>
+          <data hash="b44258a2087a1542cabfac17b39b2700" format="d/m/Y">28/05/2018</data>
         </andamento>
         <andamento>
-          <descricao>Habilitação em processo | Apresentação de Procuração (documento restrito)</descricao>
-          <data hash="b6df931820a4a573fe58dd037b33856b" format="d/m/Y H:i:s">10/12/2017 21:18:46</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>AR Positivo Juntado Juntada de AR : AR853915665TJ Situação : Cumprido Modelo : Processo Digital - Carta - Citação - Rito Comum - Fazenda Pública - NOVO CPC Destinatário : Roberto Ugolini Filho Diligência : 21/05/2018</descricao>
+          <data hash="7e395e282e72de29fe04495419e23fda" format="d/m/Y">24/05/2018</data>
         </andamento>
         <andamento>
-          <descricao>Decorrido o prazo de ABDOU LAHAT FALL em 22/11/2017 23:59:59</descricao>
-          <data hash="2e3a938bd1ca360337f5849c1623f981" format="d/m/Y H:i:s">23/11/2017 01:08:27</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>AR Positivo Juntado Juntada de AR : AR853915679TJ Situação : Cumprido Modelo : Processo Digital - Carta - Citação - Rito Comum - Fazenda Pública - NOVO CPC Destinatário : Maria Regina Ugolini Chamma Diligência : 18/05/2018</descricao>
+          <data hash="f4692b0d756845c3a38c1d2c53f87053" format="d/m/Y">23/05/2018</data>
         </andamento>
         <andamento>
-          <descricao>Decorrido o prazo de AGROSUL AGROAVICOLA INDUSTRIAL S.A. em 22/11/2017 23:59:59</descricao>
-          <data hash="c9e4b9b38c02fd4f8e5c23061a7bb6f9" format="d/m/Y H:i:s">23/11/2017 00:30:03</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Carta Expedida Processo Digital - Carta - Citação - Rito Comum - Fazenda Pública - NOVO CPC</descricao>
+          <data hash="03f7853dffc3a83d4f2b987c3c4c79bf" format="d/m/Y">14/05/2018</data>
         </andamento>
         <andamento>
-          <descricao>Publicado(a) o(a) Notificação em 27/10/2017</descricao>
-          <data hash="d980b368a5b17ab284edcd1459d833b2" format="d/m/Y H:i:s">27/10/2017 00:38:01</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Carta Expedida Processo Digital - Carta - Citação - Rito Comum - Fazenda Pública - NOVO CPC</descricao>
+          <data hash="03f7853dffc3a83d4f2b987c3c4c79bf" format="d/m/Y">14/05/2018</data>
         </andamento>
         <andamento>
-          <descricao>Disponibilizado (a) o(a) Notificação no Diário da Justiça Eletrônico</descricao>
-          <data hash="38e9b69eac1b8aced9d98a76fddd2aa9" format="d/m/Y H:i:s">27/10/2017 00:38:01</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Mero expediente Recebo a petição de fls. 327/328 como emenda à inicial, procedendo-se a Serventia as necessárias anotações a fim de que Roberto Ugolini Filho e Maria Regina Ugolini Chamma sejam incluídos no polo passivo da demanda.Após, citem-se os requeridos.</descricao>
+          <data hash="ff39ee006dfd5bf652ab6548d355c3c6" format="d/m/Y">11/05/2018</data>
         </andamento>
         <andamento>
-          <descricao>Expedido(a) Intimação a(o) destinatário</descricao>
-          <data hash="7c347b5ca20e3a544f3cc734022171b9" format="d/m/Y H:i:s">25/10/2017 16:36:59</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Conclusos para Despacho</descricao>
+          <data hash="b7749e41e6b535abb7ab0cc15e70509d" format="d/m/Y">09/05/2018</data>
         </andamento>
         <andamento>
-          <descricao>Intimação | Intimação (documento restrito)</descricao>
-          <data hash="80dd91df2c33883de5731bc4330a8aee" format="d/m/Y H:i:s">25/10/2017 16:36:58</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Emenda à Inicial Juntada Nº Protocolo: WSBR.18.70001423-0 Tipo da Petição: Emenda à Inicial Data: 12/03/2018 13:24</descricao>
+          <data hash="bfc674f3fc9c99f3528104b54fb1cc7f" format="d/m/Y">12/03/2018</data>
         </andamento>
         <andamento>
-          <descricao>Intimação | Notificação (documento restrito)</descricao>
-          <data hash="db43626ba74a0ed77ffbf73570e5257e" format="d/m/Y H:i:s">25/10/2017 16:36:58</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Certidão de Publicação Expedida Relação :0083/2018 Data da Disponibilização: 06/03/2018 Data da Publicação: 07/03/2018 Número do Diário: 2529 Página: 604/617</descricao>
+          <data hash="f607f13a7ceef7dd4f7d47efd8a13ba3" format="d/m/Y">06/03/2018</data>
         </andamento>
         <andamento>
-          <descricao>Audiência inicial designada (11/12/2017 08:30 - POSTO DA JT DE SÃO SEBASTIÃO DO CAÍ)</descricao>
-          <data hash="7ccb2798e8d5b4d0151c5ce170111652" format="d/m/Y H:i:s">25/10/2017 16:31:50</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Remetido ao DJE Relação: 0083/2018 Teor do ato: Vistos.Intime-se o autor para que, no prazo de quinze (15) dias emende a inicial, a fim de incluir no polo passivo da ação os irmãos da requerida, indicados na contestação a fls. 193, conforme mencionado a fls. 17, mas não de forma expressa. Uma vez que a requerida já concordou com a emenda, desnecessária sua intimação.Int. Advogados(s): Carlos Pagano Botana Portugal Gouvêa (OAB 199725/SP), Silvia Palácio de Almeida (OAB 326351/SP)</descricao>
+          <data hash="d973383d1630ac251a73de232654bd61" format="d/m/Y">05/03/2018</data>
         </andamento>
         <andamento>
-          <descricao>Distribuído por sorteio</descricao>
-          <data hash="1198ed274ada03c85df1ecf91c45904f" format="d/m/Y H:i:s">12/10/2017 18:33:39</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Despacho Vistos.Intime-se o autor para que, no prazo de quinze (15) dias emende a inicial, a fim de incluir no polo passivo da ação os irmãos da requerida, indicados na contestação a fls. 193, conforme mencionado a fls. 17, mas não de forma expressa. Uma vez que a requerida já concordou com a emenda, desnecessária sua intimação.Int.</descricao>
+          <data hash="165c0c0c33a3365e691dc7b88b9a9099" format="d/m/Y">26/02/2018</data>
         </andamento>
         <andamento>
-          <descricao>Lesão | Fotografia (documento restrito)</descricao>
-          <data hash="a2649d40e792064becfc03df3f7547fe" format="d/m/Y H:i:s">12/10/2017 18:32:59</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Conclusos para Despacho</descricao>
+          <data hash="a2494cdfae4d556b2110d909130dcce2" format="d/m/Y">23/02/2018</data>
         </andamento>
         <andamento>
-          <descricao>TRCT | Termo de Homologação de Rescisão do Contrato de Trabalho (documento restrito)</descricao>
-          <data hash="e0c87a7abcfdc9050ab315b547e16f0c" format="d/m/Y H:i:s">12/10/2017 18:32:58</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Petição Juntada Nº Protocolo: WSBR.18.70000076-0 Tipo da Petição: Petição Intermediária Data: 12/01/2018 10:31</descricao>
+          <data hash="d0a6b24b6eea8d226113c96521985b0e" format="d/m/Y">12/01/2018</data>
         </andamento>
         <andamento>
-          <descricao>CTPS | CTPS (documento restrito)</descricao>
-          <data hash="823a252a6d4a6f8f3f060abb09c60b53" format="d/m/Y H:i:s">12/10/2017 18:32:58</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Contestação Juntada Nº Protocolo: WSBR.17.70007817-3 Tipo da Petição: Contestação Data: 14/12/2017 15:01</descricao>
+          <data hash="95e7f30d74a0a6bd7684b5a65c146455" format="d/m/Y">14/12/2017</data>
         </andamento>
         <andamento>
-          <descricao>Declaração | Declaração de Hipossuficiência (documento restrito)</descricao>
-          <data hash="7f70e7953ef3b63ddd7427e53ab63fe7" format="d/m/Y H:i:s">12/10/2017 18:32:57</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>AR Positivo Juntado Juntada de AR : AR774738849TJ Situação : Cumprido Modelo : Processo Digital - Carta - Citação - Rito Comum - Sem Audiência - Cível - NOVO CPC Destinatário : Maria Eloisa Ugolini Diligência : 16/11/2017</descricao>
+          <data hash="2a7646fed1a33c28a9e0c13a999a9f19" format="d/m/Y">22/11/2017</data>
         </andamento>
         <andamento>
-          <descricao>Inicial Abdou Lahat Fall | Petição Inicial (documento restrito)</descricao>
-          <data hash="07fa154ee65b850831032b0337bc3f88" format="d/m/Y H:i:s">12/10/2017 18:32:57</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Certidão de Publicação Expedida Relação :0630/2017 Data da Disponibilização: 07/11/2017 Data da Publicação: 08/11/2017 Número do Diário: 2464 Página: 636/641</descricao>
+          <data hash="218fecb11f0ce4c67c596a76dfcb4bbc" format="d/m/Y">07/11/2017</data>
         </andamento>
         <andamento>
-          <descricao>Procuração | Procuração (documento restrito)</descricao>
-          <data hash="124ca398b57bfa690284d6ae00608475" format="d/m/Y H:i:s">12/10/2017 18:32:56</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Remetido ao DJE Relação: 0630/2017 Teor do ato: VistosConcedo ao(a) autor(a) os benefícios da justiça gratuita, bem como a prioridade na tramitação do feito, nos termos da Lei 10741/03. A despeito do disposto no artigo 334, CPC, o caso concreto indica que a designação de audiência neste momento processual se mostra contraproducente, haja vista reiterados revezes nas tentativas de composição nesta modalidade de demanda, tanto em função da persistência de uma das partes quanto à tese defendida, quanto diante da insuficiência de elementos que a convençam do contrário.Deste modo, considerando a dilatação temporal que seria imposta de maneira inócua ao processo com a designação da audiência inaugural, bem como a necessidade de observância da garantia constitucional de duração razoável do processo (art. 5º, LXXVIII, CF), posterga-se para depois da réplica sua realização, se o caso, propiciando que a antecipação na oferta de elementos de convicção pelas partes, na forma do artigo 139, VI, CPC, torne a tentativa de composição mais viável.Cuida-se, por fim, de observar os princípios da razoabilidade e da eficiência na aplicação da lei processual, a teor do disposto no artigo 8º, CPC, bem assim imprimir cumprimento à garantia do devido processo legal em sua concepção material, ajustando o melhor do procedimento às peculiaridades do caso concreto.Cite-se para resposta em 15 (quinze) dias, com as advertências do art. 344, CPC. Advogados(s): Silvia Palácio de Almeida (OAB 326351/SP)</descricao>
+          <data hash="905dd1ddc5b67ad6a526c7bcc7964368" format="d/m/Y">06/11/2017</data>
         </andamento>
         <andamento>
-          <descricao>Petição em PDF | Petição em PDF (documento restrito)</descricao>
-          <data hash="8febc186d3c62b6642244af9b2d4fe4e" format="d/m/Y H:i:s">12/10/2017 18:32:56</data>
-          <tipo_andamento>ANDAMENTO</tipo_andamento>
-          <instancia>1</instancia>
+          <descricao>Carta Expedida Processo Digital - Carta - Citação - Rito Comum - Sem Audiência - Cível - NOVO CPC</descricao>
+          <data hash="b65d72a6228dc6af56ece65007538e21" format="d/m/Y">01/11/2017</data>
+        </andamento>
+        <andamento>
+          <descricao>Despacho VistosConcedo ao(a) autor(a) os benefícios da justiça gratuita, bem como a prioridade na tramitação do feito, nos termos da Lei 10741/03. A despeito do disposto no artigo 334, CPC, o caso concreto indica que a designação de audiência neste momento processual se mostra contraproducente, haja vista reiterados revezes nas tentativas de composição nesta modalidade de demanda, tanto em função da persistência de uma das partes quanto à tese defendida, quanto diante da insuficiência de elementos que a convençam do contrário.Deste modo, considerando a dilatação temporal que seria imposta de maneira inócua ao processo com a designação da audiência inaugural, bem como a necessidade de observância da garantia constitucional de duração razoável do processo (art. 5º, LXXVIII, CF), posterga-se para depois da réplica sua realização, se o caso, propiciando que a antecipação na oferta de elementos de convicção pelas partes, na forma do artigo 139, VI, CPC, torne a tentativa de composição mais viável.Cuida-se, por fim, de observar os princípios da razoabilidade e da eficiência na aplicação da lei processual, a teor do disposto no artigo 8º, CPC, bem assim imprimir cumprimento à garantia do devido processo legal em sua concepção material, ajustando o melhor do procedimento às peculiaridades do caso concreto.Cite-se para resposta em 15 (quinze) dias, com as advertências do art. 344, CPC.</descricao>
+          <data hash="f77189b42646b3f6e657b888576d9b30" format="d/m/Y">31/10/2017</data>
+        </andamento>
+        <andamento>
+          <descricao>Conclusos para Despacho</descricao>
+          <data hash="ce4f8bb5da6cd138ddb0eb1f30d49ec3" format="d/m/Y">23/10/2017</data>
+        </andamento>
+        <andamento>
+          <descricao>Distribuído Livremente (por Sorteio) (movimentação exclusiva do distribuidor)</descricao>
+          <data hash="3c3e7858bce24f9e7f2212177e73d577" format="d/m/Y">11/10/2017</data>
         </andamento>
       </andamentos>
       <partes>
-        <parte tipo="Autor">ABDOU LAHAT FALL</parte>
-        <parte tipo="Réu">AGROSUL AGROAVICOLA INDUSTRIAL S.A.</parte>
+        <parte tipo="Requerente">José Maria Nogueira</parte>
+        <parte tipo="Requerido">Maria Eloisa Ugolini</parte>
+        <parte tipo="Requerido">Roberto Ugolini Filho</parte>
+        <parte tipo="Requerido">Maria Regina Ugolini Chamma</parte>
+        <parte tipo="TerIntCer">Roberto Ugolini</parte>
       </partes>
-    </processo></body></BPQL>
+      <documentos>
+        <documento>
+          <descricao>Processo Completo</descricao>
+          <data format="d/m/Y H:i:s">17/12/2018 19:03:00</data>
+          <url>https://recibos.bipbop.com.br/tjsp_7d737f9154dac211a321f02fa607b8f81e25227c.zip</url>
+        </documento>
+      </documentos>
+      <tags>
+        <tag tipo="andamentos">ativo</tag>
+      </tags>
+    </processo>
+  </body>
+</BPQL>

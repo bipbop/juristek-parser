@@ -19,6 +19,7 @@
   "homepage": "https://github.com/bipbop/juristek-parser#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "fix-utf8": "^1.0.4",
     "moment": "^2.20.1",
     "numeral": "^2.0.6"
   },

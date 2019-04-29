@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BPQL>
+  <header specialResourceUse="0" resourceUse="0">
+    <date-time>18/10/2018 11:37:23</date-time>
+    <execution-time>14</execution-time>
+    <query database="JURISTEK" table="PUSHOAB">SELECT FROM 'JURISTEK'.'PUSHOAB'</query>
+  </header>
+  <body>
+    <advogado>
+      <processos>
+        <processo>
+          <numero_processo>1062303-97.2018.8.26.0100</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=2S000VOHJ0000&amp;processo.foro=100&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1062303-97.2018.8.26.0100</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1077925-56.2017.8.26.0100</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=2S000R0NK0000&amp;processo.foro=100&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1077925-56.2017.8.26.0100</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>0005731-32.2004.8.26.0100</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=2SZX54SPV0000&amp;processo.foro=100&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <numero_antigo>583.00.2004.005731</numero_antigo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">0005731-32.2004.8.26.0100</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>0007318-93.2014.8.26.0050</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=1E001PH6T0000&amp;processo.foro=50&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">0007318-93.2014.8.26.0050</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>0554427-32.0089.8.26.0014</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=0EZ1HBGMZ0000&amp;processo.foro=14&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">0554427-32.0089.8.26.0014</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>3008670-19.2013.8.26.0099</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=2R0000AHT0000&amp;processo.foro=99&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">3008670-19.2013.8.26.0099</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1000736-54.2018.8.26.0233</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=6H0000FZ10000&amp;processo.foro=233&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1000736-54.2018.8.26.0233</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1000258-36.2015.8.26.0238</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=6M0000CAX0000&amp;processo.foro=238&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1000258-36.2015.8.26.0238</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1032979-65.2018.8.26.0002</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=02001KL500000&amp;processo.foro=2&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1032979-65.2018.8.26.0002</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1016453-23.2018.8.26.0002</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=02001JNEH0000&amp;processo.foro=2&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1016453-23.2018.8.26.0002</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1008699-30.2018.8.26.0002</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=02001J8IJ0000&amp;processo.foro=2&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1008699-30.2018.8.26.0002</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1054110-33.2017.8.26.0002</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=02001I9IY0000&amp;processo.foro=2&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1054110-33.2017.8.26.0002</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1039383-37.2015.8.26.0100</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=2S000GJHE0000&amp;processo.foro=2&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1039383-37.2015.8.26.0100</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>0010465-23.2018.8.26.0007</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=07001ANYA0000&amp;processo.foro=6&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">0010465-23.2018.8.26.0007</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1004953-39.2018.8.26.0008</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=080015D980000&amp;processo.foro=8&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1004953-39.2018.8.26.0008</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1003754-43.2018.8.26.0020</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=0K0004VBJ0000&amp;processo.foro=20&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1003754-43.2018.8.26.0020</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1014226-71.2016.8.26.0021</numero_processo>
+          <instancia>1</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cpopg/show.do?processo.codigo=0L0005WOT0000&amp;processo.foro=21&amp;conversationId=&amp;dadosConsulta.localPesquisa.cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;dadosConsulta.tipoNuProcesso=UNIFICADO&amp;dadosConsulta.valorConsulta=292175SP&amp;paginaConsulta=1</url_processo>
+          <tribunal_consulta>PrimeiraInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1014226-71.2016.8.26.0021</parametro>
+          </parametros>
+        </processo>
+      </processos>
+    </advogado>
+    <advogado>
+      <processos>
+        <processo>
+          <numero_processo>3008670-19.2013.8.26.0099</numero_processo>
+          <instancia>2</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cposg/show.do;jsessionid=174F27AE702771C46EC2FC1D67C670C6.cposg4?processo.codigo=RI004KV8O0000&amp;conversationId=&amp;paginaConsulta=1&amp;localPesquisa_cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;tipoNuProcesso=UNIFICADO&amp;dePesquisa=292175-SP&amp;uuidCaptcha=&amp;pbEnviar=Pesquisar</url_processo>
+          <tribunal_consulta>SegundaInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">3008670-19.2013.8.26.0099</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>2128450-97.2018.8.26.0000</numero_processo>
+          <instancia>2</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cposg/show.do;jsessionid=174F27AE702771C46EC2FC1D67C670C6.cposg4?processo.codigo=RI004LTQ40000&amp;conversationId=&amp;paginaConsulta=1&amp;localPesquisa_cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;tipoNuProcesso=UNIFICADO&amp;dePesquisa=292175-SP&amp;uuidCaptcha=&amp;pbEnviar=Pesquisar</url_processo>
+          <tribunal_consulta>SegundaInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">2128450-97.2018.8.26.0000</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>2137923-10.2018.8.26.0000</numero_processo>
+          <instancia>2</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cposg/show.do;jsessionid=174F27AE702771C46EC2FC1D67C670C6.cposg4?processo.codigo=RI004MJPT0000&amp;conversationId=&amp;paginaConsulta=1&amp;localPesquisa_cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;tipoNuProcesso=UNIFICADO&amp;dePesquisa=292175-SP&amp;uuidCaptcha=&amp;pbEnviar=Pesquisar</url_processo>
+          <tribunal_consulta>SegundaInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">2137923-10.2018.8.26.0000</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1077925-56.2017.8.26.0100</numero_processo>
+          <instancia>2</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cposg/show.do;jsessionid=174F27AE702771C46EC2FC1D67C670C6.cposg4?processo.codigo=RI004LZA20000&amp;conversationId=&amp;paginaConsulta=1&amp;localPesquisa_cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;tipoNuProcesso=UNIFICADO&amp;dePesquisa=292175-SP&amp;uuidCaptcha=&amp;pbEnviar=Pesquisar</url_processo>
+          <tribunal_consulta>SegundaInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1077925-56.2017.8.26.0100</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1100766-45.2017.8.26.0100</numero_processo>
+          <instancia>2</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cposg/show.do;jsessionid=174F27AE702771C46EC2FC1D67C670C6.cposg4?processo.codigo=RI004I0OB0000&amp;conversationId=&amp;paginaConsulta=1&amp;localPesquisa_cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;tipoNuProcesso=UNIFICADO&amp;dePesquisa=292175-SP&amp;uuidCaptcha=&amp;pbEnviar=Pesquisar</url_processo>
+          <tribunal_consulta>SegundaInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1100766-45.2017.8.26.0100</parametro>
+          </parametros>
+        </processo>
+        <processo>
+          <numero_processo>1054110-33.2017.8.26.0002</numero_processo>
+          <instancia>2</instancia>
+          <tribunal_nome>TJSP</tribunal_nome>
+          <url_processo>https://esaj.tjsp.jus.br//cposg/show.do;jsessionid=174F27AE702771C46EC2FC1D67C670C6.cposg4?processo.codigo=RI004IEEB0000&amp;conversationId=&amp;paginaConsulta=1&amp;localPesquisa_cdLocal=-1&amp;cbPesquisa=NUMOAB&amp;tipoNuProcesso=UNIFICADO&amp;dePesquisa=292175-SP&amp;uuidCaptcha=&amp;pbEnviar=Pesquisar</url_processo>
+          <tribunal_consulta>SegundaInstancia</tribunal_consulta>
+          <parametros>
+            <parametro name="numero_processo">1054110-33.2017.8.26.0002</parametro>
+          </parametros>
+        </processo>
+      </processos>
+    </advogado>
+  </body>
+</BPQL>

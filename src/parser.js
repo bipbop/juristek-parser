@@ -15,6 +15,7 @@ export default class Parser {
     throw new Exception({
       message: exception.text(),
       source: exception.attr('source'),
+      push: exception.attr('push') !== 'false',
       code: parseInt(exception.attr('code'), 10) || 0,
       log: exception.attr('log'),
     });
