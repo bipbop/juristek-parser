@@ -7,9 +7,10 @@ export default class Info extends Parser {
       table: tableNode.attribs,
       database: databaseNode.attribs,
       fields: $('field', tableNode).map((fi, fieldNode) => Object.assign(fieldNode.attribs, {
+        otherMasks: $('alternative_mask', fieldNode).map((oi, optionNode) => $(optionNode).text()).get(),
         options: $('option', fieldNode).map((oi, optionNode) => Object.assign(optionNode.attribs, {
           text: $(optionNode).text(),
-        })).get(0),
+        })).get(),
       })).get(),
     })).get()).get();
   }

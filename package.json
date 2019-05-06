@@ -20,28 +20,28 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "fix-utf8": "^1.0.4",
-    "moment": "^2.20.1",
+    "moment": "^2.24.0",
     "numeral": "^2.0.6"
   },
   "devDependencies": {
     "basic-logger": "^0.4.4",
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.19.0",
     "camel-case": "^3.0.0",
     "es6-error": "^4.1.1",
-    "eslint": "^4.15.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-flowtype": "^2.41.0",
-    "eslint-plugin-import": "^2.9.0",
-    "express": "^4.16.2",
-    "lodash": "^4.17.5",
-    "mocha": "^5.1.1",
-    "rollup-plugin-buble": "^0.19.2",
-    "rollup-plugin-commonjs": "^9.1.0",
-    "rollup-plugin-filesize": "^1.5.0",
-    "rollup-plugin-json": "^2.3.0",
-    "rollup-plugin-node-resolve": "^3.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-flowtype": "^3.7.0",
+    "eslint-plugin-import": "^2.17.2",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mocha": "^6.1.4",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-uglify-es": "^0.0.1",
     "tinydb": "^0.1.0",
-    "validate-cnj": "^1.0.7"
+    "validate-cnj": "^1.0.8"
   }
 }
