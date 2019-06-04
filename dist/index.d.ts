@@ -235,30 +235,30 @@ type ProcessosReturn = ArrayParser<ProcessoData.RootObject>;
 type OABReturn = ArrayParser<OABData.RootObject>;
 type InfoReturn = ArrayParser<InfoData.RootObject>;
 
-class Parser<T = Cheerio> {
-  constructor(u: Cheerio);
-  load(): T & ParserInformation;
+declare class Parser<T = Cheerio> {
+  public constructor(u: Cheerio);
+  public load(): T & ParserInformation;
 }
 
 export class Info extends Parser<InfoReturn> {
-  static openString(u: string): Info<InfoReturn>;
-  static compatible(info: InfoData.RootObject[], procNumber: string, fieldName?: string): InfoData.RootObject[];
+  public static openString(u: string): Parser<InfoReturn>;
+  public static compatible(info: InfoData.RootObject[], procNumber: string, fieldName?: string): InfoData.RootObject[];
 }
 
 export class OAB extends Parser<OABReturn> {
-  static openString(u: string): Info<OABReturn>;
+  public static openString(u: string): Parser<OABReturn>;
 }
 
 export class Processos extends Parser<ProcessosReturn> {
-  static openString(u: string): Info<ProcessosReturn>;
+  public static openString(u: string): Parser<ProcessosReturn>;
 }
 
 export class JuristekException extends Error {
-  source?: string | null;
-  log?: string | null;
-  push?: boolean;
-  code?: number;
-  toString(): string;
+  public source?: string | null;
+  public log?: string | null;
+  public push?: boolean;
+  public code?: number;
+  public toString(): string;
 }
 
 export class JuristekInstanceException extends JuristekException { }

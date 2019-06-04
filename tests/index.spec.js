@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const { Info, OAB, Processos } = require('../lib/index.js');
+const { Info, OAB, Processos } = require('../dist/index.js');
 
 describe('info', () => {
   it('info.xml', () => {

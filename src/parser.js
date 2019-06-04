@@ -1,9 +1,8 @@
 import cheerio from 'cheerio';
-import pick from 'lodash/pick';
 import objectAssign from 'object-assign';
 
 import { Exception } from './exceptions';
-import p from '../package.json';
+import { version, name, repository } from '../package.json';
 
 export default class Parser {
   constructor(cherrioObject) {
@@ -36,7 +35,10 @@ export default class Parser {
   parse() {
     let dump = this.dump();
     if (Array.isArray(dump) || typeof dump !== 'object') dump = { response: dump };
-    return objectAssign(dump, { _parserLoaded: new Date(), _parser: pick(p, 'version', 'name', 'repository') });
+    return objectAssign(dump, {
+      _parserLoaded: new Date(),
+      _parser: { version, name, repository },
+    });
   }
 
   dump() {

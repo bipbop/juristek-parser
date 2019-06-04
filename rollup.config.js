@@ -29,6 +29,7 @@ module.exports = {
       cheerio: 'cheerio',
       moment: 'moment',
       numeral: 'numeral',
+      'validate-cnj': 'ValidateCNJ',
     },
   },
 };
