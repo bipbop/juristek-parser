@@ -1,5 +1,6 @@
 import cheerio from 'cheerio';
-import pickBy from 'lodash/pickBy';
+import pick from 'lodash/pick';
+import objectAssign from 'object-assign';
 
 import { Exception } from './exceptions';
 import p from '../package.json';
@@ -12,17 +13,16 @@ export default class Parser {
   assertDocument() {
     const exception = this.$('BPQL > header > exception');
     if (!exception.length) return;
-    throw new Exception({
-      message: exception.text(),
-      source: exception.attr('source'),
+    throw objectAssign(new Exception(exception.text()), {
+      source: exception.attr('source') || null,
       push: exception.attr('push') !== 'false',
       code: parseInt(exception.attr('code'), 10) || 0,
-      log: exception.attr('log'),
+      log: exception.attr('log') || null,
     });
   }
 
-  static openString(str, ParserClass = Parser) {
-    return new ParserClass(cheerio.load(str, {
+  static openString(str) {
+    return new this(cheerio.load(str, {
       normalizeWhitespace: true,
       xmlMode: true,
     }));
@@ -36,7 +36,7 @@ export default class Parser {
   parse() {
     let dump = this.dump();
     if (Array.isArray(dump) || typeof dump !== 'object') dump = { response: dump };
-    return Object.assign(dump, { _parserLoaded: new Date(), _parser: pickBy(p, 'version', 'name', 'repository') });
+    return objectAssign(dump, { _parserLoaded: new Date(), _parser: pick(p, 'version', 'name', 'repository') });
   }
 
   dump() {

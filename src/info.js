@@ -1,3 +1,5 @@
+import objectAssign from 'object-assign';
+
 import Parser from './parser';
 
 export default class Info extends Parser {
@@ -17,9 +19,9 @@ export default class Info extends Parser {
     return $('database').map((i, databaseNode) => $('table', databaseNode).map((it, tableNode) => ({
       table: tableNode.attribs,
       database: databaseNode.attribs,
-      fields: $('field', tableNode).map((fi, fieldNode) => Object.assign(fieldNode.attribs, {
+      fields: $('field', tableNode).map((fi, fieldNode) => objectAssign(fieldNode.attribs, {
         otherMasks: $('alternative_mask', fieldNode).map((oi, optionNode) => $(optionNode).text()).get(),
-        options: $('option', fieldNode).map((oi, optionNode) => Object.assign(optionNode.attribs, {
+        options: $('option', fieldNode).map((oi, optionNode) => objectAssign(optionNode.attribs, {
           text: $(optionNode).text(),
         })).get(),
       })).get(),

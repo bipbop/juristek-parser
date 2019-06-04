@@ -1,5 +1,6 @@
 import camelCase from 'camel-case';
 import pickBy from 'lodash/pickBy';
+import objectAssign from 'object-assign';
 
 import Parser from './parser';
 import { Processo } from './processos';
@@ -8,7 +9,7 @@ export default class OAB extends Parser {
   readNode(key, node) {
     const { $ } = this;
 
-    return pickBy(Object.assign({}, node.attribs, {
+    return pickBy(objectAssign({}, node.attribs, {
       [key]: $(node).text().trim(),
     }), v => !!v);
   }
@@ -23,7 +24,7 @@ export default class OAB extends Parser {
       return this.readNode(camelCase(node.name), node);
     }
 
-    return Object.assign(...nodeChildren.map((ip, e) => {
+    return objectAssign(...nodeChildren.map((ip, e) => {
       const key = camelCase(e.name);
 
       const elementChildren = $(e).children();
@@ -46,7 +47,7 @@ export default class OAB extends Parser {
 
   dump() {
     const { $ } = this;
-    return $('body advogado processos processo').map((i, processoNode) =>
-      OAB.formatQuery(Processo.formatNumeroProcesso(this.childrenDump(processoNode)))).get();
+    return $('body advogado processos processo').map((i, processoNode) => OAB
+      .formatQuery(Processo.formatNumeroProcesso(this.childrenDump(processoNode)))).get();
   }
 }

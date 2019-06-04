@@ -3,12 +3,12 @@ import findKey from 'lodash/findKey';
 
 class JuristekException extends ExtendableError {
   toString() {
-    return this.message.message || this.message;
+    return this.message;
   }
 }
 
-class JuristekInstanceException extends JuristekException {}/* Erros de Robô */
-class JuristekParserException extends JuristekException {}/* Erros de Interpretação */
+class JuristekInstanceException extends JuristekException {} /* Erros de Robô */
+class JuristekParserException extends JuristekException {} /* Erros de Interpretação */
 
 const errorCodes = {
   E_INTERNAL_USER_BLOCKED: 0, // Usuário Bloqueado

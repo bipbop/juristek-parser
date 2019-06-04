@@ -1,4 +1,3 @@
-import Parser from './parser';
 import Info from './info';
 import OAB from './oab';
 import Processos from './processos';
@@ -8,7 +7,6 @@ export {
   Processos,
   ExceptionCodes,
   exceptions,
-  Parser,
   Info,
   OAB,
 };
