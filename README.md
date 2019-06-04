@@ -18,8 +18,8 @@ npm install juristek-parser --save
 # TL-DR
 
 ```js
-const { Parser, Processos } = require('juristek-parser');
-console.log(Parser.openString(xml, Processos).processos);
+const { Processos } = require('juristek-parser');
+console.log(Processos.openString(xml).response);
 ```
 
 ## Tests
