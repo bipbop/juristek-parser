@@ -3,7 +3,7 @@ import pickBy from 'lodash/pickBy';
 import objectAssign from 'object-assign';
 
 import Parser from './parser';
-import { Processo } from './processos';
+import { formatNumeroProcesso } from './processo';
 
 export default class OAB extends Parser {
   readNode(key, node) {
@@ -48,6 +48,6 @@ export default class OAB extends Parser {
   dump() {
     const { $ } = this;
     return $('body advogado processos processo').map((i, processoNode) => OAB
-      .formatQuery(Processo.formatNumeroProcesso(this.childrenDump(processoNode)))).get();
+      .formatQuery(formatNumeroProcesso(this.childrenDump(processoNode)))).get();
   }
 }

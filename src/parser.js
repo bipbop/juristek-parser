@@ -1,7 +1,7 @@
 import cheerio from 'cheerio';
 import objectAssign from 'object-assign';
 
-import { Exception } from './exceptions';
+import { JuristekException as Exception } from './exceptions';
 import { version, name, repository } from '../package.json';
 
 export default class Parser {

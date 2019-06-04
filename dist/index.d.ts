@@ -261,6 +261,8 @@ export class JuristekException extends Error {
   public toString(): string;
 }
 
+export function formatNumeroProcesso(proc: string): string;
+export function exceptionCodename(code: number): string;
 export class JuristekInstanceException extends JuristekException { }
 export class JuristekParserException extends JuristekException { }
 

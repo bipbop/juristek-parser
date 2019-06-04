@@ -1,14 +1,11 @@
-import Info from './info';
-import OAB from './oab';
-import Processos from './processos';
-import ExceptionCodes, * as exceptions from './exceptions';
-
+export { default as Info } from './info';
+export { default as OAB } from './oab';
+export { default as Processos } from './processos';
+export { formatNumeroProcesso } from './processo';
 export {
-  Processos,
-  ExceptionCodes,
-  exceptions,
-  Info,
-  OAB,
-};
-
-export default Processos;
+  default as ExceptionCodes,
+  codename as exceptionCodename,
+  JuristekException,
+  JuristekInstanceException,
+  JuristekParserException,
+} from './exceptions';

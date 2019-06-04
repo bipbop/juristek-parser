@@ -1,15 +1,6 @@
 import ExtendableError from 'es6-error';
 import findKey from 'lodash/findKey';
 
-class JuristekException extends ExtendableError {
-  toString() {
-    return this.message;
-  }
-}
-
-class JuristekInstanceException extends JuristekException {} /* Erros de Robô */
-class JuristekParserException extends JuristekException {} /* Erros de Interpretação */
-
 const errorCodes = {
   E_INTERNAL_USER_BLOCKED: 0, // Usuário Bloqueado
   E_TABLE_NOT_FOUND: 1, // Tipo de consulta inexistente
@@ -57,6 +48,11 @@ export function codename(k) {
   return findKey(errorCodes, n => n === k) || 'E_UNKNOWN';
 }
 
-export { JuristekInstanceException as Instance };
-export { JuristekException as Exception };
-export { JuristekParserException as Parser };
+export class JuristekException extends ExtendableError {
+  toString() {
+    return this.message;
+  }
+}
+
+export class JuristekInstanceException extends JuristekException {} /* Erros de Robô */
+export class JuristekParserException extends JuristekException {} /* Erros de Interpretação */
