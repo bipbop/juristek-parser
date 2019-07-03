@@ -8,13 +8,15 @@ import moment from 'moment';
 import CalculateCNJ from 'validate-cnj';
 import fixUtf8 from 'fix-utf8';
 import objectAssign from 'object-assign';
+import numeral from 'numeral';
 
-import numeral from './numeral-pt-br';
 import Parser from './parser';
 import phpMoment from './php-moment';
 
 const numeroRegex = /numero/i;
 const dataRegex = /data(?!base)/i;
+
+numeral.locale('pt-br');
 
 function camelObject(from) {
   const obj = {};
