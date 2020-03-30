@@ -1,4 +1,3 @@
-import ExtendableError from 'es6-error';
 import findKey from 'lodash/findKey';
 
 const errorCodes = {
@@ -45,14 +44,5 @@ const errorCodes = {
 export default errorCodes;
 
 export function codename(k) {
-  return findKey(errorCodes, n => n === k) || 'E_UNKNOWN';
+  return findKey(errorCodes, (n) => n === k) || 'E_UNKNOWN';
 }
-
-export class JuristekException extends ExtendableError {
-  toString() {
-    return this.message;
-  }
-}
-
-export class JuristekInstanceException extends JuristekException {} /* Erros de Robô */
-export class JuristekParserException extends JuristekException {} /* Erros de Interpretação */

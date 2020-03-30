@@ -1,1 +1,4808 @@
-!function(u,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports,require("cheerio"),require("moment"),require("validate-cnj"),require("numeral")):"function"==typeof define&&define.amd?define(["exports","cheerio","moment","validate-cnj","numeral"],t):t((u=u||self).JuristekParser={},u.cheerio,u.moment,u.ValidateCNJ,u.numeral)}(this,function(u,t,A,r,a){"use strict";t=t&&t.hasOwnProperty("default")?t.default:t,A=A&&A.hasOwnProperty("default")?A.default:A,r=r&&r.hasOwnProperty("default")?r.default:r,a=a&&a.hasOwnProperty("default")?a.default:a;var E=Object.getOwnPropertySymbols,c=Object.prototype.hasOwnProperty,C=Object.prototype.propertyIsEnumerable;var i=function(){try{if(!Object.assign)return!1;var u=new String("abc");if(u[5]="de","5"===Object.getOwnPropertyNames(u)[0])return!1;for(var t={},e=0;e<10;e++)t["_"+String.fromCharCode(e)]=e;if("0123456789"!==Object.getOwnPropertyNames(t).map(function(u){return t[u]}).join(""))return!1;var r={};return"abcdefghijklmnopqrst".split("").forEach(function(u){r[u]=u}),"abcdefghijklmnopqrst"===Object.keys(Object.assign({},r)).join("")}catch(u){return!1}}()?Object.assign:function(u,t){for(var e,r,n=arguments,o=function(u){if(null==u)throw new TypeError("Object.assign cannot be called with null or undefined");return Object(u)}(u),A=1;A<arguments.length;A++){for(var a in e=Object(n[A]))c.call(e,a)&&(o[a]=e[a]);if(E){r=E(e);for(var i=0;i<r.length;i++)C.call(e,r[i])&&(o[r[i]]=e[r[i]])}}return o};function e(u,t){if(!u)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?u:t}var n,o=(function(u,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);u.prototype=Object.create(t&&t.prototype,{constructor:{value:u,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(u,t):u.__proto__=t)}(F,(n=Error,s.prototype=Object.create(n.prototype,{constructor:{value:n,enumerable:!1,writable:!0,configurable:!0}}),Object.setPrototypeOf?Object.setPrototypeOf(s,n):s.__proto__=n,s)),F);function s(){n.apply(this,arguments)}function F(){var u=0<arguments.length&&void 0!==arguments[0]?arguments[0]:"";!function(u,t){if(!(u instanceof t))throw new TypeError("Cannot call a class as a function")}(this,F);var t=e(this,(F.__proto__||Object.getPrototypeOf(F)).call(this,u));return Object.defineProperty(t,"message",{configurable:!0,enumerable:!1,value:u,writable:!0}),Object.defineProperty(t,"name",{configurable:!0,enumerable:!1,value:t.constructor.name,writable:!0}),Error.hasOwnProperty("captureStackTrace")?(Error.captureStackTrace(t,t.constructor),e(t)):(Object.defineProperty(t,"stack",{configurable:!0,enumerable:!1,value:new Error(u).stack,writable:!0}),t)}var l=function(u,r,t){var n;return t(u,function(u,t,e){if(r(u,t,e))return n=t,!1}),n};var f=function(i){return function(u,t,e){for(var r=-1,n=Object(u),o=e(u),A=o.length;A--;){var a=o[i?A:++r];if(!1===t(n[a],a,n))break}return u}}();var D=function(u,t){for(var e=-1,r=Array(u);++e<u;)r[e]=t(e);return r},B="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};function g(u,t){return u(t={exports:{}},t.exports),t.exports}var p="object"==typeof B&&B&&B.Object===Object&&B,b="object"==typeof self&&self&&self.Object===Object&&self,h=p||b||Function("return this")(),v=h.Symbol,d=Object.prototype,_=d.hasOwnProperty,m=d.toString,y=v?v.toStringTag:void 0;var j=function(u){var t=_.call(u,y),e=u[y];try{var r=!(u[y]=void 0)}catch(u){}var n=m.call(u);return r&&(t?u[y]=e:delete u[y]),n},O=Object.prototype.toString;var P=function(u){return O.call(u)},x=v?v.toStringTag:void 0;var w=function(u){return null==u?void 0===u?"[object Undefined]":"[object Null]":x&&x in Object(u)?j(u):P(u)};var I=function(u){return null!=u&&"object"==typeof u};var N=function(u){return I(u)&&"[object Arguments]"==w(u)},S=Object.prototype,T=S.hasOwnProperty,z=S.propertyIsEnumerable,R=N(function(){return arguments}())?N:function(u){return I(u)&&T.call(u,"callee")&&!z.call(u,"callee")},M=Array.isArray;function L(){return!1}var U=g(function(u,t){var e=t&&!t.nodeType&&t,r=e&&u&&!u.nodeType&&u,n=r&&r.exports===e?h.Buffer:void 0,o=(n?n.isBuffer:void 0)||L;u.exports=o}),$=/^(?:0|[1-9]\d*)$/;var k=function(u,t){var e=typeof u;return!!(t=null==t?9007199254740991:t)&&("number"==e||"symbol"!=e&&$.test(u))&&-1<u&&u%1==0&&u<t};var Y=function(u){return"number"==typeof u&&-1<u&&u%1==0&&u<=9007199254740991},V={};V["[object Float32Array]"]=V["[object Float64Array]"]=V["[object Int8Array]"]=V["[object Int16Array]"]=V["[object Int32Array]"]=V["[object Uint8Array]"]=V["[object Uint8ClampedArray]"]=V["[object Uint16Array]"]=V["[object Uint32Array]"]=!0,V["[object Arguments]"]=V["[object Array]"]=V["[object ArrayBuffer]"]=V["[object Boolean]"]=V["[object DataView]"]=V["[object Date]"]=V["[object Error]"]=V["[object Function]"]=V["[object Map]"]=V["[object Number]"]=V["[object Object]"]=V["[object RegExp]"]=V["[object Set]"]=V["[object String]"]=V["[object WeakMap]"]=!1;function H(u){return I(u)&&Y(u.length)&&!!V[w(u)]}var G=function(t){return function(u){return t(u)}},J=g(function(u,t){var e=t&&!t.nodeType&&t,r=e&&u&&!u.nodeType&&u,n=r&&r.exports===e&&p.process,o=function(){try{var u=r&&r.require&&r.require("util").types;return u||n&&n.binding&&n.binding("util")}catch(u){}}();u.exports=o}),Z=J&&J.isTypedArray,W=Z?G(Z):H,q=Object.prototype.hasOwnProperty;var K=function(u,t){var e=M(u),r=!e&&R(u),n=!e&&!r&&U(u),o=!e&&!r&&!n&&W(u),A=e||r||n||o,a=A?D(u.length,String):[],i=a.length;for(var E in u)!t&&!q.call(u,E)||A&&("length"==E||n&&("offset"==E||"parent"==E)||o&&("buffer"==E||"byteLength"==E||"byteOffset"==E)||k(E,i))||a.push(E);return a},Q=Object.prototype;var X=function(u){var t=u&&u.constructor;return u===("function"==typeof t&&t.prototype||Q)};var uu=function(t,e){return function(u){return t(e(u))}},tu=uu(Object.keys,Object),eu=Object.prototype.hasOwnProperty;var ru=function(u){if(!X(u))return tu(u);var t=[];for(var e in Object(u))eu.call(u,e)&&"constructor"!=e&&t.push(e);return t};var nu=function(u){var t=typeof u;return null!=u&&("object"==t||"function"==t)};var ou=function(u){if(!nu(u))return!1;var t=w(u);return"[object Function]"==t||"[object GeneratorFunction]"==t||"[object AsyncFunction]"==t||"[object Proxy]"==t};var Au=function(u){return null!=u&&Y(u.length)&&!ou(u)};var au=function(u){return Au(u)?K(u):ru(u)};var iu=function(u,t){return u&&f(u,t,au)};function Eu(){this.__data__=[],this.size=0}var cu=function(u,t){return u===t||u!=u&&t!=t};var Cu=function(u,t){for(var e=u.length;e--;)if(cu(u[e][0],t))return e;return-1},su=Array.prototype.splice;function Fu(u){var t=this.__data__,e=Cu(t,u);return!(e<0)&&(e==t.length-1?t.pop():su.call(t,e,1),--this.size,!0)}function lu(u){var t=this.__data__,e=Cu(t,u);return e<0?void 0:t[e][1]}function fu(u){return-1<Cu(this.__data__,u)}function Du(u,t){var e=this.__data__,r=Cu(e,u);return r<0?(++this.size,e.push([u,t])):e[r][1]=t,this}function Bu(u){var t=-1,e=null==u?0:u.length;for(this.clear();++t<e;){var r=u[t];this.set(r[0],r[1])}}Bu.prototype.clear=Eu,Bu.prototype.delete=Fu,Bu.prototype.get=lu,Bu.prototype.has=fu,Bu.prototype.set=Du;var gu=Bu;function pu(){this.__data__=new gu,this.size=0}function bu(u){var t=this.__data__,e=t.delete(u);return this.size=t.size,e}function hu(u){return this.__data__.get(u)}function vu(u){return this.__data__.has(u)}var du,_u=h["__core-js_shared__"],mu=(du=/[^.]+$/.exec(_u&&_u.keys&&_u.keys.IE_PROTO||""))?"Symbol(src)_1."+du:"";var yu=function(u){return!!mu&&mu in u},ju=Function.prototype.toString;var Ou=function(u){if(null!=u){try{return ju.call(u)}catch(u){}try{return u+""}catch(u){}}return""},Pu=/^\[object .+?Constructor\]$/,xu=Function.prototype,wu=Object.prototype,Iu=xu.toString,Nu=wu.hasOwnProperty,Su=RegExp("^"+Iu.call(Nu).replace(/[\\^$.*+?()[\]{}|]/g,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$");var Tu=function(u){return!(!nu(u)||yu(u))&&(ou(u)?Su:Pu).test(Ou(u))};var zu=function(u,t){return null==u?void 0:u[t]};var Ru=function(u,t){var e=zu(u,t);return Tu(e)?e:void 0},Mu=Ru(h,"Map"),Lu=Ru(Object,"create");function Uu(){this.__data__=Lu?Lu(null):{},this.size=0}function $u(u){var t=this.has(u)&&delete this.__data__[u];return this.size-=t?1:0,t}var ku=Object.prototype.hasOwnProperty;function Yu(u){var t=this.__data__;if(Lu){var e=t[u];return"__lodash_hash_undefined__"===e?void 0:e}return ku.call(t,u)?t[u]:void 0}var Vu=Object.prototype.hasOwnProperty;function Hu(u){var t=this.__data__;return Lu?void 0!==t[u]:Vu.call(t,u)}function Gu(u,t){var e=this.__data__;return this.size+=this.has(u)?0:1,e[u]=Lu&&void 0===t?"__lodash_hash_undefined__":t,this}function Ju(u){var t=-1,e=null==u?0:u.length;for(this.clear();++t<e;){var r=u[t];this.set(r[0],r[1])}}Ju.prototype.clear=Uu,Ju.prototype.delete=$u,Ju.prototype.get=Yu,Ju.prototype.has=Hu,Ju.prototype.set=Gu;var Zu=Ju;var Wu=function(u){var t=typeof u;return"string"==t||"number"==t||"symbol"==t||"boolean"==t?"__proto__"!==u:null===u};var qu=function(u,t){var e=u.__data__;return Wu(t)?e["string"==typeof t?"string":"hash"]:e.map};function Ku(u){var t=qu(this,u).delete(u);return this.size-=t?1:0,t}function Qu(u){return qu(this,u).get(u)}function Xu(u){return qu(this,u).has(u)}function ut(u,t){var e=qu(this,u),r=e.size;return e.set(u,t),this.size+=e.size==r?0:1,this}function tt(u){var t=-1,e=null==u?0:u.length;for(this.clear();++t<e;){var r=u[t];this.set(r[0],r[1])}}tt.prototype.clear=function(){this.size=0,this.__data__={hash:new Zu,map:new(Mu||gu),string:new Zu}},tt.prototype.delete=Ku,tt.prototype.get=Qu,tt.prototype.has=Xu,tt.prototype.set=ut;var et=tt;function rt(u,t){var e=this.__data__;if(e instanceof gu){var r=e.__data__;if(!Mu||r.length<199)return r.push([u,t]),this.size=++e.size,this;e=this.__data__=new et(r)}return e.set(u,t),this.size=e.size,this}function nt(u){var t=this.__data__=new gu(u);this.size=t.size}nt.prototype.clear=pu,nt.prototype.delete=bu,nt.prototype.get=hu,nt.prototype.has=vu,nt.prototype.set=rt;var ot=nt;function At(u){return this.__data__.has(u)}function at(u){var t=-1,e=null==u?0:u.length;for(this.__data__=new et;++t<e;)this.add(u[t])}at.prototype.add=at.prototype.push=function(u){return this.__data__.set(u,"__lodash_hash_undefined__"),this},at.prototype.has=At;var it=at;var Et=function(u,t){for(var e=-1,r=null==u?0:u.length;++e<r;)if(t(u[e],e,u))return!0;return!1};var ct=function(u,t){return u.has(t)};var Ct=function(u,t,e,r,n,o){var A=1&e,a=u.length,i=t.length;if(a!=i&&!(A&&a<i))return!1;var E=o.get(u);if(E&&o.get(t))return E==t;var c=-1,C=!0,s=2&e?new it:void 0;for(o.set(u,t),o.set(t,u);++c<a;){var F=u[c],l=t[c];if(r)var f=A?r(l,F,c,t,u,o):r(F,l,c,u,t,o);if(void 0!==f){if(f)continue;C=!1;break}if(s){if(!Et(t,function(u,t){if(!ct(s,t)&&(F===u||n(F,u,e,r,o)))return s.push(t)})){C=!1;break}}else if(F!==l&&!n(F,l,e,r,o)){C=!1;break}}return o.delete(u),o.delete(t),C},st=h.Uint8Array;function Ft(u){var e=-1,r=Array(u.size);return u.forEach(function(u,t){r[++e]=[t,u]}),r}function lt(u){var t=-1,e=Array(u.size);return u.forEach(function(u){e[++t]=u}),e}var ft=v?v.prototype:void 0,Dt=ft?ft.valueOf:void 0;var Bt=function(u,t,e,r,n,o,A){switch(e){case"[object DataView]":if(u.byteLength!=t.byteLength||u.byteOffset!=t.byteOffset)return!1;u=u.buffer,t=t.buffer;case"[object ArrayBuffer]":return!(u.byteLength!=t.byteLength||!o(new st(u),new st(t)));case"[object Boolean]":case"[object Date]":case"[object Number]":return cu(+u,+t);case"[object Error]":return u.name==t.name&&u.message==t.message;case"[object RegExp]":case"[object String]":return u==t+"";case"[object Map]":var a=Ft;case"[object Set]":var i=1&r;if(a=a||lt,u.size!=t.size&&!i)return!1;var E=A.get(u);if(E)return E==t;r|=2,A.set(u,t);var c=Ct(a(u),a(t),r,n,o,A);return A.delete(u),c;case"[object Symbol]":if(Dt)return Dt.call(u)==Dt.call(t)}return!1};var gt=function(u,t){for(var e=-1,r=t.length,n=u.length;++e<r;)u[n+e]=t[e];return u};var pt=function(u,t,e){var r=t(u);return M(u)?r:gt(r,e(u))};var bt=function(u,t){for(var e=-1,r=null==u?0:u.length,n=0,o=[];++e<r;){var A=u[e];t(A,e,u)&&(o[n++]=A)}return o};function ht(){return[]}var vt=Object.prototype.propertyIsEnumerable,dt=Object.getOwnPropertySymbols,_t=dt?function(t){return null==t?[]:(t=Object(t),bt(dt(t),function(u){return vt.call(t,u)}))}:ht;var mt=function(u){return pt(u,au,_t)},yt=Object.prototype.hasOwnProperty;var jt=function(u,t,e,r,n,o){var A=1&e,a=mt(u),i=a.length;if(i!=mt(t).length&&!A)return!1;for(var E=i;E--;){var c=a[E];if(!(A?c in t:yt.call(t,c)))return!1}var C=o.get(u);if(C&&o.get(t))return C==t;var s=!0;o.set(u,t),o.set(t,u);for(var F=A;++E<i;){var l=u[c=a[E]],f=t[c];if(r)var D=A?r(f,l,c,t,u,o):r(l,f,c,u,t,o);if(!(void 0===D?l===f||n(l,f,e,r,o):D)){s=!1;break}F=F||"constructor"==c}if(s&&!F){var B=u.constructor,g=t.constructor;B!=g&&"constructor"in u&&"constructor"in t&&!("function"==typeof B&&B instanceof B&&"function"==typeof g&&g instanceof g)&&(s=!1)}return o.delete(u),o.delete(t),s},Ot=Ru(h,"DataView"),Pt=Ru(h,"Promise"),xt=Ru(h,"Set"),wt=Ru(h,"WeakMap"),It="[object Map]",Nt="[object Promise]",St="[object Set]",Tt="[object WeakMap]",zt="[object DataView]",Rt=Ou(Ot),Mt=Ou(Mu),Lt=Ou(Pt),Ut=Ou(xt),$t=Ou(wt),kt=w;(Ot&&kt(new Ot(new ArrayBuffer(1)))!=zt||Mu&&kt(new Mu)!=It||Pt&&kt(Pt.resolve())!=Nt||xt&&kt(new xt)!=St||wt&&kt(new wt)!=Tt)&&(kt=function(u){var t=w(u),e="[object Object]"==t?u.constructor:void 0,r=e?Ou(e):"";if(r)switch(r){case Rt:return zt;case Mt:return It;case Lt:return Nt;case Ut:return St;case $t:return Tt}return t});var Yt=kt,Vt="[object Arguments]",Ht="[object Array]",Gt="[object Object]",Jt=Object.prototype.hasOwnProperty;var Zt=function(u,t,e,r,n,o){var A=M(u),a=M(t),i=A?Ht:Yt(u),E=a?Ht:Yt(t),c=(i=i==Vt?Gt:i)==Gt,C=(E=E==Vt?Gt:E)==Gt,s=i==E;if(s&&U(u)){if(!U(t))return!1;c=!(A=!0)}if(s&&!c)return o=o||new ot,A||W(u)?Ct(u,t,e,r,n,o):Bt(u,t,i,e,r,n,o);if(!(1&e)){var F=c&&Jt.call(u,"__wrapped__"),l=C&&Jt.call(t,"__wrapped__");if(F||l)return n(F?u.value():u,l?t.value():t,e,r,o=o||new ot)}return s&&(o=o||new ot,jt(u,t,e,r,n,o))};var Wt=function u(t,e,r,n,o){return t===e||(null==t||null==e||!I(t)&&!I(e)?t!=t&&e!=e:Zt(t,e,r,n,u,o))};var qt=function(u,t,e,r){var n=e.length,o=n,A=!r;if(null==u)return!o;for(u=Object(u);n--;){var a=e[n];if(A&&a[2]?a[1]!==u[a[0]]:!(a[0]in u))return!1}for(;++n<o;){var i=(a=e[n])[0],E=u[i],c=a[1];if(A&&a[2]){if(void 0===E&&!(i in u))return!1}else{var C=new ot;if(r)var s=r(E,c,i,u,t,C);if(!(void 0===s?Wt(c,E,3,r,C):s))return!1}}return!0};var Kt=function(u){return u==u&&!nu(u)};var Qt=function(u){for(var t=au(u),e=t.length;e--;){var r=t[e],n=u[r];t[e]=[r,n,Kt(n)]}return t};var Xt=function(t,e){return function(u){return null!=u&&(u[t]===e&&(void 0!==e||t in Object(u)))}};var ue=function(t){var e=Qt(t);return 1==e.length&&e[0][2]?Xt(e[0][0],e[0][1]):function(u){return u===t||qt(u,t,e)}};var te=function(u){return"symbol"==typeof u||I(u)&&"[object Symbol]"==w(u)},ee=/\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,re=/^\w*$/;var ne=function(u,t){if(M(u))return!1;var e=typeof u;return!("number"!=e&&"symbol"!=e&&"boolean"!=e&&null!=u&&!te(u))||(re.test(u)||!ee.test(u)||null!=t&&u in Object(t))},oe="Expected a function";function Ae(n,o){if("function"!=typeof n||null!=o&&"function"!=typeof o)throw new TypeError(oe);var A=function(){var u=arguments,t=o?o.apply(this,u):u[0],e=A.cache;if(e.has(t))return e.get(t);var r=n.apply(this,u);return A.cache=e.set(t,r)||e,r};return A.cache=new(Ae.Cache||et),A}Ae.Cache=et;var ae=Ae;var ie=/[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,Ee=/\\(\\)?/g,ce=function(u){var t=ae(u,function(u){return 500===e.size&&e.clear(),u}),e=t.cache;return t}(function(u){var n=[];return 46===u.charCodeAt(0)&&n.push(""),u.replace(ie,function(u,t,e,r){n.push(e?r.replace(Ee,"$1"):t||u)}),n});var Ce=function(u,t){for(var e=-1,r=null==u?0:u.length,n=Array(r);++e<r;)n[e]=t(u[e],e,u);return n},se=1/0,Fe=v?v.prototype:void 0,le=Fe?Fe.toString:void 0;var fe=function u(t){if("string"==typeof t)return t;if(M(t))return Ce(t,u)+"";if(te(t))return le?le.call(t):"";var e=t+"";return"0"==e&&1/t==-se?"-0":e};var De=function(u){return null==u?"":fe(u)};var Be=function(u,t){return M(u)?u:ne(u,t)?[u]:ce(De(u))};var ge=function(u){if("string"==typeof u||te(u))return u;var t=u+"";return"0"==t&&1/u==-1/0?"-0":t};var pe=function(u,t){for(var e=0,r=(t=Be(t,u)).length;null!=u&&e<r;)u=u[ge(t[e++])];return e&&e==r?u:void 0};var be=function(u,t,e){var r=null==u?void 0:pe(u,t);return void 0===r?e:r};function he(u,t){return null!=u&&t in Object(u)}var ve=function(u,t,e){for(var r=-1,n=(t=Be(t,u)).length,o=!1;++r<n;){var A=ge(t[r]);if(!(o=null!=u&&e(u,A)))break;u=u[A]}return o||++r!=n?o:!!(n=null==u?0:u.length)&&Y(n)&&k(A,n)&&(M(u)||R(u))};var de=function(u,t){return null!=u&&ve(u,t,he)};var _e=function(e,r){return ne(e)&&Kt(r)?Xt(ge(e),r):function(u){var t=be(u,e);return void 0===t&&t===r?de(u,e):Wt(r,t,3)}};function me(u){return u}var ye=function(t){return function(u){return null==u?void 0:u[t]}};var je=function(t){return function(u){return pe(u,t)}};var Oe=function(u){return ne(u)?ye(ge(u)):je(u)};var Pe=function(u){return"function"==typeof u?u:null==u?me:"object"==typeof u?M(u)?_e(u[0],u[1]):ue(u):Oe(u)};var xe=function(u,t){return l(u,Pe(t),iu)},we={E_INTERNAL_USER_BLOCKED:0,E_TABLE_NOT_FOUND:1,E_DATABASE_NOT_FOUND:1,E_NOT_FOUND:2,E_INVALID_ARGUMENT:3,E_SYNTAX_ERROR:3,E_MISSING_ARGUMENT:4,E_MULTIPLE_RESULTS_FOUND:5,E_BLOCKED_IP:6,E_UNEXPECTED_HTTP_CODE:7,E_TIMEOUT:7,E_LOAD_PAGE_FAILED:7,E_PROXY_CONFIGURATION_ERROR:7,E_REMOTE_SITE_UNDER_MAINTENANCE:8,E_AUTHENTICATION_FAILURE:9,E_INTERNAL_SERVER_ERROR:11,E_INTERNAL_ERROR:11,E_QUERY_LIMIT:12,E_PASSWORD_REQUIRED:20,E_JUSTICE_SECRET:21,E_EXPECTED_DATA_NOT_FOUND:24,E_CAPTCHA_BREAK_FAILED:25,E_INTERNAL_PUSH_LABEL:26,E_UNDER_MAINTENANCE:27,E_SITE_MESSAGE:28,E_BLOCKED_BY_CONFIG:29,E_LEGAL_REVIEW:30,E_RESOURCE_UNAVAILABLE:31,E_INTERNAL_EMAIL_UNCHECKED:32,E_INTERNAL_NOT_READY:33,E_OUTDATED:1522,E_ARCHIVED_PROCESS:1522,E_WITHOUT_PROCEEDINGS:1523,E_UNKNOWN:1524,E_EMAIL_UNCHECKED:1525,E_BLOCKED_USER:1526};function Ie(u){this.$=u}var Ne=function(u){function t(){u.apply(this,arguments)}return u&&(t.__proto__=u),((t.prototype=Object.create(u&&u.prototype)).constructor=t).prototype.toString=function(){return this.message},t}(o),Se=function(u){function t(){u.apply(this,arguments)}return u&&(t.__proto__=u),(t.prototype=Object.create(u&&u.prototype)).constructor=t}(Ne),Te=function(u){function t(){u.apply(this,arguments)}return u&&(t.__proto__=u),(t.prototype=Object.create(u&&u.prototype)).constructor=t}(Ne),ze={type:"git",url:"https://github.com/bipbop/juristek-parser.git"};Ie.prototype.assertDocument=function(){var u=this.$("BPQL > header > exception");if(u.length)throw i(new Ne(u.text()),{source:u.attr("source")||null,push:"false"!==u.attr("push"),code:parseInt(u.attr("code"),10)||0,log:u.attr("log")||null})},Ie.openString=function(u){return new this(t.load(u,{normalizeWhitespace:!0,xmlMode:!0}))},Ie.prototype.load=function(){return this.assertDocument(),this.parse()},Ie.prototype.parse=function(){var u=this.dump();return!Array.isArray(u)&&"object"==typeof u||(u={response:u}),i(u,{_parserLoaded:new Date,_parser:{version:"5.0.9",name:"juristek-parser",repository:ze}})},Ie.prototype.dump=function(){return this.$};function Re(u,t,r){return null==u?"":(r="string"!=typeof r?" ":r,function(u,t){var e=$e[t];return u=null==u?"":String(u),e&&(u=u.replace(e.regexp,function(u){return e.map[u]})),u.toLowerCase()}(u=String(u).replace(Ye,"$1 $2").replace(Ve,"$1 $2").replace(ke,function(u,t,e){return 0===t||t===e.length-u.length?"":r}),t))}function Me(u,e,t){var r=Re(u,e);return t||(r=r.replace(/ (?=\d)/g,"_")),r.replace(/ (.)/g,function(u,t){return function(u,t){var e=Ue[t];return u=null==u?"":String(u),e&&(u=u.replace(e.regexp,function(u){return e.map[u]})),u.toUpperCase()}(t,e)})}var Le=function(u){function t(){u.apply(this,arguments)}return u&&(t.__proto__=u),((t.prototype=Object.create(u&&u.prototype)).constructor=t).compatible=function(u,e,t){return void 0===t&&(t="numero_processo"),u.filter(function(u){return u.fields.filter(function(u){return u.name===t}).filter(function(u){var t=u.otherMasks;return[u.mask].concat(t).map(function(u){return new RegExp("^"+u.replace(/(\.)/g,"\\$1").replace(/N+/g,"\\d+").replace(/[A-Z]/g,"\\d")+"$").test(e)}).find(function(u){return!0===u})}).length})},t.prototype.dump=function(){var r=this.$;return r("database").map(function(u,e){return r("table",e).map(function(u,t){return{table:t.attribs,database:e.attribs,fields:r("field",t).map(function(u,t){return i(t.attribs,{otherMasks:r("alternative_mask",t).map(function(u,t){return r(t).text()}).get(),options:r("option",t).map(function(u,t){return i(t.attribs,{text:r(t).text()})}).get()})}).get()}}).get()}).get()},t}(Ie),Ue={tr:{regexp:/[\u0069]/g,map:{i:"İ"}},az:{regexp:/[\u0069]/g,map:{i:"İ"}},lt:{regexp:/[\u0069\u006A\u012F]\u0307|\u0069\u0307[\u0300\u0301\u0303]/g,map:{"i̇":"I","j̇":"J","į̇":"Į","i̇̀":"Ì","i̇́":"Í","i̇̃":"Ĩ"}}},$e={tr:{regexp:/\u0130|\u0049|\u0049\u0307/g,map:{"İ":"i",I:"ı","İ":"i"}},az:{regexp:/[\u0130]/g,map:{"İ":"i",I:"ı","İ":"i"}},lt:{regexp:/[\u0049\u004A\u012E\u00CC\u00CD\u0128]/g,map:{I:"i̇",J:"j̇","Į":"į̇","Ì":"i̇̀","Í":"i̇́","Ĩ":"i̇̃"}}},ke=/[^A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0561-\u0587\u05D0-\u05EA\u05F0-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u08A0-\u08B4\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C60\u0C61\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D05-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E87\u0E88\u0E8A\u0E8D\u0E94-\u0E97\u0E99-\u0E9F\u0EA1-\u0EA3\u0EA5\u0EA7\u0EAA\u0EAB\u0EAD-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u170C\u170E-\u1711\u1720-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1877\u1880-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4B\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1CE9-\u1CEC\u1CEE-\u1CF1\u1CF5\u1CF6\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2C2E\u2C30-\u2C5E\u2C60-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312D\u3131-\u318E\u31A0-\u31BA\u31F0-\u31FF\u3400-\u4DB5\u4E00-\u9FD5\uA000-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7AD\uA7B0-\uA7B7\uA7F7-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB65\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC0-9\xB2\xB3\xB9\xBC-\xBE\u0660-\u0669\u06F0-\u06F9\u07C0-\u07C9\u0966-\u096F\u09E6-\u09EF\u09F4-\u09F9\u0A66-\u0A6F\u0AE6-\u0AEF\u0B66-\u0B6F\u0B72-\u0B77\u0BE6-\u0BF2\u0C66-\u0C6F\u0C78-\u0C7E\u0CE6-\u0CEF\u0D66-\u0D75\u0DE6-\u0DEF\u0E50-\u0E59\u0ED0-\u0ED9\u0F20-\u0F33\u1040-\u1049\u1090-\u1099\u1369-\u137C\u16EE-\u16F0\u17E0-\u17E9\u17F0-\u17F9\u1810-\u1819\u1946-\u194F\u19D0-\u19DA\u1A80-\u1A89\u1A90-\u1A99\u1B50-\u1B59\u1BB0-\u1BB9\u1C40-\u1C49\u1C50-\u1C59\u2070\u2074-\u2079\u2080-\u2089\u2150-\u2182\u2185-\u2189\u2460-\u249B\u24EA-\u24FF\u2776-\u2793\u2CFD\u3007\u3021-\u3029\u3038-\u303A\u3192-\u3195\u3220-\u3229\u3248-\u324F\u3251-\u325F\u3280-\u3289\u32B1-\u32BF\uA620-\uA629\uA6E6-\uA6EF\uA830-\uA835\uA8D0-\uA8D9\uA900-\uA909\uA9D0-\uA9D9\uA9F0-\uA9F9\uAA50-\uAA59\uABF0-\uABF9\uFF10-\uFF19]+/g,Ye=/([a-z\xB5\xDF-\xF6\xF8-\xFF\u0101\u0103\u0105\u0107\u0109\u010B\u010D\u010F\u0111\u0113\u0115\u0117\u0119\u011B\u011D\u011F\u0121\u0123\u0125\u0127\u0129\u012B\u012D\u012F\u0131\u0133\u0135\u0137\u0138\u013A\u013C\u013E\u0140\u0142\u0144\u0146\u0148\u0149\u014B\u014D\u014F\u0151\u0153\u0155\u0157\u0159\u015B\u015D\u015F\u0161\u0163\u0165\u0167\u0169\u016B\u016D\u016F\u0171\u0173\u0175\u0177\u017A\u017C\u017E-\u0180\u0183\u0185\u0188\u018C\u018D\u0192\u0195\u0199-\u019B\u019E\u01A1\u01A3\u01A5\u01A8\u01AA\u01AB\u01AD\u01B0\u01B4\u01B6\u01B9\u01BA\u01BD-\u01BF\u01C6\u01C9\u01CC\u01CE\u01D0\u01D2\u01D4\u01D6\u01D8\u01DA\u01DC\u01DD\u01DF\u01E1\u01E3\u01E5\u01E7\u01E9\u01EB\u01ED\u01EF\u01F0\u01F3\u01F5\u01F9\u01FB\u01FD\u01FF\u0201\u0203\u0205\u0207\u0209\u020B\u020D\u020F\u0211\u0213\u0215\u0217\u0219\u021B\u021D\u021F\u0221\u0223\u0225\u0227\u0229\u022B\u022D\u022F\u0231\u0233-\u0239\u023C\u023F\u0240\u0242\u0247\u0249\u024B\u024D\u024F-\u0293\u0295-\u02AF\u0371\u0373\u0377\u037B-\u037D\u0390\u03AC-\u03CE\u03D0\u03D1\u03D5-\u03D7\u03D9\u03DB\u03DD\u03DF\u03E1\u03E3\u03E5\u03E7\u03E9\u03EB\u03ED\u03EF-\u03F3\u03F5\u03F8\u03FB\u03FC\u0430-\u045F\u0461\u0463\u0465\u0467\u0469\u046B\u046D\u046F\u0471\u0473\u0475\u0477\u0479\u047B\u047D\u047F\u0481\u048B\u048D\u048F\u0491\u0493\u0495\u0497\u0499\u049B\u049D\u049F\u04A1\u04A3\u04A5\u04A7\u04A9\u04AB\u04AD\u04AF\u04B1\u04B3\u04B5\u04B7\u04B9\u04BB\u04BD\u04BF\u04C2\u04C4\u04C6\u04C8\u04CA\u04CC\u04CE\u04CF\u04D1\u04D3\u04D5\u04D7\u04D9\u04DB\u04DD\u04DF\u04E1\u04E3\u04E5\u04E7\u04E9\u04EB\u04ED\u04EF\u04F1\u04F3\u04F5\u04F7\u04F9\u04FB\u04FD\u04FF\u0501\u0503\u0505\u0507\u0509\u050B\u050D\u050F\u0511\u0513\u0515\u0517\u0519\u051B\u051D\u051F\u0521\u0523\u0525\u0527\u0529\u052B\u052D\u052F\u0561-\u0587\u13F8-\u13FD\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E01\u1E03\u1E05\u1E07\u1E09\u1E0B\u1E0D\u1E0F\u1E11\u1E13\u1E15\u1E17\u1E19\u1E1B\u1E1D\u1E1F\u1E21\u1E23\u1E25\u1E27\u1E29\u1E2B\u1E2D\u1E2F\u1E31\u1E33\u1E35\u1E37\u1E39\u1E3B\u1E3D\u1E3F\u1E41\u1E43\u1E45\u1E47\u1E49\u1E4B\u1E4D\u1E4F\u1E51\u1E53\u1E55\u1E57\u1E59\u1E5B\u1E5D\u1E5F\u1E61\u1E63\u1E65\u1E67\u1E69\u1E6B\u1E6D\u1E6F\u1E71\u1E73\u1E75\u1E77\u1E79\u1E7B\u1E7D\u1E7F\u1E81\u1E83\u1E85\u1E87\u1E89\u1E8B\u1E8D\u1E8F\u1E91\u1E93\u1E95-\u1E9D\u1E9F\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7\u1EB9\u1EBB\u1EBD\u1EBF\u1EC1\u1EC3\u1EC5\u1EC7\u1EC9\u1ECB\u1ECD\u1ECF\u1ED1\u1ED3\u1ED5\u1ED7\u1ED9\u1EDB\u1EDD\u1EDF\u1EE1\u1EE3\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF\u1EF1\u1EF3\u1EF5\u1EF7\u1EF9\u1EFB\u1EFD\u1EFF-\u1F07\u1F10-\u1F15\u1F20-\u1F27\u1F30-\u1F37\u1F40-\u1F45\u1F50-\u1F57\u1F60-\u1F67\u1F70-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6\u1FB7\u1FBE\u1FC2-\u1FC4\u1FC6\u1FC7\u1FD0-\u1FD3\u1FD6\u1FD7\u1FE0-\u1FE7\u1FF2-\u1FF4\u1FF6\u1FF7\u210A\u210E\u210F\u2113\u212F\u2134\u2139\u213C\u213D\u2146-\u2149\u214E\u2184\u2C30-\u2C5E\u2C61\u2C65\u2C66\u2C68\u2C6A\u2C6C\u2C71\u2C73\u2C74\u2C76-\u2C7B\u2C81\u2C83\u2C85\u2C87\u2C89\u2C8B\u2C8D\u2C8F\u2C91\u2C93\u2C95\u2C97\u2C99\u2C9B\u2C9D\u2C9F\u2CA1\u2CA3\u2CA5\u2CA7\u2CA9\u2CAB\u2CAD\u2CAF\u2CB1\u2CB3\u2CB5\u2CB7\u2CB9\u2CBB\u2CBD\u2CBF\u2CC1\u2CC3\u2CC5\u2CC7\u2CC9\u2CCB\u2CCD\u2CCF\u2CD1\u2CD3\u2CD5\u2CD7\u2CD9\u2CDB\u2CDD\u2CDF\u2CE1\u2CE3\u2CE4\u2CEC\u2CEE\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA641\uA643\uA645\uA647\uA649\uA64B\uA64D\uA64F\uA651\uA653\uA655\uA657\uA659\uA65B\uA65D\uA65F\uA661\uA663\uA665\uA667\uA669\uA66B\uA66D\uA681\uA683\uA685\uA687\uA689\uA68B\uA68D\uA68F\uA691\uA693\uA695\uA697\uA699\uA69B\uA723\uA725\uA727\uA729\uA72B\uA72D\uA72F-\uA731\uA733\uA735\uA737\uA739\uA73B\uA73D\uA73F\uA741\uA743\uA745\uA747\uA749\uA74B\uA74D\uA74F\uA751\uA753\uA755\uA757\uA759\uA75B\uA75D\uA75F\uA761\uA763\uA765\uA767\uA769\uA76B\uA76D\uA76F\uA771-\uA778\uA77A\uA77C\uA77F\uA781\uA783\uA785\uA787\uA78C\uA78E\uA791\uA793-\uA795\uA797\uA799\uA79B\uA79D\uA79F\uA7A1\uA7A3\uA7A5\uA7A7\uA7A9\uA7B5\uA7B7\uA7FA\uAB30-\uAB5A\uAB60-\uAB65\uAB70-\uABBF\uFB00-\uFB06\uFB13-\uFB17\uFF41-\uFF5A0-9\xB2\xB3\xB9\xBC-\xBE\u0660-\u0669\u06F0-\u06F9\u07C0-\u07C9\u0966-\u096F\u09E6-\u09EF\u09F4-\u09F9\u0A66-\u0A6F\u0AE6-\u0AEF\u0B66-\u0B6F\u0B72-\u0B77\u0BE6-\u0BF2\u0C66-\u0C6F\u0C78-\u0C7E\u0CE6-\u0CEF\u0D66-\u0D75\u0DE6-\u0DEF\u0E50-\u0E59\u0ED0-\u0ED9\u0F20-\u0F33\u1040-\u1049\u1090-\u1099\u1369-\u137C\u16EE-\u16F0\u17E0-\u17E9\u17F0-\u17F9\u1810-\u1819\u1946-\u194F\u19D0-\u19DA\u1A80-\u1A89\u1A90-\u1A99\u1B50-\u1B59\u1BB0-\u1BB9\u1C40-\u1C49\u1C50-\u1C59\u2070\u2074-\u2079\u2080-\u2089\u2150-\u2182\u2185-\u2189\u2460-\u249B\u24EA-\u24FF\u2776-\u2793\u2CFD\u3007\u3021-\u3029\u3038-\u303A\u3192-\u3195\u3220-\u3229\u3248-\u324F\u3251-\u325F\u3280-\u3289\u32B1-\u32BF\uA620-\uA629\uA6E6-\uA6EF\uA830-\uA835\uA8D0-\uA8D9\uA900-\uA909\uA9D0-\uA9D9\uA9F0-\uA9F9\uAA50-\uAA59\uABF0-\uABF9\uFF10-\uFF19])([A-Z\xC0-\xD6\xD8-\xDE\u0100\u0102\u0104\u0106\u0108\u010A\u010C\u010E\u0110\u0112\u0114\u0116\u0118\u011A\u011C\u011E\u0120\u0122\u0124\u0126\u0128\u012A\u012C\u012E\u0130\u0132\u0134\u0136\u0139\u013B\u013D\u013F\u0141\u0143\u0145\u0147\u014A\u014C\u014E\u0150\u0152\u0154\u0156\u0158\u015A\u015C\u015E\u0160\u0162\u0164\u0166\u0168\u016A\u016C\u016E\u0170\u0172\u0174\u0176\u0178\u0179\u017B\u017D\u0181\u0182\u0184\u0186\u0187\u0189-\u018B\u018E-\u0191\u0193\u0194\u0196-\u0198\u019C\u019D\u019F\u01A0\u01A2\u01A4\u01A6\u01A7\u01A9\u01AC\u01AE\u01AF\u01B1-\u01B3\u01B5\u01B7\u01B8\u01BC\u01C4\u01C7\u01CA\u01CD\u01CF\u01D1\u01D3\u01D5\u01D7\u01D9\u01DB\u01DE\u01E0\u01E2\u01E4\u01E6\u01E8\u01EA\u01EC\u01EE\u01F1\u01F4\u01F6-\u01F8\u01FA\u01FC\u01FE\u0200\u0202\u0204\u0206\u0208\u020A\u020C\u020E\u0210\u0212\u0214\u0216\u0218\u021A\u021C\u021E\u0220\u0222\u0224\u0226\u0228\u022A\u022C\u022E\u0230\u0232\u023A\u023B\u023D\u023E\u0241\u0243-\u0246\u0248\u024A\u024C\u024E\u0370\u0372\u0376\u037F\u0386\u0388-\u038A\u038C\u038E\u038F\u0391-\u03A1\u03A3-\u03AB\u03CF\u03D2-\u03D4\u03D8\u03DA\u03DC\u03DE\u03E0\u03E2\u03E4\u03E6\u03E8\u03EA\u03EC\u03EE\u03F4\u03F7\u03F9\u03FA\u03FD-\u042F\u0460\u0462\u0464\u0466\u0468\u046A\u046C\u046E\u0470\u0472\u0474\u0476\u0478\u047A\u047C\u047E\u0480\u048A\u048C\u048E\u0490\u0492\u0494\u0496\u0498\u049A\u049C\u049E\u04A0\u04A2\u04A4\u04A6\u04A8\u04AA\u04AC\u04AE\u04B0\u04B2\u04B4\u04B6\u04B8\u04BA\u04BC\u04BE\u04C0\u04C1\u04C3\u04C5\u04C7\u04C9\u04CB\u04CD\u04D0\u04D2\u04D4\u04D6\u04D8\u04DA\u04DC\u04DE\u04E0\u04E2\u04E4\u04E6\u04E8\u04EA\u04EC\u04EE\u04F0\u04F2\u04F4\u04F6\u04F8\u04FA\u04FC\u04FE\u0500\u0502\u0504\u0506\u0508\u050A\u050C\u050E\u0510\u0512\u0514\u0516\u0518\u051A\u051C\u051E\u0520\u0522\u0524\u0526\u0528\u052A\u052C\u052E\u0531-\u0556\u10A0-\u10C5\u10C7\u10CD\u13A0-\u13F5\u1E00\u1E02\u1E04\u1E06\u1E08\u1E0A\u1E0C\u1E0E\u1E10\u1E12\u1E14\u1E16\u1E18\u1E1A\u1E1C\u1E1E\u1E20\u1E22\u1E24\u1E26\u1E28\u1E2A\u1E2C\u1E2E\u1E30\u1E32\u1E34\u1E36\u1E38\u1E3A\u1E3C\u1E3E\u1E40\u1E42\u1E44\u1E46\u1E48\u1E4A\u1E4C\u1E4E\u1E50\u1E52\u1E54\u1E56\u1E58\u1E5A\u1E5C\u1E5E\u1E60\u1E62\u1E64\u1E66\u1E68\u1E6A\u1E6C\u1E6E\u1E70\u1E72\u1E74\u1E76\u1E78\u1E7A\u1E7C\u1E7E\u1E80\u1E82\u1E84\u1E86\u1E88\u1E8A\u1E8C\u1E8E\u1E90\u1E92\u1E94\u1E9E\u1EA0\u1EA2\u1EA4\u1EA6\u1EA8\u1EAA\u1EAC\u1EAE\u1EB0\u1EB2\u1EB4\u1EB6\u1EB8\u1EBA\u1EBC\u1EBE\u1EC0\u1EC2\u1EC4\u1EC6\u1EC8\u1ECA\u1ECC\u1ECE\u1ED0\u1ED2\u1ED4\u1ED6\u1ED8\u1EDA\u1EDC\u1EDE\u1EE0\u1EE2\u1EE4\u1EE6\u1EE8\u1EEA\u1EEC\u1EEE\u1EF0\u1EF2\u1EF4\u1EF6\u1EF8\u1EFA\u1EFC\u1EFE\u1F08-\u1F0F\u1F18-\u1F1D\u1F28-\u1F2F\u1F38-\u1F3F\u1F48-\u1F4D\u1F59\u1F5B\u1F5D\u1F5F\u1F68-\u1F6F\u1FB8-\u1FBB\u1FC8-\u1FCB\u1FD8-\u1FDB\u1FE8-\u1FEC\u1FF8-\u1FFB\u2102\u2107\u210B-\u210D\u2110-\u2112\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u2130-\u2133\u213E\u213F\u2145\u2183\u2C00-\u2C2E\u2C60\u2C62-\u2C64\u2C67\u2C69\u2C6B\u2C6D-\u2C70\u2C72\u2C75\u2C7E-\u2C80\u2C82\u2C84\u2C86\u2C88\u2C8A\u2C8C\u2C8E\u2C90\u2C92\u2C94\u2C96\u2C98\u2C9A\u2C9C\u2C9E\u2CA0\u2CA2\u2CA4\u2CA6\u2CA8\u2CAA\u2CAC\u2CAE\u2CB0\u2CB2\u2CB4\u2CB6\u2CB8\u2CBA\u2CBC\u2CBE\u2CC0\u2CC2\u2CC4\u2CC6\u2CC8\u2CCA\u2CCC\u2CCE\u2CD0\u2CD2\u2CD4\u2CD6\u2CD8\u2CDA\u2CDC\u2CDE\u2CE0\u2CE2\u2CEB\u2CED\u2CF2\uA640\uA642\uA644\uA646\uA648\uA64A\uA64C\uA64E\uA650\uA652\uA654\uA656\uA658\uA65A\uA65C\uA65E\uA660\uA662\uA664\uA666\uA668\uA66A\uA66C\uA680\uA682\uA684\uA686\uA688\uA68A\uA68C\uA68E\uA690\uA692\uA694\uA696\uA698\uA69A\uA722\uA724\uA726\uA728\uA72A\uA72C\uA72E\uA732\uA734\uA736\uA738\uA73A\uA73C\uA73E\uA740\uA742\uA744\uA746\uA748\uA74A\uA74C\uA74E\uA750\uA752\uA754\uA756\uA758\uA75A\uA75C\uA75E\uA760\uA762\uA764\uA766\uA768\uA76A\uA76C\uA76E\uA779\uA77B\uA77D\uA77E\uA780\uA782\uA784\uA786\uA78B\uA78D\uA790\uA792\uA796\uA798\uA79A\uA79C\uA79E\uA7A0\uA7A2\uA7A4\uA7A6\uA7A8\uA7AA-\uA7AD\uA7B0-\uA7B4\uA7B6\uFF21-\uFF3A])/g,Ve=/([A-Z\xC0-\xD6\xD8-\xDE\u0100\u0102\u0104\u0106\u0108\u010A\u010C\u010E\u0110\u0112\u0114\u0116\u0118\u011A\u011C\u011E\u0120\u0122\u0124\u0126\u0128\u012A\u012C\u012E\u0130\u0132\u0134\u0136\u0139\u013B\u013D\u013F\u0141\u0143\u0145\u0147\u014A\u014C\u014E\u0150\u0152\u0154\u0156\u0158\u015A\u015C\u015E\u0160\u0162\u0164\u0166\u0168\u016A\u016C\u016E\u0170\u0172\u0174\u0176\u0178\u0179\u017B\u017D\u0181\u0182\u0184\u0186\u0187\u0189-\u018B\u018E-\u0191\u0193\u0194\u0196-\u0198\u019C\u019D\u019F\u01A0\u01A2\u01A4\u01A6\u01A7\u01A9\u01AC\u01AE\u01AF\u01B1-\u01B3\u01B5\u01B7\u01B8\u01BC\u01C4\u01C7\u01CA\u01CD\u01CF\u01D1\u01D3\u01D5\u01D7\u01D9\u01DB\u01DE\u01E0\u01E2\u01E4\u01E6\u01E8\u01EA\u01EC\u01EE\u01F1\u01F4\u01F6-\u01F8\u01FA\u01FC\u01FE\u0200\u0202\u0204\u0206\u0208\u020A\u020C\u020E\u0210\u0212\u0214\u0216\u0218\u021A\u021C\u021E\u0220\u0222\u0224\u0226\u0228\u022A\u022C\u022E\u0230\u0232\u023A\u023B\u023D\u023E\u0241\u0243-\u0246\u0248\u024A\u024C\u024E\u0370\u0372\u0376\u037F\u0386\u0388-\u038A\u038C\u038E\u038F\u0391-\u03A1\u03A3-\u03AB\u03CF\u03D2-\u03D4\u03D8\u03DA\u03DC\u03DE\u03E0\u03E2\u03E4\u03E6\u03E8\u03EA\u03EC\u03EE\u03F4\u03F7\u03F9\u03FA\u03FD-\u042F\u0460\u0462\u0464\u0466\u0468\u046A\u046C\u046E\u0470\u0472\u0474\u0476\u0478\u047A\u047C\u047E\u0480\u048A\u048C\u048E\u0490\u0492\u0494\u0496\u0498\u049A\u049C\u049E\u04A0\u04A2\u04A4\u04A6\u04A8\u04AA\u04AC\u04AE\u04B0\u04B2\u04B4\u04B6\u04B8\u04BA\u04BC\u04BE\u04C0\u04C1\u04C3\u04C5\u04C7\u04C9\u04CB\u04CD\u04D0\u04D2\u04D4\u04D6\u04D8\u04DA\u04DC\u04DE\u04E0\u04E2\u04E4\u04E6\u04E8\u04EA\u04EC\u04EE\u04F0\u04F2\u04F4\u04F6\u04F8\u04FA\u04FC\u04FE\u0500\u0502\u0504\u0506\u0508\u050A\u050C\u050E\u0510\u0512\u0514\u0516\u0518\u051A\u051C\u051E\u0520\u0522\u0524\u0526\u0528\u052A\u052C\u052E\u0531-\u0556\u10A0-\u10C5\u10C7\u10CD\u13A0-\u13F5\u1E00\u1E02\u1E04\u1E06\u1E08\u1E0A\u1E0C\u1E0E\u1E10\u1E12\u1E14\u1E16\u1E18\u1E1A\u1E1C\u1E1E\u1E20\u1E22\u1E24\u1E26\u1E28\u1E2A\u1E2C\u1E2E\u1E30\u1E32\u1E34\u1E36\u1E38\u1E3A\u1E3C\u1E3E\u1E40\u1E42\u1E44\u1E46\u1E48\u1E4A\u1E4C\u1E4E\u1E50\u1E52\u1E54\u1E56\u1E58\u1E5A\u1E5C\u1E5E\u1E60\u1E62\u1E64\u1E66\u1E68\u1E6A\u1E6C\u1E6E\u1E70\u1E72\u1E74\u1E76\u1E78\u1E7A\u1E7C\u1E7E\u1E80\u1E82\u1E84\u1E86\u1E88\u1E8A\u1E8C\u1E8E\u1E90\u1E92\u1E94\u1E9E\u1EA0\u1EA2\u1EA4\u1EA6\u1EA8\u1EAA\u1EAC\u1EAE\u1EB0\u1EB2\u1EB4\u1EB6\u1EB8\u1EBA\u1EBC\u1EBE\u1EC0\u1EC2\u1EC4\u1EC6\u1EC8\u1ECA\u1ECC\u1ECE\u1ED0\u1ED2\u1ED4\u1ED6\u1ED8\u1EDA\u1EDC\u1EDE\u1EE0\u1EE2\u1EE4\u1EE6\u1EE8\u1EEA\u1EEC\u1EEE\u1EF0\u1EF2\u1EF4\u1EF6\u1EF8\u1EFA\u1EFC\u1EFE\u1F08-\u1F0F\u1F18-\u1F1D\u1F28-\u1F2F\u1F38-\u1F3F\u1F48-\u1F4D\u1F59\u1F5B\u1F5D\u1F5F\u1F68-\u1F6F\u1FB8-\u1FBB\u1FC8-\u1FCB\u1FD8-\u1FDB\u1FE8-\u1FEC\u1FF8-\u1FFB\u2102\u2107\u210B-\u210D\u2110-\u2112\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u2130-\u2133\u213E\u213F\u2145\u2183\u2C00-\u2C2E\u2C60\u2C62-\u2C64\u2C67\u2C69\u2C6B\u2C6D-\u2C70\u2C72\u2C75\u2C7E-\u2C80\u2C82\u2C84\u2C86\u2C88\u2C8A\u2C8C\u2C8E\u2C90\u2C92\u2C94\u2C96\u2C98\u2C9A\u2C9C\u2C9E\u2CA0\u2CA2\u2CA4\u2CA6\u2CA8\u2CAA\u2CAC\u2CAE\u2CB0\u2CB2\u2CB4\u2CB6\u2CB8\u2CBA\u2CBC\u2CBE\u2CC0\u2CC2\u2CC4\u2CC6\u2CC8\u2CCA\u2CCC\u2CCE\u2CD0\u2CD2\u2CD4\u2CD6\u2CD8\u2CDA\u2CDC\u2CDE\u2CE0\u2CE2\u2CEB\u2CED\u2CF2\uA640\uA642\uA644\uA646\uA648\uA64A\uA64C\uA64E\uA650\uA652\uA654\uA656\uA658\uA65A\uA65C\uA65E\uA660\uA662\uA664\uA666\uA668\uA66A\uA66C\uA680\uA682\uA684\uA686\uA688\uA68A\uA68C\uA68E\uA690\uA692\uA694\uA696\uA698\uA69A\uA722\uA724\uA726\uA728\uA72A\uA72C\uA72E\uA732\uA734\uA736\uA738\uA73A\uA73C\uA73E\uA740\uA742\uA744\uA746\uA748\uA74A\uA74C\uA74E\uA750\uA752\uA754\uA756\uA758\uA75A\uA75C\uA75E\uA760\uA762\uA764\uA766\uA768\uA76A\uA76C\uA76E\uA779\uA77B\uA77D\uA77E\uA780\uA782\uA784\uA786\uA78B\uA78D\uA790\uA792\uA796\uA798\uA79A\uA79C\uA79E\uA7A0\uA7A2\uA7A4\uA7A6\uA7A8\uA7AA-\uA7AD\uA7B0-\uA7B4\uA7B6\uFF21-\uFF3A])([A-Z\xC0-\xD6\xD8-\xDE\u0100\u0102\u0104\u0106\u0108\u010A\u010C\u010E\u0110\u0112\u0114\u0116\u0118\u011A\u011C\u011E\u0120\u0122\u0124\u0126\u0128\u012A\u012C\u012E\u0130\u0132\u0134\u0136\u0139\u013B\u013D\u013F\u0141\u0143\u0145\u0147\u014A\u014C\u014E\u0150\u0152\u0154\u0156\u0158\u015A\u015C\u015E\u0160\u0162\u0164\u0166\u0168\u016A\u016C\u016E\u0170\u0172\u0174\u0176\u0178\u0179\u017B\u017D\u0181\u0182\u0184\u0186\u0187\u0189-\u018B\u018E-\u0191\u0193\u0194\u0196-\u0198\u019C\u019D\u019F\u01A0\u01A2\u01A4\u01A6\u01A7\u01A9\u01AC\u01AE\u01AF\u01B1-\u01B3\u01B5\u01B7\u01B8\u01BC\u01C4\u01C7\u01CA\u01CD\u01CF\u01D1\u01D3\u01D5\u01D7\u01D9\u01DB\u01DE\u01E0\u01E2\u01E4\u01E6\u01E8\u01EA\u01EC\u01EE\u01F1\u01F4\u01F6-\u01F8\u01FA\u01FC\u01FE\u0200\u0202\u0204\u0206\u0208\u020A\u020C\u020E\u0210\u0212\u0214\u0216\u0218\u021A\u021C\u021E\u0220\u0222\u0224\u0226\u0228\u022A\u022C\u022E\u0230\u0232\u023A\u023B\u023D\u023E\u0241\u0243-\u0246\u0248\u024A\u024C\u024E\u0370\u0372\u0376\u037F\u0386\u0388-\u038A\u038C\u038E\u038F\u0391-\u03A1\u03A3-\u03AB\u03CF\u03D2-\u03D4\u03D8\u03DA\u03DC\u03DE\u03E0\u03E2\u03E4\u03E6\u03E8\u03EA\u03EC\u03EE\u03F4\u03F7\u03F9\u03FA\u03FD-\u042F\u0460\u0462\u0464\u0466\u0468\u046A\u046C\u046E\u0470\u0472\u0474\u0476\u0478\u047A\u047C\u047E\u0480\u048A\u048C\u048E\u0490\u0492\u0494\u0496\u0498\u049A\u049C\u049E\u04A0\u04A2\u04A4\u04A6\u04A8\u04AA\u04AC\u04AE\u04B0\u04B2\u04B4\u04B6\u04B8\u04BA\u04BC\u04BE\u04C0\u04C1\u04C3\u04C5\u04C7\u04C9\u04CB\u04CD\u04D0\u04D2\u04D4\u04D6\u04D8\u04DA\u04DC\u04DE\u04E0\u04E2\u04E4\u04E6\u04E8\u04EA\u04EC\u04EE\u04F0\u04F2\u04F4\u04F6\u04F8\u04FA\u04FC\u04FE\u0500\u0502\u0504\u0506\u0508\u050A\u050C\u050E\u0510\u0512\u0514\u0516\u0518\u051A\u051C\u051E\u0520\u0522\u0524\u0526\u0528\u052A\u052C\u052E\u0531-\u0556\u10A0-\u10C5\u10C7\u10CD\u13A0-\u13F5\u1E00\u1E02\u1E04\u1E06\u1E08\u1E0A\u1E0C\u1E0E\u1E10\u1E12\u1E14\u1E16\u1E18\u1E1A\u1E1C\u1E1E\u1E20\u1E22\u1E24\u1E26\u1E28\u1E2A\u1E2C\u1E2E\u1E30\u1E32\u1E34\u1E36\u1E38\u1E3A\u1E3C\u1E3E\u1E40\u1E42\u1E44\u1E46\u1E48\u1E4A\u1E4C\u1E4E\u1E50\u1E52\u1E54\u1E56\u1E58\u1E5A\u1E5C\u1E5E\u1E60\u1E62\u1E64\u1E66\u1E68\u1E6A\u1E6C\u1E6E\u1E70\u1E72\u1E74\u1E76\u1E78\u1E7A\u1E7C\u1E7E\u1E80\u1E82\u1E84\u1E86\u1E88\u1E8A\u1E8C\u1E8E\u1E90\u1E92\u1E94\u1E9E\u1EA0\u1EA2\u1EA4\u1EA6\u1EA8\u1EAA\u1EAC\u1EAE\u1EB0\u1EB2\u1EB4\u1EB6\u1EB8\u1EBA\u1EBC\u1EBE\u1EC0\u1EC2\u1EC4\u1EC6\u1EC8\u1ECA\u1ECC\u1ECE\u1ED0\u1ED2\u1ED4\u1ED6\u1ED8\u1EDA\u1EDC\u1EDE\u1EE0\u1EE2\u1EE4\u1EE6\u1EE8\u1EEA\u1EEC\u1EEE\u1EF0\u1EF2\u1EF4\u1EF6\u1EF8\u1EFA\u1EFC\u1EFE\u1F08-\u1F0F\u1F18-\u1F1D\u1F28-\u1F2F\u1F38-\u1F3F\u1F48-\u1F4D\u1F59\u1F5B\u1F5D\u1F5F\u1F68-\u1F6F\u1FB8-\u1FBB\u1FC8-\u1FCB\u1FD8-\u1FDB\u1FE8-\u1FEC\u1FF8-\u1FFB\u2102\u2107\u210B-\u210D\u2110-\u2112\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u2130-\u2133\u213E\u213F\u2145\u2183\u2C00-\u2C2E\u2C60\u2C62-\u2C64\u2C67\u2C69\u2C6B\u2C6D-\u2C70\u2C72\u2C75\u2C7E-\u2C80\u2C82\u2C84\u2C86\u2C88\u2C8A\u2C8C\u2C8E\u2C90\u2C92\u2C94\u2C96\u2C98\u2C9A\u2C9C\u2C9E\u2CA0\u2CA2\u2CA4\u2CA6\u2CA8\u2CAA\u2CAC\u2CAE\u2CB0\u2CB2\u2CB4\u2CB6\u2CB8\u2CBA\u2CBC\u2CBE\u2CC0\u2CC2\u2CC4\u2CC6\u2CC8\u2CCA\u2CCC\u2CCE\u2CD0\u2CD2\u2CD4\u2CD6\u2CD8\u2CDA\u2CDC\u2CDE\u2CE0\u2CE2\u2CEB\u2CED\u2CF2\uA640\uA642\uA644\uA646\uA648\uA64A\uA64C\uA64E\uA650\uA652\uA654\uA656\uA658\uA65A\uA65C\uA65E\uA660\uA662\uA664\uA666\uA668\uA66A\uA66C\uA680\uA682\uA684\uA686\uA688\uA68A\uA68C\uA68E\uA690\uA692\uA694\uA696\uA698\uA69A\uA722\uA724\uA726\uA728\uA72A\uA72C\uA72E\uA732\uA734\uA736\uA738\uA73A\uA73C\uA73E\uA740\uA742\uA744\uA746\uA748\uA74A\uA74C\uA74E\uA750\uA752\uA754\uA756\uA758\uA75A\uA75C\uA75E\uA760\uA762\uA764\uA766\uA768\uA76A\uA76C\uA76E\uA779\uA77B\uA77D\uA77E\uA780\uA782\uA784\uA786\uA78B\uA78D\uA790\uA792\uA796\uA798\uA79A\uA79C\uA79E\uA7A0\uA7A2\uA7A4\uA7A6\uA7A8\uA7AA-\uA7AD\uA7B0-\uA7B4\uA7B6\uFF21-\uFF3A][a-z\xB5\xDF-\xF6\xF8-\xFF\u0101\u0103\u0105\u0107\u0109\u010B\u010D\u010F\u0111\u0113\u0115\u0117\u0119\u011B\u011D\u011F\u0121\u0123\u0125\u0127\u0129\u012B\u012D\u012F\u0131\u0133\u0135\u0137\u0138\u013A\u013C\u013E\u0140\u0142\u0144\u0146\u0148\u0149\u014B\u014D\u014F\u0151\u0153\u0155\u0157\u0159\u015B\u015D\u015F\u0161\u0163\u0165\u0167\u0169\u016B\u016D\u016F\u0171\u0173\u0175\u0177\u017A\u017C\u017E-\u0180\u0183\u0185\u0188\u018C\u018D\u0192\u0195\u0199-\u019B\u019E\u01A1\u01A3\u01A5\u01A8\u01AA\u01AB\u01AD\u01B0\u01B4\u01B6\u01B9\u01BA\u01BD-\u01BF\u01C6\u01C9\u01CC\u01CE\u01D0\u01D2\u01D4\u01D6\u01D8\u01DA\u01DC\u01DD\u01DF\u01E1\u01E3\u01E5\u01E7\u01E9\u01EB\u01ED\u01EF\u01F0\u01F3\u01F5\u01F9\u01FB\u01FD\u01FF\u0201\u0203\u0205\u0207\u0209\u020B\u020D\u020F\u0211\u0213\u0215\u0217\u0219\u021B\u021D\u021F\u0221\u0223\u0225\u0227\u0229\u022B\u022D\u022F\u0231\u0233-\u0239\u023C\u023F\u0240\u0242\u0247\u0249\u024B\u024D\u024F-\u0293\u0295-\u02AF\u0371\u0373\u0377\u037B-\u037D\u0390\u03AC-\u03CE\u03D0\u03D1\u03D5-\u03D7\u03D9\u03DB\u03DD\u03DF\u03E1\u03E3\u03E5\u03E7\u03E9\u03EB\u03ED\u03EF-\u03F3\u03F5\u03F8\u03FB\u03FC\u0430-\u045F\u0461\u0463\u0465\u0467\u0469\u046B\u046D\u046F\u0471\u0473\u0475\u0477\u0479\u047B\u047D\u047F\u0481\u048B\u048D\u048F\u0491\u0493\u0495\u0497\u0499\u049B\u049D\u049F\u04A1\u04A3\u04A5\u04A7\u04A9\u04AB\u04AD\u04AF\u04B1\u04B3\u04B5\u04B7\u04B9\u04BB\u04BD\u04BF\u04C2\u04C4\u04C6\u04C8\u04CA\u04CC\u04CE\u04CF\u04D1\u04D3\u04D5\u04D7\u04D9\u04DB\u04DD\u04DF\u04E1\u04E3\u04E5\u04E7\u04E9\u04EB\u04ED\u04EF\u04F1\u04F3\u04F5\u04F7\u04F9\u04FB\u04FD\u04FF\u0501\u0503\u0505\u0507\u0509\u050B\u050D\u050F\u0511\u0513\u0515\u0517\u0519\u051B\u051D\u051F\u0521\u0523\u0525\u0527\u0529\u052B\u052D\u052F\u0561-\u0587\u13F8-\u13FD\u1D00-\u1D2B\u1D6B-\u1D77\u1D79-\u1D9A\u1E01\u1E03\u1E05\u1E07\u1E09\u1E0B\u1E0D\u1E0F\u1E11\u1E13\u1E15\u1E17\u1E19\u1E1B\u1E1D\u1E1F\u1E21\u1E23\u1E25\u1E27\u1E29\u1E2B\u1E2D\u1E2F\u1E31\u1E33\u1E35\u1E37\u1E39\u1E3B\u1E3D\u1E3F\u1E41\u1E43\u1E45\u1E47\u1E49\u1E4B\u1E4D\u1E4F\u1E51\u1E53\u1E55\u1E57\u1E59\u1E5B\u1E5D\u1E5F\u1E61\u1E63\u1E65\u1E67\u1E69\u1E6B\u1E6D\u1E6F\u1E71\u1E73\u1E75\u1E77\u1E79\u1E7B\u1E7D\u1E7F\u1E81\u1E83\u1E85\u1E87\u1E89\u1E8B\u1E8D\u1E8F\u1E91\u1E93\u1E95-\u1E9D\u1E9F\u1EA1\u1EA3\u1EA5\u1EA7\u1EA9\u1EAB\u1EAD\u1EAF\u1EB1\u1EB3\u1EB5\u1EB7\u1EB9\u1EBB\u1EBD\u1EBF\u1EC1\u1EC3\u1EC5\u1EC7\u1EC9\u1ECB\u1ECD\u1ECF\u1ED1\u1ED3\u1ED5\u1ED7\u1ED9\u1EDB\u1EDD\u1EDF\u1EE1\u1EE3\u1EE5\u1EE7\u1EE9\u1EEB\u1EED\u1EEF\u1EF1\u1EF3\u1EF5\u1EF7\u1EF9\u1EFB\u1EFD\u1EFF-\u1F07\u1F10-\u1F15\u1F20-\u1F27\u1F30-\u1F37\u1F40-\u1F45\u1F50-\u1F57\u1F60-\u1F67\u1F70-\u1F7D\u1F80-\u1F87\u1F90-\u1F97\u1FA0-\u1FA7\u1FB0-\u1FB4\u1FB6\u1FB7\u1FBE\u1FC2-\u1FC4\u1FC6\u1FC7\u1FD0-\u1FD3\u1FD6\u1FD7\u1FE0-\u1FE7\u1FF2-\u1FF4\u1FF6\u1FF7\u210A\u210E\u210F\u2113\u212F\u2134\u2139\u213C\u213D\u2146-\u2149\u214E\u2184\u2C30-\u2C5E\u2C61\u2C65\u2C66\u2C68\u2C6A\u2C6C\u2C71\u2C73\u2C74\u2C76-\u2C7B\u2C81\u2C83\u2C85\u2C87\u2C89\u2C8B\u2C8D\u2C8F\u2C91\u2C93\u2C95\u2C97\u2C99\u2C9B\u2C9D\u2C9F\u2CA1\u2CA3\u2CA5\u2CA7\u2CA9\u2CAB\u2CAD\u2CAF\u2CB1\u2CB3\u2CB5\u2CB7\u2CB9\u2CBB\u2CBD\u2CBF\u2CC1\u2CC3\u2CC5\u2CC7\u2CC9\u2CCB\u2CCD\u2CCF\u2CD1\u2CD3\u2CD5\u2CD7\u2CD9\u2CDB\u2CDD\u2CDF\u2CE1\u2CE3\u2CE4\u2CEC\u2CEE\u2CF3\u2D00-\u2D25\u2D27\u2D2D\uA641\uA643\uA645\uA647\uA649\uA64B\uA64D\uA64F\uA651\uA653\uA655\uA657\uA659\uA65B\uA65D\uA65F\uA661\uA663\uA665\uA667\uA669\uA66B\uA66D\uA681\uA683\uA685\uA687\uA689\uA68B\uA68D\uA68F\uA691\uA693\uA695\uA697\uA699\uA69B\uA723\uA725\uA727\uA729\uA72B\uA72D\uA72F-\uA731\uA733\uA735\uA737\uA739\uA73B\uA73D\uA73F\uA741\uA743\uA745\uA747\uA749\uA74B\uA74D\uA74F\uA751\uA753\uA755\uA757\uA759\uA75B\uA75D\uA75F\uA761\uA763\uA765\uA767\uA769\uA76B\uA76D\uA76F\uA771-\uA778\uA77A\uA77C\uA77F\uA781\uA783\uA785\uA787\uA78C\uA78E\uA791\uA793-\uA795\uA797\uA799\uA79B\uA79D\uA79F\uA7A1\uA7A3\uA7A5\uA7A7\uA7A9\uA7B5\uA7B7\uA7FA\uAB30-\uAB5A\uAB60-\uAB65\uAB70-\uABBF\uFB00-\uFB06\uFB13-\uFB17\uFF41-\uFF5A])/g,He=function(){try{var u=Ru(Object,"defineProperty");return u({},"",{}),u}catch(u){}}();var Ge=function(u,t,e){"__proto__"==t&&He?He(u,t,{configurable:!0,enumerable:!0,value:e,writable:!0}):u[t]=e},Je=Object.prototype.hasOwnProperty;var Ze=function(u,t,e){var r=u[t];Je.call(u,t)&&cu(r,e)&&(void 0!==e||t in u)||Ge(u,t,e)};var We=function(u,t,e,r){if(!nu(u))return u;for(var n=-1,o=(t=Be(t,u)).length,A=o-1,a=u;null!=a&&++n<o;){var i=ge(t[n]),E=e;if(n!=A){var c=a[i];void 0===(E=r?r(c,i,a):void 0)&&(E=nu(c)?c:k(t[n+1])?[]:{})}Ze(a,i,E),a=a[i]}return u};var qe=function(u,t,e){for(var r=-1,n=t.length,o={};++r<n;){var A=t[r],a=pe(u,A);e(a,A)&&We(o,Be(A,u),a)}return o},Ke=uu(Object.getPrototypeOf,Object),Qe=Object.getOwnPropertySymbols?function(u){for(var t=[];u;)gt(t,_t(u)),u=Ke(u);return t}:ht;var Xe=function(u){var t=[];if(null!=u)for(var e in Object(u))t.push(e);return t},ur=Object.prototype.hasOwnProperty;var tr=function(u){if(!nu(u))return Xe(u);var t=X(u),e=[];for(var r in u)("constructor"!=r||!t&&ur.call(u,r))&&e.push(r);return e};function er(u){return Au(u)?K(u,!0):tr(u)}var rr=function(u){return pt(u,er,Qe)};var nr=function(u,e){if(null==u)return{};var t=Ce(rr(u),function(u){return[u]});return e=Pe(e),qe(u,t,function(u,t){return e(u,t[0])})};function or(u,t){for(var e=-1,r=null==u?0:u.length;++e<r&&!1!==t(u[e],e,u););return u}var Ar=function(o,A){return function(u,t){if(null==u)return u;if(!Au(u))return o(u,t);for(var e=u.length,r=A?e:-1,n=Object(u);(A?r--:++r<e)&&!1!==t(n[r],r,n););return u}}(iu);var ar=function(u){return"function"==typeof u?u:me};var ir=function(u,t){return(M(u)?or:Ar)(u,ar(t))};var Er=function(u,r){var n={};return r=Pe(r),iu(u,function(u,t,e){Ge(n,t,r(u,t,e))}),n},cr=v?v.isConcatSpreadable:void 0;var Cr=function(u){return M(u)||R(u)||!!(cr&&u&&u[cr])};var sr=function u(t,e,r,n,o){var A=-1,a=t.length;for(r=r||Cr,o=o||[];++A<a;){var i=t[A];0<e&&r(i)?1<e?u(i,e-1,r,n,o):gt(o,i):n||(o[o.length]=i)}return o};var Fr=function(u){return(null==u?0:u.length)?sr(u,1/0):[]};function lr(u,r){var n=-1,o=Au(u)?Array(u.length):[];return Ar(u,function(u,t,e){o[++n]=r(u,t,e)}),o}function fr(u){return u.replace(/â‚¬/g,"€").replace(/â€š/g,"‚").replace(/Æ’/g,"ƒ").replace(/â€ž/g,"„").replace(/â€¦/g,"…").replace(/â€\u00A0/g,"†").replace(/â€¡/g,"‡").replace(/Ë†/g,"ˆ").replace(/â€°/g,"‰").replace(/Å\u00A0/g,"Š").replace(/â€¹/g,"‹").replace(/Å’/g,"Œ").replace(/Å½/g,"Ž").replace(/â€˜/g,"‘").replace(/â€™/g,"’").replace(/â€œ/g,"“").replace(/â€\u009D/g,"”").replace(/â€¢/g,"•").replace(/â€“/g,"–").replace(/â€”/g,"—").replace(/Ëœ/g,"˜").replace(/â„¢/g,"™").replace(/Å¡/g,"š").replace(/â€º/g,"›").replace(/Å“/g,"œ").replace(/Å¾/g,"ž").replace(/Å¸/g,"Ÿ").replace(/Â /g," ").replace(/Â¡/g,"¡").replace(/Â¢/g,"¢").replace(/Â£/g,"£").replace(/Â¤/g,"¤").replace(/Â¥/g,"¥").replace(/Â¦/g,"¦").replace(/Â§/g,"§").replace(/Â¨/g,"¨").replace(/Â©/g,"©").replace(/Âª/g,"ª").replace(/Â«/g,"«").replace(/Â¬/g,"¬").replace(/Â­/g,"­").replace(/Â®/g,"®").replace(/Â¯/g,"¯").replace(/Â°/g,"°").replace(/Â±/g,"±").replace(/Â²/g,"²").replace(/Â³/g,"³").replace(/Â´/g,"´").replace(/Âµ/g,"µ").replace(/Â¶/g,"¶").replace(/Â·/g,"·").replace(/Â¸/g,"¸").replace(/Â¹/g,"¹").replace(/Âº/g,"º").replace(/Â»/g,"»").replace(/Â¼/g,"¼").replace(/Â½/g,"½").replace(/Â¾/g,"¾").replace(/Â¿/g,"¿").replace(/Ã€/g,"À").replace(/Ã‚/g,"Â").replace(/Ãƒ/g,"Ã").replace(/Ã„/g,"Ä").replace(/Ã…/g,"Å").replace(/Ã†/g,"Æ").replace(/Ã‡/g,"Ç").replace(/Ãˆ/g,"È").replace(/Ã‰/g,"É").replace(/ÃŠ/g,"Ê").replace(/Ã‹/g,"Ë").replace(/ÃŒ/g,"Ì").replace(/Ã\u008D/g,"Í").replace(/ÃŽ/g,"Î").replace(/Ã\u008F/g,"Ï").replace(/Ã\u0090/g,"Ð").replace(/Ã‘/g,"Ñ").replace(/Ã’/g,"Ò").replace(/Ã“/g,"Ó").replace(/Ã”/g,"Ô").replace(/Ã•/g,"Õ").replace(/Ã–/g,"Ö").replace(/Ã—/g,"×").replace(/Ã˜/g,"Ø").replace(/Ã™/g,"Ù").replace(/Ãš/g,"Ú").replace(/Ã›/g,"Û").replace(/Ãœ/g,"Ü").replace(/Ã\u009D/g,"Ý").replace(/Ãž/g,"Þ").replace(/ÃŸ/g,"ß").replace(/Ã\u00A0/g,"à").replace(/Ã¡/g,"á").replace(/Ã¢/g,"â").replace(/Ã£/g,"ã").replace(/Ã¤/g,"ä").replace(/Ã¥/g,"å").replace(/Ã¦/g,"æ").replace(/Ã§/g,"ç").replace(/Ã¨/g,"è").replace(/Ã©/g,"é").replace(/Ãª/g,"ê").replace(/Ã«/g,"ë").replace(/Ã¬/g,"ì").replace(/Ã\u00AD/g,"í").replace(/Ã®/g,"î").replace(/Ã¯/g,"ï").replace(/Ã°/g,"ð").replace(/Ã±/g,"ñ").replace(/Ã²/g,"ò").replace(/Ã³/g,"ó").replace(/Ã´/g,"ô").replace(/Ãµ/g,"õ").replace(/Ã¶/g,"ö").replace(/Ã·/g,"÷").replace(/Ã¸/g,"ø").replace(/Ã¹/g,"ù").replace(/Ãº/g,"ú").replace(/Ã»/g,"û").replace(/Ã¼/g,"ü").replace(/Ã½/g,"ý").replace(/Ã¾/g,"þ").replace(/Ã¿/g,"ÿ").normalize()}var Dr=function(u,t){return(M(u)?Ce:lr)(u,Pe(t))},Br={d:"DD",D:"ddd",j:"D",l:"dddd",N:"E",S:function(){return"["+this.format("Do").replace(/\d*/g,"")+"]"},w:"d",z:function(){return this.format("DDD")-1},W:"W",F:"MMMM",m:"MM",M:"MMM",n:"M",t:function(){return this.daysInMonth()},L:function(){return this.isLeapYear()?1:0},o:"GGGG",Y:"YYYY",y:"YY",a:"a",A:"A",B:function(u){var t=u.clone().utc(),e=(t.hours()+1)%24+t.minutes()/60+t.seconds()/3600;return Math.floor(1e3*e/24)},g:"h",G:"H",h:"hh",H:"HH",i:"mm",s:"ss",u:"[u]",e:"[e]",I:function(u){return u.isDST()?1:0},O:"ZZ",P:"Z",T:"[T]",Z:function(u){return 36*parseInt(u.format("ZZ"),10)},c:"YYYY-MM-DD[T]HH:mm:ssZ",r:"ddd, DD MMM YYYY HH:mm:ss ZZ",U:"X"},gr=/[dDjlNSwzWFmMntLoYyaABgGhHisueIOPTZcrU]/g;var pr=/numero/i,br=/data(?!base)/i;function hr(u){var e={};return ir(u,function(u,t){e[Me(t)]=u}),e}function vr(u){if(!u.numeroProcesso)return u;var t=u;try{var e=r.load(t.numeroProcesso);t.numeroProcesso=e.generate(!0),t.cnj=e.pieces}catch(u){}return t}a.locale("pt-br");var dr=function(e){function o(u,t){e.call(this,t),this.elementProcesso=u}e&&(o.__proto__=e);var u={dadosCaptura:{configurable:!0},adicional:{configurable:!0},ajuizamento:{configurable:!0},area:{configurable:!0},assunto:{configurable:!0},atas:{configurable:!0},cartorio:{configurable:!0},codigoReu:{configurable:!0},comarcaInicial:{configurable:!0},decisao:{configurable:!0},foro:{configurable:!0},inscricao:{configurable:!0},localizacao:{configurable:!0},localizacaoImovel:{configurable:!0},nome:{configurable:!0},numeroDivida:{configurable:!0},numeroVara:{configurable:!0},observacao:{configurable:!0},orgao:{configurable:!0},origemProcesso:{configurable:!0},rito:{configurable:!0},solucao:{configurable:!0},acao:{configurable:!0},andamentoInicial:{configurable:!0},autuacao:{configurable:!0},classe:{configurable:!0},comarca:{configurable:!0},dataValorCausa:{configurable:!0},descricao:{configurable:!0},distribuicao:{configurable:!0},fase:{configurable:!0},incidente:{configurable:!0},instancia:{configurable:!0},natureza:{configurable:!0},numeroAntigo:{configurable:!0},numeroProcesso:{configurable:!0},numeroProtocolo:{configurable:!0},eletronico:{configurable:!0},situacao:{configurable:!0},status:{configurable:!0},valorCausa:{configurable:!0},vara:{configurable:!0},justiceSecret:{configurable:!0},transitoJulgado:{configurable:!0},urlProcesso:{configurable:!0},adicionalAttributes:{configurable:!0},ajuizamentoAttributes:{configurable:!0},areaAttributes:{configurable:!0},assuntoAttributes:{configurable:!0},atasAttributes:{configurable:!0},cartorioAttributes:{configurable:!0},codigoReuAttributes:{configurable:!0},comarcaInicialAttributes:{configurable:!0},decisaoAttributes:{configurable:!0},foroAttributes:{configurable:!0},inscricaoAttributes:{configurable:!0},localizacaoAttributes:{configurable:!0},localizacaoImovelAttributes:{configurable:!0},nomeAttributes:{configurable:!0},numeroDividaAttributes:{configurable:!0},numeroVaraAttributes:{configurable:!0},observacaoAttributes:{configurable:!0},orgaoAttributes:{configurable:!0},origemProcessoAttributes:{configurable:!0},ritoAttributes:{configurable:!0},solucaoAttributes:{configurable:!0},acaoAttributes:{configurable:!0},andamentoInicialAttributes:{configurable:!0},autuacaoAttributes:{configurable:!0},classeAttributes:{configurable:!0},comarcaAttributes:{configurable:!0},dataValorCausaAttributes:{configurable:!0},descricaoAttributes:{configurable:!0},distribuicaoAttributes:{configurable:!0},faseAttributes:{configurable:!0},incidenteAttributes:{configurable:!0},instanciaAttributes:{configurable:!0},naturezaAttributes:{configurable:!0},numeroAntigoAttributes:{configurable:!0},numeroProcessoAttributes:{configurable:!0},numeroProtocoloAttributes:{configurable:!0},eletronicoAttributes:{configurable:!0},situacaoAttributes:{configurable:!0},statusAttributes:{configurable:!0},valorCausaAttributes:{configurable:!0},varaAttributes:{configurable:!0},justiceSecretAttributes:{configurable:!0},transitoJulgadoAttributes:{configurable:!0},urlProcessoAttributes:{configurable:!0},advogados:{configurable:!0},partes:{configurable:!0},documentos:{configurable:!0},andamentos:{configurable:!0},tags:{configurable:!0}};return((o.prototype=Object.create(e&&e.prototype)).constructor=o).formatItem=function(u,t,e){var r=this;if(Array.isArray(u))return u.map(function(u){return r.formatItem(u,t,e)});if("object"==typeof u)return o.format(u);if("numeroProcesso"===t)return u;if("numeroAntigo"===t)return u;if(-1!==["valorCausa","instancia"].indexOf(t)||pr.test(t))return a(u).value();if("eletronico"===t)return"1"===u;if(br.test(t)||-1!==["inscricao","transitoJulgado","ajuizamento","autuacao","distribuicao","andamentoInicial","dataValorCausa"].indexOf(t)){var n=A(u,function(u,t){return u.replace(gr,function(u){return"function"==typeof Br[u]?Br[u](t):Br[u]})}(e.format||(e[t+"Attributes"]?e[t+"Attributes"].format:null)||"d/m/Y"));return n.isValid()?n.toDate():u}return u},o.format=function(e){var u=Er(e,function(u,t){return o.formatItem(u,t,e)});return u=vr(u)},o.prototype.getter=function(u,t,e){void 0===t&&(t={}),void 0===e&&(e=null);var r=(0,this.$)(this.elementProcesso).children(u);if(!r.length)return e;var n=r.text();return i(t,r.get().attribs),fr(n)},o.prototype.attributes=function(u,t){void 0===t&&(t=null);var e=(0,this.$)(this.elementProcesso).children(u);if(!e.length)return t;var r=e.get().attribs;return r?Er(hr(r),function(u){return fr(u)}):t},u.dadosCaptura.get=function(){return this.elementProcesso.attribs},u.adicional.get=function(){return this.getter("adicional")},u.ajuizamento.get=function(){return this.getter("ajuizamento")},u.area.get=function(){return this.getter("area")},u.assunto.get=function(){return this.getter("assunto")},u.atas.get=function(){return this.getter("atas")},u.cartorio.get=function(){return this.getter("cartorio")},u.codigoReu.get=function(){return this.getter("codigo_reu")},u.comarcaInicial.get=function(){return this.getter("comarca_inicial")},u.decisao.get=function(){return this.getter("decisao")},u.foro.get=function(){return this.getter("foro")},u.inscricao.get=function(){return this.getter("inscricao")},u.localizacao.get=function(){return this.getter("localizacao")},u.localizacaoImovel.get=function(){return this.getter("localizacao_imovel")},u.nome.get=function(){return this.getter("nome")},u.numeroDivida.get=function(){return this.getter("numero_divida")},u.numeroVara.get=function(){return this.getter("numero_vara")},u.observacao.get=function(){return this.getter("observacao")},u.orgao.get=function(){return this.getter("orgao")},u.origemProcesso.get=function(){return this.getter("origem_processo")},u.rito.get=function(){return this.getter("rito")},u.solucao.get=function(){return this.getter("solucao")},u.acao.get=function(){return this.getter("acao")},u.andamentoInicial.get=function(){return this.getter("andamento_inicial")},u.autuacao.get=function(){return this.getter("autuacao")},u.classe.get=function(){return this.getter("classe")},u.comarca.get=function(){return this.getter("comarca")},u.dataValorCausa.get=function(){return this.getter("data_valor_causa")},u.descricao.get=function(){return this.getter("descricao")},u.distribuicao.get=function(){return this.getter("distribuicao")},u.fase.get=function(){return this.getter("fase")},u.incidente.get=function(){return this.getter("incidente")},u.instancia.get=function(){return this.getter("instancia")},u.natureza.get=function(){return this.getter("natureza")},u.numeroAntigo.get=function(){return this.getter("numero_antigo")},u.numeroProcesso.get=function(){return this.getter("numero_processo")},u.numeroProtocolo.get=function(){return this.getter("numero_protocolo")},u.eletronico.get=function(){return this.getter("eletronico")},u.situacao.get=function(){return this.getter("situacao")},u.status.get=function(){return this.getter("status")},u.valorCausa.get=function(){return this.getter("valor_causa")},u.vara.get=function(){return this.getter("vara")},u.justiceSecret.get=function(){return this.getter("justiceSecret")},u.transitoJulgado.get=function(){return this.getter("transitoJulgado")},u.urlProcesso.get=function(){return this.getter("url_processo")},u.adicionalAttributes.get=function(){return this.attributes("adicional")},u.ajuizamentoAttributes.get=function(){return this.attributes("ajuizamento")},u.areaAttributes.get=function(){return this.attributes("area")},u.assuntoAttributes.get=function(){return this.attributes("assunto")},u.atasAttributes.get=function(){return this.attributes("atas")},u.cartorioAttributes.get=function(){return this.attributes("cartorio")},u.codigoReuAttributes.get=function(){return this.attributes("codigo_reu")},u.comarcaInicialAttributes.get=function(){return this.attributes("comarca_inicial")},u.decisaoAttributes.get=function(){return this.attributes("decisao")},u.foroAttributes.get=function(){return this.attributes("foro")},u.inscricaoAttributes.get=function(){return this.attributes("inscricao")},u.localizacaoAttributes.get=function(){return this.attributes("localizacao")},u.localizacaoImovelAttributes.get=function(){return this.attributes("localizacao_imovel")},u.nomeAttributes.get=function(){return this.attributes("nome")},u.numeroDividaAttributes.get=function(){return this.attributes("numero_divida")},u.numeroVaraAttributes.get=function(){return this.attributes("numero_vara")},u.observacaoAttributes.get=function(){return this.attributes("observacao")},u.orgaoAttributes.get=function(){return this.attributes("orgao")},u.origemProcessoAttributes.get=function(){return this.attributes("origem_processo")},u.ritoAttributes.get=function(){return this.attributes("rito")},u.solucaoAttributes.get=function(){return this.attributes("solucao")},u.acaoAttributes.get=function(){return this.attributes("acao")},u.andamentoInicialAttributes.get=function(){return this.attributes("andamento_inicial")},u.autuacaoAttributes.get=function(){return this.attributes("autuacao")},u.classeAttributes.get=function(){return this.attributes("classe")},u.comarcaAttributes.get=function(){return this.attributes("comarca")},u.dataValorCausaAttributes.get=function(){return this.attributes("data_valor_causa")},u.descricaoAttributes.get=function(){return this.attributes("descricao")},u.distribuicaoAttributes.get=function(){return this.attributes("distribuicao")},u.faseAttributes.get=function(){return this.attributes("fase")},u.incidenteAttributes.get=function(){return this.attributes("incidente")},u.instanciaAttributes.get=function(){return this.attributes("instancia")},u.naturezaAttributes.get=function(){return this.attributes("natureza")},u.numeroAntigoAttributes.get=function(){return this.attributes("numero_antigo")},u.numeroProcessoAttributes.get=function(){return this.attributes("numero_processo")},u.numeroProtocoloAttributes.get=function(){return this.attributes("numero_protocolo")},u.eletronicoAttributes.get=function(){return this.attributes("eletronico")},u.situacaoAttributes.get=function(){return this.attributes("situacao")},u.statusAttributes.get=function(){return this.attributes("status")},u.valorCausaAttributes.get=function(){return this.attributes("valor_causa")},u.varaAttributes.get=function(){return this.attributes("vara")},u.justiceSecretAttributes.get=function(){return this.attributes("justiceSecret")},u.transitoJulgadoAttributes.get=function(){return this.attributes("transitoJulgado")},u.urlProcessoAttributes.get=function(){return this.attributes("url_processo")},u.advogados.get=function(){var e=this.$;return e("advogados advogado",this.elementProcesso).map(function(u,t){return i({},hr(t.attribs),{nome:e(t).text().trim()})}).get()},u.partes.get=function(){var e=this.$;return e("partes parte",this.elementProcesso).map(function(u,t){return i({},Er(hr(t.attribs),function(u){return fr(u)}),{nome:fr(e(t).text().trim())})}).get()},u.documentos.get=function(){var r=this.$;return r("documentos documento",this.elementProcesso).map(function(u,t){return i.apply(void 0,Fr(r(t).children().map(function(u,t){var e;return[(e={},e[Me(t.name)]=fr(r(t).text()),e),t.attribs||{}]}).get()))}).get()},u.andamentos.get=function(){var r=this.$;return r("andamentos andamento",this.elementProcesso).map(function(u,t){return i.apply(void 0,Fr(r(t).children().map(function(u,t){var e;return[(e={},e[Me(t.name)]=fr(r(t).text()),e),t.attribs||{}]}).get()))}).get().reduce(function(u,t){var e;return i(u,((e={})[t.hash]=t,e))},{})},u.tags.get=function(){var r=this.$,u=r("tags tag",this.elementProcesso).map(function(u,t){var e;return(e={})[r(t).text().trim()]=hr(t.attribs),e}).get();return u.length?i.apply(void 0,u):{}},o.prototype.dump=function(){var n=this,u=Dr(Object.getOwnPropertyDescriptors(Object.getPrototypeOf(this)),function(u,t){var e;if("function"!=typeof u.get)return null;var r=u.get.apply(n);return r?((e={})[Me(t)]=r,e):null}).filter(function(u){return!!u});return u.length?o.format(i.apply(void 0,[{}].concat(u))):{}},Object.defineProperties(o.prototype,u),o}(Ie),_r=function(u){function r(){u.apply(this,arguments)}return u&&(r.__proto__=u),((r.prototype=Object.create(u&&u.prototype)).constructor=r).prototype.readNode=function(u,t){var e,r=this.$;return nr(i({},t.attribs,((e={})[u]=r(t).text().trim(),e)),function(u){return!!u})},r.prototype.childrenDump=function(u,t){var o=this;void 0===t&&(t=!1);var A=this.$,e=A(u).children();return t?this.readNode(Me(u.name),u):i.apply(void 0,e.map(function(u,t){var e,r=Me(t.name),n=A(t).children();return n.length?((e={})[""+r]=n.map(function(u,t){return o.childrenDump(t,!0)}).get(),e):o.readNode(r,t)}).get())},r.formatQuery=function(u){var t=u;return t.query="SELECT FROM '"+u.tribunalNome+"'.'"+u.tribunalConsulta+"'",u.parametros&&u.parametros.length&&(t.query+=" WHERE "+u.parametros.map(function(u){return"'"+u.name+"' = '"+u.parametro+"'"}).join(" AND ")),t},r.prototype.dump=function(){var e=this;return(0,this.$)("body advogado processos processo").map(function(u,t){return r.formatQuery(vr(e.childrenDump(t)))}).get()},r}(Ie),mr=function(u){function t(){u.apply(this,arguments)}return u&&(t.__proto__=u),((t.prototype=Object.create(u&&u.prototype)).constructor=t).prototype.dump=function(){var e=u.prototype.dump.call(this);return e("body > processo").map(function(u,t){return new dr(t,e).parse()}).get()},t}(Ie);u.ExceptionCodes=we,u.Info=Le,u.JuristekException=Ne,u.JuristekInstanceException=Se,u.JuristekParserException=Te,u.OAB=_r,u.Processos=mr,u.exceptionCodename=function(t){return xe(we,function(u){return u===t})||"E_UNKNOWN"},u.formatNumeroProcesso=vr,Object.defineProperty(u,"__esModule",{value:!0})});
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('cheerio'), require('moment'), require('validate-cnj'), require('numeral')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'cheerio', 'moment', 'validate-cnj', 'numeral'], factory) :
+  (global = global || self, factory(global.JuristekParser = {}, global.cheerio, global.moment, global.ValidateCNJ, global.numeral));
+}(this, (function (exports, cheerio, moment, CalculateCNJ, numeral) { 'use strict';
+
+  cheerio = cheerio && Object.prototype.hasOwnProperty.call(cheerio, 'default') ? cheerio['default'] : cheerio;
+  moment = moment && Object.prototype.hasOwnProperty.call(moment, 'default') ? moment['default'] : moment;
+  CalculateCNJ = CalculateCNJ && Object.prototype.hasOwnProperty.call(CalculateCNJ, 'default') ? CalculateCNJ['default'] : CalculateCNJ;
+  numeral = numeral && Object.prototype.hasOwnProperty.call(numeral, 'default') ? numeral['default'] : numeral;
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) { Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } }
+
+  function _extendableBuiltin(cls) {
+    function ExtendableBuiltin() {
+      cls.apply(this, arguments);
+    }
+
+    ExtendableBuiltin.prototype = Object.create(cls.prototype, {
+      constructor: {
+        value: cls,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(ExtendableBuiltin, cls);
+    } else {
+      ExtendableBuiltin.__proto__ = cls;
+    }
+
+    return ExtendableBuiltin;
+  }
+
+  var ExtendableError = function (_extendableBuiltin2) {
+    _inherits(ExtendableError, _extendableBuiltin2);
+
+    function ExtendableError() {
+      var message = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+      _classCallCheck(this, ExtendableError);
+
+      // extending Error is weird and does not propagate `message`
+      var _this = _possibleConstructorReturn(this, (ExtendableError.__proto__ || Object.getPrototypeOf(ExtendableError)).call(this, message));
+
+      Object.defineProperty(_this, 'message', {
+        configurable: true,
+        enumerable: false,
+        value: message,
+        writable: true
+      });
+
+      Object.defineProperty(_this, 'name', {
+        configurable: true,
+        enumerable: false,
+        value: _this.constructor.name,
+        writable: true
+      });
+
+      if (Error.hasOwnProperty('captureStackTrace')) {
+        Error.captureStackTrace(_this, _this.constructor);
+        return _possibleConstructorReturn(_this);
+      }
+
+      Object.defineProperty(_this, 'stack', {
+        configurable: true,
+        enumerable: false,
+        value: new Error(message).stack,
+        writable: true
+      });
+      return _this;
+    }
+
+    return ExtendableError;
+  }(_extendableBuiltin(Error));
+
+  var JuristekException = /*@__PURE__*/(function (ExtendableError) {
+    function JuristekException () {
+      ExtendableError.apply(this, arguments);
+    }
+
+    if ( ExtendableError ) JuristekException.__proto__ = ExtendableError;
+    JuristekException.prototype = Object.create( ExtendableError && ExtendableError.prototype );
+    JuristekException.prototype.constructor = JuristekException;
+
+    JuristekException.prototype.toString = function toString () {
+      return this.message;
+    };
+
+    return JuristekException;
+  }(ExtendableError));
+
+  var Exception = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    'default': JuristekException
+  });
+
+  var JuristekInstanceException = /*@__PURE__*/(function (JuristekException) {
+  	function JuristekInstanceException () {
+  		JuristekException.apply(this, arguments);
+  	}if ( JuristekException ) JuristekInstanceException.__proto__ = JuristekException;
+  	JuristekInstanceException.prototype = Object.create( JuristekException && JuristekException.prototype );
+  	JuristekInstanceException.prototype.constructor = JuristekInstanceException;
+
+  	
+
+  	return JuristekInstanceException;
+  }(JuristekException));
+
+  var JuristekParserException = /*@__PURE__*/(function (JuristekException) {
+    function JuristekParserException () {
+      JuristekException.apply(this, arguments);
+    }if ( JuristekException ) JuristekParserException.__proto__ = JuristekException;
+    JuristekParserException.prototype = Object.create( JuristekException && JuristekException.prototype );
+    JuristekParserException.prototype.constructor = JuristekParserException;
+
+    
+
+    return JuristekParserException;
+  }(JuristekException));
+
+  /*
+  object-assign
+  (c) Sindre Sorhus
+  @license MIT
+  */
+  /* eslint-disable no-unused-vars */
+  var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
+  var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+  function toObject(val) {
+  	if (val === null || val === undefined) {
+  		throw new TypeError('Object.assign cannot be called with null or undefined');
+  	}
+
+  	return Object(val);
+  }
+
+  function shouldUseNative() {
+  	try {
+  		if (!Object.assign) {
+  			return false;
+  		}
+
+  		// Detect buggy property enumeration order in older V8 versions.
+
+  		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+  		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+  		test1[5] = 'de';
+  		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+  			return false;
+  		}
+
+  		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+  		var test2 = {};
+  		for (var i = 0; i < 10; i++) {
+  			test2['_' + String.fromCharCode(i)] = i;
+  		}
+  		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+  			return test2[n];
+  		});
+  		if (order2.join('') !== '0123456789') {
+  			return false;
+  		}
+
+  		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+  		var test3 = {};
+  		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+  			test3[letter] = letter;
+  		});
+  		if (Object.keys(Object.assign({}, test3)).join('') !==
+  				'abcdefghijklmnopqrst') {
+  			return false;
+  		}
+
+  		return true;
+  	} catch (err) {
+  		// We don't expect any of the above to throw, but better to be safe.
+  		return false;
+  	}
+  }
+
+  var objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+  	var arguments$1 = arguments;
+
+  	var from;
+  	var to = toObject(target);
+  	var symbols;
+
+  	for (var s = 1; s < arguments.length; s++) {
+  		from = Object(arguments$1[s]);
+
+  		for (var key in from) {
+  			if (hasOwnProperty.call(from, key)) {
+  				to[key] = from[key];
+  			}
+  		}
+
+  		if (getOwnPropertySymbols) {
+  			symbols = getOwnPropertySymbols(from);
+  			for (var i = 0; i < symbols.length; i++) {
+  				if (propIsEnumerable.call(from, symbols[i])) {
+  					to[symbols[i]] = from[symbols[i]];
+  				}
+  			}
+  		}
+  	}
+
+  	return to;
+  };
+
+  var name = "juristek-parser";
+  var version = "5.0.11";
+  var repository = {
+  	type: "git",
+  	url: "https://github.com/bipbop/juristek-parser.git"
+  };
+
+  var Parser = function Parser(cherrioObject) {
+    this.$ = cherrioObject;
+  };
+
+  Parser.prototype.assertDocument = function assertDocument () {
+    var exception = this.$('BPQL > header > exception');
+    if (!exception.length) { return; }
+    throw objectAssign(new Exception(exception.text()), {
+      source: exception.attr('source') || null,
+      push: exception.attr('push') !== 'false',
+      code: parseInt(exception.attr('code'), 10) || 0,
+      log: exception.attr('log') || null,
+    });
+  };
+
+  Parser.openString = function openString (str) {
+    return new this(cheerio.load(str, {
+      normalizeWhitespace: true,
+      xmlMode: true,
+    }));
+  };
+
+  Parser.prototype.load = function load () {
+    this.assertDocument();
+    return this.parse();
+  };
+
+  Parser.prototype.parse = function parse () {
+    var dump = this.dump();
+    if (Array.isArray(dump) || typeof dump !== 'object') { dump = { response: dump }; }
+    return objectAssign(dump, {
+      _parserLoaded: new Date(),
+      _parser: { version: version, name: name, repository: repository },
+    });
+  };
+
+  Parser.prototype.dump = function dump () {
+    return this.$;
+  };
+
+  var Info = /*@__PURE__*/(function (Parser) {
+    function Info () {
+      Parser.apply(this, arguments);
+    }
+
+    if ( Parser ) Info.__proto__ = Parser;
+    Info.prototype = Object.create( Parser && Parser.prototype );
+    Info.prototype.constructor = Info;
+
+    Info.compatible = function compatible (info, procNumber, fieldName) {
+      if ( fieldName === void 0 ) fieldName = 'numero_processo';
+
+      return info.filter(function (ref) {
+        var fields = ref.fields;
+
+        return fields
+        .filter(function (ref) {
+          var name = ref.name;
+
+          return (name === fieldName);
+        }).filter(function (ref) {
+          var otherMasks = ref.otherMasks;
+          var mask = ref.mask;
+
+          var masks = [mask].concat(otherMasks);
+          return masks.map(function (x) { return new RegExp(("^" + (x
+            .replace(/(\.)/g, '\\$1')
+            .replace(/N+/g, '\\d+')
+            .replace(/[A-Z]/g, '\\d')) + "$")).test(procNumber); }).find(function (x) { return (x === true); });
+        }).length;
+      });
+    };
+
+    Info.prototype.dump = function dump () {
+      var ref = this;
+      var $ = ref.$;
+      return $('database').map(function (i, databaseNode) { return $('table', databaseNode).map(function (it, tableNode) { return ({
+        table: tableNode.attribs,
+        database: databaseNode.attribs,
+        fields: $('field', tableNode).map(function (fi, fieldNode) { return objectAssign(fieldNode.attribs, {
+          otherMasks: $('alternative_mask', fieldNode).map(function (oi, optionNode) { return $(optionNode).text(); }).get(),
+          options: $('option', fieldNode).map(function (oi, optionNode) { return objectAssign(optionNode.attribs, {
+            text: $(optionNode).text(),
+          }); }).get(),
+        }); }).get(),
+      }); }).get(); }).get();
+    };
+
+    return Info;
+  }(Parser));
+
+  /*! *****************************************************************************
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+  this file except in compliance with the License. You may obtain a copy of the
+  License at http://www.apache.org/licenses/LICENSE-2.0
+
+  THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+  WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+  MERCHANTABLITY OR NON-INFRINGEMENT.
+
+  See the Apache Version 2.0 License for specific language governing permissions
+  and limitations under the License.
+  ***************************************************************************** */
+
+  var __assign = function() {
+      __assign = Object.assign || function __assign(t) {
+          var arguments$1 = arguments;
+
+          for (var s, i = 1, n = arguments.length; i < n; i++) {
+              s = arguments$1[i];
+              for (var p in s) { if (Object.prototype.hasOwnProperty.call(s, p)) { t[p] = s[p]; } }
+          }
+          return t;
+      };
+      return __assign.apply(this, arguments);
+  };
+
+  /**
+   * Source: ftp://ftp.unicode.org/Public/UCD/latest/ucd/SpecialCasing.txt
+   */
+  /**
+   * Lower case as a function.
+   */
+  function lowerCase(str) {
+      return str.toLowerCase();
+  }
+
+  // Support camel case ("camelCase" -> "camel Case" and "CAMELCase" -> "CAMEL Case").
+  var DEFAULT_SPLIT_REGEXP = [/([a-z0-9])([A-Z])/g, /([A-Z])([A-Z][a-z])/g];
+  // Remove all non-word characters.
+  var DEFAULT_STRIP_REGEXP = /[^A-Z0-9]+/gi;
+  /**
+   * Normalize the string into something other libraries can manipulate easier.
+   */
+  function noCase(input, options) {
+      if (options === void 0) { options = {}; }
+      var _a = options.splitRegexp, splitRegexp = _a === void 0 ? DEFAULT_SPLIT_REGEXP : _a, _b = options.stripRegexp, stripRegexp = _b === void 0 ? DEFAULT_STRIP_REGEXP : _b, _c = options.transform, transform = _c === void 0 ? lowerCase : _c, _d = options.delimiter, delimiter = _d === void 0 ? " " : _d;
+      var result = replace(replace(input, splitRegexp, "$1\0$2"), stripRegexp, "\0");
+      var start = 0;
+      var end = result.length;
+      // Trim the delimiter from around the output string.
+      while (result.charAt(start) === "\0")
+          { start++; }
+      while (result.charAt(end - 1) === "\0")
+          { end--; }
+      // Transform each token independently.
+      return result
+          .slice(start, end)
+          .split("\0")
+          .map(transform)
+          .join(delimiter);
+  }
+  /**
+   * Replace `re` in the input string with the replacement value.
+   */
+  function replace(input, re, value) {
+      if (re instanceof RegExp)
+          { return input.replace(re, value); }
+      return re.reduce(function (input, re) { return input.replace(re, value); }, input);
+  }
+
+  function pascalCaseTransform(input, index) {
+      var firstChar = input.charAt(0);
+      var lowerChars = input.substr(1).toLowerCase();
+      if (index > 0 && firstChar >= "0" && firstChar <= "9") {
+          return "_" + firstChar + lowerChars;
+      }
+      return "" + firstChar.toUpperCase() + lowerChars;
+  }
+  function pascalCase(input, options) {
+      if (options === void 0) { options = {}; }
+      return noCase(input, __assign({ delimiter: "", transform: pascalCaseTransform }, options));
+  }
+
+  function camelCaseTransform(input, index) {
+      if (index === 0)
+          { return input.toLowerCase(); }
+      return pascalCaseTransform(input, index);
+  }
+  function camelCase(input, options) {
+      if (options === void 0) { options = {}; }
+      return pascalCase(input, __assign({ transform: camelCaseTransform }, options));
+  }
+
+  /**
+   * A specialized version of `_.map` for arrays without support for iteratee
+   * shorthands.
+   *
+   * @private
+   * @param {Array} [array] The array to iterate over.
+   * @param {Function} iteratee The function invoked per iteration.
+   * @returns {Array} Returns the new mapped array.
+   */
+  function arrayMap(array, iteratee) {
+    var index = -1,
+        length = array == null ? 0 : array.length,
+        result = Array(length);
+
+    while (++index < length) {
+      result[index] = iteratee(array[index], index, array);
+    }
+    return result;
+  }
+
+  var _arrayMap = arrayMap;
+
+  /**
+   * Removes all key-value entries from the list cache.
+   *
+   * @private
+   * @name clear
+   * @memberOf ListCache
+   */
+  function listCacheClear() {
+    this.__data__ = [];
+    this.size = 0;
+  }
+
+  var _listCacheClear = listCacheClear;
+
+  /**
+   * Performs a
+   * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+   * comparison between two values to determine if they are equivalent.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to compare.
+   * @param {*} other The other value to compare.
+   * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+   * @example
+   *
+   * var object = { 'a': 1 };
+   * var other = { 'a': 1 };
+   *
+   * _.eq(object, object);
+   * // => true
+   *
+   * _.eq(object, other);
+   * // => false
+   *
+   * _.eq('a', 'a');
+   * // => true
+   *
+   * _.eq('a', Object('a'));
+   * // => false
+   *
+   * _.eq(NaN, NaN);
+   * // => true
+   */
+  function eq(value, other) {
+    return value === other || (value !== value && other !== other);
+  }
+
+  var eq_1 = eq;
+
+  /**
+   * Gets the index at which the `key` is found in `array` of key-value pairs.
+   *
+   * @private
+   * @param {Array} array The array to inspect.
+   * @param {*} key The key to search for.
+   * @returns {number} Returns the index of the matched value, else `-1`.
+   */
+  function assocIndexOf(array, key) {
+    var length = array.length;
+    while (length--) {
+      if (eq_1(array[length][0], key)) {
+        return length;
+      }
+    }
+    return -1;
+  }
+
+  var _assocIndexOf = assocIndexOf;
+
+  /** Used for built-in method references. */
+  var arrayProto = Array.prototype;
+
+  /** Built-in value references. */
+  var splice = arrayProto.splice;
+
+  /**
+   * Removes `key` and its value from the list cache.
+   *
+   * @private
+   * @name delete
+   * @memberOf ListCache
+   * @param {string} key The key of the value to remove.
+   * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+   */
+  function listCacheDelete(key) {
+    var data = this.__data__,
+        index = _assocIndexOf(data, key);
+
+    if (index < 0) {
+      return false;
+    }
+    var lastIndex = data.length - 1;
+    if (index == lastIndex) {
+      data.pop();
+    } else {
+      splice.call(data, index, 1);
+    }
+    --this.size;
+    return true;
+  }
+
+  var _listCacheDelete = listCacheDelete;
+
+  /**
+   * Gets the list cache value for `key`.
+   *
+   * @private
+   * @name get
+   * @memberOf ListCache
+   * @param {string} key The key of the value to get.
+   * @returns {*} Returns the entry value.
+   */
+  function listCacheGet(key) {
+    var data = this.__data__,
+        index = _assocIndexOf(data, key);
+
+    return index < 0 ? undefined : data[index][1];
+  }
+
+  var _listCacheGet = listCacheGet;
+
+  /**
+   * Checks if a list cache value for `key` exists.
+   *
+   * @private
+   * @name has
+   * @memberOf ListCache
+   * @param {string} key The key of the entry to check.
+   * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+   */
+  function listCacheHas(key) {
+    return _assocIndexOf(this.__data__, key) > -1;
+  }
+
+  var _listCacheHas = listCacheHas;
+
+  /**
+   * Sets the list cache `key` to `value`.
+   *
+   * @private
+   * @name set
+   * @memberOf ListCache
+   * @param {string} key The key of the value to set.
+   * @param {*} value The value to set.
+   * @returns {Object} Returns the list cache instance.
+   */
+  function listCacheSet(key, value) {
+    var data = this.__data__,
+        index = _assocIndexOf(data, key);
+
+    if (index < 0) {
+      ++this.size;
+      data.push([key, value]);
+    } else {
+      data[index][1] = value;
+    }
+    return this;
+  }
+
+  var _listCacheSet = listCacheSet;
+
+  /**
+   * Creates an list cache object.
+   *
+   * @private
+   * @constructor
+   * @param {Array} [entries] The key-value pairs to cache.
+   */
+  function ListCache(entries) {
+    var index = -1,
+        length = entries == null ? 0 : entries.length;
+
+    this.clear();
+    while (++index < length) {
+      var entry = entries[index];
+      this.set(entry[0], entry[1]);
+    }
+  }
+
+  // Add methods to `ListCache`.
+  ListCache.prototype.clear = _listCacheClear;
+  ListCache.prototype['delete'] = _listCacheDelete;
+  ListCache.prototype.get = _listCacheGet;
+  ListCache.prototype.has = _listCacheHas;
+  ListCache.prototype.set = _listCacheSet;
+
+  var _ListCache = ListCache;
+
+  /**
+   * Removes all key-value entries from the stack.
+   *
+   * @private
+   * @name clear
+   * @memberOf Stack
+   */
+  function stackClear() {
+    this.__data__ = new _ListCache;
+    this.size = 0;
+  }
+
+  var _stackClear = stackClear;
+
+  /**
+   * Removes `key` and its value from the stack.
+   *
+   * @private
+   * @name delete
+   * @memberOf Stack
+   * @param {string} key The key of the value to remove.
+   * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+   */
+  function stackDelete(key) {
+    var data = this.__data__,
+        result = data['delete'](key);
+
+    this.size = data.size;
+    return result;
+  }
+
+  var _stackDelete = stackDelete;
+
+  /**
+   * Gets the stack value for `key`.
+   *
+   * @private
+   * @name get
+   * @memberOf Stack
+   * @param {string} key The key of the value to get.
+   * @returns {*} Returns the entry value.
+   */
+  function stackGet(key) {
+    return this.__data__.get(key);
+  }
+
+  var _stackGet = stackGet;
+
+  /**
+   * Checks if a stack value for `key` exists.
+   *
+   * @private
+   * @name has
+   * @memberOf Stack
+   * @param {string} key The key of the entry to check.
+   * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+   */
+  function stackHas(key) {
+    return this.__data__.has(key);
+  }
+
+  var _stackHas = stackHas;
+
+  var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+  function createCommonjsModule(fn, module) {
+  	return module = { exports: {} }, fn(module, module.exports), module.exports;
+  }
+
+  /** Detect free variable `global` from Node.js. */
+  var freeGlobal = typeof commonjsGlobal == 'object' && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
+
+  var _freeGlobal = freeGlobal;
+
+  /** Detect free variable `self`. */
+  var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+  /** Used as a reference to the global object. */
+  var root = _freeGlobal || freeSelf || Function('return this')();
+
+  var _root = root;
+
+  /** Built-in value references. */
+  var Symbol = _root.Symbol;
+
+  var _Symbol = Symbol;
+
+  /** Used for built-in method references. */
+  var objectProto = Object.prototype;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$1 = objectProto.hasOwnProperty;
+
+  /**
+   * Used to resolve the
+   * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+   * of values.
+   */
+  var nativeObjectToString = objectProto.toString;
+
+  /** Built-in value references. */
+  var symToStringTag = _Symbol ? _Symbol.toStringTag : undefined;
+
+  /**
+   * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+   *
+   * @private
+   * @param {*} value The value to query.
+   * @returns {string} Returns the raw `toStringTag`.
+   */
+  function getRawTag(value) {
+    var isOwn = hasOwnProperty$1.call(value, symToStringTag),
+        tag = value[symToStringTag];
+
+    try {
+      value[symToStringTag] = undefined;
+      var unmasked = true;
+    } catch (e) {}
+
+    var result = nativeObjectToString.call(value);
+    if (unmasked) {
+      if (isOwn) {
+        value[symToStringTag] = tag;
+      } else {
+        delete value[symToStringTag];
+      }
+    }
+    return result;
+  }
+
+  var _getRawTag = getRawTag;
+
+  /** Used for built-in method references. */
+  var objectProto$1 = Object.prototype;
+
+  /**
+   * Used to resolve the
+   * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+   * of values.
+   */
+  var nativeObjectToString$1 = objectProto$1.toString;
+
+  /**
+   * Converts `value` to a string using `Object.prototype.toString`.
+   *
+   * @private
+   * @param {*} value The value to convert.
+   * @returns {string} Returns the converted string.
+   */
+  function objectToString(value) {
+    return nativeObjectToString$1.call(value);
+  }
+
+  var _objectToString = objectToString;
+
+  /** `Object#toString` result references. */
+  var nullTag = '[object Null]',
+      undefinedTag = '[object Undefined]';
+
+  /** Built-in value references. */
+  var symToStringTag$1 = _Symbol ? _Symbol.toStringTag : undefined;
+
+  /**
+   * The base implementation of `getTag` without fallbacks for buggy environments.
+   *
+   * @private
+   * @param {*} value The value to query.
+   * @returns {string} Returns the `toStringTag`.
+   */
+  function baseGetTag(value) {
+    if (value == null) {
+      return value === undefined ? undefinedTag : nullTag;
+    }
+    return (symToStringTag$1 && symToStringTag$1 in Object(value))
+      ? _getRawTag(value)
+      : _objectToString(value);
+  }
+
+  var _baseGetTag = baseGetTag;
+
+  /**
+   * Checks if `value` is the
+   * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+   * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+   * @example
+   *
+   * _.isObject({});
+   * // => true
+   *
+   * _.isObject([1, 2, 3]);
+   * // => true
+   *
+   * _.isObject(_.noop);
+   * // => true
+   *
+   * _.isObject(null);
+   * // => false
+   */
+  function isObject(value) {
+    var type = typeof value;
+    return value != null && (type == 'object' || type == 'function');
+  }
+
+  var isObject_1 = isObject;
+
+  /** `Object#toString` result references. */
+  var asyncTag = '[object AsyncFunction]',
+      funcTag = '[object Function]',
+      genTag = '[object GeneratorFunction]',
+      proxyTag = '[object Proxy]';
+
+  /**
+   * Checks if `value` is classified as a `Function` object.
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+   * @example
+   *
+   * _.isFunction(_);
+   * // => true
+   *
+   * _.isFunction(/abc/);
+   * // => false
+   */
+  function isFunction(value) {
+    if (!isObject_1(value)) {
+      return false;
+    }
+    // The use of `Object#toString` avoids issues with the `typeof` operator
+    // in Safari 9 which returns 'object' for typed arrays and other constructors.
+    var tag = _baseGetTag(value);
+    return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+  }
+
+  var isFunction_1 = isFunction;
+
+  /** Used to detect overreaching core-js shims. */
+  var coreJsData = _root['__core-js_shared__'];
+
+  var _coreJsData = coreJsData;
+
+  /** Used to detect methods masquerading as native. */
+  var maskSrcKey = (function() {
+    var uid = /[^.]+$/.exec(_coreJsData && _coreJsData.keys && _coreJsData.keys.IE_PROTO || '');
+    return uid ? ('Symbol(src)_1.' + uid) : '';
+  }());
+
+  /**
+   * Checks if `func` has its source masked.
+   *
+   * @private
+   * @param {Function} func The function to check.
+   * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+   */
+  function isMasked(func) {
+    return !!maskSrcKey && (maskSrcKey in func);
+  }
+
+  var _isMasked = isMasked;
+
+  /** Used for built-in method references. */
+  var funcProto = Function.prototype;
+
+  /** Used to resolve the decompiled source of functions. */
+  var funcToString = funcProto.toString;
+
+  /**
+   * Converts `func` to its source code.
+   *
+   * @private
+   * @param {Function} func The function to convert.
+   * @returns {string} Returns the source code.
+   */
+  function toSource(func) {
+    if (func != null) {
+      try {
+        return funcToString.call(func);
+      } catch (e) {}
+      try {
+        return (func + '');
+      } catch (e) {}
+    }
+    return '';
+  }
+
+  var _toSource = toSource;
+
+  /**
+   * Used to match `RegExp`
+   * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+   */
+  var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+  /** Used to detect host constructors (Safari). */
+  var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+  /** Used for built-in method references. */
+  var funcProto$1 = Function.prototype,
+      objectProto$2 = Object.prototype;
+
+  /** Used to resolve the decompiled source of functions. */
+  var funcToString$1 = funcProto$1.toString;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$2 = objectProto$2.hasOwnProperty;
+
+  /** Used to detect if a method is native. */
+  var reIsNative = RegExp('^' +
+    funcToString$1.call(hasOwnProperty$2).replace(reRegExpChar, '\\$&')
+    .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+  );
+
+  /**
+   * The base implementation of `_.isNative` without bad shim checks.
+   *
+   * @private
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a native function,
+   *  else `false`.
+   */
+  function baseIsNative(value) {
+    if (!isObject_1(value) || _isMasked(value)) {
+      return false;
+    }
+    var pattern = isFunction_1(value) ? reIsNative : reIsHostCtor;
+    return pattern.test(_toSource(value));
+  }
+
+  var _baseIsNative = baseIsNative;
+
+  /**
+   * Gets the value at `key` of `object`.
+   *
+   * @private
+   * @param {Object} [object] The object to query.
+   * @param {string} key The key of the property to get.
+   * @returns {*} Returns the property value.
+   */
+  function getValue(object, key) {
+    return object == null ? undefined : object[key];
+  }
+
+  var _getValue = getValue;
+
+  /**
+   * Gets the native function at `key` of `object`.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @param {string} key The key of the method to get.
+   * @returns {*} Returns the function if it's native, else `undefined`.
+   */
+  function getNative(object, key) {
+    var value = _getValue(object, key);
+    return _baseIsNative(value) ? value : undefined;
+  }
+
+  var _getNative = getNative;
+
+  /* Built-in method references that are verified to be native. */
+  var Map = _getNative(_root, 'Map');
+
+  var _Map = Map;
+
+  /* Built-in method references that are verified to be native. */
+  var nativeCreate = _getNative(Object, 'create');
+
+  var _nativeCreate = nativeCreate;
+
+  /**
+   * Removes all key-value entries from the hash.
+   *
+   * @private
+   * @name clear
+   * @memberOf Hash
+   */
+  function hashClear() {
+    this.__data__ = _nativeCreate ? _nativeCreate(null) : {};
+    this.size = 0;
+  }
+
+  var _hashClear = hashClear;
+
+  /**
+   * Removes `key` and its value from the hash.
+   *
+   * @private
+   * @name delete
+   * @memberOf Hash
+   * @param {Object} hash The hash to modify.
+   * @param {string} key The key of the value to remove.
+   * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+   */
+  function hashDelete(key) {
+    var result = this.has(key) && delete this.__data__[key];
+    this.size -= result ? 1 : 0;
+    return result;
+  }
+
+  var _hashDelete = hashDelete;
+
+  /** Used to stand-in for `undefined` hash values. */
+  var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+  /** Used for built-in method references. */
+  var objectProto$3 = Object.prototype;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$3 = objectProto$3.hasOwnProperty;
+
+  /**
+   * Gets the hash value for `key`.
+   *
+   * @private
+   * @name get
+   * @memberOf Hash
+   * @param {string} key The key of the value to get.
+   * @returns {*} Returns the entry value.
+   */
+  function hashGet(key) {
+    var data = this.__data__;
+    if (_nativeCreate) {
+      var result = data[key];
+      return result === HASH_UNDEFINED ? undefined : result;
+    }
+    return hasOwnProperty$3.call(data, key) ? data[key] : undefined;
+  }
+
+  var _hashGet = hashGet;
+
+  /** Used for built-in method references. */
+  var objectProto$4 = Object.prototype;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$4 = objectProto$4.hasOwnProperty;
+
+  /**
+   * Checks if a hash value for `key` exists.
+   *
+   * @private
+   * @name has
+   * @memberOf Hash
+   * @param {string} key The key of the entry to check.
+   * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+   */
+  function hashHas(key) {
+    var data = this.__data__;
+    return _nativeCreate ? (data[key] !== undefined) : hasOwnProperty$4.call(data, key);
+  }
+
+  var _hashHas = hashHas;
+
+  /** Used to stand-in for `undefined` hash values. */
+  var HASH_UNDEFINED$1 = '__lodash_hash_undefined__';
+
+  /**
+   * Sets the hash `key` to `value`.
+   *
+   * @private
+   * @name set
+   * @memberOf Hash
+   * @param {string} key The key of the value to set.
+   * @param {*} value The value to set.
+   * @returns {Object} Returns the hash instance.
+   */
+  function hashSet(key, value) {
+    var data = this.__data__;
+    this.size += this.has(key) ? 0 : 1;
+    data[key] = (_nativeCreate && value === undefined) ? HASH_UNDEFINED$1 : value;
+    return this;
+  }
+
+  var _hashSet = hashSet;
+
+  /**
+   * Creates a hash object.
+   *
+   * @private
+   * @constructor
+   * @param {Array} [entries] The key-value pairs to cache.
+   */
+  function Hash(entries) {
+    var index = -1,
+        length = entries == null ? 0 : entries.length;
+
+    this.clear();
+    while (++index < length) {
+      var entry = entries[index];
+      this.set(entry[0], entry[1]);
+    }
+  }
+
+  // Add methods to `Hash`.
+  Hash.prototype.clear = _hashClear;
+  Hash.prototype['delete'] = _hashDelete;
+  Hash.prototype.get = _hashGet;
+  Hash.prototype.has = _hashHas;
+  Hash.prototype.set = _hashSet;
+
+  var _Hash = Hash;
+
+  /**
+   * Removes all key-value entries from the map.
+   *
+   * @private
+   * @name clear
+   * @memberOf MapCache
+   */
+  function mapCacheClear() {
+    this.size = 0;
+    this.__data__ = {
+      'hash': new _Hash,
+      'map': new (_Map || _ListCache),
+      'string': new _Hash
+    };
+  }
+
+  var _mapCacheClear = mapCacheClear;
+
+  /**
+   * Checks if `value` is suitable for use as unique object key.
+   *
+   * @private
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+   */
+  function isKeyable(value) {
+    var type = typeof value;
+    return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+      ? (value !== '__proto__')
+      : (value === null);
+  }
+
+  var _isKeyable = isKeyable;
+
+  /**
+   * Gets the data for `map`.
+   *
+   * @private
+   * @param {Object} map The map to query.
+   * @param {string} key The reference key.
+   * @returns {*} Returns the map data.
+   */
+  function getMapData(map, key) {
+    var data = map.__data__;
+    return _isKeyable(key)
+      ? data[typeof key == 'string' ? 'string' : 'hash']
+      : data.map;
+  }
+
+  var _getMapData = getMapData;
+
+  /**
+   * Removes `key` and its value from the map.
+   *
+   * @private
+   * @name delete
+   * @memberOf MapCache
+   * @param {string} key The key of the value to remove.
+   * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+   */
+  function mapCacheDelete(key) {
+    var result = _getMapData(this, key)['delete'](key);
+    this.size -= result ? 1 : 0;
+    return result;
+  }
+
+  var _mapCacheDelete = mapCacheDelete;
+
+  /**
+   * Gets the map value for `key`.
+   *
+   * @private
+   * @name get
+   * @memberOf MapCache
+   * @param {string} key The key of the value to get.
+   * @returns {*} Returns the entry value.
+   */
+  function mapCacheGet(key) {
+    return _getMapData(this, key).get(key);
+  }
+
+  var _mapCacheGet = mapCacheGet;
+
+  /**
+   * Checks if a map value for `key` exists.
+   *
+   * @private
+   * @name has
+   * @memberOf MapCache
+   * @param {string} key The key of the entry to check.
+   * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+   */
+  function mapCacheHas(key) {
+    return _getMapData(this, key).has(key);
+  }
+
+  var _mapCacheHas = mapCacheHas;
+
+  /**
+   * Sets the map `key` to `value`.
+   *
+   * @private
+   * @name set
+   * @memberOf MapCache
+   * @param {string} key The key of the value to set.
+   * @param {*} value The value to set.
+   * @returns {Object} Returns the map cache instance.
+   */
+  function mapCacheSet(key, value) {
+    var data = _getMapData(this, key),
+        size = data.size;
+
+    data.set(key, value);
+    this.size += data.size == size ? 0 : 1;
+    return this;
+  }
+
+  var _mapCacheSet = mapCacheSet;
+
+  /**
+   * Creates a map cache object to store key-value pairs.
+   *
+   * @private
+   * @constructor
+   * @param {Array} [entries] The key-value pairs to cache.
+   */
+  function MapCache(entries) {
+    var index = -1,
+        length = entries == null ? 0 : entries.length;
+
+    this.clear();
+    while (++index < length) {
+      var entry = entries[index];
+      this.set(entry[0], entry[1]);
+    }
+  }
+
+  // Add methods to `MapCache`.
+  MapCache.prototype.clear = _mapCacheClear;
+  MapCache.prototype['delete'] = _mapCacheDelete;
+  MapCache.prototype.get = _mapCacheGet;
+  MapCache.prototype.has = _mapCacheHas;
+  MapCache.prototype.set = _mapCacheSet;
+
+  var _MapCache = MapCache;
+
+  /** Used as the size to enable large array optimizations. */
+  var LARGE_ARRAY_SIZE = 200;
+
+  /**
+   * Sets the stack `key` to `value`.
+   *
+   * @private
+   * @name set
+   * @memberOf Stack
+   * @param {string} key The key of the value to set.
+   * @param {*} value The value to set.
+   * @returns {Object} Returns the stack cache instance.
+   */
+  function stackSet(key, value) {
+    var data = this.__data__;
+    if (data instanceof _ListCache) {
+      var pairs = data.__data__;
+      if (!_Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
+        pairs.push([key, value]);
+        this.size = ++data.size;
+        return this;
+      }
+      data = this.__data__ = new _MapCache(pairs);
+    }
+    data.set(key, value);
+    this.size = data.size;
+    return this;
+  }
+
+  var _stackSet = stackSet;
+
+  /**
+   * Creates a stack cache object to store key-value pairs.
+   *
+   * @private
+   * @constructor
+   * @param {Array} [entries] The key-value pairs to cache.
+   */
+  function Stack(entries) {
+    var data = this.__data__ = new _ListCache(entries);
+    this.size = data.size;
+  }
+
+  // Add methods to `Stack`.
+  Stack.prototype.clear = _stackClear;
+  Stack.prototype['delete'] = _stackDelete;
+  Stack.prototype.get = _stackGet;
+  Stack.prototype.has = _stackHas;
+  Stack.prototype.set = _stackSet;
+
+  var _Stack = Stack;
+
+  /** Used to stand-in for `undefined` hash values. */
+  var HASH_UNDEFINED$2 = '__lodash_hash_undefined__';
+
+  /**
+   * Adds `value` to the array cache.
+   *
+   * @private
+   * @name add
+   * @memberOf SetCache
+   * @alias push
+   * @param {*} value The value to cache.
+   * @returns {Object} Returns the cache instance.
+   */
+  function setCacheAdd(value) {
+    this.__data__.set(value, HASH_UNDEFINED$2);
+    return this;
+  }
+
+  var _setCacheAdd = setCacheAdd;
+
+  /**
+   * Checks if `value` is in the array cache.
+   *
+   * @private
+   * @name has
+   * @memberOf SetCache
+   * @param {*} value The value to search for.
+   * @returns {number} Returns `true` if `value` is found, else `false`.
+   */
+  function setCacheHas(value) {
+    return this.__data__.has(value);
+  }
+
+  var _setCacheHas = setCacheHas;
+
+  /**
+   *
+   * Creates an array cache object to store unique values.
+   *
+   * @private
+   * @constructor
+   * @param {Array} [values] The values to cache.
+   */
+  function SetCache(values) {
+    var index = -1,
+        length = values == null ? 0 : values.length;
+
+    this.__data__ = new _MapCache;
+    while (++index < length) {
+      this.add(values[index]);
+    }
+  }
+
+  // Add methods to `SetCache`.
+  SetCache.prototype.add = SetCache.prototype.push = _setCacheAdd;
+  SetCache.prototype.has = _setCacheHas;
+
+  var _SetCache = SetCache;
+
+  /**
+   * A specialized version of `_.some` for arrays without support for iteratee
+   * shorthands.
+   *
+   * @private
+   * @param {Array} [array] The array to iterate over.
+   * @param {Function} predicate The function invoked per iteration.
+   * @returns {boolean} Returns `true` if any element passes the predicate check,
+   *  else `false`.
+   */
+  function arraySome(array, predicate) {
+    var index = -1,
+        length = array == null ? 0 : array.length;
+
+    while (++index < length) {
+      if (predicate(array[index], index, array)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  var _arraySome = arraySome;
+
+  /**
+   * Checks if a `cache` value for `key` exists.
+   *
+   * @private
+   * @param {Object} cache The cache to query.
+   * @param {string} key The key of the entry to check.
+   * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+   */
+  function cacheHas(cache, key) {
+    return cache.has(key);
+  }
+
+  var _cacheHas = cacheHas;
+
+  /** Used to compose bitmasks for value comparisons. */
+  var COMPARE_PARTIAL_FLAG = 1,
+      COMPARE_UNORDERED_FLAG = 2;
+
+  /**
+   * A specialized version of `baseIsEqualDeep` for arrays with support for
+   * partial deep comparisons.
+   *
+   * @private
+   * @param {Array} array The array to compare.
+   * @param {Array} other The other array to compare.
+   * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+   * @param {Function} customizer The function to customize comparisons.
+   * @param {Function} equalFunc The function to determine equivalents of values.
+   * @param {Object} stack Tracks traversed `array` and `other` objects.
+   * @returns {boolean} Returns `true` if the arrays are equivalent, else `false`.
+   */
+  function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
+    var isPartial = bitmask & COMPARE_PARTIAL_FLAG,
+        arrLength = array.length,
+        othLength = other.length;
+
+    if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
+      return false;
+    }
+    // Assume cyclic values are equal.
+    var stacked = stack.get(array);
+    if (stacked && stack.get(other)) {
+      return stacked == other;
+    }
+    var index = -1,
+        result = true,
+        seen = (bitmask & COMPARE_UNORDERED_FLAG) ? new _SetCache : undefined;
+
+    stack.set(array, other);
+    stack.set(other, array);
+
+    // Ignore non-index properties.
+    while (++index < arrLength) {
+      var arrValue = array[index],
+          othValue = other[index];
+
+      if (customizer) {
+        var compared = isPartial
+          ? customizer(othValue, arrValue, index, other, array, stack)
+          : customizer(arrValue, othValue, index, array, other, stack);
+      }
+      if (compared !== undefined) {
+        if (compared) {
+          continue;
+        }
+        result = false;
+        break;
+      }
+      // Recursively compare arrays (susceptible to call stack limits).
+      if (seen) {
+        if (!_arraySome(other, function(othValue, othIndex) {
+              if (!_cacheHas(seen, othIndex) &&
+                  (arrValue === othValue || equalFunc(arrValue, othValue, bitmask, customizer, stack))) {
+                return seen.push(othIndex);
+              }
+            })) {
+          result = false;
+          break;
+        }
+      } else if (!(
+            arrValue === othValue ||
+              equalFunc(arrValue, othValue, bitmask, customizer, stack)
+          )) {
+        result = false;
+        break;
+      }
+    }
+    stack['delete'](array);
+    stack['delete'](other);
+    return result;
+  }
+
+  var _equalArrays = equalArrays;
+
+  /** Built-in value references. */
+  var Uint8Array = _root.Uint8Array;
+
+  var _Uint8Array = Uint8Array;
+
+  /**
+   * Converts `map` to its key-value pairs.
+   *
+   * @private
+   * @param {Object} map The map to convert.
+   * @returns {Array} Returns the key-value pairs.
+   */
+  function mapToArray(map) {
+    var index = -1,
+        result = Array(map.size);
+
+    map.forEach(function(value, key) {
+      result[++index] = [key, value];
+    });
+    return result;
+  }
+
+  var _mapToArray = mapToArray;
+
+  /**
+   * Converts `set` to an array of its values.
+   *
+   * @private
+   * @param {Object} set The set to convert.
+   * @returns {Array} Returns the values.
+   */
+  function setToArray(set) {
+    var index = -1,
+        result = Array(set.size);
+
+    set.forEach(function(value) {
+      result[++index] = value;
+    });
+    return result;
+  }
+
+  var _setToArray = setToArray;
+
+  /** Used to compose bitmasks for value comparisons. */
+  var COMPARE_PARTIAL_FLAG$1 = 1,
+      COMPARE_UNORDERED_FLAG$1 = 2;
+
+  /** `Object#toString` result references. */
+  var boolTag = '[object Boolean]',
+      dateTag = '[object Date]',
+      errorTag = '[object Error]',
+      mapTag = '[object Map]',
+      numberTag = '[object Number]',
+      regexpTag = '[object RegExp]',
+      setTag = '[object Set]',
+      stringTag = '[object String]',
+      symbolTag = '[object Symbol]';
+
+  var arrayBufferTag = '[object ArrayBuffer]',
+      dataViewTag = '[object DataView]';
+
+  /** Used to convert symbols to primitives and strings. */
+  var symbolProto = _Symbol ? _Symbol.prototype : undefined,
+      symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
+
+  /**
+   * A specialized version of `baseIsEqualDeep` for comparing objects of
+   * the same `toStringTag`.
+   *
+   * **Note:** This function only supports comparing values with tags of
+   * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+   *
+   * @private
+   * @param {Object} object The object to compare.
+   * @param {Object} other The other object to compare.
+   * @param {string} tag The `toStringTag` of the objects to compare.
+   * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+   * @param {Function} customizer The function to customize comparisons.
+   * @param {Function} equalFunc The function to determine equivalents of values.
+   * @param {Object} stack Tracks traversed `object` and `other` objects.
+   * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+   */
+  function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
+    switch (tag) {
+      case dataViewTag:
+        if ((object.byteLength != other.byteLength) ||
+            (object.byteOffset != other.byteOffset)) {
+          return false;
+        }
+        object = object.buffer;
+        other = other.buffer;
+
+      case arrayBufferTag:
+        if ((object.byteLength != other.byteLength) ||
+            !equalFunc(new _Uint8Array(object), new _Uint8Array(other))) {
+          return false;
+        }
+        return true;
+
+      case boolTag:
+      case dateTag:
+      case numberTag:
+        // Coerce booleans to `1` or `0` and dates to milliseconds.
+        // Invalid dates are coerced to `NaN`.
+        return eq_1(+object, +other);
+
+      case errorTag:
+        return object.name == other.name && object.message == other.message;
+
+      case regexpTag:
+      case stringTag:
+        // Coerce regexes to strings and treat strings, primitives and objects,
+        // as equal. See http://www.ecma-international.org/ecma-262/7.0/#sec-regexp.prototype.tostring
+        // for more details.
+        return object == (other + '');
+
+      case mapTag:
+        var convert = _mapToArray;
+
+      case setTag:
+        var isPartial = bitmask & COMPARE_PARTIAL_FLAG$1;
+        convert || (convert = _setToArray);
+
+        if (object.size != other.size && !isPartial) {
+          return false;
+        }
+        // Assume cyclic values are equal.
+        var stacked = stack.get(object);
+        if (stacked) {
+          return stacked == other;
+        }
+        bitmask |= COMPARE_UNORDERED_FLAG$1;
+
+        // Recursively compare objects (susceptible to call stack limits).
+        stack.set(object, other);
+        var result = _equalArrays(convert(object), convert(other), bitmask, customizer, equalFunc, stack);
+        stack['delete'](object);
+        return result;
+
+      case symbolTag:
+        if (symbolValueOf) {
+          return symbolValueOf.call(object) == symbolValueOf.call(other);
+        }
+    }
+    return false;
+  }
+
+  var _equalByTag = equalByTag;
+
+  /**
+   * Appends the elements of `values` to `array`.
+   *
+   * @private
+   * @param {Array} array The array to modify.
+   * @param {Array} values The values to append.
+   * @returns {Array} Returns `array`.
+   */
+  function arrayPush(array, values) {
+    var index = -1,
+        length = values.length,
+        offset = array.length;
+
+    while (++index < length) {
+      array[offset + index] = values[index];
+    }
+    return array;
+  }
+
+  var _arrayPush = arrayPush;
+
+  /**
+   * Checks if `value` is classified as an `Array` object.
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+   * @example
+   *
+   * _.isArray([1, 2, 3]);
+   * // => true
+   *
+   * _.isArray(document.body.children);
+   * // => false
+   *
+   * _.isArray('abc');
+   * // => false
+   *
+   * _.isArray(_.noop);
+   * // => false
+   */
+  var isArray = Array.isArray;
+
+  var isArray_1 = isArray;
+
+  /**
+   * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
+   * `keysFunc` and `symbolsFunc` to get the enumerable property names and
+   * symbols of `object`.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @param {Function} keysFunc The function to get the keys of `object`.
+   * @param {Function} symbolsFunc The function to get the symbols of `object`.
+   * @returns {Array} Returns the array of property names and symbols.
+   */
+  function baseGetAllKeys(object, keysFunc, symbolsFunc) {
+    var result = keysFunc(object);
+    return isArray_1(object) ? result : _arrayPush(result, symbolsFunc(object));
+  }
+
+  var _baseGetAllKeys = baseGetAllKeys;
+
+  /**
+   * A specialized version of `_.filter` for arrays without support for
+   * iteratee shorthands.
+   *
+   * @private
+   * @param {Array} [array] The array to iterate over.
+   * @param {Function} predicate The function invoked per iteration.
+   * @returns {Array} Returns the new filtered array.
+   */
+  function arrayFilter(array, predicate) {
+    var index = -1,
+        length = array == null ? 0 : array.length,
+        resIndex = 0,
+        result = [];
+
+    while (++index < length) {
+      var value = array[index];
+      if (predicate(value, index, array)) {
+        result[resIndex++] = value;
+      }
+    }
+    return result;
+  }
+
+  var _arrayFilter = arrayFilter;
+
+  /**
+   * This method returns a new empty array.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.13.0
+   * @category Util
+   * @returns {Array} Returns the new empty array.
+   * @example
+   *
+   * var arrays = _.times(2, _.stubArray);
+   *
+   * console.log(arrays);
+   * // => [[], []]
+   *
+   * console.log(arrays[0] === arrays[1]);
+   * // => false
+   */
+  function stubArray() {
+    return [];
+  }
+
+  var stubArray_1 = stubArray;
+
+  /** Used for built-in method references. */
+  var objectProto$5 = Object.prototype;
+
+  /** Built-in value references. */
+  var propertyIsEnumerable = objectProto$5.propertyIsEnumerable;
+
+  /* Built-in method references for those with the same name as other `lodash` methods. */
+  var nativeGetSymbols = Object.getOwnPropertySymbols;
+
+  /**
+   * Creates an array of the own enumerable symbols of `object`.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of symbols.
+   */
+  var getSymbols = !nativeGetSymbols ? stubArray_1 : function(object) {
+    if (object == null) {
+      return [];
+    }
+    object = Object(object);
+    return _arrayFilter(nativeGetSymbols(object), function(symbol) {
+      return propertyIsEnumerable.call(object, symbol);
+    });
+  };
+
+  var _getSymbols = getSymbols;
+
+  /**
+   * The base implementation of `_.times` without support for iteratee shorthands
+   * or max array length checks.
+   *
+   * @private
+   * @param {number} n The number of times to invoke `iteratee`.
+   * @param {Function} iteratee The function invoked per iteration.
+   * @returns {Array} Returns the array of results.
+   */
+  function baseTimes(n, iteratee) {
+    var index = -1,
+        result = Array(n);
+
+    while (++index < n) {
+      result[index] = iteratee(index);
+    }
+    return result;
+  }
+
+  var _baseTimes = baseTimes;
+
+  /**
+   * Checks if `value` is object-like. A value is object-like if it's not `null`
+   * and has a `typeof` result of "object".
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+   * @example
+   *
+   * _.isObjectLike({});
+   * // => true
+   *
+   * _.isObjectLike([1, 2, 3]);
+   * // => true
+   *
+   * _.isObjectLike(_.noop);
+   * // => false
+   *
+   * _.isObjectLike(null);
+   * // => false
+   */
+  function isObjectLike(value) {
+    return value != null && typeof value == 'object';
+  }
+
+  var isObjectLike_1 = isObjectLike;
+
+  /** `Object#toString` result references. */
+  var argsTag = '[object Arguments]';
+
+  /**
+   * The base implementation of `_.isArguments`.
+   *
+   * @private
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+   */
+  function baseIsArguments(value) {
+    return isObjectLike_1(value) && _baseGetTag(value) == argsTag;
+  }
+
+  var _baseIsArguments = baseIsArguments;
+
+  /** Used for built-in method references. */
+  var objectProto$6 = Object.prototype;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$5 = objectProto$6.hasOwnProperty;
+
+  /** Built-in value references. */
+  var propertyIsEnumerable$1 = objectProto$6.propertyIsEnumerable;
+
+  /**
+   * Checks if `value` is likely an `arguments` object.
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+   *  else `false`.
+   * @example
+   *
+   * _.isArguments(function() { return arguments; }());
+   * // => true
+   *
+   * _.isArguments([1, 2, 3]);
+   * // => false
+   */
+  var isArguments = _baseIsArguments(function() { return arguments; }()) ? _baseIsArguments : function(value) {
+    return isObjectLike_1(value) && hasOwnProperty$5.call(value, 'callee') &&
+      !propertyIsEnumerable$1.call(value, 'callee');
+  };
+
+  var isArguments_1 = isArguments;
+
+  /**
+   * This method returns `false`.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.13.0
+   * @category Util
+   * @returns {boolean} Returns `false`.
+   * @example
+   *
+   * _.times(2, _.stubFalse);
+   * // => [false, false]
+   */
+  function stubFalse() {
+    return false;
+  }
+
+  var stubFalse_1 = stubFalse;
+
+  var isBuffer_1 = createCommonjsModule(function (module, exports) {
+  /** Detect free variable `exports`. */
+  var freeExports =  exports && !exports.nodeType && exports;
+
+  /** Detect free variable `module`. */
+  var freeModule = freeExports && 'object' == 'object' && module && !module.nodeType && module;
+
+  /** Detect the popular CommonJS extension `module.exports`. */
+  var moduleExports = freeModule && freeModule.exports === freeExports;
+
+  /** Built-in value references. */
+  var Buffer = moduleExports ? _root.Buffer : undefined;
+
+  /* Built-in method references for those with the same name as other `lodash` methods. */
+  var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
+
+  /**
+   * Checks if `value` is a buffer.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.3.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
+   * @example
+   *
+   * _.isBuffer(new Buffer(2));
+   * // => true
+   *
+   * _.isBuffer(new Uint8Array(2));
+   * // => false
+   */
+  var isBuffer = nativeIsBuffer || stubFalse_1;
+
+  module.exports = isBuffer;
+  });
+
+  /** Used as references for various `Number` constants. */
+  var MAX_SAFE_INTEGER = 9007199254740991;
+
+  /** Used to detect unsigned integer values. */
+  var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+  /**
+   * Checks if `value` is a valid array-like index.
+   *
+   * @private
+   * @param {*} value The value to check.
+   * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+   * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+   */
+  function isIndex(value, length) {
+    var type = typeof value;
+    length = length == null ? MAX_SAFE_INTEGER : length;
+
+    return !!length &&
+      (type == 'number' ||
+        (type != 'symbol' && reIsUint.test(value))) &&
+          (value > -1 && value % 1 == 0 && value < length);
+  }
+
+  var _isIndex = isIndex;
+
+  /** Used as references for various `Number` constants. */
+  var MAX_SAFE_INTEGER$1 = 9007199254740991;
+
+  /**
+   * Checks if `value` is a valid array-like length.
+   *
+   * **Note:** This method is loosely based on
+   * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+   * @example
+   *
+   * _.isLength(3);
+   * // => true
+   *
+   * _.isLength(Number.MIN_VALUE);
+   * // => false
+   *
+   * _.isLength(Infinity);
+   * // => false
+   *
+   * _.isLength('3');
+   * // => false
+   */
+  function isLength(value) {
+    return typeof value == 'number' &&
+      value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER$1;
+  }
+
+  var isLength_1 = isLength;
+
+  /** `Object#toString` result references. */
+  var argsTag$1 = '[object Arguments]',
+      arrayTag = '[object Array]',
+      boolTag$1 = '[object Boolean]',
+      dateTag$1 = '[object Date]',
+      errorTag$1 = '[object Error]',
+      funcTag$1 = '[object Function]',
+      mapTag$1 = '[object Map]',
+      numberTag$1 = '[object Number]',
+      objectTag = '[object Object]',
+      regexpTag$1 = '[object RegExp]',
+      setTag$1 = '[object Set]',
+      stringTag$1 = '[object String]',
+      weakMapTag = '[object WeakMap]';
+
+  var arrayBufferTag$1 = '[object ArrayBuffer]',
+      dataViewTag$1 = '[object DataView]',
+      float32Tag = '[object Float32Array]',
+      float64Tag = '[object Float64Array]',
+      int8Tag = '[object Int8Array]',
+      int16Tag = '[object Int16Array]',
+      int32Tag = '[object Int32Array]',
+      uint8Tag = '[object Uint8Array]',
+      uint8ClampedTag = '[object Uint8ClampedArray]',
+      uint16Tag = '[object Uint16Array]',
+      uint32Tag = '[object Uint32Array]';
+
+  /** Used to identify `toStringTag` values of typed arrays. */
+  var typedArrayTags = {};
+  typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
+  typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
+  typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
+  typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
+  typedArrayTags[uint32Tag] = true;
+  typedArrayTags[argsTag$1] = typedArrayTags[arrayTag] =
+  typedArrayTags[arrayBufferTag$1] = typedArrayTags[boolTag$1] =
+  typedArrayTags[dataViewTag$1] = typedArrayTags[dateTag$1] =
+  typedArrayTags[errorTag$1] = typedArrayTags[funcTag$1] =
+  typedArrayTags[mapTag$1] = typedArrayTags[numberTag$1] =
+  typedArrayTags[objectTag] = typedArrayTags[regexpTag$1] =
+  typedArrayTags[setTag$1] = typedArrayTags[stringTag$1] =
+  typedArrayTags[weakMapTag] = false;
+
+  /**
+   * The base implementation of `_.isTypedArray` without Node.js optimizations.
+   *
+   * @private
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+   */
+  function baseIsTypedArray(value) {
+    return isObjectLike_1(value) &&
+      isLength_1(value.length) && !!typedArrayTags[_baseGetTag(value)];
+  }
+
+  var _baseIsTypedArray = baseIsTypedArray;
+
+  /**
+   * The base implementation of `_.unary` without support for storing metadata.
+   *
+   * @private
+   * @param {Function} func The function to cap arguments for.
+   * @returns {Function} Returns the new capped function.
+   */
+  function baseUnary(func) {
+    return function(value) {
+      return func(value);
+    };
+  }
+
+  var _baseUnary = baseUnary;
+
+  var _nodeUtil = createCommonjsModule(function (module, exports) {
+  /** Detect free variable `exports`. */
+  var freeExports =  exports && !exports.nodeType && exports;
+
+  /** Detect free variable `module`. */
+  var freeModule = freeExports && 'object' == 'object' && module && !module.nodeType && module;
+
+  /** Detect the popular CommonJS extension `module.exports`. */
+  var moduleExports = freeModule && freeModule.exports === freeExports;
+
+  /** Detect free variable `process` from Node.js. */
+  var freeProcess = moduleExports && _freeGlobal.process;
+
+  /** Used to access faster Node.js helpers. */
+  var nodeUtil = (function() {
+    try {
+      // Use `util.types` for Node.js 10+.
+      var types = freeModule && freeModule.require && freeModule.require('util').types;
+
+      if (types) {
+        return types;
+      }
+
+      // Legacy `process.binding('util')` for Node.js < 10.
+      return freeProcess && freeProcess.binding && freeProcess.binding('util');
+    } catch (e) {}
+  }());
+
+  module.exports = nodeUtil;
+  });
+
+  /* Node.js helper references. */
+  var nodeIsTypedArray = _nodeUtil && _nodeUtil.isTypedArray;
+
+  /**
+   * Checks if `value` is classified as a typed array.
+   *
+   * @static
+   * @memberOf _
+   * @since 3.0.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+   * @example
+   *
+   * _.isTypedArray(new Uint8Array);
+   * // => true
+   *
+   * _.isTypedArray([]);
+   * // => false
+   */
+  var isTypedArray = nodeIsTypedArray ? _baseUnary(nodeIsTypedArray) : _baseIsTypedArray;
+
+  var isTypedArray_1 = isTypedArray;
+
+  /** Used for built-in method references. */
+  var objectProto$7 = Object.prototype;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$6 = objectProto$7.hasOwnProperty;
+
+  /**
+   * Creates an array of the enumerable property names of the array-like `value`.
+   *
+   * @private
+   * @param {*} value The value to query.
+   * @param {boolean} inherited Specify returning inherited property names.
+   * @returns {Array} Returns the array of property names.
+   */
+  function arrayLikeKeys(value, inherited) {
+    var isArr = isArray_1(value),
+        isArg = !isArr && isArguments_1(value),
+        isBuff = !isArr && !isArg && isBuffer_1(value),
+        isType = !isArr && !isArg && !isBuff && isTypedArray_1(value),
+        skipIndexes = isArr || isArg || isBuff || isType,
+        result = skipIndexes ? _baseTimes(value.length, String) : [],
+        length = result.length;
+
+    for (var key in value) {
+      if ((inherited || hasOwnProperty$6.call(value, key)) &&
+          !(skipIndexes && (
+             // Safari 9 has enumerable `arguments.length` in strict mode.
+             key == 'length' ||
+             // Node.js 0.10 has enumerable non-index properties on buffers.
+             (isBuff && (key == 'offset' || key == 'parent')) ||
+             // PhantomJS 2 has enumerable non-index properties on typed arrays.
+             (isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset')) ||
+             // Skip index properties.
+             _isIndex(key, length)
+          ))) {
+        result.push(key);
+      }
+    }
+    return result;
+  }
+
+  var _arrayLikeKeys = arrayLikeKeys;
+
+  /** Used for built-in method references. */
+  var objectProto$8 = Object.prototype;
+
+  /**
+   * Checks if `value` is likely a prototype object.
+   *
+   * @private
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+   */
+  function isPrototype(value) {
+    var Ctor = value && value.constructor,
+        proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto$8;
+
+    return value === proto;
+  }
+
+  var _isPrototype = isPrototype;
+
+  /**
+   * Creates a unary function that invokes `func` with its argument transformed.
+   *
+   * @private
+   * @param {Function} func The function to wrap.
+   * @param {Function} transform The argument transform.
+   * @returns {Function} Returns the new function.
+   */
+  function overArg(func, transform) {
+    return function(arg) {
+      return func(transform(arg));
+    };
+  }
+
+  var _overArg = overArg;
+
+  /* Built-in method references for those with the same name as other `lodash` methods. */
+  var nativeKeys = _overArg(Object.keys, Object);
+
+  var _nativeKeys = nativeKeys;
+
+  /** Used for built-in method references. */
+  var objectProto$9 = Object.prototype;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$7 = objectProto$9.hasOwnProperty;
+
+  /**
+   * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of property names.
+   */
+  function baseKeys(object) {
+    if (!_isPrototype(object)) {
+      return _nativeKeys(object);
+    }
+    var result = [];
+    for (var key in Object(object)) {
+      if (hasOwnProperty$7.call(object, key) && key != 'constructor') {
+        result.push(key);
+      }
+    }
+    return result;
+  }
+
+  var _baseKeys = baseKeys;
+
+  /**
+   * Checks if `value` is array-like. A value is considered array-like if it's
+   * not a function and has a `value.length` that's an integer greater than or
+   * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+   * @example
+   *
+   * _.isArrayLike([1, 2, 3]);
+   * // => true
+   *
+   * _.isArrayLike(document.body.children);
+   * // => true
+   *
+   * _.isArrayLike('abc');
+   * // => true
+   *
+   * _.isArrayLike(_.noop);
+   * // => false
+   */
+  function isArrayLike(value) {
+    return value != null && isLength_1(value.length) && !isFunction_1(value);
+  }
+
+  var isArrayLike_1 = isArrayLike;
+
+  /**
+   * Creates an array of the own enumerable property names of `object`.
+   *
+   * **Note:** Non-object values are coerced to objects. See the
+   * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+   * for more details.
+   *
+   * @static
+   * @since 0.1.0
+   * @memberOf _
+   * @category Object
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of property names.
+   * @example
+   *
+   * function Foo() {
+   *   this.a = 1;
+   *   this.b = 2;
+   * }
+   *
+   * Foo.prototype.c = 3;
+   *
+   * _.keys(new Foo);
+   * // => ['a', 'b'] (iteration order is not guaranteed)
+   *
+   * _.keys('hi');
+   * // => ['0', '1']
+   */
+  function keys(object) {
+    return isArrayLike_1(object) ? _arrayLikeKeys(object) : _baseKeys(object);
+  }
+
+  var keys_1 = keys;
+
+  /**
+   * Creates an array of own enumerable property names and symbols of `object`.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of property names and symbols.
+   */
+  function getAllKeys(object) {
+    return _baseGetAllKeys(object, keys_1, _getSymbols);
+  }
+
+  var _getAllKeys = getAllKeys;
+
+  /** Used to compose bitmasks for value comparisons. */
+  var COMPARE_PARTIAL_FLAG$2 = 1;
+
+  /** Used for built-in method references. */
+  var objectProto$a = Object.prototype;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$8 = objectProto$a.hasOwnProperty;
+
+  /**
+   * A specialized version of `baseIsEqualDeep` for objects with support for
+   * partial deep comparisons.
+   *
+   * @private
+   * @param {Object} object The object to compare.
+   * @param {Object} other The other object to compare.
+   * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+   * @param {Function} customizer The function to customize comparisons.
+   * @param {Function} equalFunc The function to determine equivalents of values.
+   * @param {Object} stack Tracks traversed `object` and `other` objects.
+   * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+   */
+  function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
+    var isPartial = bitmask & COMPARE_PARTIAL_FLAG$2,
+        objProps = _getAllKeys(object),
+        objLength = objProps.length,
+        othProps = _getAllKeys(other),
+        othLength = othProps.length;
+
+    if (objLength != othLength && !isPartial) {
+      return false;
+    }
+    var index = objLength;
+    while (index--) {
+      var key = objProps[index];
+      if (!(isPartial ? key in other : hasOwnProperty$8.call(other, key))) {
+        return false;
+      }
+    }
+    // Assume cyclic values are equal.
+    var stacked = stack.get(object);
+    if (stacked && stack.get(other)) {
+      return stacked == other;
+    }
+    var result = true;
+    stack.set(object, other);
+    stack.set(other, object);
+
+    var skipCtor = isPartial;
+    while (++index < objLength) {
+      key = objProps[index];
+      var objValue = object[key],
+          othValue = other[key];
+
+      if (customizer) {
+        var compared = isPartial
+          ? customizer(othValue, objValue, key, other, object, stack)
+          : customizer(objValue, othValue, key, object, other, stack);
+      }
+      // Recursively compare objects (susceptible to call stack limits).
+      if (!(compared === undefined
+            ? (objValue === othValue || equalFunc(objValue, othValue, bitmask, customizer, stack))
+            : compared
+          )) {
+        result = false;
+        break;
+      }
+      skipCtor || (skipCtor = key == 'constructor');
+    }
+    if (result && !skipCtor) {
+      var objCtor = object.constructor,
+          othCtor = other.constructor;
+
+      // Non `Object` object instances with different constructors are not equal.
+      if (objCtor != othCtor &&
+          ('constructor' in object && 'constructor' in other) &&
+          !(typeof objCtor == 'function' && objCtor instanceof objCtor &&
+            typeof othCtor == 'function' && othCtor instanceof othCtor)) {
+        result = false;
+      }
+    }
+    stack['delete'](object);
+    stack['delete'](other);
+    return result;
+  }
+
+  var _equalObjects = equalObjects;
+
+  /* Built-in method references that are verified to be native. */
+  var DataView = _getNative(_root, 'DataView');
+
+  var _DataView = DataView;
+
+  /* Built-in method references that are verified to be native. */
+  var Promise = _getNative(_root, 'Promise');
+
+  var _Promise = Promise;
+
+  /* Built-in method references that are verified to be native. */
+  var Set = _getNative(_root, 'Set');
+
+  var _Set = Set;
+
+  /* Built-in method references that are verified to be native. */
+  var WeakMap = _getNative(_root, 'WeakMap');
+
+  var _WeakMap = WeakMap;
+
+  /** `Object#toString` result references. */
+  var mapTag$2 = '[object Map]',
+      objectTag$1 = '[object Object]',
+      promiseTag = '[object Promise]',
+      setTag$2 = '[object Set]',
+      weakMapTag$1 = '[object WeakMap]';
+
+  var dataViewTag$2 = '[object DataView]';
+
+  /** Used to detect maps, sets, and weakmaps. */
+  var dataViewCtorString = _toSource(_DataView),
+      mapCtorString = _toSource(_Map),
+      promiseCtorString = _toSource(_Promise),
+      setCtorString = _toSource(_Set),
+      weakMapCtorString = _toSource(_WeakMap);
+
+  /**
+   * Gets the `toStringTag` of `value`.
+   *
+   * @private
+   * @param {*} value The value to query.
+   * @returns {string} Returns the `toStringTag`.
+   */
+  var getTag = _baseGetTag;
+
+  // Fallback for data views, maps, sets, and weak maps in IE 11 and promises in Node.js < 6.
+  if ((_DataView && getTag(new _DataView(new ArrayBuffer(1))) != dataViewTag$2) ||
+      (_Map && getTag(new _Map) != mapTag$2) ||
+      (_Promise && getTag(_Promise.resolve()) != promiseTag) ||
+      (_Set && getTag(new _Set) != setTag$2) ||
+      (_WeakMap && getTag(new _WeakMap) != weakMapTag$1)) {
+    getTag = function(value) {
+      var result = _baseGetTag(value),
+          Ctor = result == objectTag$1 ? value.constructor : undefined,
+          ctorString = Ctor ? _toSource(Ctor) : '';
+
+      if (ctorString) {
+        switch (ctorString) {
+          case dataViewCtorString: return dataViewTag$2;
+          case mapCtorString: return mapTag$2;
+          case promiseCtorString: return promiseTag;
+          case setCtorString: return setTag$2;
+          case weakMapCtorString: return weakMapTag$1;
+        }
+      }
+      return result;
+    };
+  }
+
+  var _getTag = getTag;
+
+  /** Used to compose bitmasks for value comparisons. */
+  var COMPARE_PARTIAL_FLAG$3 = 1;
+
+  /** `Object#toString` result references. */
+  var argsTag$2 = '[object Arguments]',
+      arrayTag$1 = '[object Array]',
+      objectTag$2 = '[object Object]';
+
+  /** Used for built-in method references. */
+  var objectProto$b = Object.prototype;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$9 = objectProto$b.hasOwnProperty;
+
+  /**
+   * A specialized version of `baseIsEqual` for arrays and objects which performs
+   * deep comparisons and tracks traversed objects enabling objects with circular
+   * references to be compared.
+   *
+   * @private
+   * @param {Object} object The object to compare.
+   * @param {Object} other The other object to compare.
+   * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+   * @param {Function} customizer The function to customize comparisons.
+   * @param {Function} equalFunc The function to determine equivalents of values.
+   * @param {Object} [stack] Tracks traversed `object` and `other` objects.
+   * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+   */
+  function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
+    var objIsArr = isArray_1(object),
+        othIsArr = isArray_1(other),
+        objTag = objIsArr ? arrayTag$1 : _getTag(object),
+        othTag = othIsArr ? arrayTag$1 : _getTag(other);
+
+    objTag = objTag == argsTag$2 ? objectTag$2 : objTag;
+    othTag = othTag == argsTag$2 ? objectTag$2 : othTag;
+
+    var objIsObj = objTag == objectTag$2,
+        othIsObj = othTag == objectTag$2,
+        isSameTag = objTag == othTag;
+
+    if (isSameTag && isBuffer_1(object)) {
+      if (!isBuffer_1(other)) {
+        return false;
+      }
+      objIsArr = true;
+      objIsObj = false;
+    }
+    if (isSameTag && !objIsObj) {
+      stack || (stack = new _Stack);
+      return (objIsArr || isTypedArray_1(object))
+        ? _equalArrays(object, other, bitmask, customizer, equalFunc, stack)
+        : _equalByTag(object, other, objTag, bitmask, customizer, equalFunc, stack);
+    }
+    if (!(bitmask & COMPARE_PARTIAL_FLAG$3)) {
+      var objIsWrapped = objIsObj && hasOwnProperty$9.call(object, '__wrapped__'),
+          othIsWrapped = othIsObj && hasOwnProperty$9.call(other, '__wrapped__');
+
+      if (objIsWrapped || othIsWrapped) {
+        var objUnwrapped = objIsWrapped ? object.value() : object,
+            othUnwrapped = othIsWrapped ? other.value() : other;
+
+        stack || (stack = new _Stack);
+        return equalFunc(objUnwrapped, othUnwrapped, bitmask, customizer, stack);
+      }
+    }
+    if (!isSameTag) {
+      return false;
+    }
+    stack || (stack = new _Stack);
+    return _equalObjects(object, other, bitmask, customizer, equalFunc, stack);
+  }
+
+  var _baseIsEqualDeep = baseIsEqualDeep;
+
+  /**
+   * The base implementation of `_.isEqual` which supports partial comparisons
+   * and tracks traversed objects.
+   *
+   * @private
+   * @param {*} value The value to compare.
+   * @param {*} other The other value to compare.
+   * @param {boolean} bitmask The bitmask flags.
+   *  1 - Unordered comparison
+   *  2 - Partial comparison
+   * @param {Function} [customizer] The function to customize comparisons.
+   * @param {Object} [stack] Tracks traversed `value` and `other` objects.
+   * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+   */
+  function baseIsEqual(value, other, bitmask, customizer, stack) {
+    if (value === other) {
+      return true;
+    }
+    if (value == null || other == null || (!isObjectLike_1(value) && !isObjectLike_1(other))) {
+      return value !== value && other !== other;
+    }
+    return _baseIsEqualDeep(value, other, bitmask, customizer, baseIsEqual, stack);
+  }
+
+  var _baseIsEqual = baseIsEqual;
+
+  /** Used to compose bitmasks for value comparisons. */
+  var COMPARE_PARTIAL_FLAG$4 = 1,
+      COMPARE_UNORDERED_FLAG$2 = 2;
+
+  /**
+   * The base implementation of `_.isMatch` without support for iteratee shorthands.
+   *
+   * @private
+   * @param {Object} object The object to inspect.
+   * @param {Object} source The object of property values to match.
+   * @param {Array} matchData The property names, values, and compare flags to match.
+   * @param {Function} [customizer] The function to customize comparisons.
+   * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+   */
+  function baseIsMatch(object, source, matchData, customizer) {
+    var index = matchData.length,
+        length = index,
+        noCustomizer = !customizer;
+
+    if (object == null) {
+      return !length;
+    }
+    object = Object(object);
+    while (index--) {
+      var data = matchData[index];
+      if ((noCustomizer && data[2])
+            ? data[1] !== object[data[0]]
+            : !(data[0] in object)
+          ) {
+        return false;
+      }
+    }
+    while (++index < length) {
+      data = matchData[index];
+      var key = data[0],
+          objValue = object[key],
+          srcValue = data[1];
+
+      if (noCustomizer && data[2]) {
+        if (objValue === undefined && !(key in object)) {
+          return false;
+        }
+      } else {
+        var stack = new _Stack;
+        if (customizer) {
+          var result = customizer(objValue, srcValue, key, object, source, stack);
+        }
+        if (!(result === undefined
+              ? _baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG$4 | COMPARE_UNORDERED_FLAG$2, customizer, stack)
+              : result
+            )) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  var _baseIsMatch = baseIsMatch;
+
+  /**
+   * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
+   *
+   * @private
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` if suitable for strict
+   *  equality comparisons, else `false`.
+   */
+  function isStrictComparable(value) {
+    return value === value && !isObject_1(value);
+  }
+
+  var _isStrictComparable = isStrictComparable;
+
+  /**
+   * Gets the property names, values, and compare flags of `object`.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the match data of `object`.
+   */
+  function getMatchData(object) {
+    var result = keys_1(object),
+        length = result.length;
+
+    while (length--) {
+      var key = result[length],
+          value = object[key];
+
+      result[length] = [key, value, _isStrictComparable(value)];
+    }
+    return result;
+  }
+
+  var _getMatchData = getMatchData;
+
+  /**
+   * A specialized version of `matchesProperty` for source values suitable
+   * for strict equality comparisons, i.e. `===`.
+   *
+   * @private
+   * @param {string} key The key of the property to get.
+   * @param {*} srcValue The value to match.
+   * @returns {Function} Returns the new spec function.
+   */
+  function matchesStrictComparable(key, srcValue) {
+    return function(object) {
+      if (object == null) {
+        return false;
+      }
+      return object[key] === srcValue &&
+        (srcValue !== undefined || (key in Object(object)));
+    };
+  }
+
+  var _matchesStrictComparable = matchesStrictComparable;
+
+  /**
+   * The base implementation of `_.matches` which doesn't clone `source`.
+   *
+   * @private
+   * @param {Object} source The object of property values to match.
+   * @returns {Function} Returns the new spec function.
+   */
+  function baseMatches(source) {
+    var matchData = _getMatchData(source);
+    if (matchData.length == 1 && matchData[0][2]) {
+      return _matchesStrictComparable(matchData[0][0], matchData[0][1]);
+    }
+    return function(object) {
+      return object === source || _baseIsMatch(object, source, matchData);
+    };
+  }
+
+  var _baseMatches = baseMatches;
+
+  /** `Object#toString` result references. */
+  var symbolTag$1 = '[object Symbol]';
+
+  /**
+   * Checks if `value` is classified as a `Symbol` primitive or object.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+   * @example
+   *
+   * _.isSymbol(Symbol.iterator);
+   * // => true
+   *
+   * _.isSymbol('abc');
+   * // => false
+   */
+  function isSymbol(value) {
+    return typeof value == 'symbol' ||
+      (isObjectLike_1(value) && _baseGetTag(value) == symbolTag$1);
+  }
+
+  var isSymbol_1 = isSymbol;
+
+  /** Used to match property names within property paths. */
+  var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
+      reIsPlainProp = /^\w*$/;
+
+  /**
+   * Checks if `value` is a property name and not a property path.
+   *
+   * @private
+   * @param {*} value The value to check.
+   * @param {Object} [object] The object to query keys on.
+   * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
+   */
+  function isKey(value, object) {
+    if (isArray_1(value)) {
+      return false;
+    }
+    var type = typeof value;
+    if (type == 'number' || type == 'symbol' || type == 'boolean' ||
+        value == null || isSymbol_1(value)) {
+      return true;
+    }
+    return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
+      (object != null && value in Object(object));
+  }
+
+  var _isKey = isKey;
+
+  /** Error message constants. */
+  var FUNC_ERROR_TEXT = 'Expected a function';
+
+  /**
+   * Creates a function that memoizes the result of `func`. If `resolver` is
+   * provided, it determines the cache key for storing the result based on the
+   * arguments provided to the memoized function. By default, the first argument
+   * provided to the memoized function is used as the map cache key. The `func`
+   * is invoked with the `this` binding of the memoized function.
+   *
+   * **Note:** The cache is exposed as the `cache` property on the memoized
+   * function. Its creation may be customized by replacing the `_.memoize.Cache`
+   * constructor with one whose instances implement the
+   * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
+   * method interface of `clear`, `delete`, `get`, `has`, and `set`.
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Function
+   * @param {Function} func The function to have its output memoized.
+   * @param {Function} [resolver] The function to resolve the cache key.
+   * @returns {Function} Returns the new memoized function.
+   * @example
+   *
+   * var object = { 'a': 1, 'b': 2 };
+   * var other = { 'c': 3, 'd': 4 };
+   *
+   * var values = _.memoize(_.values);
+   * values(object);
+   * // => [1, 2]
+   *
+   * values(other);
+   * // => [3, 4]
+   *
+   * object.a = 2;
+   * values(object);
+   * // => [1, 2]
+   *
+   * // Modify the result cache.
+   * values.cache.set(object, ['a', 'b']);
+   * values(object);
+   * // => ['a', 'b']
+   *
+   * // Replace `_.memoize.Cache`.
+   * _.memoize.Cache = WeakMap;
+   */
+  function memoize(func, resolver) {
+    if (typeof func != 'function' || (resolver != null && typeof resolver != 'function')) {
+      throw new TypeError(FUNC_ERROR_TEXT);
+    }
+    var memoized = function() {
+      var args = arguments,
+          key = resolver ? resolver.apply(this, args) : args[0],
+          cache = memoized.cache;
+
+      if (cache.has(key)) {
+        return cache.get(key);
+      }
+      var result = func.apply(this, args);
+      memoized.cache = cache.set(key, result) || cache;
+      return result;
+    };
+    memoized.cache = new (memoize.Cache || _MapCache);
+    return memoized;
+  }
+
+  // Expose `MapCache`.
+  memoize.Cache = _MapCache;
+
+  var memoize_1 = memoize;
+
+  /** Used as the maximum memoize cache size. */
+  var MAX_MEMOIZE_SIZE = 500;
+
+  /**
+   * A specialized version of `_.memoize` which clears the memoized function's
+   * cache when it exceeds `MAX_MEMOIZE_SIZE`.
+   *
+   * @private
+   * @param {Function} func The function to have its output memoized.
+   * @returns {Function} Returns the new memoized function.
+   */
+  function memoizeCapped(func) {
+    var result = memoize_1(func, function(key) {
+      if (cache.size === MAX_MEMOIZE_SIZE) {
+        cache.clear();
+      }
+      return key;
+    });
+
+    var cache = result.cache;
+    return result;
+  }
+
+  var _memoizeCapped = memoizeCapped;
+
+  /** Used to match property names within property paths. */
+  var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+
+  /** Used to match backslashes in property paths. */
+  var reEscapeChar = /\\(\\)?/g;
+
+  /**
+   * Converts `string` to a property path array.
+   *
+   * @private
+   * @param {string} string The string to convert.
+   * @returns {Array} Returns the property path array.
+   */
+  var stringToPath = _memoizeCapped(function(string) {
+    var result = [];
+    if (string.charCodeAt(0) === 46 /* . */) {
+      result.push('');
+    }
+    string.replace(rePropName, function(match, number, quote, subString) {
+      result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));
+    });
+    return result;
+  });
+
+  var _stringToPath = stringToPath;
+
+  /** Used as references for various `Number` constants. */
+  var INFINITY = 1 / 0;
+
+  /** Used to convert symbols to primitives and strings. */
+  var symbolProto$1 = _Symbol ? _Symbol.prototype : undefined,
+      symbolToString = symbolProto$1 ? symbolProto$1.toString : undefined;
+
+  /**
+   * The base implementation of `_.toString` which doesn't convert nullish
+   * values to empty strings.
+   *
+   * @private
+   * @param {*} value The value to process.
+   * @returns {string} Returns the string.
+   */
+  function baseToString(value) {
+    // Exit early for strings to avoid a performance hit in some environments.
+    if (typeof value == 'string') {
+      return value;
+    }
+    if (isArray_1(value)) {
+      // Recursively convert values (susceptible to call stack limits).
+      return _arrayMap(value, baseToString) + '';
+    }
+    if (isSymbol_1(value)) {
+      return symbolToString ? symbolToString.call(value) : '';
+    }
+    var result = (value + '');
+    return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+  }
+
+  var _baseToString = baseToString;
+
+  /**
+   * Converts `value` to a string. An empty string is returned for `null`
+   * and `undefined` values. The sign of `-0` is preserved.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Lang
+   * @param {*} value The value to convert.
+   * @returns {string} Returns the converted string.
+   * @example
+   *
+   * _.toString(null);
+   * // => ''
+   *
+   * _.toString(-0);
+   * // => '-0'
+   *
+   * _.toString([1, 2, 3]);
+   * // => '1,2,3'
+   */
+  function toString(value) {
+    return value == null ? '' : _baseToString(value);
+  }
+
+  var toString_1 = toString;
+
+  /**
+   * Casts `value` to a path array if it's not one.
+   *
+   * @private
+   * @param {*} value The value to inspect.
+   * @param {Object} [object] The object to query keys on.
+   * @returns {Array} Returns the cast property path array.
+   */
+  function castPath(value, object) {
+    if (isArray_1(value)) {
+      return value;
+    }
+    return _isKey(value, object) ? [value] : _stringToPath(toString_1(value));
+  }
+
+  var _castPath = castPath;
+
+  /** Used as references for various `Number` constants. */
+  var INFINITY$1 = 1 / 0;
+
+  /**
+   * Converts `value` to a string key if it's not a string or symbol.
+   *
+   * @private
+   * @param {*} value The value to inspect.
+   * @returns {string|symbol} Returns the key.
+   */
+  function toKey(value) {
+    if (typeof value == 'string' || isSymbol_1(value)) {
+      return value;
+    }
+    var result = (value + '');
+    return (result == '0' && (1 / value) == -INFINITY$1) ? '-0' : result;
+  }
+
+  var _toKey = toKey;
+
+  /**
+   * The base implementation of `_.get` without support for default values.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @param {Array|string} path The path of the property to get.
+   * @returns {*} Returns the resolved value.
+   */
+  function baseGet(object, path) {
+    path = _castPath(path, object);
+
+    var index = 0,
+        length = path.length;
+
+    while (object != null && index < length) {
+      object = object[_toKey(path[index++])];
+    }
+    return (index && index == length) ? object : undefined;
+  }
+
+  var _baseGet = baseGet;
+
+  /**
+   * Gets the value at `path` of `object`. If the resolved value is
+   * `undefined`, the `defaultValue` is returned in its place.
+   *
+   * @static
+   * @memberOf _
+   * @since 3.7.0
+   * @category Object
+   * @param {Object} object The object to query.
+   * @param {Array|string} path The path of the property to get.
+   * @param {*} [defaultValue] The value returned for `undefined` resolved values.
+   * @returns {*} Returns the resolved value.
+   * @example
+   *
+   * var object = { 'a': [{ 'b': { 'c': 3 } }] };
+   *
+   * _.get(object, 'a[0].b.c');
+   * // => 3
+   *
+   * _.get(object, ['a', '0', 'b', 'c']);
+   * // => 3
+   *
+   * _.get(object, 'a.b.c', 'default');
+   * // => 'default'
+   */
+  function get(object, path, defaultValue) {
+    var result = object == null ? undefined : _baseGet(object, path);
+    return result === undefined ? defaultValue : result;
+  }
+
+  var get_1 = get;
+
+  /**
+   * The base implementation of `_.hasIn` without support for deep paths.
+   *
+   * @private
+   * @param {Object} [object] The object to query.
+   * @param {Array|string} key The key to check.
+   * @returns {boolean} Returns `true` if `key` exists, else `false`.
+   */
+  function baseHasIn(object, key) {
+    return object != null && key in Object(object);
+  }
+
+  var _baseHasIn = baseHasIn;
+
+  /**
+   * Checks if `path` exists on `object`.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @param {Array|string} path The path to check.
+   * @param {Function} hasFunc The function to check properties.
+   * @returns {boolean} Returns `true` if `path` exists, else `false`.
+   */
+  function hasPath(object, path, hasFunc) {
+    path = _castPath(path, object);
+
+    var index = -1,
+        length = path.length,
+        result = false;
+
+    while (++index < length) {
+      var key = _toKey(path[index]);
+      if (!(result = object != null && hasFunc(object, key))) {
+        break;
+      }
+      object = object[key];
+    }
+    if (result || ++index != length) {
+      return result;
+    }
+    length = object == null ? 0 : object.length;
+    return !!length && isLength_1(length) && _isIndex(key, length) &&
+      (isArray_1(object) || isArguments_1(object));
+  }
+
+  var _hasPath = hasPath;
+
+  /**
+   * Checks if `path` is a direct or inherited property of `object`.
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Object
+   * @param {Object} object The object to query.
+   * @param {Array|string} path The path to check.
+   * @returns {boolean} Returns `true` if `path` exists, else `false`.
+   * @example
+   *
+   * var object = _.create({ 'a': _.create({ 'b': 2 }) });
+   *
+   * _.hasIn(object, 'a');
+   * // => true
+   *
+   * _.hasIn(object, 'a.b');
+   * // => true
+   *
+   * _.hasIn(object, ['a', 'b']);
+   * // => true
+   *
+   * _.hasIn(object, 'b');
+   * // => false
+   */
+  function hasIn(object, path) {
+    return object != null && _hasPath(object, path, _baseHasIn);
+  }
+
+  var hasIn_1 = hasIn;
+
+  /** Used to compose bitmasks for value comparisons. */
+  var COMPARE_PARTIAL_FLAG$5 = 1,
+      COMPARE_UNORDERED_FLAG$3 = 2;
+
+  /**
+   * The base implementation of `_.matchesProperty` which doesn't clone `srcValue`.
+   *
+   * @private
+   * @param {string} path The path of the property to get.
+   * @param {*} srcValue The value to match.
+   * @returns {Function} Returns the new spec function.
+   */
+  function baseMatchesProperty(path, srcValue) {
+    if (_isKey(path) && _isStrictComparable(srcValue)) {
+      return _matchesStrictComparable(_toKey(path), srcValue);
+    }
+    return function(object) {
+      var objValue = get_1(object, path);
+      return (objValue === undefined && objValue === srcValue)
+        ? hasIn_1(object, path)
+        : _baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG$5 | COMPARE_UNORDERED_FLAG$3);
+    };
+  }
+
+  var _baseMatchesProperty = baseMatchesProperty;
+
+  /**
+   * This method returns the first argument it receives.
+   *
+   * @static
+   * @since 0.1.0
+   * @memberOf _
+   * @category Util
+   * @param {*} value Any value.
+   * @returns {*} Returns `value`.
+   * @example
+   *
+   * var object = { 'a': 1 };
+   *
+   * console.log(_.identity(object) === object);
+   * // => true
+   */
+  function identity(value) {
+    return value;
+  }
+
+  var identity_1 = identity;
+
+  /**
+   * The base implementation of `_.property` without support for deep paths.
+   *
+   * @private
+   * @param {string} key The key of the property to get.
+   * @returns {Function} Returns the new accessor function.
+   */
+  function baseProperty(key) {
+    return function(object) {
+      return object == null ? undefined : object[key];
+    };
+  }
+
+  var _baseProperty = baseProperty;
+
+  /**
+   * A specialized version of `baseProperty` which supports deep paths.
+   *
+   * @private
+   * @param {Array|string} path The path of the property to get.
+   * @returns {Function} Returns the new accessor function.
+   */
+  function basePropertyDeep(path) {
+    return function(object) {
+      return _baseGet(object, path);
+    };
+  }
+
+  var _basePropertyDeep = basePropertyDeep;
+
+  /**
+   * Creates a function that returns the value at `path` of a given object.
+   *
+   * @static
+   * @memberOf _
+   * @since 2.4.0
+   * @category Util
+   * @param {Array|string} path The path of the property to get.
+   * @returns {Function} Returns the new accessor function.
+   * @example
+   *
+   * var objects = [
+   *   { 'a': { 'b': 2 } },
+   *   { 'a': { 'b': 1 } }
+   * ];
+   *
+   * _.map(objects, _.property('a.b'));
+   * // => [2, 1]
+   *
+   * _.map(_.sortBy(objects, _.property(['a', 'b'])), 'a.b');
+   * // => [1, 2]
+   */
+  function property(path) {
+    return _isKey(path) ? _baseProperty(_toKey(path)) : _basePropertyDeep(path);
+  }
+
+  var property_1 = property;
+
+  /**
+   * The base implementation of `_.iteratee`.
+   *
+   * @private
+   * @param {*} [value=_.identity] The value to convert to an iteratee.
+   * @returns {Function} Returns the iteratee.
+   */
+  function baseIteratee(value) {
+    // Don't store the `typeof` result in a variable to avoid a JIT bug in Safari 9.
+    // See https://bugs.webkit.org/show_bug.cgi?id=156034 for more details.
+    if (typeof value == 'function') {
+      return value;
+    }
+    if (value == null) {
+      return identity_1;
+    }
+    if (typeof value == 'object') {
+      return isArray_1(value)
+        ? _baseMatchesProperty(value[0], value[1])
+        : _baseMatches(value);
+    }
+    return property_1(value);
+  }
+
+  var _baseIteratee = baseIteratee;
+
+  var defineProperty = (function() {
+    try {
+      var func = _getNative(Object, 'defineProperty');
+      func({}, '', {});
+      return func;
+    } catch (e) {}
+  }());
+
+  var _defineProperty = defineProperty;
+
+  /**
+   * The base implementation of `assignValue` and `assignMergeValue` without
+   * value checks.
+   *
+   * @private
+   * @param {Object} object The object to modify.
+   * @param {string} key The key of the property to assign.
+   * @param {*} value The value to assign.
+   */
+  function baseAssignValue(object, key, value) {
+    if (key == '__proto__' && _defineProperty) {
+      _defineProperty(object, key, {
+        'configurable': true,
+        'enumerable': true,
+        'value': value,
+        'writable': true
+      });
+    } else {
+      object[key] = value;
+    }
+  }
+
+  var _baseAssignValue = baseAssignValue;
+
+  /** Used for built-in method references. */
+  var objectProto$c = Object.prototype;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$a = objectProto$c.hasOwnProperty;
+
+  /**
+   * Assigns `value` to `key` of `object` if the existing value is not equivalent
+   * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+   * for equality comparisons.
+   *
+   * @private
+   * @param {Object} object The object to modify.
+   * @param {string} key The key of the property to assign.
+   * @param {*} value The value to assign.
+   */
+  function assignValue(object, key, value) {
+    var objValue = object[key];
+    if (!(hasOwnProperty$a.call(object, key) && eq_1(objValue, value)) ||
+        (value === undefined && !(key in object))) {
+      _baseAssignValue(object, key, value);
+    }
+  }
+
+  var _assignValue = assignValue;
+
+  /**
+   * The base implementation of `_.set`.
+   *
+   * @private
+   * @param {Object} object The object to modify.
+   * @param {Array|string} path The path of the property to set.
+   * @param {*} value The value to set.
+   * @param {Function} [customizer] The function to customize path creation.
+   * @returns {Object} Returns `object`.
+   */
+  function baseSet(object, path, value, customizer) {
+    if (!isObject_1(object)) {
+      return object;
+    }
+    path = _castPath(path, object);
+
+    var index = -1,
+        length = path.length,
+        lastIndex = length - 1,
+        nested = object;
+
+    while (nested != null && ++index < length) {
+      var key = _toKey(path[index]),
+          newValue = value;
+
+      if (index != lastIndex) {
+        var objValue = nested[key];
+        newValue = customizer ? customizer(objValue, key, nested) : undefined;
+        if (newValue === undefined) {
+          newValue = isObject_1(objValue)
+            ? objValue
+            : (_isIndex(path[index + 1]) ? [] : {});
+        }
+      }
+      _assignValue(nested, key, newValue);
+      nested = nested[key];
+    }
+    return object;
+  }
+
+  var _baseSet = baseSet;
+
+  /**
+   * The base implementation of  `_.pickBy` without support for iteratee shorthands.
+   *
+   * @private
+   * @param {Object} object The source object.
+   * @param {string[]} paths The property paths to pick.
+   * @param {Function} predicate The function invoked per property.
+   * @returns {Object} Returns the new object.
+   */
+  function basePickBy(object, paths, predicate) {
+    var index = -1,
+        length = paths.length,
+        result = {};
+
+    while (++index < length) {
+      var path = paths[index],
+          value = _baseGet(object, path);
+
+      if (predicate(value, path)) {
+        _baseSet(result, _castPath(path, object), value);
+      }
+    }
+    return result;
+  }
+
+  var _basePickBy = basePickBy;
+
+  /** Built-in value references. */
+  var getPrototype = _overArg(Object.getPrototypeOf, Object);
+
+  var _getPrototype = getPrototype;
+
+  /* Built-in method references for those with the same name as other `lodash` methods. */
+  var nativeGetSymbols$1 = Object.getOwnPropertySymbols;
+
+  /**
+   * Creates an array of the own and inherited enumerable symbols of `object`.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of symbols.
+   */
+  var getSymbolsIn = !nativeGetSymbols$1 ? stubArray_1 : function(object) {
+    var result = [];
+    while (object) {
+      _arrayPush(result, _getSymbols(object));
+      object = _getPrototype(object);
+    }
+    return result;
+  };
+
+  var _getSymbolsIn = getSymbolsIn;
+
+  /**
+   * This function is like
+   * [`Object.keys`](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+   * except that it includes inherited enumerable properties.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of property names.
+   */
+  function nativeKeysIn(object) {
+    var result = [];
+    if (object != null) {
+      for (var key in Object(object)) {
+        result.push(key);
+      }
+    }
+    return result;
+  }
+
+  var _nativeKeysIn = nativeKeysIn;
+
+  /** Used for built-in method references. */
+  var objectProto$d = Object.prototype;
+
+  /** Used to check objects for own properties. */
+  var hasOwnProperty$b = objectProto$d.hasOwnProperty;
+
+  /**
+   * The base implementation of `_.keysIn` which doesn't treat sparse arrays as dense.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of property names.
+   */
+  function baseKeysIn(object) {
+    if (!isObject_1(object)) {
+      return _nativeKeysIn(object);
+    }
+    var isProto = _isPrototype(object),
+        result = [];
+
+    for (var key in object) {
+      if (!(key == 'constructor' && (isProto || !hasOwnProperty$b.call(object, key)))) {
+        result.push(key);
+      }
+    }
+    return result;
+  }
+
+  var _baseKeysIn = baseKeysIn;
+
+  /**
+   * Creates an array of the own and inherited enumerable property names of `object`.
+   *
+   * **Note:** Non-object values are coerced to objects.
+   *
+   * @static
+   * @memberOf _
+   * @since 3.0.0
+   * @category Object
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of property names.
+   * @example
+   *
+   * function Foo() {
+   *   this.a = 1;
+   *   this.b = 2;
+   * }
+   *
+   * Foo.prototype.c = 3;
+   *
+   * _.keysIn(new Foo);
+   * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+   */
+  function keysIn(object) {
+    return isArrayLike_1(object) ? _arrayLikeKeys(object, true) : _baseKeysIn(object);
+  }
+
+  var keysIn_1 = keysIn;
+
+  /**
+   * Creates an array of own and inherited enumerable property names and
+   * symbols of `object`.
+   *
+   * @private
+   * @param {Object} object The object to query.
+   * @returns {Array} Returns the array of property names and symbols.
+   */
+  function getAllKeysIn(object) {
+    return _baseGetAllKeys(object, keysIn_1, _getSymbolsIn);
+  }
+
+  var _getAllKeysIn = getAllKeysIn;
+
+  /**
+   * Creates an object composed of the `object` properties `predicate` returns
+   * truthy for. The predicate is invoked with two arguments: (value, key).
+   *
+   * @static
+   * @memberOf _
+   * @since 4.0.0
+   * @category Object
+   * @param {Object} object The source object.
+   * @param {Function} [predicate=_.identity] The function invoked per property.
+   * @returns {Object} Returns the new object.
+   * @example
+   *
+   * var object = { 'a': 1, 'b': '2', 'c': 3 };
+   *
+   * _.pickBy(object, _.isNumber);
+   * // => { 'a': 1, 'c': 3 }
+   */
+  function pickBy(object, predicate) {
+    if (object == null) {
+      return {};
+    }
+    var props = _arrayMap(_getAllKeysIn(object), function(prop) {
+      return [prop];
+    });
+    predicate = _baseIteratee(predicate);
+    return _basePickBy(object, props, function(value, path) {
+      return predicate(value, path[0]);
+    });
+  }
+
+  var pickBy_1 = pickBy;
+
+  /**
+   * A specialized version of `_.forEach` for arrays without support for
+   * iteratee shorthands.
+   *
+   * @private
+   * @param {Array} [array] The array to iterate over.
+   * @param {Function} iteratee The function invoked per iteration.
+   * @returns {Array} Returns `array`.
+   */
+  function arrayEach(array, iteratee) {
+    var index = -1,
+        length = array == null ? 0 : array.length;
+
+    while (++index < length) {
+      if (iteratee(array[index], index, array) === false) {
+        break;
+      }
+    }
+    return array;
+  }
+
+  var _arrayEach = arrayEach;
+
+  /**
+   * Creates a base function for methods like `_.forIn` and `_.forOwn`.
+   *
+   * @private
+   * @param {boolean} [fromRight] Specify iterating from right to left.
+   * @returns {Function} Returns the new base function.
+   */
+  function createBaseFor(fromRight) {
+    return function(object, iteratee, keysFunc) {
+      var index = -1,
+          iterable = Object(object),
+          props = keysFunc(object),
+          length = props.length;
+
+      while (length--) {
+        var key = props[fromRight ? length : ++index];
+        if (iteratee(iterable[key], key, iterable) === false) {
+          break;
+        }
+      }
+      return object;
+    };
+  }
+
+  var _createBaseFor = createBaseFor;
+
+  /**
+   * The base implementation of `baseForOwn` which iterates over `object`
+   * properties returned by `keysFunc` and invokes `iteratee` for each property.
+   * Iteratee functions may exit iteration early by explicitly returning `false`.
+   *
+   * @private
+   * @param {Object} object The object to iterate over.
+   * @param {Function} iteratee The function invoked per iteration.
+   * @param {Function} keysFunc The function to get the keys of `object`.
+   * @returns {Object} Returns `object`.
+   */
+  var baseFor = _createBaseFor();
+
+  var _baseFor = baseFor;
+
+  /**
+   * The base implementation of `_.forOwn` without support for iteratee shorthands.
+   *
+   * @private
+   * @param {Object} object The object to iterate over.
+   * @param {Function} iteratee The function invoked per iteration.
+   * @returns {Object} Returns `object`.
+   */
+  function baseForOwn(object, iteratee) {
+    return object && _baseFor(object, iteratee, keys_1);
+  }
+
+  var _baseForOwn = baseForOwn;
+
+  /**
+   * Creates a `baseEach` or `baseEachRight` function.
+   *
+   * @private
+   * @param {Function} eachFunc The function to iterate over a collection.
+   * @param {boolean} [fromRight] Specify iterating from right to left.
+   * @returns {Function} Returns the new base function.
+   */
+  function createBaseEach(eachFunc, fromRight) {
+    return function(collection, iteratee) {
+      if (collection == null) {
+        return collection;
+      }
+      if (!isArrayLike_1(collection)) {
+        return eachFunc(collection, iteratee);
+      }
+      var length = collection.length,
+          index = fromRight ? length : -1,
+          iterable = Object(collection);
+
+      while ((fromRight ? index-- : ++index < length)) {
+        if (iteratee(iterable[index], index, iterable) === false) {
+          break;
+        }
+      }
+      return collection;
+    };
+  }
+
+  var _createBaseEach = createBaseEach;
+
+  /**
+   * The base implementation of `_.forEach` without support for iteratee shorthands.
+   *
+   * @private
+   * @param {Array|Object} collection The collection to iterate over.
+   * @param {Function} iteratee The function invoked per iteration.
+   * @returns {Array|Object} Returns `collection`.
+   */
+  var baseEach = _createBaseEach(_baseForOwn);
+
+  var _baseEach = baseEach;
+
+  /**
+   * Casts `value` to `identity` if it's not a function.
+   *
+   * @private
+   * @param {*} value The value to inspect.
+   * @returns {Function} Returns cast function.
+   */
+  function castFunction(value) {
+    return typeof value == 'function' ? value : identity_1;
+  }
+
+  var _castFunction = castFunction;
+
+  /**
+   * Iterates over elements of `collection` and invokes `iteratee` for each element.
+   * The iteratee is invoked with three arguments: (value, index|key, collection).
+   * Iteratee functions may exit iteration early by explicitly returning `false`.
+   *
+   * **Note:** As with other "Collections" methods, objects with a "length"
+   * property are iterated like arrays. To avoid this behavior use `_.forIn`
+   * or `_.forOwn` for object iteration.
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @alias each
+   * @category Collection
+   * @param {Array|Object} collection The collection to iterate over.
+   * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+   * @returns {Array|Object} Returns `collection`.
+   * @see _.forEachRight
+   * @example
+   *
+   * _.forEach([1, 2], function(value) {
+   *   console.log(value);
+   * });
+   * // => Logs `1` then `2`.
+   *
+   * _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
+   *   console.log(key);
+   * });
+   * // => Logs 'a' then 'b' (iteration order is not guaranteed).
+   */
+  function forEach(collection, iteratee) {
+    var func = isArray_1(collection) ? _arrayEach : _baseEach;
+    return func(collection, _castFunction(iteratee));
+  }
+
+  var forEach_1 = forEach;
+
+  var each = forEach_1;
+
+  /**
+   * Creates an object with the same keys as `object` and values generated
+   * by running each own enumerable string keyed property of `object` thru
+   * `iteratee`. The iteratee is invoked with three arguments:
+   * (value, key, object).
+   *
+   * @static
+   * @memberOf _
+   * @since 2.4.0
+   * @category Object
+   * @param {Object} object The object to iterate over.
+   * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+   * @returns {Object} Returns the new mapped object.
+   * @see _.mapKeys
+   * @example
+   *
+   * var users = {
+   *   'fred':    { 'user': 'fred',    'age': 40 },
+   *   'pebbles': { 'user': 'pebbles', 'age': 1 }
+   * };
+   *
+   * _.mapValues(users, function(o) { return o.age; });
+   * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+   *
+   * // The `_.property` iteratee shorthand.
+   * _.mapValues(users, 'age');
+   * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+   */
+  function mapValues(object, iteratee) {
+    var result = {};
+    iteratee = _baseIteratee(iteratee);
+
+    _baseForOwn(object, function(value, key, object) {
+      _baseAssignValue(result, key, iteratee(value, key, object));
+    });
+    return result;
+  }
+
+  var mapValues_1 = mapValues;
+
+  /** Built-in value references. */
+  var spreadableSymbol = _Symbol ? _Symbol.isConcatSpreadable : undefined;
+
+  /**
+   * Checks if `value` is a flattenable `arguments` object or array.
+   *
+   * @private
+   * @param {*} value The value to check.
+   * @returns {boolean} Returns `true` if `value` is flattenable, else `false`.
+   */
+  function isFlattenable(value) {
+    return isArray_1(value) || isArguments_1(value) ||
+      !!(spreadableSymbol && value && value[spreadableSymbol]);
+  }
+
+  var _isFlattenable = isFlattenable;
+
+  /**
+   * The base implementation of `_.flatten` with support for restricting flattening.
+   *
+   * @private
+   * @param {Array} array The array to flatten.
+   * @param {number} depth The maximum recursion depth.
+   * @param {boolean} [predicate=isFlattenable] The function invoked per iteration.
+   * @param {boolean} [isStrict] Restrict to values that pass `predicate` checks.
+   * @param {Array} [result=[]] The initial result value.
+   * @returns {Array} Returns the new flattened array.
+   */
+  function baseFlatten(array, depth, predicate, isStrict, result) {
+    var index = -1,
+        length = array.length;
+
+    predicate || (predicate = _isFlattenable);
+    result || (result = []);
+
+    while (++index < length) {
+      var value = array[index];
+      if (depth > 0 && predicate(value)) {
+        if (depth > 1) {
+          // Recursively flatten arrays (susceptible to call stack limits).
+          baseFlatten(value, depth - 1, predicate, isStrict, result);
+        } else {
+          _arrayPush(result, value);
+        }
+      } else if (!isStrict) {
+        result[result.length] = value;
+      }
+    }
+    return result;
+  }
+
+  var _baseFlatten = baseFlatten;
+
+  /** Used as references for various `Number` constants. */
+  var INFINITY$2 = 1 / 0;
+
+  /**
+   * Recursively flattens `array`.
+   *
+   * @static
+   * @memberOf _
+   * @since 3.0.0
+   * @category Array
+   * @param {Array} array The array to flatten.
+   * @returns {Array} Returns the new flattened array.
+   * @example
+   *
+   * _.flattenDeep([1, [2, [3, [4]], 5]]);
+   * // => [1, 2, 3, 4, 5]
+   */
+  function flattenDeep(array) {
+    var length = array == null ? 0 : array.length;
+    return length ? _baseFlatten(array, INFINITY$2) : [];
+  }
+
+  var flattenDeep_1 = flattenDeep;
+
+  /**
+   * The base implementation of `_.map` without support for iteratee shorthands.
+   *
+   * @private
+   * @param {Array|Object} collection The collection to iterate over.
+   * @param {Function} iteratee The function invoked per iteration.
+   * @returns {Array} Returns the new mapped array.
+   */
+  function baseMap(collection, iteratee) {
+    var index = -1,
+        result = isArrayLike_1(collection) ? Array(collection.length) : [];
+
+    _baseEach(collection, function(value, key, collection) {
+      result[++index] = iteratee(value, key, collection);
+    });
+    return result;
+  }
+
+  var _baseMap = baseMap;
+
+  /**
+   * Creates an array of values by running each element in `collection` thru
+   * `iteratee`. The iteratee is invoked with three arguments:
+   * (value, index|key, collection).
+   *
+   * Many lodash methods are guarded to work as iteratees for methods like
+   * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
+   *
+   * The guarded methods are:
+   * `ary`, `chunk`, `curry`, `curryRight`, `drop`, `dropRight`, `every`,
+   * `fill`, `invert`, `parseInt`, `random`, `range`, `rangeRight`, `repeat`,
+   * `sampleSize`, `slice`, `some`, `sortBy`, `split`, `take`, `takeRight`,
+   * `template`, `trim`, `trimEnd`, `trimStart`, and `words`
+   *
+   * @static
+   * @memberOf _
+   * @since 0.1.0
+   * @category Collection
+   * @param {Array|Object} collection The collection to iterate over.
+   * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+   * @returns {Array} Returns the new mapped array.
+   * @example
+   *
+   * function square(n) {
+   *   return n * n;
+   * }
+   *
+   * _.map([4, 8], square);
+   * // => [16, 64]
+   *
+   * _.map({ 'a': 4, 'b': 8 }, square);
+   * // => [16, 64] (iteration order is not guaranteed)
+   *
+   * var users = [
+   *   { 'user': 'barney' },
+   *   { 'user': 'fred' }
+   * ];
+   *
+   * // The `_.property` iteratee shorthand.
+   * _.map(users, 'user');
+   * // => ['barney', 'fred']
+   */
+  function map(collection, iteratee) {
+    var func = isArray_1(collection) ? _arrayMap : _baseMap;
+    return func(collection, _baseIteratee(iteratee));
+  }
+
+  var map_1 = map;
+
+  var fixUtf8 = function (str) {
+    return str
+    // U+20AC  0x80  € â‚¬   %E2 %82 %AC
+    .replace(/â‚¬/g, '€')
+    // U+201A  0x82  ‚ â€š   %E2 %80 %9A
+    .replace(/â€š/g, '‚')
+    // U+0192  0x83  ƒ Æ’  %C6 %92
+    .replace(/Æ’/g, 'ƒ')
+    // U+201E  0x84  „ â€ž   %E2 %80 %9E
+    .replace(/â€ž/g, '„')
+    // U+2026  0x85  … â€¦   %E2 %80 %A6
+    .replace(/â€¦/g, '…')
+    // U+2020  0x86  † â€  %E2 %80 %A0
+    .replace(/â€\u00A0/g, '†')
+    // U+2021  0x87  ‡ â€¡   %E2 %80 %A1
+    .replace(/â€¡/g, '‡')
+    // U+02C6  0x88  ˆ Ë†  %CB %86
+    .replace(/Ë†/g, 'ˆ')
+    // U+2030  0x89  ‰ â€°   %E2 %80 %B0
+    .replace(/â€°/g, '‰')
+    // U+0160  0x8A  Š Å   %C5 %A0
+    .replace(/Å\u00A0/g, 'Š')
+    // U+2039  0x8B  ‹ â€¹   %E2 %80 %B9
+    .replace(/â€¹/g, '‹')
+    // U+0152  0x8C  Œ Å’  %C5 %92
+    .replace(/Å’/g, 'Œ')
+    // U+017D  0x8E  Ž Å½  %C5 %BD
+    .replace(/Å½/g, 'Ž')
+    // U+2018  0x91  ‘ â€˜   %E2 %80 %98
+    .replace(/â€˜/g, '‘')
+    // U+2019  0x92  ’ â€™   %E2 %80 %99
+    .replace(/â€™/g, '’')
+    // U+201C  0x93  “ â€œ   %E2 %80 %9C
+    .replace(/â€œ/g, '“')
+    // U+201D  0x94  ” â€  %E2 %80 %9D
+    .replace(/â€\u009D/g, '”')
+    // U+2022  0x95  • â€¢   %E2 %80 %A2
+    .replace(/â€¢/g, '•')
+    // U+2013  0x96  – â€“   %E2 %80 %93
+    .replace(/â€“/g, '–')
+    // U+2014  0x97  — â€”   %E2 %80 %94
+    .replace(/â€”/g, '—')
+    // U+02DC  0x98  ˜ Ëœ  %CB %9C
+    .replace(/Ëœ/g, '˜')
+    // U+2122  0x99  ™ â„¢   %E2 %84 %A2
+    .replace(/â„¢/g, '™')
+    // U+0161  0x9A  š Å¡  %C5 %A1
+    .replace(/Å¡/g, 'š')
+    // U+203A  0x9B  › â€º   %E2 %80 %BA
+    .replace(/â€º/g, '›')
+    // U+0153  0x9C  œ Å“  %C5 %93
+    .replace(/Å“/g, 'œ')
+    // U+017E  0x9E  ž Å¾  %C5 %BE
+    .replace(/Å¾/g, 'ž')
+    // U+0178  0x9F  Ÿ Å¸  %C5 %B8
+    .replace(/Å¸/g, 'Ÿ')
+    // U+00A0  0xA0    Â   %C2 %A0
+    .replace(/Â /g, ' ')
+    // U+00A1  0xA1  ¡ Â¡  %C2 %A1
+    .replace(/Â¡/g, '¡')
+    // U+00A2  0xA2  ¢ Â¢  %C2 %A2
+    .replace(/Â¢/g, '¢')
+    // U+00A3  0xA3  £ Â£  %C2 %A3
+    .replace(/Â£/g, '£')
+    // U+00A4  0xA4  ¤ Â¤  %C2 %A4
+    .replace(/Â¤/g, '¤')
+    // U+00A5  0xA5  ¥ Â¥  %C2 %A5
+    .replace(/Â¥/g, '¥')
+    // U+00A6  0xA6  ¦ Â¦  %C2 %A6
+    .replace(/Â¦/g, '¦')
+    // U+00A7  0xA7  § Â§  %C2 %A7
+    .replace(/Â§/g, '§')
+    // U+00A8  0xA8  ¨ Â¨  %C2 %A8
+    .replace(/Â¨/g, '¨')
+    // U+00A9  0xA9  © Â©  %C2 %A9
+    .replace(/Â©/g, '©')
+    // U+00AA  0xAA  ª Âª  %C2 %AA
+    .replace(/Âª/g, 'ª')
+    // U+00AB  0xAB  « Â«  %C2 %AB
+    .replace(/Â«/g, '«')
+    // U+00AC  0xAC  ¬ Â¬  %C2 %AC
+    .replace(/Â¬/g, '¬')
+    // U+00AD  0xAD  ­ Â­  %C2 %AD
+    .replace(/Â­/g, '­')
+    // U+00AE  0xAE  ® Â®  %C2 %AE
+    .replace(/Â®/g, '®')
+    // U+00AF  0xAF  ¯ Â¯  %C2 %AF
+    .replace(/Â¯/g, '¯')
+    // U+00B0  0xB0  ° Â°  %C2 %B0
+    .replace(/Â°/g, '°')
+    // U+00B1  0xB1  ± Â±  %C2 %B1
+    .replace(/Â±/g, '±')
+    // U+00B2  0xB2  ² Â²  %C2 %B2
+    .replace(/Â²/g, '²')
+    // U+00B3  0xB3  ³ Â³  %C2 %B3
+    .replace(/Â³/g, '³')
+    // U+00B4  0xB4  ´ Â´  %C2 %B4
+    .replace(/Â´/g, '´')
+    // U+00B5  0xB5  µ Âµ  %C2 %B5
+    .replace(/Âµ/g, 'µ')
+    // U+00B6  0xB6  ¶ Â¶  %C2 %B6
+    .replace(/Â¶/g, '¶')
+    // U+00B7  0xB7  · Â·  %C2 %B7
+    .replace(/Â·/g, '·')
+    // U+00B8  0xB8  ¸ Â¸  %C2 %B8
+    .replace(/Â¸/g, '¸')
+    // U+00B9  0xB9  ¹ Â¹  %C2 %B9
+    .replace(/Â¹/g, '¹')
+    // U+00BA  0xBA  º Âº  %C2 %BA
+    .replace(/Âº/g, 'º')
+    // U+00BB  0xBB  » Â»  %C2 %BB
+    .replace(/Â»/g, '»')
+    // U+00BC  0xBC  ¼ Â¼  %C2 %BC
+    .replace(/Â¼/g, '¼')
+    // U+00BD  0xBD  ½ Â½  %C2 %BD
+    .replace(/Â½/g, '½')
+    // U+00BE  0xBE  ¾ Â¾  %C2 %BE
+    .replace(/Â¾/g, '¾')
+    // U+00BF  0xBF  ¿ Â¿  %C2 %BF
+    .replace(/Â¿/g, '¿')
+    // U+00C0  0xC0  À Ã€  %C3 %80
+    .replace(/Ã€/g, 'À')
+    // U+00C2  0xC2  Â Ã‚  %C3 %82
+    .replace(/Ã‚/g, 'Â')
+    // U+00C3  0xC3  Ã Ãƒ  %C3 %83
+    .replace(/Ãƒ/g, 'Ã')
+    // U+00C4  0xC4  Ä Ã„  %C3 %84
+    .replace(/Ã„/g, 'Ä')
+    // U+00C5  0xC5  Å Ã…  %C3 %85
+    .replace(/Ã…/g, 'Å')
+    // U+00C6  0xC6  Æ Ã†  %C3 %86
+    .replace(/Ã†/g, 'Æ')
+    // U+00C7  0xC7  Ç Ã‡  %C3 %87
+    .replace(/Ã‡/g, 'Ç')
+    // U+00C8  0xC8  È Ãˆ  %C3 %88
+    .replace(/Ãˆ/g, 'È')
+    // U+00C9  0xC9  É Ã‰  %C3 %89
+    .replace(/Ã‰/g, 'É')
+    // U+00CA  0xCA  Ê ÃŠ  %C3 %8A
+    .replace(/ÃŠ/g, 'Ê')
+    // U+00CB  0xCB  Ë Ã‹  %C3 %8B
+    .replace(/Ã‹/g, 'Ë')
+    // U+00CC  0xCC  Ì ÃŒ  %C3 %8C
+    .replace(/ÃŒ/g, 'Ì')
+    // U+00CD  0xCD  Í Ã   %C3 %8D
+    .replace(/Ã\u008D/g, 'Í')
+    // U+00CE  0xCE  Î ÃŽ  %C3 %8E
+    .replace(/ÃŽ/g, 'Î')
+    // U+00CF  0xCF  Ï Ã   %C3 %8F
+    .replace(/Ã\u008F/g, 'Ï')
+    // U+00D0  0xD0  Ð Ã   %C3 %90
+    .replace(/Ã\u0090/g, 'Ð')
+    // U+00D1  0xD1  Ñ Ã‘  %C3 %91
+    .replace(/Ã‘/g, 'Ñ')
+    // U+00D2  0xD2  Ò Ã’  %C3 %92
+    .replace(/Ã’/g, 'Ò')
+    // U+00D3  0xD3  Ó Ã“  %C3 %93
+    .replace(/Ã“/g, 'Ó')
+    // U+00D4  0xD4  Ô Ã”  %C3 %94
+    .replace(/Ã”/g, 'Ô')
+    // U+00D5  0xD5  Õ Ã•  %C3 %95
+    .replace(/Ã•/g, 'Õ')
+    // U+00D6  0xD6  Ö Ã–  %C3 %96
+    .replace(/Ã–/g, 'Ö')
+    // U+00D7  0xD7  × Ã—  %C3 %97
+    .replace(/Ã—/g, '×')
+    // U+00D8  0xD8  Ø Ã˜  %C3 %98
+    .replace(/Ã˜/g, 'Ø')
+    // U+00D9  0xD9  Ù Ã™  %C3 %99
+    .replace(/Ã™/g, 'Ù')
+    // U+00DA  0xDA  Ú Ãš  %C3 %9A
+    .replace(/Ãš/g, 'Ú')
+    // U+00DB  0xDB  Û Ã›  %C3 %9B
+    .replace(/Ã›/g, 'Û')
+    // U+00DC  0xDC  Ü Ãœ  %C3 %9C
+    .replace(/Ãœ/g, 'Ü')
+    // U+00DD  0xDD  Ý Ã   %C3 %9D
+    .replace(/Ã\u009D/g, 'Ý')
+    // U+00DE  0xDE  Þ Ãž  %C3 %9E
+    .replace(/Ãž/g, 'Þ')
+    // U+00DF  0xDF  ß ÃŸ  %C3 %9F
+    .replace(/ÃŸ/g, 'ß')
+    // U+00E0  0xE0  à Ã   %C3 %A0
+    .replace(/Ã\u00A0/g, 'à')
+    // U+00E1  0xE1  á Ã¡  %C3 %A1
+    .replace(/Ã¡/g, 'á')
+    // U+00E2  0xE2  â Ã¢  %C3 %A2
+    .replace(/Ã¢/g, 'â')
+    // U+00E3  0xE3  ã Ã£  %C3 %A3
+    .replace(/Ã£/g, 'ã')
+    // U+00E4  0xE4  ä Ã¤  %C3 %A4
+    .replace(/Ã¤/g, 'ä')
+    // U+00E5  0xE5  å Ã¥  %C3 %A5
+    .replace(/Ã¥/g, 'å')
+    // U+00E6  0xE6  æ Ã¦  %C3 %A6
+    .replace(/Ã¦/g, 'æ')
+    // U+00E7  0xE7  ç Ã§  %C3 %A7
+    .replace(/Ã§/g, 'ç')
+    // U+00E8  0xE8  è Ã¨  %C3 %A8
+    .replace(/Ã¨/g, 'è')
+    // U+00E9  0xE9  é Ã©  %C3 %A9
+    .replace(/Ã©/g, 'é')
+    // U+00EA  0xEA  ê Ãª  %C3 %AA
+    .replace(/Ãª/g, 'ê')
+    // U+00EB  0xEB  ë Ã«  %C3 %AB
+    .replace(/Ã«/g, 'ë')
+    // U+00EC  0xEC  ì Ã¬  %C3 %AC
+    .replace(/Ã¬/g, 'ì')
+    // U+00ED  0xED  í Ã­  %C3 %AD
+    .replace(/Ã\u00AD/g, 'í')
+    // U+00EE  0xEE  î Ã®  %C3 %AE
+    .replace(/Ã®/g, 'î')
+    // U+00EF  0xEF  ï Ã¯  %C3 %AF
+    .replace(/Ã¯/g, 'ï')
+    // U+00F0  0xF0  ð Ã°  %C3 %B0
+    .replace(/Ã°/g, 'ð')
+    // U+00F1  0xF1  ñ Ã±  %C3 %B1
+    .replace(/Ã±/g, 'ñ')
+    // U+00F2  0xF2  ò Ã²  %C3 %B2
+    .replace(/Ã²/g, 'ò')
+    // U+00F3  0xF3  ó Ã³  %C3 %B3
+    .replace(/Ã³/g, 'ó')
+    // U+00F4  0xF4  ô Ã´  %C3 %B4
+    .replace(/Ã´/g, 'ô')
+    // U+00F5  0xF5  õ Ãµ  %C3 %B5
+    .replace(/Ãµ/g, 'õ')
+    // U+00F6  0xF6  ö Ã¶  %C3 %B6
+    .replace(/Ã¶/g, 'ö')
+    // U+00F7  0xF7  ÷ Ã·  %C3 %B7
+    .replace(/Ã·/g, '÷')
+    // U+00F8  0xF8  ø Ã¸  %C3 %B8
+    .replace(/Ã¸/g, 'ø')
+    // U+00F9  0xF9  ù Ã¹  %C3 %B9
+    .replace(/Ã¹/g, 'ù')
+    // U+00FA  0xFA  ú Ãº  %C3 %BA
+    .replace(/Ãº/g, 'ú')
+    // U+00FB  0xFB  û Ã»  %C3 %BB
+    .replace(/Ã»/g, 'û')
+    // U+00FC  0xFC  ü Ã¼  %C3 %BC
+    .replace(/Ã¼/g, 'ü')
+    // U+00FD  0xFD  ý Ã½  %C3 %BD
+    .replace(/Ã½/g, 'ý')
+    // U+00FE  0xFE  þ Ã¾  %C3 %BE
+    .replace(/Ã¾/g, 'þ')
+    // U+00FF  0xFF  ÿ Ã¿  %C3 %BF
+    .replace(/Ã¿/g, 'ÿ')
+    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
+    .normalize()
+  };
+
+  var formatMap = {
+    d: 'DD',
+    D: 'ddd',
+    j: 'D',
+    l: 'dddd',
+    N: 'E',
+    S: function S() {
+      return ("[" + (this.format('Do').replace(/\d*/g, '')) + "]");
+    },
+    w: 'd',
+    z: function z() {
+      return this.format('DDD') - 1;
+    },
+    W: 'W',
+    F: 'MMMM',
+    m: 'MM',
+    M: 'MMM',
+    n: 'M',
+    t: function t() {
+      return this.daysInMonth();
+    },
+    L: function L() {
+      return this.isLeapYear() ? 1 : 0;
+    },
+    o: 'GGGG',
+    Y: 'YYYY',
+    y: 'YY',
+    a: 'a',
+    A: 'A',
+    B: function B(moment) {
+      var thisUTC = moment.clone().utc();
+      var swatch = ((thisUTC.hours() + 1) % 24) + (thisUTC.minutes() / 60)
+        + (thisUTC.seconds() / 3600);
+      return Math.floor((swatch * 1000) / 24);
+    },
+    g: 'h',
+    G: 'H',
+    h: 'hh',
+    H: 'HH',
+    i: 'mm',
+    s: 'ss',
+    u: '[u]', // not sure if moment has this
+    e: '[e]', // moment does not have this
+    I: function I(moment) {
+      return moment.isDST() ? 1 : 0;
+    },
+    O: 'ZZ',
+    P: 'Z',
+    T: '[T]', // deprecated in moment
+    Z: function Z(moment) {
+      return parseInt(moment.format('ZZ'), 10) * 36;
+    },
+    c: 'YYYY-MM-DD[T]HH:mm:ssZ',
+    r: 'ddd, DD MMM YYYY HH:mm:ss ZZ',
+    U: 'X',
+  };
+
+  var formatEx = /[dDjlNSwzWFmMntLoYyaABgGhHisueIOPTZcrU]/g;
+
+  function phpMoment(format, moment) {
+    return format.replace(formatEx, function (phpStr) { return (typeof formatMap[phpStr] === 'function' ? formatMap[phpStr](moment) : formatMap[phpStr]); });
+  }
+
+  var numeroRegex = /numero/i;
+  var dataRegex = /data(?!base)/i;
+
+  numeral.register('locale', 'pt-br', {
+    delimiters: {
+      thousands: '.',
+      decimal: ',',
+    },
+    abbreviations: {
+      thousand: 'mil',
+      million: 'milhões',
+      billion: 'b',
+      trillion: 't',
+    },
+    ordinal: function ordinal() {
+      return 'º';
+    },
+    currency: {
+      symbol: 'R$',
+    },
+  });
+
+  numeral.locale('pt-br');
+
+  function camelObject(from) {
+    var obj = {};
+    each(from, function (v, k) {
+      obj[camelCase(k)] = v;
+    });
+    return obj;
+  }
+
+  function formatNumeroProcesso(proc) {
+    if (!proc.numeroProcesso) { return proc; }
+
+    var ret = proc;
+
+    try {
+      var cnj = CalculateCNJ.load(ret.numeroProcesso);
+      ret.numeroProcesso = cnj.generate(true); /* cnj mask */
+      ret.cnj = cnj.pieces;
+    } catch (e) {
+      /* pass */
+    }
+
+    return ret;
+  }
+
+
+  var Processo = /*@__PURE__*/(function (Parser) {
+    function Processo(elementProcesso, $) {
+      Parser.call(this, $);
+      this.elementProcesso = elementProcesso;
+    }
+
+    if ( Parser ) Processo.__proto__ = Parser;
+    Processo.prototype = Object.create( Parser && Parser.prototype );
+    Processo.prototype.constructor = Processo;
+
+    var prototypeAccessors = { dadosCaptura: { configurable: true },adicional: { configurable: true },ajuizamento: { configurable: true },area: { configurable: true },assunto: { configurable: true },atas: { configurable: true },cartorio: { configurable: true },codigoReu: { configurable: true },comarcaInicial: { configurable: true },decisao: { configurable: true },foro: { configurable: true },inscricao: { configurable: true },localizacao: { configurable: true },localizacaoImovel: { configurable: true },nome: { configurable: true },numeroDivida: { configurable: true },numeroVara: { configurable: true },observacao: { configurable: true },orgao: { configurable: true },origemProcesso: { configurable: true },rito: { configurable: true },solucao: { configurable: true },acao: { configurable: true },andamentoInicial: { configurable: true },autuacao: { configurable: true },classe: { configurable: true },comarca: { configurable: true },dataValorCausa: { configurable: true },descricao: { configurable: true },distribuicao: { configurable: true },fase: { configurable: true },incidente: { configurable: true },instancia: { configurable: true },natureza: { configurable: true },numeroAntigo: { configurable: true },numeroProcesso: { configurable: true },numeroProtocolo: { configurable: true },eletronico: { configurable: true },situacao: { configurable: true },status: { configurable: true },valorCausa: { configurable: true },vara: { configurable: true },justiceSecret: { configurable: true },transitoJulgado: { configurable: true },urlProcesso: { configurable: true },adicionalAttributes: { configurable: true },ajuizamentoAttributes: { configurable: true },areaAttributes: { configurable: true },assuntoAttributes: { configurable: true },atasAttributes: { configurable: true },cartorioAttributes: { configurable: true },codigoReuAttributes: { configurable: true },comarcaInicialAttributes: { configurable: true },decisaoAttributes: { configurable: true },foroAttributes: { configurable: true },inscricaoAttributes: { configurable: true },localizacaoAttributes: { configurable: true },localizacaoImovelAttributes: { configurable: true },nomeAttributes: { configurable: true },numeroDividaAttributes: { configurable: true },numeroVaraAttributes: { configurable: true },observacaoAttributes: { configurable: true },orgaoAttributes: { configurable: true },origemProcessoAttributes: { configurable: true },ritoAttributes: { configurable: true },solucaoAttributes: { configurable: true },acaoAttributes: { configurable: true },andamentoInicialAttributes: { configurable: true },autuacaoAttributes: { configurable: true },classeAttributes: { configurable: true },comarcaAttributes: { configurable: true },dataValorCausaAttributes: { configurable: true },descricaoAttributes: { configurable: true },distribuicaoAttributes: { configurable: true },faseAttributes: { configurable: true },incidenteAttributes: { configurable: true },instanciaAttributes: { configurable: true },naturezaAttributes: { configurable: true },numeroAntigoAttributes: { configurable: true },numeroProcessoAttributes: { configurable: true },numeroProtocoloAttributes: { configurable: true },eletronicoAttributes: { configurable: true },situacaoAttributes: { configurable: true },statusAttributes: { configurable: true },valorCausaAttributes: { configurable: true },varaAttributes: { configurable: true },justiceSecretAttributes: { configurable: true },transitoJulgadoAttributes: { configurable: true },urlProcessoAttributes: { configurable: true },advogados: { configurable: true },partes: { configurable: true },documentos: { configurable: true },andamentos: { configurable: true },tags: { configurable: true } };
+
+    Processo.formatItem = function formatItem (v, k, dump) {
+      var this$1 = this;
+
+      if (Array.isArray(v)) { return v.map(function (n) { return this$1.formatItem(n, k, dump); }); }
+      if (typeof v === 'object') { return Processo.format(v); }
+      if (k === 'numeroProcesso') { return v; }
+      if (k === 'numeroAntigo') { return v; }
+      if (['valorCausa', 'instancia'].indexOf(k) !== -1 || numeroRegex.test(k)) { return numeral(v).value(); }
+      if (k === 'eletronico') { return v === '1'; }
+      if (dataRegex.test(k) || ['inscricao', 'transitoJulgado', 'ajuizamento', 'autuacao', 'distribuicao', 'andamentoInicial', 'dataValorCausa'].indexOf(k) !== -1) {
+        var n = moment(v, phpMoment(dump.format || (dump[(k + "Attributes")] ? dump[(k + "Attributes")].format : null) || 'd/m/Y'));
+        return n.isValid() ? n.toDate() : v;
+      }
+
+      return v;
+    };
+
+    Processo.format = function format (dump) {
+      var ret = mapValues_1(dump, function (v, k) { return Processo.formatItem(v, k, dump); });
+      ret = formatNumeroProcesso(ret);
+      return ret;
+    };
+
+    Processo.prototype.getter = function getter (name, attributes, df) {
+      if ( attributes === void 0 ) attributes = {};
+      if ( df === void 0 ) df = null;
+
+      var ref = this;
+      var $ = ref.$;
+      var element = $(this.elementProcesso).children(name);
+      if (!element.length) { return df; }
+      var textValue = element.text();
+      objectAssign(attributes, element.get().attribs);
+      return fixUtf8(textValue);
+    };
+
+    Processo.prototype.attributes = function attributes (name, df) {
+      if ( df === void 0 ) df = null;
+
+      var ref = this;
+      var $ = ref.$;
+      var element = $(this.elementProcesso).children(name);
+      if (!element.length) { return df; }
+      var ref$1 = element.get();
+      var attribs = ref$1.attribs;
+      return attribs ? mapValues_1(camelObject(attribs), function (v) { return fixUtf8(v); }) : df;
+    };
+
+    prototypeAccessors.dadosCaptura.get = function () { return this.elementProcesso.attribs; };
+
+    prototypeAccessors.adicional.get = function () { return this.getter('adicional'); };
+
+    prototypeAccessors.ajuizamento.get = function () { return this.getter('ajuizamento'); };
+
+    prototypeAccessors.area.get = function () { return this.getter('area'); };
+
+    prototypeAccessors.assunto.get = function () { return this.getter('assunto'); };
+
+    prototypeAccessors.atas.get = function () { return this.getter('atas'); };
+
+    prototypeAccessors.cartorio.get = function () { return this.getter('cartorio'); };
+
+    prototypeAccessors.codigoReu.get = function () { return this.getter('codigo_reu'); };
+
+    prototypeAccessors.comarcaInicial.get = function () { return this.getter('comarca_inicial'); };
+
+    prototypeAccessors.decisao.get = function () { return this.getter('decisao'); };
+
+    prototypeAccessors.foro.get = function () { return this.getter('foro'); };
+
+    prototypeAccessors.inscricao.get = function () { return this.getter('inscricao'); };
+
+    prototypeAccessors.localizacao.get = function () { return this.getter('localizacao'); };
+
+    prototypeAccessors.localizacaoImovel.get = function () { return this.getter('localizacao_imovel'); };
+
+    prototypeAccessors.nome.get = function () { return this.getter('nome'); };
+
+    prototypeAccessors.numeroDivida.get = function () { return this.getter('numero_divida'); };
+
+    prototypeAccessors.numeroVara.get = function () { return this.getter('numero_vara'); };
+
+    prototypeAccessors.observacao.get = function () { return this.getter('observacao'); };
+
+    prototypeAccessors.orgao.get = function () { return this.getter('orgao'); };
+
+    prototypeAccessors.origemProcesso.get = function () { return this.getter('origem_processo'); };
+
+    prototypeAccessors.rito.get = function () { return this.getter('rito'); };
+
+    prototypeAccessors.solucao.get = function () { return this.getter('solucao'); };
+
+    prototypeAccessors.acao.get = function () { return this.getter('acao'); };
+
+    prototypeAccessors.andamentoInicial.get = function () { return this.getter('andamento_inicial'); };
+
+    prototypeAccessors.autuacao.get = function () { return this.getter('autuacao'); };
+
+    prototypeAccessors.classe.get = function () { return this.getter('classe'); };
+
+    prototypeAccessors.comarca.get = function () { return this.getter('comarca'); };
+
+    prototypeAccessors.dataValorCausa.get = function () { return this.getter('data_valor_causa'); };
+
+    prototypeAccessors.descricao.get = function () { return this.getter('descricao'); };
+
+    prototypeAccessors.distribuicao.get = function () { return this.getter('distribuicao'); };
+
+    prototypeAccessors.fase.get = function () { return this.getter('fase'); };
+
+    prototypeAccessors.incidente.get = function () { return this.getter('incidente'); };
+
+    prototypeAccessors.instancia.get = function () { return this.getter('instancia'); };
+
+    prototypeAccessors.natureza.get = function () { return this.getter('natureza'); };
+
+    prototypeAccessors.numeroAntigo.get = function () { return this.getter('numero_antigo'); };
+
+    prototypeAccessors.numeroProcesso.get = function () { return this.getter('numero_processo'); };
+
+    prototypeAccessors.numeroProtocolo.get = function () { return this.getter('numero_protocolo'); };
+
+    prototypeAccessors.eletronico.get = function () { return this.getter('eletronico'); };
+
+    prototypeAccessors.situacao.get = function () { return this.getter('situacao'); };
+
+    prototypeAccessors.status.get = function () { return this.getter('status'); };
+
+    prototypeAccessors.valorCausa.get = function () { return this.getter('valor_causa'); };
+
+    prototypeAccessors.vara.get = function () { return this.getter('vara'); };
+
+    prototypeAccessors.justiceSecret.get = function () { return this.getter('justiceSecret'); };
+
+    prototypeAccessors.transitoJulgado.get = function () { return this.getter('transitoJulgado'); };
+
+    prototypeAccessors.urlProcesso.get = function () { return this.getter('url_processo'); };
+
+    prototypeAccessors.adicionalAttributes.get = function () { return this.attributes('adicional'); };
+
+    prototypeAccessors.ajuizamentoAttributes.get = function () { return this.attributes('ajuizamento'); };
+
+    prototypeAccessors.areaAttributes.get = function () { return this.attributes('area'); };
+
+    prototypeAccessors.assuntoAttributes.get = function () { return this.attributes('assunto'); };
+
+    prototypeAccessors.atasAttributes.get = function () { return this.attributes('atas'); };
+
+    prototypeAccessors.cartorioAttributes.get = function () { return this.attributes('cartorio'); };
+
+    prototypeAccessors.codigoReuAttributes.get = function () { return this.attributes('codigo_reu'); };
+
+    prototypeAccessors.comarcaInicialAttributes.get = function () { return this.attributes('comarca_inicial'); };
+
+    prototypeAccessors.decisaoAttributes.get = function () { return this.attributes('decisao'); };
+
+    prototypeAccessors.foroAttributes.get = function () { return this.attributes('foro'); };
+
+    prototypeAccessors.inscricaoAttributes.get = function () { return this.attributes('inscricao'); };
+
+    prototypeAccessors.localizacaoAttributes.get = function () { return this.attributes('localizacao'); };
+
+    prototypeAccessors.localizacaoImovelAttributes.get = function () { return this.attributes('localizacao_imovel'); };
+
+    prototypeAccessors.nomeAttributes.get = function () { return this.attributes('nome'); };
+
+    prototypeAccessors.numeroDividaAttributes.get = function () { return this.attributes('numero_divida'); };
+
+    prototypeAccessors.numeroVaraAttributes.get = function () { return this.attributes('numero_vara'); };
+
+    prototypeAccessors.observacaoAttributes.get = function () { return this.attributes('observacao'); };
+
+    prototypeAccessors.orgaoAttributes.get = function () { return this.attributes('orgao'); };
+
+    prototypeAccessors.origemProcessoAttributes.get = function () { return this.attributes('origem_processo'); };
+
+    prototypeAccessors.ritoAttributes.get = function () { return this.attributes('rito'); };
+
+    prototypeAccessors.solucaoAttributes.get = function () { return this.attributes('solucao'); };
+
+    prototypeAccessors.acaoAttributes.get = function () { return this.attributes('acao'); };
+
+    prototypeAccessors.andamentoInicialAttributes.get = function () { return this.attributes('andamento_inicial'); };
+
+    prototypeAccessors.autuacaoAttributes.get = function () { return this.attributes('autuacao'); };
+
+    prototypeAccessors.classeAttributes.get = function () { return this.attributes('classe'); };
+
+    prototypeAccessors.comarcaAttributes.get = function () { return this.attributes('comarca'); };
+
+    prototypeAccessors.dataValorCausaAttributes.get = function () { return this.attributes('data_valor_causa'); };
+
+    prototypeAccessors.descricaoAttributes.get = function () { return this.attributes('descricao'); };
+
+    prototypeAccessors.distribuicaoAttributes.get = function () { return this.attributes('distribuicao'); };
+
+    prototypeAccessors.faseAttributes.get = function () { return this.attributes('fase'); };
+
+    prototypeAccessors.incidenteAttributes.get = function () { return this.attributes('incidente'); };
+
+    prototypeAccessors.instanciaAttributes.get = function () { return this.attributes('instancia'); };
+
+    prototypeAccessors.naturezaAttributes.get = function () { return this.attributes('natureza'); };
+
+    prototypeAccessors.numeroAntigoAttributes.get = function () { return this.attributes('numero_antigo'); };
+
+    prototypeAccessors.numeroProcessoAttributes.get = function () { return this.attributes('numero_processo'); };
+
+    prototypeAccessors.numeroProtocoloAttributes.get = function () { return this.attributes('numero_protocolo'); };
+
+    prototypeAccessors.eletronicoAttributes.get = function () { return this.attributes('eletronico'); };
+
+    prototypeAccessors.situacaoAttributes.get = function () { return this.attributes('situacao'); };
+
+    prototypeAccessors.statusAttributes.get = function () { return this.attributes('status'); };
+
+    prototypeAccessors.valorCausaAttributes.get = function () { return this.attributes('valor_causa'); };
+
+    prototypeAccessors.varaAttributes.get = function () { return this.attributes('vara'); };
+
+    prototypeAccessors.justiceSecretAttributes.get = function () { return this.attributes('justiceSecret'); };
+
+    prototypeAccessors.transitoJulgadoAttributes.get = function () { return this.attributes('transitoJulgado'); };
+
+    prototypeAccessors.urlProcessoAttributes.get = function () { return this.attributes('url_processo'); };
+
+    prototypeAccessors.advogados.get = function () {
+      var ref = this;
+      var $ = ref.$;
+      return $('advogados advogado', this.elementProcesso).map(function (i, advogado) { return objectAssign({}, camelObject(advogado.attribs), {
+        nome: $(advogado).text().trim(),
+      }); }).get();
+    };
+
+    prototypeAccessors.partes.get = function () {
+      var ref = this;
+      var $ = ref.$;
+      return $('partes parte', this.elementProcesso).map(function (i, parte) { return objectAssign(
+        {},
+        mapValues_1(camelObject(parte.attribs), function (v) { return fixUtf8(v); }), {
+          nome: fixUtf8($(parte).text().trim()),
+        }
+      ); }).get();
+    };
+
+    prototypeAccessors.documentos.get = function () {
+      var ref = this;
+      var $ = ref.$;
+      return $('documentos documento', this.elementProcesso).map(function (i, andamento) { return objectAssign.apply(void 0, flattenDeep_1($(andamento).children().map(function (ik, k) {
+        var obj;
+
+        return [( obj = {}, obj[camelCase(k.name)] = fixUtf8($(k).text()), obj ), k.attribs || {}];
+        }).get())); }).get();
+    };
+
+
+    prototypeAccessors.andamentos.get = function () {
+      var ref = this;
+      var $ = ref.$;
+      return $('andamentos andamento', this.elementProcesso).map(function (i, andamento) { return objectAssign.apply(void 0, flattenDeep_1($(andamento).children().map(function (ik, k) {
+        var obj;
+
+        return [( obj = {}, obj[camelCase(k.name)] = fixUtf8($(k).text()), obj ), k.attribs || {}];
+        }).get())); }).get()
+        .reduce(function (obj, item) {
+          var obj$1;
+
+          return objectAssign(obj, ( obj$1 = {}, obj$1[item.hash] = item, obj$1 ));
+      }, {});
+    };
+
+    prototypeAccessors.tags.get = function () {
+      var ref = this;
+      var $ = ref.$;
+      var tags = $('tags tag', this.elementProcesso).map(function (i, tag) {
+        var obj;
+
+        return (( obj = {}, obj[$(tag).text().trim()] = camelObject(tag.attribs), obj ));
+      }).get();
+      if (!tags.length) { return {}; }
+      return objectAssign.apply(void 0, tags);
+    };
+
+    Processo.prototype.dump = function dump () {
+      var this$1 = this;
+
+      var items = map_1(
+        Object.getOwnPropertyDescriptors(Object.getPrototypeOf(this)),
+        function (v, key) {
+          var obj;
+
+          if (typeof v.get !== 'function') { return null; }
+          var value = v.get.apply(this$1);
+          if (!value) { return null; }
+          return ( obj = {}, obj[camelCase(key)] = value, obj );
+        }
+      ).filter(function (x) { return !!x; });
+      if (!items.length) { return {}; }
+      return Processo.format(objectAssign.apply(void 0, [ {} ].concat( items )));
+    };
+
+    Object.defineProperties( Processo.prototype, prototypeAccessors );
+
+    return Processo;
+  }(Parser));
+
+  var OAB = /*@__PURE__*/(function (Parser) {
+    function OAB () {
+      Parser.apply(this, arguments);
+    }
+
+    if ( Parser ) OAB.__proto__ = Parser;
+    OAB.prototype = Object.create( Parser && Parser.prototype );
+    OAB.prototype.constructor = OAB;
+
+    OAB.prototype.readNode = function readNode (key, node) {
+      var obj;
+
+      var ref = this;
+      var $ = ref.$;
+
+      return pickBy_1(objectAssign({}, node.attribs, ( obj = {}, obj[key] = $(node).text().trim(), obj )), function (v) { return !!v; });
+    };
+
+    OAB.prototype.childrenDump = function childrenDump (node, children) {
+      var this$1 = this;
+      if ( children === void 0 ) children = false;
+
+      var ref = this;
+      var $ = ref.$;
+
+      var element = $(node);
+      var nodeChildren = element.children();
+
+      if (children) {
+        return this.readNode(camelCase(node.name), node);
+      }
+
+      return objectAssign.apply(void 0, nodeChildren.map(function (ip, e) {
+        var obj;
+
+        var key = camelCase(e.name);
+
+        var elementChildren = $(e).children();
+        if (elementChildren.length) {
+          return ( obj = {}, obj[("" + key)] = elementChildren.map(function (i, n) { return this$1.childrenDump(n, true); }).get(), obj );
+        }
+
+        return this$1.readNode(key, e);
+      }).get());
+    };
+
+    OAB.formatQuery = function formatQuery (proc) {
+      var ret = proc;
+      ret.query = "SELECT FROM '" + (proc.tribunalNome) + "'.'" + (proc.tribunalConsulta) + "'";
+      if (proc.parametros && proc.parametros.length) {
+        ret.query += " WHERE " + (proc.parametros.map(function (ref) {
+          var name = ref.name;
+          var parametro = ref.parametro;
+
+          return ("'" + name + "' = '" + parametro + "'");
+        }).join(' AND '));
+      }
+      return ret;
+    };
+
+    OAB.prototype.dump = function dump () {
+      var this$1 = this;
+
+      var ref = this;
+      var $ = ref.$;
+      return $('body advogado processos processo').map(function (i, processoNode) { return OAB
+        .formatQuery(formatNumeroProcesso(this$1.childrenDump(processoNode))); }).get();
+    };
+
+    return OAB;
+  }(Parser));
+
+  var Processos = /*@__PURE__*/(function (Parser) {
+    function Processos () {
+      Parser.apply(this, arguments);
+    }
+
+    if ( Parser ) Processos.__proto__ = Parser;
+    Processos.prototype = Object.create( Parser && Parser.prototype );
+    Processos.prototype.constructor = Processos;
+
+    Processos.prototype.dump = function dump () {
+      var $ = Parser.prototype.dump.call(this);
+      return $('body > processo').map(function (_, p) { return new Processo(p, $).parse(); }).get();
+    };
+
+    return Processos;
+  }(Parser));
+
+  /**
+   * The base implementation of methods like `_.findKey` and `_.findLastKey`,
+   * without support for iteratee shorthands, which iterates over `collection`
+   * using `eachFunc`.
+   *
+   * @private
+   * @param {Array|Object} collection The collection to inspect.
+   * @param {Function} predicate The function invoked per iteration.
+   * @param {Function} eachFunc The function to iterate over `collection`.
+   * @returns {*} Returns the found element or its key, else `undefined`.
+   */
+  function baseFindKey(collection, predicate, eachFunc) {
+    var result;
+    eachFunc(collection, function(value, key, collection) {
+      if (predicate(value, key, collection)) {
+        result = key;
+        return false;
+      }
+    });
+    return result;
+  }
+
+  var _baseFindKey = baseFindKey;
+
+  /**
+   * This method is like `_.find` except that it returns the key of the first
+   * element `predicate` returns truthy for instead of the element itself.
+   *
+   * @static
+   * @memberOf _
+   * @since 1.1.0
+   * @category Object
+   * @param {Object} object The object to inspect.
+   * @param {Function} [predicate=_.identity] The function invoked per iteration.
+   * @returns {string|undefined} Returns the key of the matched element,
+   *  else `undefined`.
+   * @example
+   *
+   * var users = {
+   *   'barney':  { 'age': 36, 'active': true },
+   *   'fred':    { 'age': 40, 'active': false },
+   *   'pebbles': { 'age': 1,  'active': true }
+   * };
+   *
+   * _.findKey(users, function(o) { return o.age < 40; });
+   * // => 'barney' (iteration order is not guaranteed)
+   *
+   * // The `_.matches` iteratee shorthand.
+   * _.findKey(users, { 'age': 1, 'active': true });
+   * // => 'pebbles'
+   *
+   * // The `_.matchesProperty` iteratee shorthand.
+   * _.findKey(users, ['active', false]);
+   * // => 'fred'
+   *
+   * // The `_.property` iteratee shorthand.
+   * _.findKey(users, 'active');
+   * // => 'barney'
+   */
+  function findKey(object, predicate) {
+    return _baseFindKey(object, _baseIteratee(predicate), _baseForOwn);
+  }
+
+  var findKey_1 = findKey;
+
+  var errorCodes = {
+    E_INTERNAL_USER_BLOCKED: 0, // Usuário Bloqueado
+    E_TABLE_NOT_FOUND: 1, // Tipo de consulta inexistente
+    E_DATABASE_NOT_FOUND: 1, // Tribunal não suportado
+    E_NOT_FOUND: 2, // Consulta não encontrada
+    E_INVALID_ARGUMENT: 3, // Parâmetro de consulta inválido
+    E_SYNTAX_ERROR: 3, // Erro de sintaxe
+    E_MISSING_ARGUMENT: 4, // Parâmetro de consulta obrigatório inexistente
+    E_MULTIPLE_RESULTS_FOUND: 5, // Consulta com múltiplos resultados
+    E_BLOCKED_IP: 6, // IP do robô bloqueado
+    E_UNEXPECTED_HTTP_CODE: 7, // Erro inesperado durante consulta ao site
+    E_TIMEOUT: 7, // Ocorreu timeout durante a consulta
+    E_LOAD_PAGE_FAILED: 7, // Erro de carregamento de página
+    E_PROXY_CONFIGURATION_ERROR: 7, // Erro de configuração de proxy
+    E_REMOTE_SITE_UNDER_MAINTENANCE: 8, // Site sob manutenção
+    E_AUTHENTICATION_FAILURE: 9, // Erro ao logar no site
+    E_INTERNAL_SERVER_ERROR: 11,
+    E_INTERNAL_ERROR: 11, // Erro interno
+    E_QUERY_LIMIT: 12, // Limite de consulta atingido
+    E_PASSWORD_REQUIRED: 20, // Requer parâmetros de senha para acessar
+    E_JUSTICE_SECRET: 21, // Segredo de Justiça
+    E_EXPECTED_DATA_NOT_FOUND: 24, // Erro durante a obtenção dos dados
+    E_CAPTCHA_BREAK_FAILED: 25, // Não foi possível quebrar o captcha
+
+    E_INTERNAL_PUSH_LABEL: 26, // Já existe um PUSH com essa LABEL
+    E_UNDER_MAINTENANCE: 27, // Nossas manutenções
+    E_SITE_MESSAGE: 28, // Mensagem enviada pelo portal
+    E_BLOCKED_BY_CONFIG: 29, // Bloqueado por uma configuração
+    E_LEGAL_REVIEW: 30, // Revisão de Advogado
+    E_RESOURCE_UNAVAILABLE: 31, // Recurso não disponível
+    E_INTERNAL_EMAIL_UNCHECKED: 32, // Email interno não verificado
+    E_INTERNAL_NOT_READY: 33,
+
+    E_OUTDATED: 1522,
+    E_ARCHIVED_PROCESS: 1522,
+    E_WITHOUT_PROCEEDINGS: 1523,
+    E_UNKNOWN: 1524,
+    E_EMAIL_UNCHECKED: 1525,
+    E_BLOCKED_USER: 1526,
+  };
+
+  function codename(k) {
+    return findKey_1(errorCodes, function (n) { return n === k; }) || 'E_UNKNOWN';
+  }
+
+  exports.ExceptionCodes = errorCodes;
+  exports.Info = Info;
+  exports.JuristekException = JuristekException;
+  exports.JuristekInstanceException = JuristekInstanceException;
+  exports.JuristekParserException = JuristekParserException;
+  exports.OAB = OAB;
+  exports.Processos = Processos;
+  exports.exceptionCodename = codename;
+  exports.formatNumeroProcesso = formatNumeroProcesso;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

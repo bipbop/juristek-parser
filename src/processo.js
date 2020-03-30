@@ -1,5 +1,5 @@
 import each from 'lodash/each';
-import camelCase from 'camel-case';
+import { camelCase } from 'camel-case';
 
 import mapValues from 'lodash/mapValues';
 import flattenDeep from 'lodash/flattenDeep';
@@ -15,6 +15,25 @@ import phpMoment from './php-moment';
 
 const numeroRegex = /numero/i;
 const dataRegex = /data(?!base)/i;
+
+numeral.register('locale', 'pt-br', {
+  delimiters: {
+    thousands: '.',
+    decimal: ',',
+  },
+  abbreviations: {
+    thousand: 'mil',
+    million: 'milhões',
+    billion: 'b',
+    trillion: 't',
+  },
+  ordinal() {
+    return 'º';
+  },
+  currency: {
+    symbol: 'R$',
+  },
+});
 
 numeral.locale('pt-br');
 
@@ -50,7 +69,7 @@ export default class Processo extends Parser {
   }
 
   static formatItem(v, k, dump) {
-    if (Array.isArray(v)) return v.map(n => this.formatItem(n, k, dump));
+    if (Array.isArray(v)) return v.map((n) => this.formatItem(n, k, dump));
     if (typeof v === 'object') return Processo.format(v);
     if (k === 'numeroProcesso') return v;
     if (k === 'numeroAntigo') return v;
@@ -84,7 +103,7 @@ export default class Processo extends Parser {
     const element = $(this.elementProcesso).children(name);
     if (!element.length) return df;
     const { attribs } = element.get();
-    return attribs ? mapValues(camelObject(attribs), v => fixUtf8(v)) : df;
+    return attribs ? mapValues(camelObject(attribs), (v) => fixUtf8(v)) : df;
   }
 
   get dadosCaptura() { return this.elementProcesso.attribs; }
@@ -276,7 +295,7 @@ export default class Processo extends Parser {
     const { $ } = this;
     return $('partes parte', this.elementProcesso).map((i, parte) => objectAssign(
       {},
-      mapValues(camelObject(parte.attribs), v => fixUtf8(v)), {
+      mapValues(camelObject(parte.attribs), (v) => fixUtf8(v)), {
         nome: fixUtf8($(parte).text().trim()),
       },
     )).get();
@@ -310,7 +329,7 @@ export default class Processo extends Parser {
         if (!value) return null;
         return { [camelCase(key)]: value };
       },
-    ).filter(x => !!x);
+    ).filter((x) => !!x);
     if (!items.length) return {};
     return Processo.format(objectAssign({}, ...items));
   }

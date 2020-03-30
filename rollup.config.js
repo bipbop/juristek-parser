@@ -3,7 +3,7 @@ const commonjs = require('rollup-plugin-commonjs');
 const resolve = require('rollup-plugin-node-resolve');
 const filesize = require('rollup-plugin-filesize');
 const json = require('rollup-plugin-json');
-const { uglify } = require('rollup-plugin-uglify');
+// const { uglify } = require('rollup-plugin-uglify');
 
 const pkgDetails = require('./package.json');
 
@@ -17,7 +17,7 @@ module.exports = {
       preferBuiltins: false,
     }),
     buble(),
-    uglify(),
+    // uglify(),
     filesize(),
   ],
   output: {

@@ -29,8 +29,8 @@ const formatMap = {
   A: 'A',
   B(moment) {
     const thisUTC = moment.clone().utc();
-    const swatch = ((thisUTC.hours() + 1) % 24) + (thisUTC.minutes() / 60) +
-      (thisUTC.seconds() / 3600);
+    const swatch = ((thisUTC.hours() + 1) % 24) + (thisUTC.minutes() / 60)
+      + (thisUTC.seconds() / 3600);
     return Math.floor((swatch * 1000) / 24);
   },
   g: 'h',
@@ -58,5 +58,5 @@ const formatMap = {
 const formatEx = /[dDjlNSwzWFmMntLoYyaABgGhHisueIOPTZcrU]/g;
 
 export default function phpMoment(format, moment) {
-  return format.replace(formatEx, phpStr => (typeof formatMap[phpStr] === 'function' ? formatMap[phpStr](moment) : formatMap[phpStr]));
+  return format.replace(formatEx, (phpStr) => (typeof formatMap[phpStr] === 'function' ? formatMap[phpStr](moment) : formatMap[phpStr]));
 }

@@ -1,4 +1,4 @@
-import camelCase from 'camel-case';
+import { camelCase } from 'camel-case';
 import pickBy from 'lodash/pickBy';
 import objectAssign from 'object-assign';
 
