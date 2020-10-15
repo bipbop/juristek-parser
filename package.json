@@ -1,6 +1,6 @@
 {
   "name": "juristek-parser",
-  "version": "5.0.11",
+  "version": "5.0.12",
   "types": "dist/index.d.ts",
   "description": "Parser de XML do BIPBOP Juristek para NodeJS.",
   "main": "dist/index.js",
@@ -28,25 +28,25 @@
   "homepage": "https://github.com/bipbop/juristek-parser#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.1",
     "numeral": "^2.0.6",
-    "validate-cnj": "^1.0.14"
+    "validate-cnj": "^1.0.15"
   },
   "devDependencies": {
-    "@types/cheerio": "^0.22.17",
+    "@types/cheerio": "^0.22.22",
     "camel-case": "^4.1.1",
     "es6-error": "^4.1.1",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
     "fix-utf8": "^1.1.1",
-    "jest": "^25.2.4",
-    "lodash": "^4.17.15",
+    "jest": "^26.5.3",
+    "lodash": "^4.17.20",
     "object-assign": "^4.1.1",
-    "rollup": "^2.3.0",
+    "rollup": "^2.31.0",
     "rollup-plugin-buble": "^0.19.8",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-filesize": "^6.2.1",
+    "rollup-plugin-filesize": "^9.0.2",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-uglify": "^6.0.4"

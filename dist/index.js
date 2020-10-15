@@ -1,13 +1,15 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('cheerio'), require('moment'), require('validate-cnj'), require('numeral')) :
   typeof define === 'function' && define.amd ? define(['exports', 'cheerio', 'moment', 'validate-cnj', 'numeral'], factory) :
-  (global = global || self, factory(global.JuristekParser = {}, global.cheerio, global.moment, global.ValidateCNJ, global.numeral));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.JuristekParser = {}, global.cheerio, global.moment, global.ValidateCNJ, global.numeral));
 }(this, (function (exports, cheerio, moment, CalculateCNJ, numeral) { 'use strict';
 
-  cheerio = cheerio && Object.prototype.hasOwnProperty.call(cheerio, 'default') ? cheerio['default'] : cheerio;
-  moment = moment && Object.prototype.hasOwnProperty.call(moment, 'default') ? moment['default'] : moment;
-  CalculateCNJ = CalculateCNJ && Object.prototype.hasOwnProperty.call(CalculateCNJ, 'default') ? CalculateCNJ['default'] : CalculateCNJ;
-  numeral = numeral && Object.prototype.hasOwnProperty.call(numeral, 'default') ? numeral['default'] : numeral;
+  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+  var cheerio__default = /*#__PURE__*/_interopDefaultLegacy(cheerio);
+  var moment__default = /*#__PURE__*/_interopDefaultLegacy(moment);
+  var CalculateCNJ__default = /*#__PURE__*/_interopDefaultLegacy(CalculateCNJ);
+  var numeral__default = /*#__PURE__*/_interopDefaultLegacy(numeral);
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -217,7 +219,7 @@
   };
 
   var name = "juristek-parser";
-  var version = "5.0.11";
+  var version = "5.0.12";
   var repository = {
   	type: "git",
   	url: "https://github.com/bipbop/juristek-parser.git"
@@ -239,9 +241,10 @@
   };
 
   Parser.openString = function openString (str) {
-    return new this(cheerio.load(str, {
+    return new this(cheerio__default['default'].load(str, {
       normalizeWhitespace: true,
       xmlMode: true,
+      decodeEntities: false
     }));
   };
 
@@ -1454,10 +1457,11 @@
     if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
       return false;
     }
-    // Assume cyclic values are equal.
-    var stacked = stack.get(array);
-    if (stacked && stack.get(other)) {
-      return stacked == other;
+    // Check that cyclic values are equal.
+    var arrStacked = stack.get(array);
+    var othStacked = stack.get(other);
+    if (arrStacked && othStacked) {
+      return arrStacked == other && othStacked == array;
     }
     var index = -1,
         result = true,
@@ -2377,10 +2381,11 @@
         return false;
       }
     }
-    // Assume cyclic values are equal.
-    var stacked = stack.get(object);
-    if (stacked && stack.get(other)) {
-      return stacked == other;
+    // Check that cyclic values are equal.
+    var objStacked = stack.get(object);
+    var othStacked = stack.get(other);
+    if (objStacked && othStacked) {
+      return objStacked == other && othStacked == object;
     }
     var result = true;
     stack.set(object, other);
@@ -3358,6 +3363,10 @@
       var key = _toKey(path[index]),
           newValue = value;
 
+      if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+        return object;
+      }
+
       if (index != lastIndex) {
         var objValue = nested[key];
         newValue = customizer ? customizer(objValue, key, nested) : undefined;
@@ -4230,7 +4239,7 @@
   var numeroRegex = /numero/i;
   var dataRegex = /data(?!base)/i;
 
-  numeral.register('locale', 'pt-br', {
+  numeral__default['default'].register('locale', 'pt-br', {
     delimiters: {
       thousands: '.',
       decimal: ',',
@@ -4249,7 +4258,7 @@
     },
   });
 
-  numeral.locale('pt-br');
+  numeral__default['default'].locale('pt-br');
 
   function camelObject(from) {
     var obj = {};
@@ -4265,7 +4274,7 @@
     var ret = proc;
 
     try {
-      var cnj = CalculateCNJ.load(ret.numeroProcesso);
+      var cnj = CalculateCNJ__default['default'].load(ret.numeroProcesso);
       ret.numeroProcesso = cnj.generate(true); /* cnj mask */
       ret.cnj = cnj.pieces;
     } catch (e) {
@@ -4295,10 +4304,10 @@
       if (typeof v === 'object') { return Processo.format(v); }
       if (k === 'numeroProcesso') { return v; }
       if (k === 'numeroAntigo') { return v; }
-      if (['valorCausa', 'instancia'].indexOf(k) !== -1 || numeroRegex.test(k)) { return numeral(v).value(); }
+      if (['valorCausa', 'instancia'].indexOf(k) !== -1 || numeroRegex.test(k)) { return numeral__default['default'](v).value(); }
       if (k === 'eletronico') { return v === '1'; }
       if (dataRegex.test(k) || ['inscricao', 'transitoJulgado', 'ajuizamento', 'autuacao', 'distribuicao', 'andamentoInicial', 'dataValorCausa'].indexOf(k) !== -1) {
-        var n = moment(v, phpMoment(dump.format || (dump[(k + "Attributes")] ? dump[(k + "Attributes")].format : null) || 'd/m/Y'));
+        var n = moment__default['default'](v, phpMoment(dump.format || (dump[(k + "Attributes")] ? dump[(k + "Attributes")].format : null) || 'd/m/Y'));
         return n.isValid() ? n.toDate() : v;
       }
 

@@ -24,6 +24,7 @@ export default class Parser {
     return new this(cheerio.load(str, {
       normalizeWhitespace: true,
       xmlMode: true,
+      decodeEntities: false
     }));
   }
 
