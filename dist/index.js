@@ -98,11 +98,6 @@
     return JuristekException;
   }(ExtendableError));
 
-  var Exception = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    'default': JuristekException
-  });
-
   var JuristekInstanceException = /*@__PURE__*/(function (JuristekException) {
   	function JuristekInstanceException () {
   		JuristekException.apply(this, arguments);
@@ -219,7 +214,7 @@
   };
 
   var name = "juristek-parser";
-  var version = "5.0.12";
+  var version = "5.0.13";
   var repository = {
   	type: "git",
   	url: "https://github.com/bipbop/juristek-parser.git"
@@ -232,7 +227,7 @@
   Parser.prototype.assertDocument = function assertDocument () {
     var exception = this.$('BPQL > header > exception');
     if (!exception.length) { return; }
-    throw objectAssign(new Exception(exception.text()), {
+    throw objectAssign(new Error(exception.text()), {
       source: exception.attr('source') || null,
       push: exception.attr('push') !== 'false',
       code: parseInt(exception.attr('code'), 10) || 0,

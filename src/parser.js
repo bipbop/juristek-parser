@@ -12,7 +12,7 @@ export default class Parser {
   assertDocument() {
     const exception = this.$('BPQL > header > exception');
     if (!exception.length) return;
-    throw objectAssign(new Exception(exception.text()), {
+    throw objectAssign(new Error(exception.text()), {
       source: exception.attr('source') || null,
       push: exception.attr('push') !== 'false',
       code: parseInt(exception.attr('code'), 10) || 0,

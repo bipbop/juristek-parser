@@ -1,6 +1,6 @@
 {
   "name": "juristek-parser",
-  "version": "5.0.12",
+  "version": "5.0.13",
   "types": "dist/index.d.ts",
   "description": "Parser de XML do BIPBOP Juristek para NodeJS.",
   "main": "dist/index.js",
