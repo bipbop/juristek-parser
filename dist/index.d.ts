@@ -235,8 +235,8 @@ type ProcessosReturn = ArrayParser<ProcessoData.RootObject>;
 type OABReturn = ArrayParser<OABData.RootObject>;
 type InfoReturn = ArrayParser<InfoData.RootObject>;
 
-declare class Parser<T = Cheerio> {
-  public constructor(u: Cheerio);
+declare class Parser<T = cheerio.Cheerio> {
+  public constructor(u: cheerio.Cheerio);
   public load(): T & ParserInformation;
 }
 

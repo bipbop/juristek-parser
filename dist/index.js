@@ -214,7 +214,7 @@
   };
 
   var name = "juristek-parser";
-  var version = "5.0.13";
+  var version = "5.0.14";
   var repository = {
   	type: "git",
   	url: "https://github.com/bipbop/juristek-parser.git"
