@@ -16,26 +16,30 @@ import phpMoment from './php-moment';
 const numeroRegex = /numero/i;
 const dataRegex = /data(?!base)/i;
 
-numeral.register('locale', 'pt-br', {
-  delimiters: {
-    thousands: '.',
-    decimal: ',',
-  },
-  abbreviations: {
-    thousand: 'mil',
-    million: 'milhões',
-    billion: 'b',
-    trillion: 't',
-  },
-  ordinal() {
-    return 'º';
-  },
-  currency: {
-    symbol: 'R$',
-  },
-});
+try {
+  numeral.register('locale', 'pt-br', {
+    delimiters: {
+      thousands: '.',
+      decimal: ',',
+    },
+    abbreviations: {
+      thousand: 'mil',
+      million: 'milhões',
+      billion: 'b',
+      trillion: 't',
+    },
+    ordinal() {
+      return 'º';
+    },
+    currency: {
+      symbol: 'R$',
+    },
+  });
 
-numeral.locale('pt-br');
+  numeral.locale('pt-br');
+} catch (e) {
+  /* pass */
+}
 
 function camelObject(from) {
   const obj = {};

@@ -214,7 +214,7 @@
   };
 
   var name = "juristek-parser";
-  var version = "5.0.14";
+  var version = "5.0.16";
   var repository = {
   	type: "git",
   	url: "https://github.com/bipbop/juristek-parser.git"
@@ -4234,26 +4234,30 @@
   var numeroRegex = /numero/i;
   var dataRegex = /data(?!base)/i;
 
-  numeral__default['default'].register('locale', 'pt-br', {
-    delimiters: {
-      thousands: '.',
-      decimal: ',',
-    },
-    abbreviations: {
-      thousand: 'mil',
-      million: 'milhões',
-      billion: 'b',
-      trillion: 't',
-    },
-    ordinal: function ordinal() {
-      return 'º';
-    },
-    currency: {
-      symbol: 'R$',
-    },
-  });
+  try {
+    numeral__default['default'].register('locale', 'pt-br', {
+      delimiters: {
+        thousands: '.',
+        decimal: ',',
+      },
+      abbreviations: {
+        thousand: 'mil',
+        million: 'milhões',
+        billion: 'b',
+        trillion: 't',
+      },
+      ordinal: function ordinal() {
+        return 'º';
+      },
+      currency: {
+        symbol: 'R$',
+      },
+    });
 
-  numeral__default['default'].locale('pt-br');
+    numeral__default['default'].locale('pt-br');
+  } catch (e) {
+    /* pass */
+  }
 
   function camelObject(from) {
     var obj = {};
